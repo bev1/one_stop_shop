@@ -25,6 +25,24 @@ a
   &:hover
     text-decoration: none
     color: inherit
+.container
+  @media (min-width:1100px)
+    max-width: 1980px
+  @media (min-width:1200px)
+    max-width: 1180px
+  @media (min-width:1300px)
+    max-width: 1280px
+  @media (min-width:1400px)
+    max-width: 1380px
+  @media (min-width:1500px)
+    max-width: 1480px
+  @media (min-width:1600px)
+    max-width: 1580px
+  @media (min-width:1700px)
+    max-width: 1680px
+  @media (min-width:1800px)
+    max-width: 1780px
+    
 
 
 @import './layout/header'
@@ -36,6 +54,11 @@ a
   min-height: 100vh
   .container
     position: relative
+    .row
+      .col-md-6:last-child
+        display: flex
+        align-items: center
+        justify-content: center
     @media (min-width: 1850px)
       max-width: 1800px
   .title
@@ -63,6 +86,7 @@ a
     margin-top: 266px
     margin-left: -18px
     display: flex
+    width: fit-content
     .text
       text-align: right
       margin-right: 32px
@@ -78,5 +102,9 @@ a
       width: 71px
       height: 71px
       border-radius: 50%
+      transition: .3s
+    &:hover
+      .button
+        transform: scale(1.1)
   &.consulting
     background-image: url('../img/consulting_main.png')

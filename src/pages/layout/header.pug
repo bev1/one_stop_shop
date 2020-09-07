@@ -1,10 +1,10 @@
-.header
+header.header
   .container
     .header-wrap
       .logo
         a(href="index.html")
           img(src="img/logo.png", alt="logo")
-      ul.header-menu
+      ul.header-menu.collapse#navbar
         li
           a.active(href="index.html")
             .text Consulting
@@ -35,5 +35,9 @@
             .text Real estate
             .line
             .number 06
+      button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation")
+        span(class="line line-1")
+        span(class="line line-2")
+        span(class="line line-3")
 
                 
