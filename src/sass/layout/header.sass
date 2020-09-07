@@ -1,8 +1,57 @@
 .header
+  padding: 15px 0
+  position: absolute
+  top: 0
+  width: 100%
   .container
-    @media (min-width: 1800px)
-      max-width: 1760px
+    @media (min-width: 1850px)
+      max-width: 1830px
     .header-wrap
       display: flex
+      align-items: center
+    .logo
+      margin-right: 187px
     .header-menu
       list-style: none
+      display: flex
+      padding: 0
+      margin: 0
+      padding-top: 15px
+      li
+        &:nth-child(1)
+          margin-right: 132px
+        &:nth-child(2)
+          margin-right: 83px
+        &:nth-child(3)
+          margin-right: 88px
+        &:nth-child(4)
+          margin-right: 71px
+        &:nth-child(5)
+          margin-right: 83px
+          
+        a
+          overflow: hidden
+          color: #151515
+          font-weight: bold
+          .text
+            font-size: 18px
+            margin-bottom: 7px
+          .number
+            color: #737373
+            font-size: 12px
+          .line
+            height: 2px
+            width: 0
+            background-color: transparent
+            transition: .2s
+            margin-bottom: 9px
+          &:hover, &.active
+            .line
+              height: 2px
+              width: 100%
+              background-color: #cf093c
+              transform: translateX(0)
+            .number
+              color: #cf093c
+        
+

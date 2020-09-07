@@ -28,4 +28,28 @@ a
 
 
 @import './layout/header'
+@import './layout/footer'
 // @import './components/cube'
+
+.main-section
+  padding: 50px 0
+  min-height: 100vh
+  .container
+    @media (min-width: 1850px)
+      max-width: 1830px
+  .title
+    font-weight: bold
+    font-size: 110px
+    color: #151515
+    display: flex
+    align-items: center
+    span
+      display: inline-block
+      &:first-child
+        font-size: 95px
+      &:last-child
+        font-size: 110px
+        &::first-letter
+          color: #1e4ea7
+  &.consulting
+    background-image: url('../img/consulting_main.png')

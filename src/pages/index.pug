@@ -10,4 +10,21 @@ html(lang="ru")
         link(rel="stylesheet", href="css/main.css")
     body
         include layout/header.pug
+        main
+          section.main-section.consulting
+            .container
+              .row
+                .col-md-6                  
+                  h1.title
+                    span 01
+                    span Consulting
+                  .sub-title
+                    .arrow
+                      img(src="img/blue_arrow.png", alt="arrow")
+                    .text Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, error totam. Omnis fuga asperiores quos culpa ex soluta veritatis? Nobis!
+                .col-md-6
+
         include layout/footer.pug
+        script(src="js/jquery.min.js")
+        script(src="js/bootstrap.min.js")
+        script(src="js/script.js")
