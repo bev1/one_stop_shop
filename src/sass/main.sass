@@ -35,21 +35,48 @@ a
   padding: 50px 0
   min-height: 100vh
   .container
+    position: relative
     @media (min-width: 1850px)
-      max-width: 1830px
+      max-width: 1800px
   .title
     font-weight: bold
     font-size: 110px
     color: #151515
     display: flex
     align-items: center
+    margin-top: 250px
     span
       display: inline-block
       &:first-child
         font-size: 95px
+        margin-right: 60px
       &:last-child
         font-size: 110px
         &::first-letter
           color: #1e4ea7
+  .sub-title
+    display: flex
+    padding-left: 50px
+    .arrow
+      margin-right: 75px
+  .video-link
+    margin-top: 266px
+    margin-left: -18px
+    display: flex
+    .text
+      text-align: right
+      margin-right: 32px
+      color: #050505
+      font-size: 21px
+      line-height: 30px
+      font-weight: bold
+    .button
+      display: flex
+      justify-content: center
+      align-items: center
+      border: 2px solid #cf093c
+      width: 71px
+      height: 71px
+      border-radius: 50%
   &.consulting
     background-image: url('../img/consulting_main.png')
