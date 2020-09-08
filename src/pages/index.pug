@@ -7,6 +7,7 @@ html(lang="ru")
         link(rel="stylesheet", href="css/bootstrap-reboot.min.css")
         link(rel="stylesheet", href="css/bootstrap.min.css")
         link(rel="stylesheet", href="css/bootstrap-grid.min.css")
+        link(rel="stylesheet", href="css/aos.css")
         link(rel="stylesheet", href="css/main.css")
     body
         include layout/header.pug
@@ -32,8 +33,64 @@ html(lang="ru")
                       img(src="img/play_button.png", alt="play")
                 .col-md-6
                   //- include components/cube.pug
+          section.section.consulting-1
+            .container
+              .section-title
+                .title-cube
+                  img(src="img/stamp.png", alt="")
+                  p РЕГИСТРАЦИИ
+                h2 Услуги по
+                  br
+                  span регистрации компаний
+              .row
+                .col-md-6
+                  ul.check-list.left
+                    li(data-aos="fade-right") Регистрируем и предоставляем качественный сервис в мировом пространстве, включая оффшорные юрисдикции
+                    li(data-aos="fade-right") Предлагаем секретарские услуги для компаний;
+                    li(data-aos="fade-right") Ведем бухгалтерское обслуживание – учет, подготовка отчетов, аудит, а также подача отчетов в налоговую службу;
+                    li(data-aos="fade-right") Предоставляем юридический или регистрационный адрес;
+                    li(data-aos="fade-right") Заверяем пакет документов компании – нотариальное заверение или апостиль документов;
+                .col-md-6
+                  ul.check-list.top
+                    li(data-aos="fade-left") Качественно подготавливаем необходимую документацию, в том числе доверенности, уставы, договоры об учреждении и другие;
+                    li(data-aos="fade-left") Предоставляем помощь в получении сертификатов в оффшорных зонах;
+                    li(data-aos="fade-left") Предлагаем профессиональный номинальный сервис – партнер, директор, акционер;
+                    li(data-aos="fade-left") Открываем банковские счета, мерчант счета, подключение платежных систем;
+                    li(data-aos="fade-left") Получаем финансовые, Forex, EML, игровые лицензии;
+                    li(data-aos="fade-left") Присутствует целый ряд дополнительных услуг.
+
+          section.section.consulting-2
+            .container
+              h3.letter Юрисдикции
+              .tabs
+                ul.nav
+                  li.nav-item
+                    a(href="#content1" data-toggle="tab").nav-link.active Oффшорныe юрисдикции
+                  li.nav-item
+                    a(href="#content2" data-toggle="tab").nav-link Низконалоговые юрисдикции
+                  li.nav-item
+                    a(href="#content3" data-toggle="tab").nav-link Европейские юрисдикции
+                  li.nav-item
+                    a(href="#content4" data-toggle="tab").nav-link Юрисдикции в Азии
+                  li.nav-item
+                    a(href="#content5" data-toggle="tab").nav-link Юрисдикции в Северной и Южной Америке
+                  li.nav-item
+                    a(href="#content6" data-toggle="tab").nav-link Юрисдикции в Австралии и Океании
+                  li.nav-item
+                    a(href="#content7" data-toggle="tab").nav-link Юрисдикции в Африке
+                .tab-content
+                  div.tab-pane.fade.show.active#content1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, earum!
+                  div.tab-pane.fade#content2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, earum!fdhdrdrtuyvdr
+                  div.tab-pane.fade#content3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, earum!egyueytufrt
+                  div.tab-pane.fade#content4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, earum!
+                  div.tab-pane.fade#content5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, earum!333333333333333
+                  div.tab-pane.fade#content6 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, earum!rvgyutyuer
+                  div.tab-pane.fade#content7 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, earum!
+
+
 
         include layout/footer.pug
         script(src="js/jquery.min.js")
         script(src="js/bootstrap.min.js")
+        script(src="js/aos.js")
         script(src="js/script.js")

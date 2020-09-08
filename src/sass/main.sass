@@ -19,12 +19,22 @@
 
 body
   font-family: 'ProximaNova'
+  background-color: #dfdfdf
+  opacity: 0
 a
   color: inherit
   text-decoration: none
   &:hover
     text-decoration: none
     color: inherit
+h3
+  font-size: 36px
+  text-align: center
+  color: #000000
+  font-weight: 700
+  &.letter
+    &::first-letter
+      color: #1e4ea7
 .container
   @media (min-width:1100px)
     max-width: 1980px
@@ -108,3 +118,87 @@ a
         transform: scale(1.1)
   &.consulting
     background-image: url('../img/consulting_main.png')
+    background-repeat: no-repeat
+
+.title-cube
+  color: #ffffff
+  background-color: #1e4ea7
+  width: 200px
+  height: 200px
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  margin-top: 45px
+  margin-left: 22px
+  margin-right: 48px
+  p
+    font-size: 18px
+    letter-spacing: 4px
+    margin-top: 25px
+  img
+    margin-top: 30px
+
+.check-list
+  list-style: none
+  color: #848484
+  font-size: 16px
+  padding: 0
+  margin: 0
+  padding-left: 50px
+  li
+    position: relative
+    padding-left: 25px
+    margin-bottom: 25px
+    &::before
+      content: ''
+      position: absolute
+      top: 5px
+      left: -10px
+      width: 20px
+      height: 14px
+      background-image: url('../img/check.png')
+
+.section
+  .section-title
+    display: flex
+    align-items: flex-end
+  h2
+    font-size: 36px
+    font-weight: 700
+    color: #151515
+    span
+      color: #1e4ea7
+  &.consulting-1
+    padding-top: 18px
+    .container
+      background-image: url('../img/consulting_1.png')
+      background-repeat: no-repeat
+      background-size: 96%
+      background-position: 64px 0
+      padding-bottom: 245px
+      @media (min-width: 1850px)
+        max-width: 1805px
+    .check-list
+      margin-top: 63px
+      &.left
+        margin-left: 128px
+      &.top
+        margin-top: -10px
+        margin-left: 13px
+        li
+          margin-bottom: 21px
+          @media (min-width: 1700px)
+            max-width: 600px
+
+  &.consulting-2
+    .tabs
+      .nav
+        a
+          border: 1px solid #c7c7c8
+          font-size: 16px
+          color: #1e4ea7
+          transition: .3s
+          &:hover
+            color: #ffffff
+            background-color: #1e4ea7
