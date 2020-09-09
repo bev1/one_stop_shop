@@ -169,25 +169,66 @@ h3
 
 .color-block
   color: #ffffff
+  span
+    font-weight: 600
   p.small
     font-size: 24px
   p.big
-    font-size: 48px
+    font-size: 36px
   p.red
     color: #cf093c
     text-align: center
     letter-spacing: 24px
     line-height: 36px
-  span
-    font-weight: 600
+    margin-top: 133px
+    font-size: 24px
+    margin-left: 407px
+    font-weight: 500
+    span
+      font-weight: 500
+      margin-left: 40px
 
 .button
-  width: 355px
-  height: 68px
+  width: 334px
+  height: 67px
   color: #ffffff
   display: flex
   align-items: center
-  justify-content: center
+  justify-content: flex-end
+  padding-right: 54px
+  position: relative
+  transition: all 0.3s
+  font-size: 22px
+  font-weight: 600
+  letter-spacing: 1px
+  &:before
+    content: ''
+    position: absolute
+    transition: all 0.2s
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 1
+    opacity: 0
+    background: rgba(255, 255, 255, 0.4)
+    transform: scale(1, 0.1)
+  &:hover:before
+    opacity: 1
+    transform: scale(1, 1)
+  &:after
+    content: ''
+    position: absolute
+    transition: all 0.3s
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 1
+    transition: all 0.2s
+  &:hover:after
+    transform: scale(1, .1)
+    opacity: 0    
   &.red
     background-color: #cf093c
 
@@ -385,3 +426,23 @@ h3
           width: 30px
           height: 37px
           background-image: url('../img/reward.png')
+
+  &.consulting-6
+    padding: 55px 0 37px
+    background-image: url('../img/consulting_6.png')
+    background-repeat: no-repeat
+    background-size: cover
+    .container
+      @media (min-width: 1610px)
+        max-width: 1590px
+    .color-block
+      p
+        &.small
+          max-width: 700px
+        &.big
+          margin-top: 33px
+          max-width: 620px
+          line-height: 49px
+      .button
+        margin-top: 47px
+        margin-left: 94px
