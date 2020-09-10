@@ -47,7 +47,7 @@ h3
       color: #1e4ea7
 .container
   @media (min-width:1100px)
-    max-width: 1980px
+    max-width: 1080px
   @media (min-width:1200px)
     max-width: 1180px
   @media (min-width:1300px)
@@ -75,7 +75,7 @@ h3
   .container
     position: relative
     .row
-      .col-md-6:last-child
+      .col-lg-6:last-child
         display: flex
         align-items: center
         justify-content: center
@@ -83,7 +83,7 @@ h3
       max-width: 1800px
   .title
     font-weight: bold
-    font-size: 110px
+    // font-size: 110px
     color: #151515
     display: flex
     align-items: center
@@ -97,16 +97,64 @@ h3
         font-size: 110px
         &::first-letter
           color: #1e4ea7
+    @media (max-width: 1500px)
+      &
+        margin-top: 150px
+        span
+          &:first-child
+            font-size: 75px
+            margin-right: 20px
+          &:last-child
+            font-size: 80px
+    @media (max-width: 1100px)
+      &
+        margin-top: 100px
+        span
+          &:first-child
+            font-size: 65px
+          &:last-child
+            font-size: 70px
+    @media (max-width: 992px)
+      &
+        margin-top: 25px
+    @media (max-width: 450px)
+      &
+        margin-top: 25px
+        span
+          &:first-child
+            font-size: 35px
+          &:last-child
+            font-size: 40px
   .sub-title
     display: flex
     padding-left: 50px
     .arrow
       margin-right: 75px
+    @media (max-width: 1500px)
+      &
+        padding-left: 0
+        .arrow
+          margin-right: 35px
+    @media (max-width: 450px)
+      &
+        .arrow
+          margin-right: 20px
+          img
+            width: 25px
+        .text
+          font-size: 16px
   .video-link
     margin-top: 266px
     margin-left: -18px
     display: flex
     width: fit-content
+    @media (max-width: 1500px)
+      &
+        margin-left: 0
+    @media (max-width: 992px)
+      &
+        margin-top: 15px
+        margin-bottom: 100px
     .text
       text-align: right
       margin-right: 32px
@@ -114,6 +162,8 @@ h3
       font-size: 21px
       line-height: 30px
       font-weight: bold
+      @media (max-width: 450px)
+        line-height: 25px
     .link-img
       display: flex
       justify-content: center
@@ -123,6 +173,9 @@ h3
       height: 71px
       border-radius: 50%
       transition: .3s
+      @media (max-width: 450px)
+        width: 50px
+        height: 50px
     &:hover
       .link-img
         transform: scale(1.1)
@@ -149,6 +202,17 @@ h3
     margin-top: 25px
   img
     margin-top: 30px
+  @media (max-width: 768px)
+    &
+      width: 130px
+      height: 130px
+      p
+        letter-spacing: normal
+        font-size: 14px
+        margin-bottom: 0
+        margin-top: 10px
+      img
+        margin-top: 10px
 
 .check-list
   list-style: none
@@ -243,6 +307,10 @@ h3
     font-size: 36px
     font-weight: 700
     color: #151515
+    @media (max-width: 768px)
+      font-size: 26px
+    @media (max-width: 500px)
+      font-size: 22px
     span
       color: #1e4ea7
   &.consulting-1
@@ -255,17 +323,49 @@ h3
       padding-bottom: 239px
       @media (min-width: 1850px)
         max-width: 1805px
+      @media (max-width: 1500px)
+        &
+          background-position: 0 0
+          background-size: 100%
+          padding-bottom: 100px
+          .title-cube
+            margin-left: 0
+      @media (max-width: 1200px)
+        &
+          padding-bottom: 25px
+      @media (max-width: 992px)
+        &
+          .title-cube
+            margin-top: -10px
+      @media (max-width: 768px)
+        &
+          .title-cube
+            margin-top: -10px
+            margin-left: -10px
+            margin-right: 15px
     .check-list
       margin-top: 63px
+      @media (max-width: 1500px)
+        &
+          padding-left: 0
       &.left
         margin-left: 128px
+        @media (max-width: 1200px)
+          margin-left: 10px
       &.top
         margin-top: -10px
         margin-left: 13px
+        @media (max-width: 1200px)
+          margin-left: 10px
+          margin-top: 0
         li
           margin-bottom: 21px
           @media (min-width: 1700px)
             max-width: 600px
+      @media (max-width: 992px)
+        &
+          li
+            margin-bottom: 15px
 
   &.consulting-2
     h3
@@ -287,12 +387,20 @@ h3
           &:hover, &.active
             color: #ffffff
             background-color: #1e4ea7
+          @media (max-width: 450px)
+            font-size: 14px
+            margin-bottom: 5px
     .tab-content
       // background-image: url('../img/map.png')
       background-repeat: no-repeat
       padding-bottom: 1325px
       background-position: center
       background-size: 85%
+      @media (max-width: 768px)
+        background-position: bottom
+        padding-bottom: 840px
+      @media (max-width: 650px)
+        padding-bottom: 760px
       .container
         position: relative
         @media (min-width: 1500px)
@@ -312,21 +420,39 @@ h3
               font-size: 16px
               padding: 7px 38px
               font-weight: 600
+              @media (max-width: 1210px)
+                padding: 5px
+                font-size: 14px
+          @media (max-width: 992px)
+            &
+              border: .5px solid #c7c7c8
+              &>div
+                border: none
+                .table-item
+                  border: .5px solid #c7c7c8
+                &:last-child
+                  border-right: none
       .tab-pane
         position: absolute
-        width: 100%
+        width: 90%
         top: 0
         left: 0
+        margin-left: 5%
 
   &.consulting-3
     margin-top: -133px
     padding-bottom: 120px
+    @media (max-width: 768px)
+      margin-top: 0
     .container
       // background-image: url('../img/law.png')
       background-repeat: no-repeat
       background-position: left
       @media (min-width: 1500px)
         max-width: 1485px
+      @media (max-width: 1300px)
+        background-size: 33%
+        background-position: unset
     h3
       text-align: left
       position: relative
@@ -342,8 +468,32 @@ h3
         height: 38px
         background-image: url('../img/file.png')
         background-repeat: no-repeat
+        @media (max-width: 500px)
+          width: 22px
+          height: 28px
+          background-size: contain
+          left: -20px
+      @media (max-width: 992px)
+        margin: 50px 0 130px 250px
+        font-size: 28px
+        line-height: 30px
+      @media (max-width: 767px)
+        margin: 28px 0 57px 182px
+        font-size: 24px
+        line-height: 29px
+      @media (max-width: 500px)
+        margin: 28px 0 57px 182px
+        font-size: 20px
+        line-height: 25px
+      @media (max-width: 450px)
+        margin: 28px 0 34px 140px
+      @media (max-width: 400px)
+        margin: 28px 0 34px 120px
+        font-size: 19px
     .consulting-3-list
       margin-left: -50px
+      @media (max-width: 992px)
+        margin-left: 0
       li
         color: #848484
         font-size: 16px
