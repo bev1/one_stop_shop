@@ -1,8 +1,13 @@
 $( document ).ready(function() {
 
-  $(document.body).animate({opacity: 1}, 300);
+  $("body").css("opacity", "1");
 
   AOS.init();
+
+  $('.lazy').Lazy({
+    effect: "fadeIn",
+    effectTime: 500,
+  });
 
   $(window).scroll(function() {
     if($(document).scrollTop() > 0) {

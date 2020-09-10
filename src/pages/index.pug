@@ -32,12 +32,12 @@ html(lang="ru")
                     .link-img
                       img(src="img/play_button.png", alt="play")
                 .col-md-6
-                  //- include components/cube.pug
+                  include components/cube.pug
           section.section.consulting-1
-            .container
+            div(data-src="../img/consulting_1.png").container.lazy
               .section-title
                 .title-cube
-                  img(src="img/stamp.png")
+                  img.lazy(data-src="img/stamp.png")
                   p РЕГИСТРАЦИИ
                 h2 Услуги по
                   br
@@ -78,7 +78,7 @@ html(lang="ru")
                     a(href="#content6" data-toggle="tab").nav-link Юрисдикции в Австралии и Океании
                   li.nav-item
                     a(href="#content7" data-toggle="tab").nav-link Юрисдикции в Африке
-            .tab-content
+            div(data-src="../img/map.png").tab-content.lazy
               .container
                 div.tab-pane.fade.show.active#content1
                   .table
@@ -355,7 +355,7 @@ html(lang="ru")
                         .table-item Panama
 
           section.section.consulting-3
-            .container
+            div(data-src="../img/law.png").container.lazy
               .row
                 .col-md-7.offset-md-5
                   h3(data-aos="fade-up").word
@@ -375,7 +375,7 @@ html(lang="ru")
                     li(data-aos="fade-left" data-aos-delay="600") Корпоративная печать.
 
           section.section.consulting-4
-            .container
+            div(data-src="../img/consulting_4.png").container.lazy
               h3(data-aos="fade-up").word Оплачиваемые услуги 
                 span при регистрации компании:
               ul.consulting-4-list
@@ -386,7 +386,7 @@ html(lang="ru")
                 li(data-aos="fade-right" data-aos-delay="400") Курьерская доставка
 
           section.section.consulting-5
-            .container
+            div(data-src="../img/consulting_5.png").container.lazy
               h3.word 
                 span Преимущества
                 br
@@ -418,7 +418,7 @@ html(lang="ru")
                       span имеют хороший правовой статус 
                       | несмотря на то, что для этих компаний никогда не велись банковские счета, поэтому они на 100% прозрачны.
 
-          section.section.consulting-6
+          section(data-src="../img/consulting_6.png").section.consulting-6.lazy
             .container
               .color-block
                 .row
@@ -436,10 +436,10 @@ html(lang="ru")
                     a.button.red(href="#") START TODAY
 
           section.section.consulting-7
-            .container
+            div(data-src="../img/consulting_7.png").container.lazy
               .section-title
                 .title-cube
-                  img(src="img/document.png")
+                  img.lazy(data-src="img/document.png")
                   p ЛИЦЕНЗИИ
                 h2
                   span Лицензии
@@ -503,7 +503,7 @@ html(lang="ru")
                 p.sub-text.bottom
                   strong Компании, занимающиеся предоставлением услуг платежных систем, крипто-валют, форекс услуги, финансовые услуги и азартных игр, могут извлечь выгоду при получении лицензии и создания предприятия, удовлетворяющего требованиям лицензий определенного класса в стране Карибского бассейна или Латинской Америки.
 
-          section.section.consulting-8
+          section(data-src="../img/consulting_8.png").section.consulting-8.lazy
             .container
               .color-block
                 .row
@@ -517,10 +517,10 @@ html(lang="ru")
                     a.button.red(href="#") START TODAY
 
           section.section.consulting-9
-            .container
+            div(data-src="../img/consulting_9.png").container.lazy
               .section-title
                 .title-cube
-                  img(src="img/bank.png")
+                  img.lazy(data-src="img/bank.png")
                   p СЧЕТ В БАНКЕ
                 h2
                   span Счет в банке
@@ -542,8 +542,8 @@ html(lang="ru")
                 | банковских счетов
               .row
                 .col-md-6
-                  img(src="img/circle.png")
-                  img(src="img/types.png")
+                  img.lazy(data-src="img/circle.png")
+                  img.lazy(data-src="img/types.png")
                 .col-md-6
                   p.types Личный счёт физического лица
                   p.types Корпоративный счёт на компанию
@@ -557,7 +557,7 @@ html(lang="ru")
                     li(data-aos="fade-up" data-aos-delay="250") Другие причины
                   p.bottom Перечень банков по странам:
 
-          section.section.consulting-11
+          section(data-src="../img/consulting_11.png").section.consulting-11.lazy
             .container
               .color-block
                 .row
@@ -571,10 +571,10 @@ html(lang="ru")
                     a.button.red(href="#") START TODAY
 
           section.section.consulting-12
-            .container
+            div(data-src="../img/consulting_12.png").container.lazy
               .section-title
                 .title-cube
-                  img(src="img/payment.png")
+                  img.lazy(data-src="img/payment.png")
                   p ПЛАТЕЖНАЯ СИСТЕМА
                 h2
                   span Платёжная система
@@ -585,7 +585,7 @@ html(lang="ru")
               p.sub-text One TopShop сотрудничает более чем с 30 платежными системами, работающими по всему миру.
 
           section.section.consulting-13
-            .container
+            div(data-src="../img/consulting_13.png").container.lazy
               .row
                 .col-md-7.offset-md-5
                   h3(data-aos="fade-up").word
@@ -599,7 +599,7 @@ html(lang="ru")
                   p.sub-text Платежи могут быть классифицированы по крупной и розничной стоимости с учетом стоимости платежа и типа стороны, которая инициирует транзакцию.
                   p.sub-text Крупные платежи, как правило, представляют собой платежи высокой стоимости, осуществляемые финансовыми учреждениями, тогда как розничные платежи осуществляются физическими лицами и имеют относительно низкую стоимость.
 
-          section.section.consulting-14
+          section(data-src="../img/consulting_14.png").section.consulting-14.lazy
             .container
               h3.word 
                 span Преимущества
@@ -633,7 +633,7 @@ html(lang="ru")
                       span подключения 
                       | мерчант счета.
                       
-          section.section.consulting-15
+          section(data-src="../img/consulting_15.png").section.consulting-15.lazy
             .container
               .color-block
                 .row
@@ -647,10 +647,10 @@ html(lang="ru")
                     a.button.red(href="#") START TODAY
 
           section.section.consulting-16
-            .container
+            div(data-src="../img/consulting_16.png").container.lazy
               .section-title
                 .title-cube
-                  img(src="img/transaction.png")
+                  img.lazy(data-src="img/transaction.png")
                   p МЕРЧАНТ 
                     br
                     | СЧЕТ
@@ -663,14 +663,14 @@ html(lang="ru")
 
           section.section.consulting-17
             .container
-              h3(data-aos="fade-up").word
+              h3.word
                 span Виды 
                 | мерчант счетов
               p.sub-title В зависимости от видов деятельности и уровня возврата платежей, мерчант счет может быть:
               .row
                 .col-md-6
-                  img(src="img/mcircle.png")
-                  img(src="img/mtypes.png")
+                  img.lazy(data-src="img/mcircle.png")
+                  img.lazy(data-src="img/mtypes.png")
                 .col-md-6
                   p.types high risk – высокий риск возвратов платежей
                   p.types low risk – низкий риск возвратов платежей
@@ -686,7 +686,7 @@ html(lang="ru")
                     li(data-aos="fade-up" data-aos-delay="250") наличия банковского счета компании;
                     li(data-aos="fade-up" data-aos-delay="300") процессинговой истории, если она имеется.
 
-          section.section.consulting-18
+          section(data-src="../img/consulting_18.png").section.consulting-18.lazy
             .container
               .color-block
                 .row
@@ -702,5 +702,6 @@ html(lang="ru")
         include layout/footer.pug
         script(src="js/jquery.min.js")
         script(src="js/bootstrap.min.js")
+        script(src="js/lazy-load.js")
         script(src="js/aos.js")
         script(src="js/script.js")
