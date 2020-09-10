@@ -251,9 +251,29 @@ h3
     font-size: 24px
     margin-left: 407px
     font-weight: 500
+    @media (max-width:1560px)
+      margin-left: 300px
+    @media (max-width:1350px)
+      margin-left: 200px
+    @media (max-width:1150px)
+      margin-left: 100px
+      letter-spacing: 15px
+    @media (max-width:992px)
+      margin-left: 0
+      text-align: center
+      letter-spacing: 5px
+      margin-top: 0
+    @media (max-width:768px)
+      letter-spacing: 1px
+      font-weight: 600
+      font-size: 18px
+      white-space: nowrap
     span
       font-weight: 500
       margin-left: 40px
+      @media (max-width:768px)
+        margin-left: 0
+        font-weight: 600
 
 .button
   width: 334px
@@ -558,6 +578,8 @@ h3
 
   &.consulting-5
     padding: 30px 0 108px
+    @media (max-width: 768px)
+      padding-bottom: 50px
     .container
       // background-image: url('../img/consulting_5.png')
       background-repeat: no-repeat
@@ -640,6 +662,9 @@ h3
     // background-image: url('../img/consulting_6.png')
     background-repeat: no-repeat
     background-size: cover
+    background-position: bottom
+    @media (max-width: 992px)
+      background-position: left
     .container
       @media (min-width: 1610px)
         max-width: 1590px
@@ -651,27 +676,67 @@ h3
           margin-top: 33px
           max-width: 620px
           line-height: 49px
+        @media (max-width: 1200px)
+          &.small
+            font-size: 22px
+          &.big
+            font-size: 24px
+        @media (max-width: 992px)
+          &.small
+            max-width: 100%
+          &.big
+            max-width: 100%
+            margin-top: 15px
+        @media (max-width: 768px)
+          &.small
+            font-size: 16px
+          &.big
+            font-size: 18px
+            line-height: normal
       .button
         margin-top: 47px
         margin-left: 94px
+        @media (max-width:992px)
+          display: flex
+          padding: 0
+          align-items: center
+          justify-content: center
+          margin-left: auto
+          margin-right: auto
 
   &.consulting-7
     padding-top: 28px
     .title-cube
       margin-top: 58px
+      @media (max-width: 767px)
+        margin-top: 20px
+      @media (max-width: 450px)
+        margin-left: 0
+        margin-top: 0
+        margin-right: 10px
     .sub-text
       font-size: 16px
       color: #151515
       margin-left: 165px
       margin-top: 20px
+      @media (max-width: 1300px)
+        margin-left: 20px
       &.center
         text-align: center
         margin: 120px auto 0
         max-width: 980px
+        @media (max-width: 1200px)
+          margin-top: 30px
       &.bottom
         text-align: center
         margin: 54px auto 43px
         max-width: 1000px
+        @media (max-width: 992px)
+          margin: 165px auto 10px
+        @media (max-width: 568px)
+          margin: 220px auto 10px
+        @media (max-width: 450px)
+          margin: 250px auto 10px
     &>.container
       // background-image: url('../img/consulting_7.png')
       background-repeat: no-repeat
@@ -679,9 +744,33 @@ h3
       background-position: 67px -39px
       @media (min-width: 1850px)
         max-width: 1805px
+      @media (max-width: 1800px)
+        background-position: 67px 20px
+      @media (max-width: 1600px)
+        background-position: 14px 87px
+        background-size: 102%
+      @media (max-width: 1500px)
+        background-position: 0 188px
+        background-size: 100%
+      @media (max-width: 1200px)
+        background-position: 0 45px
+      @media (max-width: 1100px)
+        background-position: 0 110px
+      @media (max-width: 992px)
+        background-position: 0 20px
+      @media (max-width: 768px)
+        background-position: 0 -45px
+      @media (max-width: 767px)
+        background-position: 0 -25px
+      @media (max-width: 525px)
+        background-position: 0 0px
+      @media (max-width: 415px)
+        background-position: 0 15px
     .check-list
       margin-top: 25px
       margin-left: 128px
+      @media (max-width: 1300px)
+        margin-left: 0
       li
         margin-bottom: 6px
     .small-tabs
@@ -694,15 +783,27 @@ h3
         display: block
         border-right: 1px solid #C2C2C2
         max-width: 518px
+        @media (max-width: 992px)
+          max-width: 100%
+          border-right: 0
+          border-bottom: 1px solid #C2C2C2
+        @media (max-width: 568px)
+          margin-left: 20px
         li
           margin-bottom: 19px
           padding-left: 18px
+          @media (max-width: 992px)
+            margin-bottom: 10px
+          @media (max-width: 568px)
+            margin-bottom: 5px
           a
             color: #151515
             font-size: 21px
             font-weight: 600
             &.active, &:hover
               color: #1e4ea7
+            @media (max-width: 1100px)
+              font-size: 18px
       .tab-pane
         font-size: 16px
         color: #848484
@@ -713,6 +814,8 @@ h3
         transition: all 0.2s
         transform: translateX(2rem)
         position: absolute
+        @media (max-width: 1500px)
+          margin-left: 0
         &.show
           transform: translateX(0rem)
         li
@@ -724,9 +827,14 @@ h3
     background-repeat: no-repeat
     background-size: cover
     background-position: center
+    @media (max-width: 992px)
+      background-position: left
     .container
       @media (min-width: 1610px)
         max-width: 1590px
+      @media (max-width: 1500px)
+        padding-top: 63px
+        padding-bottom: 82px
     .color-block
       p
         &.small
@@ -736,16 +844,63 @@ h3
           max-width: 710px
           line-height: 49px
           font-size: 37px
-          span
-            font-size: 47px
+        @media (max-width: 1200px)
+          &.small
+            font-size: 22px
+          &.big
+            font-size: 24px
+            line-height: normal
+        @media (max-width: 992px)
+          &.small
+            max-width: 100%
+            margin-top: 15px
+          &.big
+            max-width: 100%
+        @media (max-width: 768px)
+          &.small
+            font-size: 16px
+          &.big
+            font-size: 18px
+        span
+          font-size: 47px
+          @media (max-width: 1200px)
+            font-size: 24px
+          @media (max-width: 768px)
+            font-size: 18px
         &.red
           margin-left: 318px
           font-size: 25px
           margin-top: 130px
           letter-spacing: 47px
+          @media (max-width: 1700px)
+            margin-left: 250px
+          @media (max-width:1560px)
+            margin-left: 300px
+          @media (max-width:1350px)
+            margin-left: 200px
+          @media (max-width:1150px)
+            margin-left: 100px
+            letter-spacing: 15px
+          @media (max-width:992px)
+            margin-left: 0
+            text-align: center
+            letter-spacing: 5px
+            margin-top: 0
+          @media (max-width:768px)
+            letter-spacing: 1px
+            font-weight: 600
+            font-size: 18px
+            white-space: nowrap
       .button
         margin-top: 78px
         margin-left: 94px
+        @media (max-width:992px)
+          display: flex
+          padding: 0
+          align-items: center
+          justify-content: center
+          margin-left: auto
+          margin-right: auto
 
 
   &.consulting-9
@@ -760,6 +915,9 @@ h3
       margin-left: 165px
       margin-top: 27px
       max-width: 940px
+      @media (max-width: 1200px)
+        margin-left: 20px
+        max-width: 100%
     &>.container
       // background-image: url('../img/consulting_9.png')
       background-repeat: no-repeat
@@ -768,6 +926,23 @@ h3
       padding-bottom: 119px
       @media (min-width: 1850px)
         max-width: 1805px
+      @media (max-width: 1500px)
+        &
+          background-position: 0 0
+          background-size: 100%
+          padding-bottom: 100px
+          .title-cube
+            margin-left: 0
+      @media (max-width: 768px)
+        &
+          .title-cube
+            margin-top: -10px
+            margin-right: 15px
+      @media (max-width: 450px)
+        &
+          background-position: 0 15px
+          background-size: 100%
+          padding-bottom: 50px
 
   &.consulting-10
     padding-bottom: 46px
