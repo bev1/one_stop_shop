@@ -933,6 +933,8 @@ h3
           padding-bottom: 100px
           .title-cube
             margin-left: 0
+      @media (max-width: 1100px)
+        padding-bottom: 50px
       @media (max-width: 768px)
         &
           .title-cube
@@ -949,17 +951,37 @@ h3
     .container
       @media (min-width: 1750px)
         max-width: 1718px
-      .col-md-6
+      .col-lg-6
         position: relative
         img:last-child
           position: absolute
           top: -45px
           right: 31px
+        @media (max-width: 1500px)
+          img
+            &:first-child
+              width: 400px
+            &:last-child
+              width: 500px
+        @media (max-width: 1100px)
+          img
+            &:first-child
+              width: 300px
+            &:last-child
+              width: 400px
+        @media (max-width: 992px)
+          img
+            display: none !important
     h3
       text-align: center
       line-height: 45px
       margin-bottom: 63px
       margin-top: -10px
+      @media (max-width: 992px)
+        margin-bottom: 20px
+      @media (max-width: 568px)
+        font-size: 24px
+        line-height: 35px
     .types
       font-size: 24px
       color: rgb(21, 21, 21)
@@ -967,6 +989,11 @@ h3
       padding-left: 50px
       position: relative
       margin-bottom: 36px
+      @media (max-width: 1100px)
+        font-size: 18px
+      @media (max-width: 450px)
+        font-size: 17px
+        margin-bottom: 30px
       &:before
         content: ''
         position: absolute
@@ -975,6 +1002,16 @@ h3
         width: 60px
         height: 60px
         background-image: url('../img/types2.png')
+        @media (max-width: 1100px)
+          width: 50px
+          height: 50px
+          background-size: cover
+          top: -12px
+          left: -20px
+        @media (max-width: 568px)
+          width: 40px
+          height: 40px
+          left: -5px
       &:first-child
         margin-top: 10px
         &:before
@@ -983,6 +1020,8 @@ h3
       font-size: 16px
       padding-left: 52px
       margin-bottom: 7px
+      @media (max-width: 1200px)
+        padding-left: 0
       span
         color: #fe6000
         font-weight: 600
@@ -991,6 +1030,10 @@ h3
       margin-left: 49px
       font-weight: 500
       margin-top: 39px
+      @media (max-width: 768px)
+        margin-left: 0
+        font-size: 22px
+        margin-top: 25px
     .consulting-10-list
       list-style: none
       li
@@ -999,6 +1042,10 @@ h3
         padding-left: 48px
         position: relative
         margin-bottom: 6px
+        @media (max-width: 1200px)
+          padding-left: 0
+        @media (max-width: 1100px)
+          font-size: 18px
         &:before
           content: ''
           position: absolute
@@ -1008,6 +1055,8 @@ h3
           width: 21px
           height: 21px
           background-size: cover
+          @media (max-width: 1200px)
+            left: -41px
 
 
   &.consulting-11
@@ -1016,26 +1065,71 @@ h3
     background-repeat: no-repeat
     background-size: cover
     background-position: center
+    @media (max-width: 992px)
+      background-position: left
+      padding: 15px 0 25px
     .container
       @media (min-width: 1610px)
         max-width: 1590px
+      @media (max-width: 1500px)
+        padding-top: 63px
+        padding-bottom: 82px
     .color-block
       p
         &.big
           max-width: 710px
           line-height: 49px
           font-size: 37px
+        @media (max-width: 1200px)
+          &.big
+            font-size: 24px
+            line-height: normal
+        @media (max-width: 992px)
+          &.big
+            max-width: 100%
+        @media (max-width: 768px)
+          &.big
+            font-size: 18px
           span
             font-size: 47px
+            @media (max-width: 1200px)
+              font-size: 24px
+            @media (max-width: 768px)
+              font-size: 18px
         &.red
           margin-left: 320px
           font-size: 25px
           margin-top: 76px
           letter-spacing: 24px
           white-space: nowrap
+          @media (max-width: 1700px)
+            margin-left: 250px
+          @media (max-width:1560px)
+            margin-left: 200px
+            letter-spacing: 15px
+          @media (max-width:1400px)
+            margin-left: 150px
+          @media (max-width:1150px)
+            margin-left: 100px
+          @media (max-width:992px)
+            margin-left: 0
+            text-align: center
+            letter-spacing: 5px
+            margin-top: 0
+          @media (max-width:768px)
+            letter-spacing: 1px
+            font-weight: 600
+            font-size: 18px
       .button
         margin-top: 78px
         margin-left: 94px
+        @media (max-width:992px)
+          display: flex
+          padding: 0
+          align-items: center
+          justify-content: center
+          margin-left: auto
+          margin-right: auto
 
   &.consulting-12
     padding-top: 10px
