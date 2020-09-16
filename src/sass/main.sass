@@ -84,15 +84,87 @@ h3
         .cube-link
           position: absolute
           color: rgb(30, 78, 167)
+          font-size: 24px
+          font-weight: 500
+          z-index: 1
+          @media (max-width: 1799px)
+            font-size: 22px
+          @media (max-width: 1200px)
+            font-size: 20px
           &:after
             content: ''
             width: 18px
-            height: 8px
+            height: 11px
             background-image: url('../img/cube-arrow.png')
-            background-size: cover
+            background-size: contain
+            background-repeat: no-repeat
             display: inline-block
+            margin-left: 10px
+          &:before
+            content: ''
+            width: 0
+            height: 1px
+            background-color: #1e4ea7
+            position: absolute
+            bottom: 4px
+            left: -7px
+            transition: .2s
+          &:nth-child(1)
+            top: 153px
+            right: 59px
+            @media (max-width: 1799px)
+              top: 160px
+              right: 67px
+            @media (max-width: 1599px)
+              top: 170px
+              right: 13px
+            @media (max-width: 1500px)
+              top: 130px
+              right: auto
+              left: 24px
+            @media (max-width: 1299px)
+              top: 130px
+              left: 0
+            @media (max-width: 1199px)
+              top: 140px
+              left: 0
+          &:nth-child(2)
+            top: 303px
+            left: 86px
+            @media (max-width: 1799px)
+              left: 57px
+            @media (max-width: 1500px)
+              top: 230px
+              left: 95px
+            @media (max-width: 1199px)
+              top: 244px
+              left: 60px
+          &:nth-child(3)
+            bottom: 180px
+            left: 113px
+            @media (max-width: 1799px)
+              bottom: 190px
+              left: 63px
+            @media (max-width: 1500px)
+              bottom: 175px
+              left: 100px
+            @media (max-width: 1199px)
+              bottom: 170px
+              left: 60px
+          &:hover
+            &:before
+              width: 128px
         img
           margin-left: -162px
+          @media (max-width: 1699px)
+            transform: scale(.95)
+          @media (max-width: 1599px)
+            transform: scale(.9)
+            margin-left: -100px
+          @media (max-width: 1500px)
+            margin-left: 100px
+          @media (max-width: 1200px)
+            margin-left: 130px
     @media (min-width: 1850px)
       max-width: 1800px
   .title

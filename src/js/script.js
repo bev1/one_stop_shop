@@ -17,5 +17,11 @@ $( document ).ready(function() {
     }
   });
   
+  $('.cube-link').on('click', function(e) {
+    $('html, body').animate({
+      scrollTop: $($(this).attr('href')).offset().top
+    }, 500);
+    return false;
+  });
 
 });
