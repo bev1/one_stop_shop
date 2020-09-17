@@ -91,6 +91,8 @@ h3
             font-size: 22px
           @media (max-width: 1200px)
             font-size: 20px
+          @media (max-width: 767px)
+            font-size: 18px
           &:after
             content: ''
             width: 18px
@@ -110,6 +112,7 @@ h3
             left: -7px
             transition: .2s
           &:nth-child(1)
+            text-align: center
             top: 153px
             right: 59px
             @media (max-width: 1799px)
@@ -127,7 +130,15 @@ h3
               left: 0
             @media (max-width: 1199px)
               top: 140px
-              left: 0
+            @media (max-width: 992px)
+              top: 120px
+            @media (max-width: 575px)
+              top: 100px
+              left: 130px
+            @media (max-width: 490px)
+              left: 100px
+            @media (max-width: 400px)
+              left: 70px
           &:nth-child(2)
             top: 303px
             left: 86px
@@ -139,6 +150,17 @@ h3
             @media (max-width: 1199px)
               top: 244px
               left: 60px
+            @media (max-width: 992px)
+              top: 200px
+              left: 130px
+            @media (max-width: 767px)
+              left: 100px
+            @media (max-width: 490px)
+              left: 80px
+            @media (max-width: 450px)
+              left: 50px
+            @media (max-width: 400px)
+              left: 30px
           &:nth-child(3)
             bottom: 180px
             left: 113px
@@ -151,6 +173,15 @@ h3
             @media (max-width: 1199px)
               bottom: 170px
               left: 60px
+            @media (max-width: 992px)
+              bottom: 130px
+              left: 80px
+            @media (max-width: 490px)
+              left: 65px
+            @media (max-width: 450px)
+              left: 40px
+            @media (max-width: 400px)
+              left: 20px
           &:hover
             &:before
               width: 128px
@@ -165,6 +196,13 @@ h3
             margin-left: 100px
           @media (max-width: 1200px)
             margin-left: 130px
+          @media (max-width: 992px)
+            transform: scale(.8)
+            margin-left: 0
+          @media (max-width: 767px)
+            margin-left: 120px
+          @media (max-width: 500px)
+            transform: scale(.7)
     @media (min-width: 1850px)
       max-width: 1800px
   .title
@@ -240,7 +278,6 @@ h3
     @media (max-width: 992px)
       &
         margin-top: 15px
-        margin-bottom: 100px
     .text
       text-align: right
       margin-right: 32px
