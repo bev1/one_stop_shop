@@ -30,6 +30,9 @@
   .modal-content
     border-radius: 0
     .modal-body
+      padding-left: 0
+      padding-right: 0
+      padding-bottom: 0
       img
         max-width: 100%
       .table
@@ -63,6 +66,9 @@
           @media (min-width: 1550px)
             max-width: 1528px
       .modal-section
+        padding-bottom: 34px
+        &.tabs
+          padding-top: 47px
         .container
           @media (min-width: 1300px)
             max-width: 1256px
@@ -71,6 +77,67 @@
             display: flex
             align-items: center
             justify-content: end
+        &.text
+          .col-lg-6
+            display: block
+          padding-top: 77px
+          padding-bottom: 35px
+          background-repeat: no-repeat
+          background-position: 87% -68px
+          .container
+            @media (min-width: 1400px)
+              max-width: 1370px
+          .sub-text
+            font-size: 16px
+            line-height: 24px
+            color: #151515
+        &.bottom
+          padding: 16px 0 37px
+          background-repeat: no-repeat
+          background-size: cover
+          background-position: bottom
+          @media (max-width: 992px)
+            background-position: left
+          .container
+            @media (min-width: 1550px)
+              max-width: 1520px
+          .color-block
+            p
+              &.small
+                max-width: 700px
+              &.big
+                margin-top: 33px
+                max-width: 620px
+                line-height: 49px
+              @media (max-width: 1200px)
+                &.small
+                  font-size: 22px
+                &.big
+                  font-size: 24px
+              @media (max-width: 992px)
+                &.small
+                  max-width: 100%
+                &.big
+                  max-width: 100%
+                  margin-top: 15px
+              @media (max-width: 768px)
+                &.small
+                  font-size: 16px
+                &.big
+                  font-size: 18px
+                  line-height: normal
+              &.red
+                margin-left: 320px
+            .button
+              margin-top: 47px
+              margin-left: 94px
+              @media (max-width:992px)
+                display: flex
+                padding: 0
+                align-items: center
+                justify-content: center
+                margin-left: auto
+                margin-right: auto
         .modal-section-title
           font-size: 26px
           color: #151515
@@ -93,28 +160,39 @@
               color: #848484
         .nav
           flex-direction: column
+          margin-left: -61px
           .nav-item
             font-size: 18px
             font-weight: 700
             border-radius: 10px
             border: 1px solid #d9d9d9
             box-shadow: -13.926px 9.751px 12px rgba(49,54,57,0.21)
-            margin-bottom: 5px
+            margin-bottom: 8px
             transition: .2s
             cursor: pointer
+            padding: 9px 0 10px 31px
+            line-height: 20px
+            min-height: 63px
+            max-width: 500px
+            display: flex
+            flex-direction: column
+            justify-content: center
             span
-              font-size: 16px
+              font-size: 14px
               font-weight: 500
             &.active, &:hover
               color: #ffffff
               background-color: #1e4ea7
         .tab-pane
+          margin-top: 24px
+          margin-left: 8px
+          line-height: 30px
           &:not(.active)
             display: none
           p
-            font-size: 16px
+            font-size: 18px
             font-weight: 600
             color: #151515
-            margin-bottom: 20px
+            margin-bottom: 30px
 
 
