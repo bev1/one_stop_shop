@@ -30,6 +30,8 @@
   .modal-content
     border-radius: 0
     .modal-body
+      img
+        max-width: 100%
       .table
         border: .5px solid #c7c7c8
         margin-top: 100px
@@ -60,3 +62,59 @@
         .container
           @media (min-width: 1550px)
             max-width: 1528px
+      .modal-section
+        .container
+          @media (min-width: 1300px)
+            max-width: 1256px
+        .col-lg-6
+          &:first-child
+            display: flex
+            align-items: center
+            justify-content: end
+        .modal-section-title
+          font-size: 26px
+          color: #151515
+          font-weight: 700
+          margin-top: 27px
+          line-height: 30px
+          span
+            color: #1e4ea7
+        .modal-list
+          list-style: none
+          padding: 0
+          margin-top: 87px
+          margin-left: -21px
+          li
+            font-size: 16px
+            font-weight: 600
+            color: #151515
+            margin-bottom: 6px
+            span
+              color: #848484
+        .nav
+          flex-direction: column
+          .nav-item
+            font-size: 18px
+            font-weight: 700
+            border-radius: 10px
+            border: 1px solid #d9d9d9
+            box-shadow: -13.926px 9.751px 12px rgba(49,54,57,0.21)
+            margin-bottom: 5px
+            transition: .2s
+            cursor: pointer
+            span
+              font-size: 16px
+              font-weight: 500
+            &.active, &:hover
+              color: #ffffff
+              background-color: #1e4ea7
+        .tab-pane
+          &:not(.active)
+            display: none
+          p
+            font-size: 16px
+            font-weight: 600
+            color: #151515
+            margin-bottom: 20px
+
+
