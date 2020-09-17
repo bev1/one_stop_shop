@@ -65,6 +65,23 @@ h3
     max-width: 1780px
     
 
+@keyframes sideSlide
+	60%
+		transform: translate(20px, 0) scale(1)
+	
+
+	80%
+		transform: translate(20px, 0) scale(1)
+	
+
+	99%
+		transform: translate(0) scale(1.2)
+	
+
+	100%
+		transform: translate(0) scale(1)
+		opacity: 1
+
 
 @import './layout/header'
 @import './layout/footer'
@@ -212,15 +229,47 @@ h3
     display: flex
     align-items: center
     margin-top: 250px
-    span
+    &>span
       display: inline-block
       &:first-child
         font-size: 95px
         margin-right: 60px
       &:last-child
         font-size: 110px
-        &::first-letter
-          color: #1e4ea7
+        span
+          display: inline-block
+          opacity: 0
+          transform: translate(-300px, 0) scale(0)
+          animation: sideSlide .5s forwards
+          &:nth-of-type(1)
+            color: #1e4ea7
+          &:nth-of-type(2)
+            animation-delay: .2s
+          
+          &:nth-of-type(3)
+            animation-delay: .3s
+          
+          &:nth-of-type(4)
+            animation-delay: .4s
+          
+          &:nth-of-type(5)
+            animation-delay: .5s
+          
+          &:nth-of-type(6)
+            animation-delay: .6s
+          
+          &:nth-of-type(7)
+            animation-delay: .7s
+          
+          &:nth-of-type(8)
+            animation-delay: .8s
+          
+          &:nth-of-type(9)
+            animation-delay: .9s
+          
+          &:nth-of-type(10)
+            animation-delay: 1s
+          
     @media (max-width: 1500px)
       &
         margin-top: 150px
