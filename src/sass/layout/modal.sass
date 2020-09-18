@@ -1,10 +1,12 @@
 .modal
-  padding: 0
+  padding-right: 0
   .modal-header
     box-shadow: -1.638px 1.147px 8px rgba(49,54,57,0.15)
     padding-left: 97px
     padding-bottom: 13px
     border-bottom: none
+    @media (max-width: 568px)
+      padding-left: 50px
     .close
       padding: 5px
     .modal-title
@@ -12,6 +14,10 @@
       font-weight: 600
       font-size: 26px
       position: relative
+      @media (max-width: 1300px)
+        font-size: 22px
+      @media (max-width: 568px)
+        font-size: 20px
       &:before
         content: ''
         width: 36px
@@ -22,6 +28,11 @@
         background-repeat: no-repeat
         top: 0
         left: -55px
+        @media (max-width: 1300px)
+          width: 30px
+          height: 30px
+        @media (max-width: 568px)
+          left: -40px
       span
         color: #1e4ea7
   .modal-dialog
@@ -33,6 +44,20 @@
       padding-left: 0
       padding-right: 0
       padding-bottom: 0
+      position: relative
+      &:after
+        content: ''
+        width: 17px
+        height: 276px
+        background-color: #1e4ea7
+        right: 0px
+        top: 98px
+        position: absolute
+        @media (max-width: 1500px)
+          width: 10px
+          top: 0
+        @media (max-width: 992px)
+          display: none
       img
         max-width: 100%
       .table
@@ -40,15 +65,20 @@
         margin-top: 100px
         margin-left: -64px
         min-width: 800px
-        position: relative
-        &:after
-          content: ''
-          width: 17px
-          height: 276px
-          background-color: #1e4ea7
-          right: -85px
-          top: -23px
-          position: absolute
+        @media (max-width: 1650px)
+          min-width: auto
+          margin-left: 0
+        @media (max-width: 1500px)
+          margin-top: 20px
+        // position: relative
+        // &:after
+        //   content: ''
+        //   width: 17px
+        //   height: 276px
+        //   background-color: #1e4ea7
+        //   right: -85px
+        //   top: -23px
+        //   position: absolute
         .item
           display: flex
           p
@@ -59,12 +89,24 @@
             color: #151515
             font-weight: 600
             padding: 7px 0 6px 40px
+            @media (max-width: 1500px)
+              padding: 7px 0 6px 5px
+            @media (max-width: 1400px)
+              font-size: 14px
+            @media (max-width: 450px)
+              padding: 5px 2px
+              line-height: 16px
             &:last-child
               font-weight: 700
       .main-info
         .container
           @media (min-width: 1550px)
             max-width: 1528px
+        @media (max-width: 992px)
+          .col-lg-5.col-xl-6
+            text-align: center
+            img
+              max-width: 200px
       .modal-section
         padding-bottom: 34px
         &.tabs
@@ -84,6 +126,10 @@
           padding-bottom: 35px
           background-repeat: no-repeat
           background-position: 87% -68px
+          @media (max-width: 1100px)
+            padding-top: 30px
+          @media (max-width: 992px)
+            background-position: 200px -120px
           .container
             @media (min-width: 1400px)
               max-width: 1370px
@@ -144,6 +190,8 @@
           font-weight: 700
           margin-top: 27px
           line-height: 30px
+          @media (max-width: 992px)
+            font-size: 24px
           span
             color: #1e4ea7
         .modal-list
@@ -151,6 +199,9 @@
           padding: 0
           margin-top: 87px
           margin-left: -21px
+          @media (max-width: 992px)
+            margin-left: 0
+            margin-top: 20px
           li
             font-size: 16px
             font-weight: 600
@@ -161,12 +212,14 @@
         .nav
           flex-direction: column
           margin-left: -61px
+          @media (max-width: 1450px)
+            margin-left: 0
           .nav-item
             font-size: 18px
             font-weight: 700
             border-radius: 10px
             border: 1px solid #d9d9d9
-            box-shadow: -13.926px 9.751px 12px rgba(49,54,57,0.21)
+            box-shadow: -13px 0px 12px rgba(49,54,57,0.21)
             margin-bottom: 8px
             transition: .2s
             cursor: pointer
@@ -177,9 +230,15 @@
             display: flex
             flex-direction: column
             justify-content: center
+            @media (max-width: 992px)
+              max-width: unset
+            @media (max-width: 450px)
+              font-size: 16px
             span
               font-size: 14px
               font-weight: 500
+              @media (max-width: 450px)
+                font-size: 13px
             &.active, &:hover
               color: #ffffff
               background-color: #1e4ea7
@@ -194,5 +253,7 @@
             font-weight: 600
             color: #151515
             margin-bottom: 30px
-
-
+            @media (max-width: 768px)
+              margin-bottom: 5px
+              font-size: 16px
+              line-height: 20px
