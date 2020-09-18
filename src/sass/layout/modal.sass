@@ -149,31 +149,42 @@
               max-width: 1520px
           .color-block
             p
-              &.small
-                max-width: 700px
               &.big
                 margin-top: 33px
                 max-width: 620px
                 line-height: 49px
               @media (max-width: 1200px)
-                &.small
-                  font-size: 22px
                 &.big
                   font-size: 24px
               @media (max-width: 992px)
-                &.small
-                  max-width: 100%
                 &.big
                   max-width: 100%
                   margin-top: 15px
               @media (max-width: 768px)
-                &.small
-                  font-size: 16px
                 &.big
                   font-size: 18px
                   line-height: normal
               &.red
-                margin-left: 320px
+                margin-left: 318px
+                @media (max-width: 1700px)
+                  margin-left: 250px
+                @media (max-width:1560px)
+                  margin-left: 300px
+                  letter-spacing: 15px
+                @media (max-width:1350px)
+                  margin-left: 200px
+                @media (max-width:1150px)
+                  margin-left: 100px
+                @media (max-width:992px)
+                  margin-left: 0
+                  text-align: center
+                  letter-spacing: 5px
+                  margin-top: 0
+                @media (max-width:768px)
+                  letter-spacing: 1px
+                  font-weight: 600
+                  font-size: 18px
+                  white-space: nowrap
             .button
               margin-top: 47px
               margin-left: 94px
