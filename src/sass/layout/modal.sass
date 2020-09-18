@@ -95,6 +95,12 @@
                 width: 70%
               &:last-child
                 width: 30%
+      .no-table
+        padding-top: 35px
+        padding-bottom: 40px
+        p
+          font-size: 18px
+          margin-bottom: 5px
       .main-info
         .container
           @media (min-width: 1550px)
@@ -108,6 +114,19 @@
         padding-bottom: 34px
         &.tabs
           padding-top: 47px
+          position: relative
+          &:after, &:before
+            content: ''
+            width: 38%
+            height: 1px
+            background-color: #c2c2c2
+            position: absolute
+          &:after
+            bottom: 0
+            left: 31%            
+          &:before
+            top: 0
+            left: 31%
         .container
           @media (min-width: 1300px)
             max-width: 1256px
@@ -207,7 +226,7 @@
         .modal-list
           list-style: none
           padding: 0
-          margin-top: 87px
+          margin-top: 10px
           // margin-left: -21px
           @media (max-width: 992px)
             margin-left: 0
