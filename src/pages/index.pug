@@ -5,9 +5,9 @@ html(lang="ru")
         meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no")
         title Document
         link(rel="stylesheet", href="css/bootstrap-reboot.min.css")
-        link(rel="stylesheet preload", href="css/bootstrap.min.css")
+        link(rel="stylesheet preload", as="style" href="css/bootstrap.min.css")
         link(rel="stylesheet", href="css/aos.css")
-        link(rel="stylesheet preload", href="css/main.css")
+        link(rel="stylesheet preload", as="style" href="css/main.css")
     body
         include layout/header.pug
         main
@@ -106,7 +106,7 @@ html(lang="ru")
                           a.link(href="#modalBVI" data-toggle="modal" data-target="#modalBVI")
                             img.lazy(data-src="../img/link.png")
                         .table-item Dominica
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
+                          a.link(href="#modalDominica" data-toggle="modal" data-target="#modalDominica")
                             img.lazy(data-src="../img/link.png")
                         .table-item Mauritius
                         .table-item Nauru
@@ -967,7 +967,7 @@ html(lang="ru")
                     a.button.red(href="#") START TODAY
 
           //- Modals
-          .modal.fade(id="modalAnguilla" tabindex="-1" role="dialog" aria-hidden="true")
+          .modal.fade(id="modalAnguilla" aria-hidden="true")
             .modal-dialog
               .modal-content
                 .modal-header
@@ -1127,12 +1127,12 @@ html(lang="ru")
                               br.d-none.d-lg-block
                               span КОМПАНИИ
                             a.button.red(href="#") START TODAY
-          .modal.fade(id="modalBVI" tabindex="-1" role="dialog" aria-hidden="true")
+          .modal.fade(id="modalBVI" aria-hidden="true")
             .modal-dialog
               .modal-content
                 .modal-header
                   h5.modal-title Регистрация компании 
-                    span BVI
+                    span БРИТАНСКИЕ ВИРГИНСКИЕ ОСТРОВА
                   button.close(type="button" data-dismiss="modal" aria-label="Close")
                     span.close-icon(aria-hidden="true")
                       img.lazy(data-src="img/close-popup.png" alt="close")
@@ -1146,10 +1146,10 @@ html(lang="ru")
                           .table
                             .item
                               p Стоимость регистрации
-                              p 1 640.00 USD
+                              p 1 370.00 EUR
                             .item
                               p Стоимость продления компании
-                              p 1 600.00 USD
+                              p 1 315.00 EUR
                             .item
                               p Количество директоров
                               p 1
@@ -1166,109 +1166,185 @@ html(lang="ru")
                     .container
                       .row
                         .col-lg-6
-                          .modal-section-title Общая информация
+                          .modal-section-title Документы
                            br
-                           span об оффшорной компании
-                            br
-                            | в Ангилье
+                           span компании на БВО
                         .col-lg-6
                           ul.modal-list
-                            li Тип компании 
-                              span — International Business Company (IBC)
-                            li Временные рамки для регистрации компании 
-                              span — от 2-х до 3-х дней
-                            li The Anguilla Financial Service Commission 
-                              span является руководящим органом;
-                            li Деятельность 
-                              span компаний регулируются 
-                              | в соответствии с Законом IBC 2000
-                            li Законодательство 
-                              span — современное оффшорное законодательство
-                            li Правовая система 
-                              span — общее право
-                            li Корпоративное налогообложение 
-                              span — нет налогов любого рода
-                            li Доступность записей 
-                              span — нет публичного реестра
-                            li Часовой пояс 
-                              span — GMT -4
-                            li Валюта 
-                              span  — восточно-карибский доллар (XCD)
+                            li Certificate of incorporation (Свидетельство о регистрации)
+                            li Memorandum and Articles of Association (Учредительный договор и Устав Компании)
+                            li Apostille of the bound set of copies of Constitutive documents (Апостилированный комплект Учредительных документов)
+                            li Subscriber’s Resolution (Решение Участников)
+                            li Apostilled Director’s Resolution (Апостилированная Резолюция о назначении последующего Директора)
+                            li Share Certificates (Сертификат Акций)
+                            li Resolution of first shares allotment (Резолюций о выпуске Акций)
+                            li Articles of Consolidation (Договор о реорганизации в форме слияния)
+                            li Plan of Consolidation (План реорганизации в форме слияния)
+                            li Written Resolutions of the sole Shareholder (Письменное решение единственного Акционера)
+                          p.sub-list
+                            strong Стоимость услуг номинального директора и акционера – 550 EUR
                   section.modal-section.tabs
                     .container
                       .row
                         .col-lg-5
                           .nav
-                            a(href="#modcontent1" data-toggle="tab").nav-item.active Уставной капитал 
+                            a(href="#modcontent11" data-toggle="tab").nav-item.active Документы номинального сервиса 
                               br
-                              span оффшорной компании в Ангилье
-                            a(href="#modcontent2" data-toggle="tab").nav-item Акционеры и директора 
+                              span оффшорной компании на BVI
+                            a(href="#modcontent12" data-toggle="tab").nav-item Основные характеристики 
                               br
-                              span оффшорной компании в Ангилье
-                            a(href="#modcontent3" data-toggle="tab").nav-item Отчетность 
+                              span оффшорной компании на BVI
+                            a(href="#modcontent13" data-toggle="tab").nav-item Применение популярных оффшорных компаний 
                               br
-                              span оффшорной компании в Ангилье
-                            a(href="#modcontent4" data-toggle="tab").nav-item Документы для регистрации 
+                              span на BVI
+                            a(href="#modcontent14" data-toggle="tab").nav-item Налогообложение 
                               br
-                              span оффшорной компании в Ангилье
-                            a(href="#modcontent5" data-toggle="tab").nav-item О стране
-                            a(href="#modcontent6" data-toggle="tab").nav-item Процедура регистрации 
-                              br
-                              span оффшорной компании в Ангилье
-                            a(href="#modcontent7" data-toggle="tab").nav-item Торговые ограничения 
-                              br
-                              span оффшорной компании в Ангилье
-                            a(href="#modcontent8" data-toggle="tab").nav-item Ограничения в названиях 
-                              br
-                              span оффшорной компании в Ангилье
-                            a(href="#modcontent9" data-toggle="tab").nav-item Язык корпоративных документов 
-                              br
-                              span оффшорной компании в Ангилье
+                              span оффшорной компании на BVI
                         .col-lg-7
-                          .tab-pane.fade.show.active#modcontent1
+                          .tab-pane.fade.show.active#modcontent11
                             ul.tab-list
-                              li Стандартная валюта — USD (с другими валютами допускается)
-                              li Стандартный уставный капитал — 50 000 USD
-                              li Минимальный оплаченный — Нет
-                          .tab-pane.fade#modcontent2
+                              li Resolution effecting the issuing the Power of Attorney (Резолюция о выпуске Доверенности)
+                              li Apostilled Power of Attorney (Апостилированная Доверенность)
+                              li Consent Letter (Письмо-согласие Номинального Директора о вступлении в должность)
+                              li Director Resignation Letter (Отказное письмо от Номинального Директора (недатированное))
+                              li Nominee Director’s Declaration (Декларация Номинального Директора о номинальных услугах)
+                              li Deed of Trust (Трастовая Декларация от Номинального Акционера)
+                              li Instrument of Transfer (Передаточные документы на Акции (недатированные))
+                            p BVI Business Company (BC) является одним из наиболее признанных и старейших оффшорных финансовых центров. Новая версия Закона о коммерческих компаниях Британских Виргинских островов 2005 ликвидировала две структуры концепции компаний, которые осуществляли свою деятельность в рамках BVI и оффшорной компании, которая позволяла только один тип компании: BVI Business Company.
+                          .tab-pane.fade#modcontent12
                             ul.tab-list
-                              li Минимальное количество акционеров — 1
-                              li Минимальное количество директоров — 1
-                              li Требование местного офиса — нет
-                              li Требование назначить секретаря компании — не обязательно
-                          .tab-pane.fade#modcontent3
+                              li Нет требования минимального уставного капитала
+                              li Минимальное количество директоров компании является одним (допускается нерезидент и корпоративный директор)
+                              li Информация о Директоре / Акционере не доступны общественности и хранятся только у регистрационного агента
+                              li Нет требования для подачи финансовой отчетности или аудита
+                              li Есть готовые компании на BVI в наличии. Спросите прямо сейчас.
+                          .tab-pane.fade#modcontent13
                             ul.tab-list
-                              li Требование о назначении аудитора — Нет
-                              li Требование подавать отчетность — Нет
-                              li Доступность счетов — Нет
-                              li Требований к финансовой отчетности — Нет
-                          .tab-pane.fade#modcontent4
+                              li BVI Business Company является хорошим выбором для:
+                              li торговой деятельности
+                              li владеющия акциями иностранных компаний
+                          .tab-pane.fade#modcontent14
+                            p Новая единая BVI оффшорная компания до сих пор пользуется безналоговым статусом, включая освобождение:
                             ul.tab-list
-                              li Заверенная копия действительного паспорта (или национальное удостоверение личности)
-                              li Сертифицированное подтверждение адреса — utility bill (не старше 3-х месяцев) на английском языке (или перевод)
-                              li Оригинал или заверенная копия рекомендательного письма из банка (не старше 3-х месяцев) или оригинал выписки из банковского счета не старше 3-х месяцев
-                          .tab-pane.fade#modcontent5
-                            p Ангилья является британской территорией в Карибском море, один из самых северных островов Малых Антильских островов. Он состоит из главного острова самого Ангилья, примерно в 26 км в длину и 5 км в ширину в самом широком месте, вместе с целым рядом более мелких островов и рифов, не имеющих постоянного населения. Столица острова является долина. Общая площадь суши территории составляет 102 кв км, с населением около 13500 (2006 оценка). Оффшорные компании, базирующиеся в Ангилье становятся все более популярными как для их высокий уровень конфиденциальности и их скорость регистрации.
-                          .tab-pane.fade#modcontent6
-                            p При получении KYC документов клиента (копия паспорта и подтверждение адреса, выданного в течение последних 3-х месяцев) и описание предполагаемой хозяйственной деятельности, и после проверки нашего юридического отдела, нами будет осуществлена регистрация компании на территории Ангилья.
-                          .tab-pane.fade#modcontent7
-                            p Anguilla IBC не должны вести бизнес с резидентами Ангильи, иметь недвижимость в Ангилье или вести деятельность в банковской сфере или трастовых и страховых компаний (без соответствующей лицензии).
-                          .tab-pane.fade#modcontent8
-                            p Название при регистрации оффшорной компании в Ангилье должно заканчиваться словом, фразой или аббревиатурой, которая указывает на ограниченную ответственность, например «Limited», «ООО», «Société Anonyme», «SA», «Corporation», или» Inc. «Запрещенные имена включают в себя те, что предполагает обозначение Королевской семьи или правительства Великобритании, таких как,» National «,» Royal «,» Republic «,» Kingdom «,» Commonwealth «,» Government «, или «Anguilla».
-                          .tab-pane.fade#modcontent9
-                            p Английский
+                              li любого налога на прибыль,
+                              li дивидендов,
+                              li процентов,
+                              li арендной платы,
+                              li роялти,
+                              li доход на прирост капитала от продажи акций компании.
+                            p BVI оффшорная компания считается налоговым резидентом BVI. BVI подписали договоры об избежании двойного налогообложения со Швейцарией и Японией.
+                            p Вместо налога существует фиксированная ежегодная государственная пошлина, а также ежегодный взнос зарегистрированный агент.
                   section.modal-section.text.lazy(data-src="../img/modal-bg.png")
                     .container
                       .row
                         .col-lg-6
                           p.sub-text 
-                            strong Если вам нужна регистрация оффшорной компании в Ангилье, 
-                            | то наши специалисты помогут вам быстро и квалифицированно зарегистрировать фирму в Ангилье. Также, вы можете купить готовую компанию в Ангилье. 
+                            strong Если вам нужна регистрация оффшорной компании на БВО, 
+                            | то наши специалисты помогут вам быстро и квалифицированно зарегистрировать фирму на БВО. Также, вы можете купить готовую компанию на БВО. 
                             strong Напишите нам 
-                            | и мы поможем вам зарегистрировать компанию в Ангилье.
+                            | и мы поможем вам зарегистрировать компанию на БВО.
                           p.sub-text Специалисты компании 
                             strong Eternity Law International 
-                            | предоставят Вам квалифицированную консультацию по приобретению оффшорной компании,  открытию банковского счета в любой юрисдикции, а также в дальнейшем сопровождении деятельности вашей компании на любом этапе работы.
+                            | предоставят Вам квалифицированную консультацию по приобретению Оффшорной компании, Европейской компании, получению VAT номера, открытию банковского счета в любой юрисдикции, а также в дальнейшем сопровождении деятельности вашей компании на любом этапе работы.
+                          p.sub-text Мы предлагаем готовые Европейские и оффшорные компании — 
+                            strong переоформление документов на новых владельцев занимает 2 дня.                  
+                  section(data-src="../img/consulting_6.png").modal-section.bottom.lazy
+                    .container
+                      .color-block
+                        .row
+                          .col-lg-6
+                            p.big
+                              span Если у вас есть любые вопросы или вам нужна консультация 
+                              br
+                              | по вопросам регистрации или 
+                              br
+                              | покупки компании, позвоните нам по телефонам, указанным на сайте, или напишите нам, наши специалисты ответят вам онлайн.
+                          .col-lg-6
+                            p.red РЕГИСТРАЦИЯ
+                              br.d-none.d-lg-block
+                              span КОМПАНИИ
+                            a.button.red(href="#") START TODAY
+          .modal.fade(id="modalDominica" aria-hidden="true")
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  h5.modal-title Регистрация компании 
+                    span Доминика
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-popup.png" alt="close")
+                .modal-body
+                  .main-info
+                    .container
+                      .row
+                        .col-lg-5.col-xl-6
+                          img.lazy(data-src="img/anguilla-flag.png" alt="flag")
+                        .col-lg-7.col-xl-6
+                          .table
+                            .item
+                              p Стоимость регистрации
+                              p 1 415.00 USD
+                            .item
+                              p Стоимость продления компании
+                              p 1 340.00 USD
+                            .item
+                              p Количество директоров
+                              p 1
+                            .item
+                              p Корпоративный налог
+                              p 0.00%
+                            .item
+                              p Уплаченный Уставной Капитал
+                              p 0.00
+                            .item
+                              p Требования к обязательной отчетности
+                              p Нет
+                  section.modal-section
+                    .container
+                      .row
+                        .col-lg-6
+                          .modal-section-title Преимущества оффшора
+                           br
+                           span на Доминике
+                        .col-lg-6
+                          p.sub-list
+                            strong Первым плюсом Доминики является оперативность регистрации компании. Решение по заявке принимается всего за 1-2 дня, поэтому вам не придется долго ждать ответа и документации по оффшору. Кроме того, на территории данного государства полностью отсутствует налогообложение, благодаря чему вы сможете существенно сэкономить на налогах. Кроме того, существуют и другие преимущества:
+                          ul.modal-list.mt-0
+                            li минимальные затраты на регистрацию юрлица и на его обслуживание;
+                            li уплата пошлины не зависит от размера уставного капитала;
+                            li уставной капитал обязательно нужно номинировать, однако его выплата необязательна;
+                            li абсолютная конфиденциальность и анонимность;
+                            li отсутствие необходимости проведения обязательной аудиторской проверки;
+                            li официальное разрешение на использование номинального сервиса.
+                          p.sub-list
+                            strong Перечень форм собственности фирм, которые можно зарегистрировать на Доминике широк, однако наиболее распространенной является International Business Company (IBC).
+                  section.modal-section.tabs
+                    .container
+                      .row
+                        .col-lg-5
+                          .nav
+                            a(href="#modcontent21" data-toggle="tab").nav-item.active Особенности уплаты налогов 
+                              br
+                              span на Доминике
+                            a(href="#modcontent22" data-toggle="tab").nav-item О стране
+                        .col-lg-7
+                          .tab-pane.fade.show.active#modcontent21
+                            p Иностранные организации не уплачивают налоги на территории Доминики. Однако вам обязательно нужно будет ежегодно перечислять пошлину. Оплата производится ежегодно, не позднее дня регистрации юридического лица. Если вы не выполните данное требование в указанный срок, компания будет исключена из Реестра. Вместе с тем, стоимость пошлины на Доминике составляет всего $100, поэтому ее уплата вряд ли ударит по карману владельца компании.
+                            p Если вы не успели уплатить налог, вернуть компанию в Реестр можно быстро и просто. Достаточно лишь погасить задолженности по пошлине и штрафам. Однако название организации все-таки придется изменить. Если же вам нужно использовать конкретное наименование, вы можете произвести перерегистрацию юридического лица с аналогичным названием. 
+                          .tab-pane.fade#modcontent22
+                            p Доминика – это государство, расположенное в Карибском бассейне, и занимающее всего 800 квадратных километров. Не следует путать эту страну с Доминиканской республикой, это совершенно разные государства, с разным законодательством и налоговой политикой. Доминика пока не достигла такого же уровня известности, как Кипр или Панама, но данная оффшорная зона также развивается очень быстро.
+                  section.modal-section.text.lazy(data-src="../img/modal-bg.png")
+                    .container
+                      .row
+                        .col-lg-6
+                          p.sub-text 
+                            strong Если вам нужна регистрация оффшорной компании в Доминике, 
+                            | то наши специалисты помогут вам быстро и квалифицированно зарегистрировать фирму в Доминике. Также, вы можете купить готовую компанию в Доминике. 
+                            strong Напишите нам 
+                            | и мы поможем вам зарегистрировать компанию в Доминике.
+                          p.sub-text Специалисты компании 
+                            strong Eternity Law International 
+                            | предоставят Вам квалифицированную консультацию по приобретению Оффшорной компании, открытию банковского счета в любой юрисдикции, а также в дальнейшем сопровождении деятельности вашей компании на любом этапе работы.
                           p.sub-text Мы предлагаем готовые Европейские и оффшорные компании — 
                             strong переоформление документов на новых владельцев занимает 2 дня.                  
                   section(data-src="../img/consulting_6.png").modal-section.bottom.lazy

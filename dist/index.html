@@ -5,9 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 		<title>Document</title>
 		<link rel="stylesheet" href="css/bootstrap-reboot.min.css"/>
-		<link rel="stylesheet preload" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet preload" as="style" href="css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="css/aos.css"/>
-		<link rel="stylesheet preload" href="css/main.css"/>
+		<link rel="stylesheet preload" as="style" href="css/main.css"/>
 	</head>
 	<body>
 		<header class="header">
@@ -115,7 +115,7 @@
 									<div class="col-6 col-lg-2 col-xl-2 offset-0">
 										<div class="table-item">Anguilla<a class="link" href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla"><img class="lazy" data-src="../img/link.png"/></a></div>
 										<div class="table-item">BVI<a class="link" href="#modalBVI" data-toggle="modal" data-target="#modalBVI"><img class="lazy" data-src="../img/link.png"/></a></div>
-										<div class="table-item">Dominica<a class="link" href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla"><img class="lazy" data-src="../img/link.png"/></a></div>
+										<div class="table-item">Dominica<a class="link" href="#modalDominica" data-toggle="modal" data-target="#modalDominica"><img class="lazy" data-src="../img/link.png"/></a></div>
 										<div class="table-item">Mauritius</div>
 										<div class="table-item">Nauru<a class="link" href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla"><img class="lazy" data-src="../img/link.png"/></a></div>
 									</div>
@@ -760,7 +760,7 @@
 					</div>
 				</div>
 			</section>
-			<div class="modal fade" id="modalAnguilla" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal fade" id="modalAnguilla" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -911,11 +911,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="modal fade" id="modalBVI" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal fade" id="modalBVI" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title">Регистрация компании <span>BVI</span></h5>
+							<h5 class="modal-title">Регистрация компании <span>БРИТАНСКИЕ ВИРГИНСКИЕ ОСТРОВА</span></h5>
 							<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="close-icon" aria-hidden="true"><img class="lazy" data-src="img/close-popup.png" alt="close"/></span></button>
 						</div>
 						<div class="modal-body">
@@ -927,11 +927,11 @@
 											<div class="table">
 												<div class="item">
 													<p>Стоимость регистрации</p>
-													<p>1 640.00 USD</p>
+													<p>1 370.00 EUR</p>
 												</div>
 												<div class="item">
 													<p>Стоимость продления компании</p>
-													<p>1 600.00 USD</p>
+													<p>1 315.00 EUR</p>
 												</div>
 												<div class="item">
 													<p>Количество директоров</p>
@@ -958,21 +958,22 @@
 								<div class="container">
 									<div class="row">
 										<div class="col-lg-6">
-											<div class="modal-section-title">Общая информация<br/><span>об оффшорной компании<br/>в Ангилье</span></div>
+											<div class="modal-section-title">Документы<br/><span>компании на БВО</span></div>
 										</div>
 										<div class="col-lg-6">
 											<ul class="modal-list">
-												<li>Тип компании <span>— International Business Company (IBC)</span></li>
-												<li>Временные рамки для регистрации компании <span>— от 2-х до 3-х дней</span></li>
-												<li>The Anguilla Financial Service Commission <span>является руководящим органом;</span></li>
-												<li>Деятельность <span>компаний регулируются </span>в соответствии с Законом IBC 2000</li>
-												<li>Законодательство <span>— современное оффшорное законодательство</span></li>
-												<li>Правовая система <span>— общее право</span></li>
-												<li>Корпоративное налогообложение <span>— нет налогов любого рода</span></li>
-												<li>Доступность записей <span>— нет публичного реестра</span></li>
-												<li>Часовой пояс <span>— GMT -4</span></li>
-												<li>Валюта <span> — восточно-карибский доллар (XCD)</span></li>
+												<li>Certificate of incorporation (Свидетельство о регистрации)</li>
+												<li>Memorandum and Articles of Association (Учредительный договор и Устав Компании)</li>
+												<li>Apostille of the bound set of copies of Constitutive documents (Апостилированный комплект Учредительных документов)</li>
+												<li>Subscriber’s Resolution (Решение Участников)</li>
+												<li>Apostilled Director’s Resolution (Апостилированная Резолюция о назначении последующего Директора)</li>
+												<li>Share Certificates (Сертификат Акций)</li>
+												<li>Resolution of first shares allotment (Резолюций о выпуске Акций)</li>
+												<li>Articles of Consolidation (Договор о реорганизации в форме слияния)</li>
+												<li>Plan of Consolidation (План реорганизации в форме слияния)</li>
+												<li>Written Resolutions of the sole Shareholder (Письменное решение единственного Акционера)</li>
 											</ul>
+											<p class="sub-list"><strong>Стоимость услуг номинального директора и акционера – 550 EUR</strong></p>
 										</div>
 									</div>
 								</div>
@@ -981,53 +982,49 @@
 								<div class="container">
 									<div class="row">
 										<div class="col-lg-5">
-											<div class="nav"><a class="nav-item active" href="#modcontent1" data-toggle="tab">Уставной капитал <br/><span>оффшорной компании в Ангилье</span></a><a class="nav-item" href="#modcontent2" data-toggle="tab">Акционеры и директора <br/><span>оффшорной компании в Ангилье</span></a><a class="nav-item" href="#modcontent3" data-toggle="tab">Отчетность <br/><span>оффшорной компании в Ангилье</span></a><a class="nav-item" href="#modcontent4" data-toggle="tab">Документы для регистрации <br/><span>оффшорной компании в Ангилье</span></a><a class="nav-item" href="#modcontent5" data-toggle="tab">О стране</a><a class="nav-item" href="#modcontent6" data-toggle="tab">Процедура регистрации <br/><span>оффшорной компании в Ангилье</span></a><a class="nav-item" href="#modcontent7" data-toggle="tab">Торговые ограничения <br/><span>оффшорной компании в Ангилье</span></a><a class="nav-item" href="#modcontent8" data-toggle="tab">Ограничения в названиях <br/><span>оффшорной компании в Ангилье</span></a><a class="nav-item" href="#modcontent9" data-toggle="tab">Язык корпоративных документов <br/><span>оффшорной компании в Ангилье</span></a></div>
+											<div class="nav"><a class="nav-item active" href="#modcontent11" data-toggle="tab">Документы номинального сервиса <br/><span>оффшорной компании на BVI</span></a><a class="nav-item" href="#modcontent12" data-toggle="tab">Основные характеристики <br/><span>оффшорной компании на BVI</span></a><a class="nav-item" href="#modcontent13" data-toggle="tab">Применение популярных оффшорных компаний <br/><span>на BVI</span></a><a class="nav-item" href="#modcontent14" data-toggle="tab">Налогообложение <br/><span>оффшорной компании на BVI</span></a></div>
 										</div>
 										<div class="col-lg-7">
-											<div class="tab-pane fade show active" id="modcontent1">
+											<div class="tab-pane fade show active" id="modcontent11">
 												<ul class="tab-list">
-													<li>Стандартная валюта — USD (с другими валютами допускается)</li>
-													<li>Стандартный уставный капитал — 50 000 USD</li>
-													<li>Минимальный оплаченный — Нет</li>
+													<li>Resolution effecting the issuing the Power of Attorney (Резолюция о выпуске Доверенности)</li>
+													<li>Apostilled Power of Attorney (Апостилированная Доверенность)</li>
+													<li>Consent Letter (Письмо-согласие Номинального Директора о вступлении в должность)</li>
+													<li>Director Resignation Letter (Отказное письмо от Номинального Директора (недатированное))</li>
+													<li>Nominee Director’s Declaration (Декларация Номинального Директора о номинальных услугах)</li>
+													<li>Deed of Trust (Трастовая Декларация от Номинального Акционера)</li>
+													<li>Instrument of Transfer (Передаточные документы на Акции (недатированные))</li>
+												</ul>
+												<p>BVI Business Company (BC) является одним из наиболее признанных и старейших оффшорных финансовых центров. Новая версия Закона о коммерческих компаниях Британских Виргинских островов 2005 ликвидировала две структуры концепции компаний, которые осуществляли свою деятельность в рамках BVI и оффшорной компании, которая позволяла только один тип компании: BVI Business Company.</p>
+											</div>
+											<div class="tab-pane fade" id="modcontent12">
+												<ul class="tab-list">
+													<li>Нет требования минимального уставного капитала</li>
+													<li>Минимальное количество директоров компании является одним (допускается нерезидент и корпоративный директор)</li>
+													<li>Информация о Директоре / Акционере не доступны общественности и хранятся только у регистрационного агента</li>
+													<li>Нет требования для подачи финансовой отчетности или аудита</li>
+													<li>Есть готовые компании на BVI в наличии. Спросите прямо сейчас.</li>
 												</ul>
 											</div>
-											<div class="tab-pane fade" id="modcontent2">
+											<div class="tab-pane fade" id="modcontent13">
 												<ul class="tab-list">
-													<li>Минимальное количество акционеров — 1</li>
-													<li>Минимальное количество директоров — 1</li>
-													<li>Требование местного офиса — нет</li>
-													<li>Требование назначить секретаря компании — не обязательно</li>
+													<li>BVI Business Company является хорошим выбором для:</li>
+													<li>торговой деятельности</li>
+													<li>владеющия акциями иностранных компаний</li>
 												</ul>
 											</div>
-											<div class="tab-pane fade" id="modcontent3">
+											<div class="tab-pane fade" id="modcontent14">
+												<p>Новая единая BVI оффшорная компания до сих пор пользуется безналоговым статусом, включая освобождение:</p>
 												<ul class="tab-list">
-													<li>Требование о назначении аудитора — Нет</li>
-													<li>Требование подавать отчетность — Нет</li>
-													<li>Доступность счетов — Нет</li>
-													<li>Требований к финансовой отчетности — Нет</li>
+													<li>любого налога на прибыль,</li>
+													<li>дивидендов,</li>
+													<li>процентов,</li>
+													<li>арендной платы,</li>
+													<li>роялти,</li>
+													<li>доход на прирост капитала от продажи акций компании.</li>
 												</ul>
-											</div>
-											<div class="tab-pane fade" id="modcontent4">
-												<ul class="tab-list">
-													<li>Заверенная копия действительного паспорта (или национальное удостоверение личности)</li>
-													<li>Сертифицированное подтверждение адреса — utility bill (не старше 3-х месяцев) на английском языке (или перевод)</li>
-													<li>Оригинал или заверенная копия рекомендательного письма из банка (не старше 3-х месяцев) или оригинал выписки из банковского счета не старше 3-х месяцев</li>
-												</ul>
-											</div>
-											<div class="tab-pane fade" id="modcontent5">
-												<p>Ангилья является британской территорией в Карибском море, один из самых северных островов Малых Антильских островов. Он состоит из главного острова самого Ангилья, примерно в 26 км в длину и 5 км в ширину в самом широком месте, вместе с целым рядом более мелких островов и рифов, не имеющих постоянного населения. Столица острова является долина. Общая площадь суши территории составляет 102 кв км, с населением около 13500 (2006 оценка). Оффшорные компании, базирующиеся в Ангилье становятся все более популярными как для их высокий уровень конфиденциальности и их скорость регистрации.</p>
-											</div>
-											<div class="tab-pane fade" id="modcontent6">
-												<p>При получении KYC документов клиента (копия паспорта и подтверждение адреса, выданного в течение последних 3-х месяцев) и описание предполагаемой хозяйственной деятельности, и после проверки нашего юридического отдела, нами будет осуществлена регистрация компании на территории Ангилья.</p>
-											</div>
-											<div class="tab-pane fade" id="modcontent7">
-												<p>Anguilla IBC не должны вести бизнес с резидентами Ангильи, иметь недвижимость в Ангилье или вести деятельность в банковской сфере или трастовых и страховых компаний (без соответствующей лицензии).</p>
-											</div>
-											<div class="tab-pane fade" id="modcontent8">
-												<p>Название при регистрации оффшорной компании в Ангилье должно заканчиваться словом, фразой или аббревиатурой, которая указывает на ограниченную ответственность, например «Limited», «ООО», «Société Anonyme», «SA», «Corporation», или» Inc. «Запрещенные имена включают в себя те, что предполагает обозначение Королевской семьи или правительства Великобритании, таких как,» National «,» Royal «,» Republic «,» Kingdom «,» Commonwealth «,» Government «, или «Anguilla».</p>
-											</div>
-											<div class="tab-pane fade" id="modcontent9">
-												<p>Английский</p>
+												<p>BVI оффшорная компания считается налоговым резидентом BVI. BVI подписали договоры об избежании двойного налогообложения со Швейцарией и Японией.</p>
+												<p>Вместо налога существует фиксированная ежегодная государственная пошлина, а также ежегодный взнос зарегистрированный агент.</p>
 											</div>
 										</div>
 									</div>
@@ -1037,8 +1034,119 @@
 								<div class="container">
 									<div class="row">
 										<div class="col-lg-6">
-											<p class="sub-text"> <strong>Если вам нужна регистрация оффшорной компании в Ангилье, </strong>то наши специалисты помогут вам быстро и квалифицированно зарегистрировать фирму в Ангилье. Также, вы можете купить готовую компанию в Ангилье. <strong>Напишите нам </strong>и мы поможем вам зарегистрировать компанию в Ангилье.</p>
-											<p class="sub-text">Специалисты компании <strong>Eternity Law International </strong>предоставят Вам квалифицированную консультацию по приобретению оффшорной компании,  открытию банковского счета в любой юрисдикции, а также в дальнейшем сопровождении деятельности вашей компании на любом этапе работы.</p>
+											<p class="sub-text"> <strong>Если вам нужна регистрация оффшорной компании на БВО, </strong>то наши специалисты помогут вам быстро и квалифицированно зарегистрировать фирму на БВО. Также, вы можете купить готовую компанию на БВО. <strong>Напишите нам </strong>и мы поможем вам зарегистрировать компанию на БВО.</p>
+											<p class="sub-text">Специалисты компании <strong>Eternity Law International </strong>предоставят Вам квалифицированную консультацию по приобретению Оффшорной компании, Европейской компании, получению VAT номера, открытию банковского счета в любой юрисдикции, а также в дальнейшем сопровождении деятельности вашей компании на любом этапе работы.</p>
+											<p class="sub-text">Мы предлагаем готовые Европейские и оффшорные компании — <strong>переоформление документов на новых владельцев занимает 2 дня.                  </strong></p>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section class="modal-section bottom lazy" data-src="../img/consulting_6.png">
+								<div class="container">
+									<div class="color-block">
+										<div class="row">
+											<div class="col-lg-6">
+												<p class="big"><span>Если у вас есть любые вопросы или вам нужна консультация </span><br/>по вопросам регистрации или <br/>покупки компании, позвоните нам по телефонам, указанным на сайте, или напишите нам, наши специалисты ответят вам онлайн.</p>
+											</div>
+											<div class="col-lg-6">
+												<p class="red">РЕГИСТРАЦИЯ<br class="d-none d-lg-block"/><span>КОМПАНИИ</span></p><a class="button red" href="#">START TODAY</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="modalDominica" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Регистрация компании <span>Доминика</span></h5>
+							<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="close-icon" aria-hidden="true"><img class="lazy" data-src="img/close-popup.png" alt="close"/></span></button>
+						</div>
+						<div class="modal-body">
+							<div class="main-info">
+								<div class="container">
+									<div class="row">
+										<div class="col-lg-5 col-xl-6"><img class="lazy" data-src="img/anguilla-flag.png" alt="flag"/></div>
+										<div class="col-lg-7 col-xl-6">
+											<div class="table">
+												<div class="item">
+													<p>Стоимость регистрации</p>
+													<p>1 415.00 USD</p>
+												</div>
+												<div class="item">
+													<p>Стоимость продления компании</p>
+													<p>1 340.00 USD</p>
+												</div>
+												<div class="item">
+													<p>Количество директоров</p>
+													<p>1</p>
+												</div>
+												<div class="item">
+													<p>Корпоративный налог</p>
+													<p>0.00%</p>
+												</div>
+												<div class="item">
+													<p>Уплаченный Уставной Капитал</p>
+													<p>0.00</p>
+												</div>
+												<div class="item">
+													<p>Требования к обязательной отчетности</p>
+													<p>Нет</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<section class="modal-section">
+								<div class="container">
+									<div class="row">
+										<div class="col-lg-6">
+											<div class="modal-section-title">Преимущества оффшора<br/><span>на Доминике</span></div>
+										</div>
+										<div class="col-lg-6">
+											<p class="sub-list"><strong>Первым плюсом Доминики является оперативность регистрации компании. Решение по заявке принимается всего за 1-2 дня, поэтому вам не придется долго ждать ответа и документации по оффшору. Кроме того, на территории данного государства полностью отсутствует налогообложение, благодаря чему вы сможете существенно сэкономить на налогах. Кроме того, существуют и другие преимущества:</strong></p>
+											<ul class="modal-list mt-0">
+												<li>минимальные затраты на регистрацию юрлица и на его обслуживание;</li>
+												<li>уплата пошлины не зависит от размера уставного капитала;</li>
+												<li>уставной капитал обязательно нужно номинировать, однако его выплата необязательна;</li>
+												<li>абсолютная конфиденциальность и анонимность;</li>
+												<li>отсутствие необходимости проведения обязательной аудиторской проверки;</li>
+												<li>официальное разрешение на использование номинального сервиса.</li>
+											</ul>
+											<p class="sub-list"><strong>Перечень форм собственности фирм, которые можно зарегистрировать на Доминике широк, однако наиболее распространенной является International Business Company (IBC).</strong></p>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section class="modal-section tabs">
+								<div class="container">
+									<div class="row">
+										<div class="col-lg-5">
+											<div class="nav"><a class="nav-item active" href="#modcontent21" data-toggle="tab">Особенности уплаты налогов <br/><span>на Доминике</span></a><a class="nav-item" href="#modcontent22" data-toggle="tab">О стране</a></div>
+										</div>
+										<div class="col-lg-7">
+											<div class="tab-pane fade show active" id="modcontent21">
+												<p>Иностранные организации не уплачивают налоги на территории Доминики. Однако вам обязательно нужно будет ежегодно перечислять пошлину. Оплата производится ежегодно, не позднее дня регистрации юридического лица. Если вы не выполните данное требование в указанный срок, компания будет исключена из Реестра. Вместе с тем, стоимость пошлины на Доминике составляет всего $100, поэтому ее уплата вряд ли ударит по карману владельца компании.</p>
+												<p>Если вы не успели уплатить налог, вернуть компанию в Реестр можно быстро и просто. Достаточно лишь погасить задолженности по пошлине и штрафам. Однако название организации все-таки придется изменить. Если же вам нужно использовать конкретное наименование, вы можете произвести перерегистрацию юридического лица с аналогичным названием. </p>
+											</div>
+											<div class="tab-pane fade" id="modcontent22">
+												<p>Доминика – это государство, расположенное в Карибском бассейне, и занимающее всего 800 квадратных километров. Не следует путать эту страну с Доминиканской республикой, это совершенно разные государства, с разным законодательством и налоговой политикой. Доминика пока не достигла такого же уровня известности, как Кипр или Панама, но данная оффшорная зона также развивается очень быстро.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section class="modal-section text lazy" data-src="../img/modal-bg.png">
+								<div class="container">
+									<div class="row">
+										<div class="col-lg-6">
+											<p class="sub-text"> <strong>Если вам нужна регистрация оффшорной компании в Доминике, </strong>то наши специалисты помогут вам быстро и квалифицированно зарегистрировать фирму в Доминике. Также, вы можете купить готовую компанию в Доминике. <strong>Напишите нам </strong>и мы поможем вам зарегистрировать компанию в Доминике.</p>
+											<p class="sub-text">Специалисты компании <strong>Eternity Law International </strong>предоставят Вам квалифицированную консультацию по приобретению Оффшорной компании, открытию банковского счета в любой юрисдикции, а также в дальнейшем сопровождении деятельности вашей компании на любом этапе работы.</p>
 											<p class="sub-text">Мы предлагаем готовые Европейские и оффшорные компании — <strong>переоформление документов на новых владельцев занимает 2 дня.                  </strong></p>
 										</div>
 									</div>
