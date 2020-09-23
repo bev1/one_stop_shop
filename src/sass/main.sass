@@ -67,20 +67,21 @@ h3
 @keyframes sideSlide
 	60%
 		transform: translate(20px, 0) scale(1)
-	
-
 	80%
 		transform: translate(20px, 0) scale(1)
-	
-
 	99%
 		transform: translate(0) scale(1.2)
-	
-
 	100%
 		transform: translate(0) scale(1)
 		opacity: 1
-
+    
+@keyframes fade 
+  0%
+    opacity: 1
+  50%
+    opacity: 0
+  100%
+    opacity: 1
 
 @import './layout/header'
 @import './layout/footer'
@@ -654,8 +655,45 @@ section
         margin-left: 5%
         &:not(.active)
           display: none
-          
-
+        .map-dot
+          position: absolute
+          .name
+            font-size: 14px
+            color: #151515
+            font-weight: 700
+            span:first-child
+              color: #1e4ea7
+          .dot
+            width: 10px
+            height: 10px
+            background-color: #1e4ea7
+            position: relative
+            border-radius: 50%
+            &::after
+              content: ''
+              width: 20px
+              height: 20px
+              position: absolute
+              top: -5px
+              left: -5px
+              border: 1px solid #1e4ea7
+              border-radius: 50%
+              animation: fade 1s infinite
+        &#content1
+          .map-dot
+            &.Anguilla
+              top: 715px
+              left: 415px
+            &.BVI
+              top: 703px
+              left: 400px
+            &.Dominica
+              top: 730px
+              left: 430px
+            &.Nauru
+              top: 800px
+              left: -20px
+              
   &.consulting-3
     margin-top: -133px
     padding-bottom: 120px
