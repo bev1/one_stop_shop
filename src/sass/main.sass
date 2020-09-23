@@ -633,7 +633,13 @@ section
                 .table-item
                   border: .5px solid #c7c7c8
                 &:last-child
-                  border-right: none
+                  border-right: none                  
+        .custom-grid-item
+          width: 14.285%
+          @media (max-width: 992px)
+            width: 50%
+            &:last-child
+              width: 100%
       .tab-pane
         position: absolute
         width: 90%

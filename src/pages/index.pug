@@ -358,7 +358,7 @@ html(lang="ru")
                 div.tab-pane.fade#content5
                   .table
                     .row
-                      .col-6.col-lg-2.col-xl-2.offset-0
+                      .custom-grid-item
                         .table-item Canada
                           a.link(href="#modalCanada" data-toggle="modal" data-target="#modalCanada")
                             img.lazy(data-src="../img/link.png")
@@ -367,7 +367,7 @@ html(lang="ru")
                             img.lazy(data-src="../img/link.png")
                         .table-item Costa Rica
                         .table-item Saint Lucia
-                      .col-6.col-lg-2.col-xl-2.offset-0
+                      .custom-grid-item
                         .table-item Bermudas
                           a.link(href="#modalBermudas" data-toggle="modal" data-target="#modalBermudas")
                             img.lazy(data-src="../img/link.png")
@@ -376,21 +376,21 @@ html(lang="ru")
                             img.lazy(data-src="../img/link.png")
                         .table-item Cuba
                         .table-item Turks & Caicos
-                      .col-6.col-lg-2.col-xl-2.offset-0
+                      .custom-grid-item
                         .table-item Anguilla
                         .table-item Brazil
                           a.link(href="#modalBrazil" data-toggle="modal" data-target="#modalBrazil")
                             img.lazy(data-src="../img/link.png")
                         .table-item Curacao
                         .table-item Uruguay
-                      .col-6.col-lg-2.col-xl-2.offset-0
+                      .custom-grid-item
                         .table-item Antigua
                         .table-item BVI
                           a.link(href="#modalBVI" data-toggle="modal" data-target="#modalBVI")
                             img.lazy(data-src="../img/link.png")
                         .table-item Peru
                         .table-item Chile
-                      .col-6.col-lg-2.col-xl-2.offset-0
+                      .custom-grid-item
                         .table-item Argentina
                           a.link(href="#modalArgentina" data-toggle="modal" data-target="#modalArgentina")
                             img.lazy(data-src="../img/link.png")
@@ -401,7 +401,7 @@ html(lang="ru")
                         .table-item USA
                           a.link(href="#modalUSA" data-toggle="modal" data-target="#modalUSA")
                             img.lazy(data-src="../img/link.png")
-                      .col-6.col-lg-2.col-xl-2.offset-0
+                      .custom-grid-item
                         .table-item Aruba
                           a.link(href="#modalAruba" data-toggle="modal" data-target="#modalAruba")
                             img.lazy(data-src="../img/link.png")
@@ -412,9 +412,15 @@ html(lang="ru")
                         .table-item Venezuela
                           a.link(href="#modalVenezuela" data-toggle="modal" data-target="#modalVenezuela")
                             img.lazy(data-src="../img/link.png")
-                        .table-item Panama
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
+                      .custom-grid-item
+                        .table-item Bahamas
+                          a.link(href="#modalBahamas" data-toggle="modal" data-target="#modalBahamas")
                             img.lazy(data-src="../img/link.png")
+                        .table-item Colombia
+                        .table-item Saint Vincent 
+                          a.link(href="#modalSaintVincent" data-toggle="modal" data-target="#modalSaintVincent")
+                            img.lazy(data-src="../img/link.png")
+                        .table-item Ecuador
                 div.tab-pane.fade#content6
                   .table
                     .row
@@ -6078,7 +6084,141 @@ html(lang="ru")
                               br.d-none.d-lg-block
                               span КОМПАНИИ
                             a.button.red(href="#") START TODAY
-
+          .modal.fade(id="modalSaintVincent" aria-hidden="true")
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  h5.modal-title Регистрация компании 
+                    span Сент Винсент
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-popup.png" alt="close")
+                .modal-body
+                  .main-info
+                    .container
+                      .row
+                        .col-lg-5.col-xl-6
+                          img.lazy(data-src="img/flags/pic_country_sent_vinsent-min.png" alt="flag")
+                        .col-lg-7.col-xl-6
+                          .table
+                            .item
+                              p Стоимость регистрации
+                              p 1 350.00 EUR
+                            .item
+                              p Стоимость продления компании
+                              p 1 200.00 EUR
+                            .item
+                              p Количество директоров
+                              p 1
+                            .item
+                              p Корпоративный налог
+                              p 0.00%
+                            .item
+                              p Уплаченный Уставной Капитал
+                              p 1.00
+                            .item
+                              p Требования к обязательной отчетности
+                              p Нет
+                            .item
+                              p Требования к местному офису
+                              p Нет
+                            .item
+                              p Требование назначить секретаря компании
+                              p Факультативно
+                  section.modal-section
+                    .container
+                      .row
+                        .col-lg-6
+                          .modal-section-title Информация 
+                           br
+                           span о юрисдикции
+                        .col-lg-6
+                          p.sub-list
+                            strong Сент-Винсент и Гренадины (также известная как Сент-Винсент) является островной страной в островах Малой Антильской  дуги, в южной части Карибских островов, которые лежат в южной части восточной границы Карибского моря.
+                          p.sub-list
+                            strong К северу от страны находится Сент-Люсия, на востоке Барбадос. 389 квадратных километров острова состоит из главного острова Сент-Винсент и на севере из Гренадин, которые представляют собой цепь мелких островов, простирающихся на юг к Гренаде.
+                          p.sub-list
+                            strong Сент-Винсент и Гренадины — густонаселенная страна (более 300 человек/км), а его столица и главный порт — Кингстаун. Сент-Винсент предлагает значительные преимущества в качестве оффшорной юрисдикции благодаря его 0% налоговые ставки для IBC компаний, профессиональных и стабильных услуг инфраструктуры и имеет положительную репутацию.
+                  section.modal-section.tabs
+                    .container
+                      .row
+                        .col-lg-5
+                          .nav
+                            a(href="#modcontent431" data-toggle="tab").nav-item.active Уставной капитал 
+                              br
+                              span компании на Сент Винсент
+                            a(href="#modcontent432" data-toggle="tab").nav-item Правовое регулирование 
+                              br
+                              span оффшорной компании на Сент Винсент
+                            a(href="#modcontent433" data-toggle="tab").nav-item Акционеры, отчетность 
+                              br
+                              span оффшорной компании на Сент Винсент
+                            a(href="#modcontent434" data-toggle="tab").nav-item Документы для регистрации
+                              br
+                              span оффшорной компании на Сент Винсент
+                            a(href="#modcontent435" data-toggle="tab").nav-item Интересные факты
+                              br
+                              span о использовании компании на Сент Винсент
+                        .col-lg-7
+                          .tab-pane.fade.show.active#modcontent431
+                            ul.tab-list
+                              li Стандартная валюта — USD
+                              li Стандартный уставной капитал USD — 10 000
+                              li Минимальный оплаченный капитал — USD 1
+                              li Акции на предъявителя — Авторизованные
+                          .tab-pane.fade#modcontent432
+                            ul.tab-list
+                              li Тип компании — International Business Company (IBC)
+                              li Временные рамки для регистрации компании — от 2 до 3 дней
+                              li Правовое регулирование — Закон о компаниях 2007 г.
+                              li Новые Международные Правила о Бизнес Компаниях  2008 г.
+                              li Правовая система общего права
+                              li Доступность записей о компании — Нет публичного реестра
+                              li Часовой пояс GMT -4
+                              li Корпоративное налогообложение — Нет налогов любого рода
+                          .tab-pane.fade#modcontent433
+                            ul.tab-list
+                              li Требование о назначении аудитора — Нет
+                              li Требование подавать отчетность — Нет
+                              li Доступность счетов — Нет
+                              li требований к финансовой отчетности — Нет
+                          .tab-pane.fade#modcontent434
+                            ul.tab-list
+                              li Заверенная копия действительного паспорта (или национальное удостоверение личности)
+                              li Сертифицирован подтверждение адреса — utility bill (не старше 3-х месяцев) на английском языке (или перевод)
+                              li Оригинал или заверенная копия рекомендательного письма из банка (не старше 3-х месяцев) или оригинал выписки из банковского счета не старше 3-х месяцев
+                          .tab-pane.fade#modcontent435
+                            p Сент-Винсент и Гренадины не имеет договора об избежании двойного налогообложения с какой-либо другой страной, таким образом, информация о деятельности оффшорной компании на Сент Винсент не передается ни в какое другое государство. Кроме того, нет никаких требований на Сент Винсенте для подача подзаконных актов или для раскрытия директоров, акционеров и адвокатов в своем самом деле с офшорного финансового органа или любого другого организация.
+                  section.modal-section.text.lazy(data-src="../img/modal-bg.png")
+                    .container
+                      .row
+                        .col-lg-6
+                          p.sub-text 
+                            strong Если вам нужна регистрация оффшорной компании в Сент Винсент и Гренадинах, 
+                            | то наши специалисты помогут вам быстро и квалифицированно зарегистрировать фирму в Сент Винсент и Гренадинах. Также, вы можете купить готовую компанию в Сент Винсент и Гренадинах. 
+                            strong Напишите нам 
+                            | и мы поможем вам зарегистрировать компанию в Сент Винсент и Гренадинах.
+                          p.sub-text Специалисты компании 
+                            strong Eternity Law International 
+                            | предоставят Вам квалифицированную консультацию по приобретению оффшорной компании,  открытию банковского счета в любой юрисдикции, а также в дальнейшем сопровождении деятельности вашей компании на любом этапе работы.
+                          p.sub-text Мы предлагаем готовые Европейские и оффшорные компании — 
+                            strong переоформление документов на новых владельцев занимает 2 дня.                  
+                  section(data-src="../img/consulting_6.png").modal-section.bottom.lazy
+                    .container
+                      .color-block
+                        .row
+                          .col-lg-6
+                            p.big
+                              span Если у вас есть любые вопросы или вам нужна консультация 
+                              br
+                              | по вопросам регистрации или 
+                              br
+                              | покупки компании, позвоните нам по телефонам, указанным на сайте, или напишите нам, наши специалисты ответят вам онлайн.
+                          .col-lg-6
+                            p.red РЕГИСТРАЦИЯ
+                              br.d-none.d-lg-block
+                              span КОМПАНИИ
+                            a.button.red(href="#") START TODAY
 
 
         include layout/footer.pug
