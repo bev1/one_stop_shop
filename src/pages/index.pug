@@ -90,9 +90,9 @@ html(lang="ru")
                   li.nav-item
                     a(href="#content5" data-toggle="tab").nav-link Юрисдикции в Северной и Южной Америке
                   li.nav-item
-                    a(href="#content6" data-toggle="tab").nav-link Юрисдикции в Австралии и Океании
+                    a(href="#content6" data-toggle="tab").nav-link Юрисдикции в Африке
                   li.nav-item
-                    a(href="#content7" data-toggle="tab").nav-link Юрисдикции в Африке
+                    a(href="#content7" data-toggle="tab").nav-link Юрисдикции в Австралии и Океании
             div(data-src="../img/map.png").tab-content.lazy
               .container
                 div.tab-pane.fade.show.active#content1
@@ -424,78 +424,18 @@ html(lang="ru")
                 div.tab-pane.fade#content6
                   .table
                     .row
-                      .col-6.col-lg-2.col-xl-2.offset-0
-                        .table-item Anguilla
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
-                        .table-item BVI
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
-                        .table-item Dominica
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
-                        .table-item Mauritius
-                        .table-item Nauru
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
-                      .col-6.col-lg-2.col-xl-2.offset-0
-                        .table-item Antigua
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
-                        .table-item Vanuatu
-                        .table-item Cayman islands
-                        .table-item Madeira
-                        .table-item St. Kitts&Nevis
-                      .col-6.col-lg-2.col-xl-2.offset-0
-                        .table-item Aruba
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
-                        .table-item Guernsey
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
-                        .table-item Costa Rica
-                        .table-item Macau
-                        .table-item Niue
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
-                      .col-6.col-lg-2.col-xl-2.offset-0
-                        .table-item Bahamas
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
-                        .table-item Gibraltar
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
-                        .table-item Curacao
-                        .table-item Malta
-                        .table-item Isle Of Man
-                      .col-6.col-lg-2.col-xl-2.offset-0
-                        .table-item Bahamas
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
-                        .table-item Hong Kong
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
-                        .table-item Labuan
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
-                        .table-item Marshall Islands
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
-                        .table-item Cook Islands
-                      .col-6.col-lg-2.col-xl-2.offset-0
-                        .table-item Belize
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
-                        .table-item Jersey
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
+                      .custom-grid-item-2
                         .table-item Liberia
-                        .table-item Monaco
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
+                      .custom-grid-item-2
+                        .table-item Namibia
+                      .custom-grid-item-2
+                        .table-item Mauritius
+                      .custom-grid-item-2
+                        .table-item Seychelles
+                          a.link(href="#modalSeychelles" data-toggle="modal" data-target="#modalSeychelles")
                             img.lazy(data-src="../img/link.png")
-                        .table-item Panama
-                          a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
-                            img.lazy(data-src="../img/link.png")
+                      .custom-grid-item-2
+                        .table-item South Africa
                 div.tab-pane.fade#content7
                   .table
                     .row
@@ -6219,7 +6159,114 @@ html(lang="ru")
                               br.d-none.d-lg-block
                               span КОМПАНИИ
                             a.button.red(href="#") START TODAY
-
+          .modal.fade(id="modalSeychelles" aria-hidden="true")
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  h5.modal-title Регистрация компании 
+                    span Сейшельские Острова
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-popup.png" alt="close")
+                .modal-body
+                  .main-info
+                    .container
+                      .row
+                        .col-lg-5.col-xl-6
+                          img.lazy(data-src="img/flags/pic_country_Seychelles-min.png" alt="flag")
+                        .col-lg-7.col-xl-6
+                          .table
+                            .item
+                              p Стоимость регистрации
+                              p 1100.00 EUR
+                            .item
+                              p Стоимость продления компании
+                              p 950.00 EUR
+                            .item
+                              p Количество директоров
+                              p 1
+                            .item
+                              p Корпоративный налог
+                              p 0.00%
+                            .item
+                              p Уплаченный Уставной Капитал
+                              p 1.00
+                            .item
+                              p Требования к обязательной отчетности
+                              p Нет
+                  section.modal-section
+                    .container
+                      .row
+                        .col-lg-6
+                          .modal-section-title Регистрация компании Сейшельские Острова
+                           br
+                           span основные характеристики
+                        .col-lg-6
+                          p.sub-list
+                            strong Нет требования минимального уставного капитала
+                          p.sub-list
+                            strong Минимальное количество директоров один (допускается нерезидент и корпоративный директор)
+                          p.sub-list
+                            strong Конфиденциальность и защита активов: не требуется представлять сведения об акционерах, бенефициарных владельцах или директорах в любой реестр правительства Сейшельских островов
+                          p.sub-list
+                            strong Простота управления: нет требований подавать финансовую отчетность или годовой отчет по прибыли компании на Сейшельских островах. Несмотря на это, регистрационные агенты требуют вести записи по адресу, где хранится отчетность компании.
+                  section.modal-section.tabs
+                    .container
+                      .row
+                        .col-lg-5
+                          .nav
+                            a(href="#modcontent441" data-toggle="tab").nav-item.active Применение популярных оффшорных компаний 
+                              br
+                              span Сейшельских Островах
+                            a(href="#modcontent442" data-toggle="tab").nav-item Налогообложение 
+                              br
+                              span оффшорной компании на Сейшельских Островах
+                        .col-lg-7
+                          .tab-pane.fade.show.active#modcontent441
+                            ul.tab-list
+                              li холдинг / защита инвестиций и активов, таких как недвижимое имущество или акции, ине имущество
+                              li коммерческие операции и международные торговые операции
+                              li защиты активов
+                              li консультации и персональный сервис
+                          .tab-pane.fade#modcontent442
+                            p Сейшельские острова имеют безналоговый статус, включая освобождение от налога на прибыль всех:
+                            ul.tab-list
+                              li дивиденды,
+                              li проценты,
+                              li арендную плату,
+                              li роялти,
+                              li доходы на прирост капитала от продажи акций компании.
+                            p Вместо налога существует фиксированная ежегодная государственная пошлина, а также ежегодный взнос зарегистрированный агент.
+                  section.modal-section.text.lazy(data-src="../img/modal-bg.png")
+                    .container
+                      .row
+                        .col-lg-6
+                          p.sub-text 
+                            strong Если вам нужна регистрация оффшорной компании на Сейшельских островах, 
+                            | то наши специалисты помогут вам быстро и квалифицированно зарегистрировать фирму на Сейшельских островах. Также, вы можете купить готовую компанию на Сейшельских островах. 
+                            strong Напишите нам 
+                            | и мы поможем вам зарегистрировать компанию на Сейшельских островах.
+                          p.sub-text Специалисты компании 
+                            strong Eternity Law International 
+                            | предоставят Вам квалифицированную консультацию по регистрации компании на Сейшельских островах или любой другой юрисдикции, открытию банковского счета в любой юрисдикции, а также в дальнейшем сопровождении деятельности вашей компании на любом этапе работы.
+                          p.sub-text Мы предлагаем готовые Европейские и оффшорные компании — 
+                            strong переоформление документов на новых владельцев занимает 2 дня.                  
+                  section(data-src="../img/consulting_6.png").modal-section.bottom.lazy
+                    .container
+                      .color-block
+                        .row
+                          .col-lg-6
+                            p.big
+                              span Если у вас есть любые вопросы или вам нужна консультация 
+                              br
+                              | по вопросам регистрации или 
+                              br
+                              | покупки компании, позвоните нам по телефонам, указанным на сайте, или напишите нам, наши специалисты ответят вам онлайн.
+                          .col-lg-6
+                            p.red РЕГИСТРАЦИЯ
+                              br.d-none.d-lg-block
+                              span КОМПАНИИ
+                            a.button.red(href="#") START TODAY
 
         include layout/footer.pug
         script(src="js/jquery.min.js")
