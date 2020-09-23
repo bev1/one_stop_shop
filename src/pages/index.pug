@@ -93,7 +93,7 @@ html(lang="ru")
                     a(href="#content6" data-toggle="tab").nav-link Юрисдикции в Африке
                   li.nav-item
                     a(href="#content7" data-toggle="tab").nav-link Юрисдикции в Австралии и Океании
-            .tab-content
+            div(data-src="../img/map.png").tab-content.lazy
               .container
                 div.tab-pane.fade.show.active#content1
                   .table
@@ -186,8 +186,6 @@ html(lang="ru")
                           a.link(href="#modalPanama" data-toggle="modal" data-target="#modalPanama")
                             img.lazy(data-src="../img/link.png")
                         .table-item Turks & Caicos
-                  .map
-                    img.lazy(data-src="../img/map.png")
                 div.tab-pane.fade#content2
                   .table
                     .row
