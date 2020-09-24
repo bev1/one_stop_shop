@@ -1,3 +1,4 @@
+// modal countries
 .modal
   padding-right: 0 !important
   .modal-header
@@ -308,3 +309,64 @@
                 margin-bottom: 5px
                 font-size: 16px
                 line-height: 20px
+// modal license
+
+.modal.license
+  .modal-header
+    .modal-title
+      &:before
+        width: 25px
+        height: 39px
+        background-image: url('../img/document-black.png')
+  .modal-body
+    .main-info
+      .top
+        font-size: 16px
+        color: #151515
+        font-weight: 500
+        margin-top: 20px
+      .title
+        font-size: 26px
+        font-weight: 600
+        margin-top: 25px
+        margin-bottom: 25px
+      .bottom
+        color: #848484
+        font-size: 16px
+        margin-bottom: 25px
+      .read-more
+        color: #1e4ea7
+        text-align: right
+        font-size: 14px
+        padding-right: 50px
+        text-decoration: underline
+        text-decoration-color: #c4d1e7
+        cursor: pointer
+    .hidden-text
+      display: none
+    .modal-section
+      &.list
+        background-repeat: no-repeat
+        background-position: right
+        margin-top: -28px
+        .container
+          @media (min-width: 1550px)
+            max-width: 1530px
+        .modal-section-title
+          margin-top: 0
+        .marked-list
+          list-style: none
+          margin-top: 20px
+          margin-left: 15px
+          li
+            color: #151515
+            font-size: 16px
+            position: relative
+            &:after
+              content: ''
+              position: absolute
+              width: 13px
+              height: 18px
+              top: 5px
+              left: -25px
+              background-image: url('../img/map-point.png') 

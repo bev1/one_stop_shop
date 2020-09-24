@@ -23,5 +23,16 @@ $( document ).ready(function() {
     }, 500);
     return false;
   });
+  
+  $('.read-more').on('click', function() {    
+    let elem = $(this).parent().find('.read-more').text();
+    if (elem == 'читать ещё') {
+      $(this).parent().find('.read-more').text('скрыть');
+      $(this).parent().find('.hidden-text').slideDown();
+    } else {
+      $(this).parent().find('.read-more').text('читать ещё');
+      $(this).parent().find('.hidden-text').slideUp();
+    }
+  });
 
 });
