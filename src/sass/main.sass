@@ -600,6 +600,10 @@ section
       @media (max-width: 1449px)
         background-size: 1200px 1100px
         padding-bottom: 1060px
+      @media (max-width: 1200px)
+        background-image: none !important
+        padding-bottom: 50px
+
       .container
         position: relative
         @media (min-width: 1600px)
@@ -655,6 +659,8 @@ section
         top: 0
         left: 0
         margin-left: 5%
+        @media (max-width: 1200px)
+          position: static
         &:not(.active)
           display: none
         .map-dot
@@ -685,78 +691,130 @@ section
             div:first-child
               margin-right: 5px
         .map-dot
+          @media (max-width: 1200px)
+            &
+              display: none !important
           &.Anguilla
             top: 720px
             left: 400px
             @media (max-width: 1599px)
               left: 305px
+            @media (max-width: 1449px)
+              top: 570px
+              left: 275px
           &.BVI
             top: 706px
             left: 380px
             @media (max-width: 1599px)
               left: 285px
+            @media (max-width: 1449px)
+              top: 555px
+              left: 255px
           &.Dominica
             top: 750px
             left: 430px
             @media (max-width: 1599px)
               left: 335px
+            @media (max-width: 1449px)
+              top: 600px
+              left: 312px
           &.Nauru
             top: 800px
             right: -20px
             @media (max-width: 1599px)
               right: -90px
+            @media (max-width: 1449px)
+              top: 635px
+              right: -50px
           &.Samoa
             top: 800px
+            @media (max-width: 1449px)
+              top: 640px
           &.Antigua
             top: 734px
             left: 415px
             @media (max-width: 1599px)
               left: 320px
+            @media (max-width: 1449px)
+              top: 585px
+              left: 295px
           &.Vanuatu
             top: 885px
             right: -30px
             @media (max-width: 1599px)
               right: -100px
+            @media (max-width: 1449px)
+              top: 710px
+              right: -60px
           &.Aruba
             top: 750px
             left: 335px
             @media (max-width: 1599px)
               left: 240px
+            @media (max-width: 1449px)
+              top: 600px
+              left: 225px
           &.Guernsey
             top: 560px
             left: 675px
             @media (max-width: 1599px)
               left: 580px
+            @media (max-width: 1449px)
+              top: 440px
+              left: 500px
             &.EU
               top: 545px
+              @media (max-width: 1449px)
+                top: 441px
+                display: flex
+                flex-direction: row-reverse
+                align-items: center
           &.Niue
             top: 850px
             left: 30px
+            @media (max-width: 1449px)
+              top: 680px
+              left: 20px
           &.Sark
             top: 580px
             left: 680px
             @media (max-width: 1599px)
               left: 585px
+            @media (max-width: 1449px)
+              top: 455px
+              left: 510px
           &.Bahamas
             top: 690px
             left: 360px
             @media (max-width: 1599px)
               left: 265px
+            @media (max-width: 1449px)
+              top: 540px
+              left: 235px
           &.Gibraltar
             top: 635px
             left: 665px
             @media (max-width: 1599px)
               left: 560px
+            @media (max-width: 1449px)
+              top: 505px
+              left: 490px
           &.Malta
             top: 635px
             left: 760px
             @media (max-width: 1599px)
               left: 652px
+            @media (max-width: 1449px)
+              top: 505px
+              left: 580px
           &.Barbados
             top: 770px
             left: 450px
             @media (max-width: 1599px)
               left: 355px
+            @media (max-width: 1449px)
+              top: 615px
+              left: 330px
             &.US
               top: 782px
               left: 470px
@@ -767,93 +825,148 @@ section
             right: 140px
             @media (max-width: 1599px)
               right: 50px
+            @media (max-width: 1449px)
+              top: 555px
+              right: 55px
           &.Labuan
             top: 790px
             right: 170px
             @media (max-width: 1599px)
               right: 80px
+            @media (max-width: 1449px)
+              top: 630px
           &.Marshall
             top: 765px
             right: -120px
+            @media (max-width: 1449px)
+              top: 600px
+              right: -60px
           &.Singapore
             top: 805px
             right: 285px
             @media (max-width: 1599px)
               right: 185px
+            @media (max-width: 1449px)
+              top: 645px
           &.Belize
             top: 730px
             left: 255px
             @media (max-width: 1599px)
               left: 160px
+            @media (max-width: 1449px)
+              top: 580px
+              left: 147px
           &.Jersey
             top: 580px
             left: 600px
             @media (max-width: 1599px)
               left: 505px
+            @media (max-width: 1449px)
+              top: 455px
+              left: 425px
             &.EU
               top: 565px
+              @media (max-width: 1449px)
+                top: 445px
           &.Monaco
             top: 595px
             left: 710px
             @media (max-width: 1599px)
               left: 615px
+            @media (max-width: 1449px)
+              top: 468px
+              left: 534px
           &.Panama
             top: 775px
             left: 275px
             @media (max-width: 1599px)
               left: 180px
+            @media (max-width: 1449px)
+              top: 617px
+              left: 165px
           &.Cyprus
             top: 650px
             left: 810px
             @media (max-width: 1599px)
-              left: 715px
+              left: 685px
+            @media (max-width: 1449px)
+              top: 520px
+              left: 617px
           &.Liechtenstein
             top: 575px
             left: 720px
             @media (max-width: 1599px)
-              left: 625px
+              left: 610px
+            @media (max-width: 1449px)
+              top: 455px
+              left: 540px
           &.Latvia
             top: 500px
             left: 780px
             @media (max-width: 1599px)
-              left: 685px
+              left: 655px
+            @media (max-width: 1449px)
+              top: 400px
+              left: 585px
           &.USA
             top: 600px
             left: 270px
             @media (max-width: 1599px)
               left: 175px
+            @media (max-width: 1449px)
+              top: 480px
           &.Switzerland
             top: 580px
             left: 610px
             @media (max-width: 1599px)
-              left: 515px
+              left: 500px
+            @media (max-width: 1449px)
+              top: 460px
+              left: 430px
           &.UnitedKingdom
             top: 535px
             left: 675px
             @media (max-width: 1599px)
-              left: 580px
+              left: 560px
+            @media (max-width: 1449px)
+              top: 425px
+              left: 500px
             &.EU
               top: 530px
+              @media (max-width: 1449px)
+                top: 425px
           &.Austria
             top: 560px
             left: 740px
             @media (max-width: 1599px)
-              left: 645px
+              left: 630px
+            @media (max-width: 1449px)
+              top: 440px
+              left: 585px
           &.Andorra
             top: 605px
             left: 625px
             @media (max-width: 1599px)
               left: 530px
+            @media (max-width: 1449px)
+              top: 480px
+              left: 445px
           &.Estonia
             top: 485px
             left: 777px
             @media (max-width: 1599px)
-              left: 682px
+              left: 650px
+            @media (max-width: 1449px)
+              top: 385px
+              left: 580px
           &.Bulgaria
             top: 595px
             left: 790px
             @media (max-width: 1599px)
               left: 695px
+            @media (max-width: 1449px)
+              top: 465px
+              left: 615px
           &.Bangladesh
             top: 700px
             right: 255px
@@ -906,8 +1019,9 @@ section
   &.consulting-3
     margin-top: -133px
     padding-bottom: 120px
-    @media (max-width: 768px)
+    @media (max-width: 1200px)
       margin-top: 0
+    @media (max-width: 768px)
       padding-bottom: 50px
     .container
       // background-image: url('../img/law.png')
