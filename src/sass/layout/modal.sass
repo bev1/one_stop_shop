@@ -444,6 +444,7 @@
           cursor: pointer
       .hidden-text
         display: none
+        margin-top: -20px
       &.info-2
         background-position: right 15%
         background-size: 95%
@@ -463,16 +464,20 @@
           margin-bottom: 25px
       &.info-3
         padding-top: 60px
-        padding-bottom: 95px
+        padding-bottom: 32px
         .container
-          @media (min-width: 1330px)
-            max-width: 1315px
+          @media (min-width: 1620px)
+            max-width: 1600px
         .left
           position: relative
+          img:first-child
+            position: absolute
+            left: -37px
+            top: -50px
           img:last-child
             position: absolute
-            top: -45px
-            right: 31px
+            top: -80px
+            right: 100px
           @media (max-width: 1500px)
             img
               &:first-child
@@ -488,14 +493,38 @@
           @media (max-width: 992px)
             img
               display: none !important
-        p
-          color: #848484
-          margin-bottom: 20px
-          font-size: 16px
-          color: #151515
-          &.bottom
-            font-size: 24px
+        .right
+          margin-left: -50px
+          .section-title
+            margin-top: -42px
+            align-items: center
+            margin-bottom: 30px
+            img
+              margin-right: 15px
+          p
+            color: #848484
+            margin-bottom: 20px
+            font-size: 16px
+            color: #151515
+            &.bottom
+              font-size: 24px
+              font-weight: 600
+              &.blue
+                color:  #1e4ea7
+                margin-top: 50px
+                margin-bottom: 12px
+      &.bottom
+        padding-top: 100px
+        padding-bottom: 55px
+        background-size: auto
+        background-position: center
+        position: relative
+        .big
+          font-size: 24px
+          max-width: 660 !important
+          line-height: 39px !important
+          span
             font-weight: 600
-            &.blue
-              color:  #1e4ea7
+            font-size: 36px
+
 
