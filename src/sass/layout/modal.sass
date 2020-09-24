@@ -347,8 +347,9 @@
     .modal-section
       &.list
         background-repeat: no-repeat
-        background-position: right
+        background-position: right -134px
         margin-top: -28px
+        padding-bottom: 0
         .container
           @media (min-width: 1550px)
             max-width: 1530px
@@ -369,4 +370,26 @@
               height: 18px
               top: 5px
               left: -25px
-              background-image: url('../img/map-point.png') 
+              background-image: url('../img/map-point.png')
+        .sub-list
+          color: #848484
+          font-size: 16px
+          font-weight: 500
+      .marked-list-2
+        list-style: none
+        margin-top: 20px
+        margin-left: 15px
+        li
+          color: #848484
+          font-size: 16px
+          position: relative
+          span
+            font-weight: 600
+          &:after
+            content: ''
+            position: absolute
+            width: 13px
+            height: 18px
+            top: 5px
+            left: -25px
+            background-image: url('../img/check-blue.png')
