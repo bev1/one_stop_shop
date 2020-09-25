@@ -621,5 +621,124 @@
             font-weight: 600
             font-size: 18px
             white-space: nowrap
-
-
+  &.forex
+    .modal-body
+      .modal-section
+        &.list
+          margin-top: 0
+          background-position: right -168px
+          padding-bottom: 50px
+          position: relative
+          &::after
+            content: ''
+            width: 38%
+            height: 1px
+            background-color: #c2c2c2
+            position: absolute
+            bottom: 0
+            left: 31%
+          .modal-section-title
+            margin-top: 15px
+          .marked-list:last-child
+            @media (max-width: 576px)
+              margin-top: 20px
+        &.list2
+          padding-top: 70px
+          padding-bottom: 70px
+          @media (max-width: 992px)
+            padding-bottom: 30px
+          overflow: hidden
+          &:after
+            display: none
+          .modal-section-title
+            margin-top: 0
+          .left
+            position: relative
+            img:first-child
+              position: absolute
+              left: -133px
+              top: 0
+            img:last-child
+              position: absolute
+              top: 0
+              right: 100px
+            @media (max-width: 1500px)
+              img
+                &:first-child
+                  width: 400px
+                &:last-child
+                  width: 500px
+            @media (max-width: 1100px)
+              img
+                &:first-child
+                  width: 300px
+                &:last-child
+                  width: 400px
+            @media (max-width: 992px)
+              img
+                display: none !important
+          .right
+            .modal-section-title
+              margin-left: -50px
+              font-size: 30px
+              @media (max-width: 992px)
+                margin-left: 0
+                font-size: 24px
+            .marked-list-2
+              margin-top: 38px
+              margin-left: -40px
+              @media (max-width: 992px)
+                margin-left: 0
+              li
+                margin-bottom: 15px
+        &.description
+          padding-top: 58px
+          color: #151515
+          @media (max-width: 992px)
+            padding-top: 0
+          .first
+            font-size: 16px
+            margin-bottom: 42px
+            position: relative
+            @media (max-width: 992px)
+              margin-left: 20px
+            sup
+              color: #fb0000
+              font-size: 16px
+              top: 10px
+              left: -20px
+              position: absolute
+          .second
+            font-size: 24px
+            line-height: 30px
+            @media (max-width: 992px)
+              font-size: 18px
+        &.bottom
+          .color-block
+            p.big
+              font-size: 18px
+      .consulting-4
+        .container
+          padding-top: 33px
+          @media (min-width: 1500px)
+            max-width: 1475px
+        h3
+          font-size: 30px
+          line-height: 36px
+          margin-left: 50px
+          margin-bottom: 28px
+          @media (max-width: 992px)
+            margin-left: 10px
+            font-size: 24px
+          &:before
+            display: none
+        .consulting-4-list
+          margin-left: 65px
+          @media (max-width: 992px)
+            margin-left: 10px
+        p
+          font-size: 16px
+          margin-left: 62px
+          margin-bottom: 10px
+          @media (max-width: 992px)
+            margin-left: 10px
