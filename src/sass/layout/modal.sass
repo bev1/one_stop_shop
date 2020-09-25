@@ -325,6 +325,8 @@
         color: #151515
         font-weight: 500
         margin-top: 20px
+        @media (max-width: 992px)
+          margin-top: 0
       .title
         font-size: 26px
         font-weight: 600
@@ -350,6 +352,8 @@
         background-position: right -134px
         margin-top: -28px
         padding-bottom: 0
+        @media (max-width: 992px)
+          background-image: none !important
         .container
           @media (min-width: 1550px)
             max-width: 1530px
@@ -359,6 +363,11 @@
           list-style: none
           margin-top: 20px
           margin-left: 15px
+          @media (max-width: 576px)
+            margin-left: 0
+            margin-bottom: 0
+            &:last-child
+              margin-top: 0
           li
             color: #151515
             font-size: 16px
@@ -375,6 +384,8 @@
           color: #848484
           font-size: 16px
           font-weight: 500
+          @media (max-width: 992px)
+            padding-left: 10px
       &.list2
         position: relative
         &::after          
@@ -393,6 +404,8 @@
           margin-top: 58px
           margin-left: 15px
           max-width: 1263px
+          @media (max-width: 576px)
+            margin-left: 0
           li
             color: #848484
             font-size: 16px
@@ -411,21 +424,31 @@
               background-image: url('../img/check-blue.png')
       &.info
         padding-top: 68px
+        @media (max-width: 992px)
+          padding-top: 40px
         .container
           @media (min-width: 1550px)
             max-width: 1530px             
         .info-item
           display: flex
           flex-direction: column
+          @media (max-width: 992px)
+            margin-bottom: 15px
           .icon
             margin-bottom: 20px
             align-self: center
+            @media (max-width: 992px)
+              margin-bottom: 10px
           .title
             text-align: center
             font-size: 26px
             font-weight: 600
             line-height: 32px
             margin-bottom: 30px
+            @media (max-width: 992px)
+              font-size: 24px
+              line-height: 24px
+              margin-bottom: 20px
             span
               color: #1e4ea7
           .text
@@ -445,12 +468,24 @@
       .hidden-text
         display: none
         margin-top: -20px
+        font-size: 16px
+        color: #151515
+        text-align: left
+        line-height: 21px
+        margin-bottom: 20px
       &.info-2
-        background-position: right 15%
+        background-position: right 85%
         background-size: 95%
         background-repeat: no-repeat
         padding-top: 60px
         padding-bottom: 95px
+        @media (max-width: 1500px)
+          background-size: 100%
+        @media (max-width: 1199px)
+          background-image: none !important
+        @media (max-width: 992px)
+          padding-bottom: 50px
+          padding-top: 0
         .container
           @media (min-width: 1330px)
             max-width: 1315px
@@ -459,12 +494,17 @@
           margin-bottom: 20px
           img
             margin-right: 50px
+            @media (max-width: 450px)
+              margin-right: 10px
         .sub-text
           line-height: 24px
           margin-bottom: 25px
+          @media (max-width: 768px)
+            font-size: 18px
       &.info-3
         padding-top: 60px
         padding-bottom: 32px
+        overflow: hidden
         .container
           @media (min-width: 1620px)
             max-width: 1600px
@@ -495,6 +535,8 @@
               display: none !important
         .right
           margin-left: -50px
+          @media (max-width: 992px)
+            margin-left: 0
           .section-title
             margin-top: -42px
             align-items: center
@@ -513,12 +555,28 @@
                 color:  #1e4ea7
                 margin-top: 50px
                 margin-bottom: 12px
+            @media (max-width: 992px)
+              &.bottom
+                font-size: 18px
+                &.blue
+                  margin-top: 15px
       &.bottom
         padding-top: 100px
         padding-bottom: 55px
         background-size: auto
         background-position: center
         position: relative
+        @media (max-width: 992px)
+          background-position: left
+        @media (max-width: 1500px)
+          padding-top: 0
+          padding-bottom: 0
+        .container
+          @media (min-width: 1610px)
+            max-width: 1590px
+          @media (max-width: 1500px)
+            padding-top: 63px
+            padding-bottom: 10px
         .big
           font-size: 24px
           max-width: 660 !important
@@ -526,5 +584,36 @@
           span
             font-weight: 600
             font-size: 36px
+          @media (max-width: 1200px)
+            &
+              line-height: normal
+              span
+                font-size: 24px
+          @media (max-width: 992px)
+            &
+              max-width: 100%
+          @media (max-width: 768px)
+            big
+              font-size: 18px
+        p.red
+          @media (max-width: 1700px)
+            margin-left: 250px
+          @media (max-width:1560px)
+            margin-left: 300px
+            letter-spacing: 15px
+          @media (max-width:1350px)
+            margin-left: 200px
+          @media (max-width:1150px)
+            margin-left: 100px
+          @media (max-width:992px)
+            margin-left: 0
+            text-align: center
+            letter-spacing: 5px
+            margin-top: 0
+          @media (max-width:768px)
+            letter-spacing: 1px
+            font-weight: 600
+            font-size: 18px
+            white-space: nowrap
 
 
