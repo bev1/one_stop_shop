@@ -344,6 +344,11 @@
         text-decoration: underline
         text-decoration-color: #c4d1e7
         cursor: pointer
+      .check-list
+        margin-top: 20px
+        padding-left: 0
+        li
+          margin-bottom: 10px
     .hidden-text
       display: none
     .modal-section
@@ -742,3 +747,94 @@
           margin-bottom: 10px
           @media (max-width: 992px)
             margin-left: 10px
+            
+  &.all-licenses
+    .modal-body
+      .main-info
+        .top
+          color: #848484
+      .modal-section-title
+        margin-bottom: 37px
+      .accordeon
+        padding-top: 50px
+        .container
+          @media (min-width: 1550px)
+            max-width: 1520px
+        .accordeon-item
+          .link
+            font-size: 16px
+            color: #151515
+            font-weight: 500
+            border-bottom: 1px solid #c2c2c2
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: space-between
+            padding: 11px 11px 11px 0
+            transition: .2s
+            .arrow-opened
+              display: none
+            &[aria-expanded=true]
+              background-color: #ebeff7
+              color: #1e4ea7
+              .arrow-opened
+                display: block
+              .arrow-closed
+                display: none
+            &:hover
+              background-color: #ebeff7
+              color: #1e4ea7
+          .body
+            border-bottom: 1px solid #c2c2c2
+            padding-left: 66px
+            padding-right: 46px
+            .image
+              margin-top: 23px
+              margin-bottom: 37px
+              img
+                width: 100%
+            .sub-title
+              font-size: 16px
+              color: #151515
+              font-weight: 600
+            .collapse-list
+              margin-top: 42px
+              margin-bottom: 43px
+              list-style: none
+              li
+                font-size: 16px
+                color: #848484
+                margin-bottom: 12px
+                position: relative
+                padding-left: 25px
+                &:before
+                  content: ''
+                  position: absolute
+                  top: 0px
+                  left: -18px
+                  width: 24px
+                  height: 24px
+                  background-image: url('../img/check-blue.png')
+              .collapse-sub-list
+                margin-top: 20px
+                list-style-type: disc
+                padding-left: 0
+                li
+                  padding-left: 5px
+                  &:before
+                    display: none
+                  &.no-style
+                    list-style: none
+                    padding: 0
+                    margin-left: -17px
+                    color: #151515
+                    margin-bottom: 0px
+                    font-weight: 600
+            .text
+              color: #151515
+              font-size: 24px
+              margin-bottom: 10px
+              &:last-child
+                margin-bottom: 23px
+
+                  
