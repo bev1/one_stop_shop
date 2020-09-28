@@ -565,6 +565,12 @@
                 color:  #1e4ea7
                 margin-top: 50px
                 margin-bottom: 12px
+            &.big-margin
+              margin-top: 100px
+              margin-bottom: 130px
+              @media (max-width: 992px)
+                margin-top: 10px
+                margin-bottom: 10px
             @media (max-width: 992px)
               &.bottom
                 font-size: 18px
@@ -880,10 +886,31 @@
           .container
             @media (min-width: 1080px)
               max-width: 1042px
+            &.custom
+              @media (min-width: 1200px)
+                max-width: 1185px
+              .modal-section-title
+                margin-bottom: 34px
           .marked-list-2
             margin-top: 0
             li
               margin-bottom: 14px
+              ul
+                list-style: none
+                margin-top: 20px
+                margin-left: 10px
+                margin-bottom: 37px
+                @media (max-width: 768px)
+                  margin-left: 5px
+                  margin-top: 5px
+                  margin-bottom: 5px
+                  padding: 0
+                li
+                  margin-bottom: 20px
+                  @media (max-width: 768px)
+                    margin-bottom: 5px
+                  &:after
+                    display: none
         &.info-3
           .left
             img
@@ -925,6 +952,12 @@
                     &:last-child
                       font-size: 14px
                       letter-spacing: 3px
+                  img
+                    position: static
+                    margin-top: 12px
+                    width: auto
+                    @media (max-width: 992px)
+                      display: block !important
                 .right
                   display: flex
                   flex-direction: column
