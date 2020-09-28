@@ -231,6 +231,12 @@
             font-size: 24px
           span
             color: #1e4ea7
+        .list-sub-title
+          font-size: 16px
+          color: #848484
+          font-weight: 500
+          margin-top: 30px
+          margin-bottom: 15px
         .modal-list
           list-style: none
           padding: 0
@@ -549,7 +555,6 @@
             img
               margin-right: 15px
           p
-            color: #848484
             margin-bottom: 20px
             font-size: 16px
             color: #151515
@@ -863,5 +868,102 @@
                 font-size: 18px
               &:last-child
                 margin-bottom: 23px
+  &.money
+    .modal-body
+      .modal-section
+        &.list2
+          .container
+            @media (min-width: 1080px)
+              max-width: 1042px
+          .marked-list-2
+            margin-top: 0
+            li
+              margin-bottom: 14px
+        &.info-3
+          .left
+            img
+              &:first-child
+                top: 35px
+              &:last-child
+                top: 5px
+          .right
+            .section-title
+              margin-top: 0
+            .steps
+              list-style: none
+              padding: 0
+              li
+                display: flex
+                justify-content: start
+                align-items: flex-start
+                margin-bottom: 15px
+                .left
+                  display: flex
+                  flex-direction: column
+                  background-color: #1e4ea7
+                  color: #ffffff
+                  border-radius: 10px
+                  width: 60px
+                  height: 60px
+                  margin-right: 25px
+                  align-items: center
+                  padding: 0 10px
+                  @media (max-width: 992px)
+                    width: 55px
+                    height: 55px
+                  span
+                    &:first-child
+                      font-weight: 600
+                      font-size: 24px
+                      @media (max-width: 992px)
+                        font-size: 18px
+                    &:last-child
+                      font-size: 14px
+                      letter-spacing: 3px
+                .right
+                  display: flex
+                  flex-direction: column
+                  margin-left: 0
+                  line-height: 31px
+                  max-width: 640px
+                  @media (max-width: 768px)
+                    line-height: 25px
+                  span
+                    color: #151515
+                    font-size: 24px
+                    @media (max-width: 992px)
+                      font-size: 18px
+                    &:first-child
+                      font-weight: 600
+          .container.small
+            @media (min-width: 1350px)
+              max-width: 1330px
+            p
+              color: #848484
+              font-size: 16px
+        &.bottom
+          padding-top: 50px
+          padding-bottom: 49px
+          @media (max-width: 1500px)
+            padding-top: 0
+            padding-bottom: 0
+          @media (max-width: 992px)
+            background-size: cover
+          .container
+            @media (max-width: 1500px)
+              padding-top: 0
+              padding-bottom: 0
+          .container
+            @media (max-width: 992px)
+              padding-bottom: 25px
+        .color-block
+          .col-lg-6
+            &:first-child
+              display: block
+          .big
+            margin-top: 15px
+          .small
+            font-size: 18px
+
 
                   
