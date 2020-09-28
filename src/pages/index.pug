@@ -1089,12 +1089,15 @@ html(lang="ru")
                   .col-lg-6
                     p.big
                       span
-                        a.link Готовые лицензии на продажу 
+                        a.link.decor(href="#modalAllLicenses" data-toggle="modal" data-target="#modalAllLicenses")
+                          img.lazy.big-link(data-src="../img/link-white.png")
+                          | Готовые лицензии на продажу 
+                          br
                       | Всегда в наличии есть готовые компании с лицензиями
                     p.small Пожалуйста, свяжитесь с нами, чтобы узнать больше о возможностях лицензирования, получения индивидуального предложения исходя из ваших требований и детального расчета для получения лицензии Вашего будущего или существующего бизнеса.
                   .col-lg-6
                     p.red ЛИЦЕНЗИИ
-                    a.button.red(href="#modalAllLicenses" data-toggle="modal" data-target="#modalAllLicenses") START TODAY
+                    a.button.red START TODAY
 
           section.section.consulting-9
             div(data-src="../img/consulting_9.png").container.lazy
