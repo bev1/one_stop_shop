@@ -1017,6 +1017,8 @@
       .bottom
         font-size: 16px
         margin-bottom: 25px
+        @media (max-width: 992px)
+          margin-bottom: 15px
     .game1
       font-size: 16px
       padding-top: 44px
@@ -1024,6 +1026,15 @@
       background-size: auto
       background-position: 87px -102px
       padding-bottom: 90px
+      @media (max-width: 1680px)
+        background-position: 30px -102px
+      @media (max-width: 1580px)
+        background-position: 0 -80px
+      @media (max-width: 1199px)
+        background-image: none !important
+      @media (max-width: 992px)
+        padding-bottom: 50px
+        padding-top: 0
       .container
         @media (min-width: 1470px)
           max-width: 1455px
@@ -1032,11 +1043,17 @@
         margin-bottom: 15px
         h2
           font-size: 26px
+          @media (max-width: 500px)
+            font-size: 22px
         img
           margin-right: 15px
+          @media (max-width: 500px)
+            margin-right: 10px
       p
         margin-left: 65px
         margin-bottom: 0
+        @media (max-width: 992px)
+          margin-left: 10px
       .sub-list
         font-size: 18px
         font-weight: 500
@@ -1045,6 +1062,9 @@
       position: relative
       padding-top: 85px
       padding-bottom: 110px
+      overflow: hidden
+      @media (max-width: 992px)
+        padding: 0
       img:first-child
         position: absolute
         left: -200px
@@ -1057,6 +1077,7 @@
         img
           &:first-child
             width: 400px
+            left: -25px
           &:last-child
             width: 500px
       @media (max-width: 1100px)
@@ -1070,23 +1091,27 @@
           display: none !important
       .right
         margin-left: -50px
+        @media (max-width: 992px)
+          margin-left: 0
         .dark
           font-weight: 500
           margin-left: 37px
           margin-bottom: 12px
+          @media (max-width: 500px)
+            margin-left: 5px
+            margin-bottom: 5px
         .section-title
           h2
             font-size: 30px
             margin-bottom: 25px
+            @media (max-width: 500px)
+              font-size: 22px
     .marked-list
       list-style: none
       margin-top: 10px
-      margin-left: 15px
+      margin-left: 15px      
       @media (max-width: 576px)
-        margin-left: 0
-        margin-bottom: 0
-        &:last-child
-          margin-top: 0
+        padding-left: 10px
       li
         color: #151515
         font-size: 16px
@@ -1094,6 +1119,8 @@
         margin-bottom: 20px
         line-height: 20px
         font-weight: 500
+        @media (max-width: 576px)
+          margin-bottom: 5px
         &:after
           content: ''
           position: absolute
@@ -1103,6 +1130,8 @@
           left: -50px
           background-size: cover
           background-image: url('../img/check.png')
+          @media (max-width: 576px)
+            left: -31px
     .game3
       position: relative
       &:after
@@ -1130,6 +1159,8 @@
       font-size: 16px
       padding-top: 75px
       padding-bottom: 10px
+      @media (max-width: 992px)
+        padding-top: 30px
       .container
         @media (min-width: 1530px)
           max-width: 1515px
@@ -1138,22 +1169,41 @@
       .modal-section-title
         margin-top: 0
         margin-bottom: 60px
+        @media (max-width: 992px)
+          margin-bottom: 15px
+          font-size: 22px
     .modal-section
       &.bottom
         padding-top: 35px
         padding-bottom: 70px
+        @media (max-width: 1300px)
+          padding-top: 10px
+          padding-bottom: 30px
         .color-block
           .col-lg-6
             &:first-child
               display: block
           p.big
             max-width: 700px
+            @media (max-width: 1300px)
+              font-size: 26px
+            @media (max-width: 1100px)
+              font-size: 24px
             span:nth-of-type(2)
                 font-size: 48px
+                @media (max-width: 1550px)
+                  font-size: 38px
+                @media (max-width: 1300px)
+                  font-size: 28px
+                @media (max-width: 1100px)
+                  font-size: 26px
             span:nth-of-type(3)
                 font-weight: 500
           p.small
             font-size: 18px
             margin-top: 45px
             line-height: 26px
+            @media (max-width: 1100px)
+              font-size: 16px
+              margin-top: 10px
                   
