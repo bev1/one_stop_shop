@@ -1003,5 +1003,59 @@
           .small
             font-size: 18px
 
+.modal.game
+  .modal-content
+    .modal-header
+      .modal-title
+        &:before
+          width: 25px
+          height: 39px
+          background-image: url('../img/document-black.png')
+  .modal-body
+    .no-table
+      padding-top: 50px
+      .bottom
+        font-size: 16px
+        margin-bottom: 25px
+    .game1
+      font-size: 16px
+      padding-top: 44px
+      .container
+        @media (min-width: 1470px)
+          max-width: 1455px
+      .section-title
+        align-items: end
+        margin-bottom: 15px
+        h2
+          font-size: 26px
+        img
+          margin-right: 15px
+      p
+        margin-left: 65px
+      .sub-list
+        font-size: 18px
+        font-weight: 500
+    .marked-list
+      list-style: none
+      margin-top: 20px
+      margin-left: 15px
+      @media (max-width: 576px)
+        margin-left: 0
+        margin-bottom: 0
+        &:last-child
+          margin-top: 0
+      li
+        color: #151515
+        font-size: 16px
+        position: relative
+        &:after
+          content: ''
+          position: absolute
+          width: 13px
+          height: 18px
+          top: 5px
+          left: -25px
+          background-size: cover
+          background-image: url('../img/check.png')
 
                   
