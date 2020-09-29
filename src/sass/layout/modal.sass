@@ -1012,6 +1012,7 @@
           height: 39px
           background-image: url('../img/document-black.png')
   .modal-body
+    overflow: hidden
     .no-table
       padding-top: 50px
       .bottom
@@ -1026,6 +1027,8 @@
       background-size: auto
       background-position: 87px -102px
       padding-bottom: 90px
+      @media (min-width: 1200px)
+        min-height: 550px
       @media (max-width: 1680px)
         background-position: 30px -102px
       @media (max-width: 1580px)
@@ -1062,7 +1065,6 @@
       position: relative
       padding-top: 85px
       padding-bottom: 110px
-      overflow: hidden
       @media (max-width: 992px)
         padding: 0
       img:first-child
