@@ -1020,6 +1020,10 @@
     .game1
       font-size: 16px
       padding-top: 44px
+      background-repeat: no-repeat
+      background-size: auto
+      background-position: 87px -102px
+      padding-bottom: 90px
       .container
         @media (min-width: 1470px)
           max-width: 1455px
@@ -1032,12 +1036,51 @@
           margin-right: 15px
       p
         margin-left: 65px
+        margin-bottom: 0
       .sub-list
         font-size: 18px
         font-weight: 500
+    .game2
+      font-size: 16px
+      position: relative
+      padding-top: 85px
+      padding-bottom: 110px
+      img:first-child
+        position: absolute
+        left: -200px
+        top: -60px
+      img:last-child
+        position: absolute
+        top: -80px
+        right: 100px
+      @media (max-width: 1500px)
+        img
+          &:first-child
+            width: 400px
+          &:last-child
+            width: 500px
+      @media (max-width: 1100px)
+        img
+          &:first-child
+            width: 300px
+          &:last-child
+            width: 400px
+      @media (max-width: 992px)
+        img
+          display: none !important
+      .right
+        margin-left: -50px
+        .dark
+          font-weight: 500
+          margin-left: 37px
+          margin-bottom: 12px
+        .section-title
+          h2
+            font-size: 30px
+            margin-bottom: 25px
     .marked-list
       list-style: none
-      margin-top: 20px
+      margin-top: 10px
       margin-left: 15px
       @media (max-width: 576px)
         margin-left: 0
@@ -1048,14 +1091,69 @@
         color: #151515
         font-size: 16px
         position: relative
+        margin-bottom: 20px
+        line-height: 20px
+        font-weight: 500
         &:after
           content: ''
           position: absolute
-          width: 13px
-          height: 18px
+          width: 20px
+          height: 14px
           top: 5px
-          left: -25px
+          left: -50px
           background-size: cover
           background-image: url('../img/check.png')
-
+    .game3
+      position: relative
+      &:after
+        content: ''
+        width: 38%
+        height: 1px
+        background-color: #c2c2c2
+        position: absolute
+      &:after
+        bottom: 0
+        left: 31%
+      .container
+        @media (min-width: 1080px)
+          max-width: 1060px
+      .marked-list
+        li
+          margin-bottom: 22px
+          &:after
+            width: 24px
+            height: 24px
+            background-image: url('../img/check-blue.png')
+      .modal-section-title
+        margin-bottom: 35px
+    .game4
+      font-size: 16px
+      padding-top: 75px
+      padding-bottom: 10px
+      .container
+        @media (min-width: 1530px)
+          max-width: 1515px
+      .dark
+        font-weight: 500
+      .modal-section-title
+        margin-top: 0
+        margin-bottom: 60px
+    .modal-section
+      &.bottom
+        padding-top: 35px
+        padding-bottom: 70px
+        .color-block
+          .col-lg-6
+            &:first-child
+              display: block
+          p.big
+            max-width: 700px
+            span:nth-of-type(2)
+                font-size: 48px
+            span:nth-of-type(3)
+                font-weight: 500
+          p.small
+            font-size: 18px
+            margin-top: 45px
+            line-height: 26px
                   
