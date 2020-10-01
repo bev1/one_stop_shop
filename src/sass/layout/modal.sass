@@ -645,6 +645,7 @@
           @media (max-width: 768px)
             big
               font-size: 18px
+          font-size: 
         p.red
           @media (max-width: 1700px)
             margin-left: 250px
@@ -665,6 +666,14 @@
             font-weight: 600
             font-size: 18px
             white-space: nowrap
+        &.small
+          @media (max-width:768px)
+            background-size: cover
+          .small
+            font-size: 18px
+          .button.red
+            @media (max-width:768px)
+              margin-top: 0
   &.forex
     .modal-body
       .modal-section
