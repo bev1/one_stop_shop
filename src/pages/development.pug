@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no")
+        title Document
+        link(rel="stylesheet", href="css/bootstrap-reboot.min.css")
+        link(rel="stylesheet preload", as="style" href="css/bootstrap.min.css")
+        link(rel="stylesheet", href="css/aos.css")
+        link(rel="stylesheet preload", as="style" href="css/main.css")
+        link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")
+    body
+        include layout/header.pug
+        main
+          section.main-section.marketing
+            .container
+              .row
+                .col-lg-6                  
+                  h1.title
+                    span(data-aos="fade" data-aos-delay="100") 02
+                    span.text-animate
+                      span M
+                      span a
+                      span r
+                      span k
+                      span e
+                      span t
+                      span i
+                      span n
+                      span g
+                  .sub-title
+                    .text(data-aos="fade-left" data-aos-delay="1000") Lorem ipsum dolor sit amet, consectetur adipisicing
+                      br.d-none.d-lg-block
+                      | elit, sed do eiusmod tempor incididunt ut labore et
+                  a.video-link(href="index.html")
+                    .text Watch
+                      br
+                      | our trailer
+                    .link-img
+                      img(src="img/play_button.png", alt="play")
+                .col-lg-6
+                  a.cube-link(href="#consulting-1") Услуги по регистрации 
+                    br.d-block.d-sm-none
+                    | компаний
+                  a.cube-link(href="#consulting-10") Счета
+                  a.cube-link(href="#consulting-7") Лицензии
+                  img(src="img/cube-consulting.png", alt="cube")
+                  //- include components/cube.pug
+          section.section.marketing-1.lazy(data-src="../img/marketing_1.png")
+            .container
+              .row
+                .col-lg-4
+                  h2 Marketing 
+                    span Solutions
+                  .line
+                  img.cubes.lazy(data-src="img/marketing_1_cubes.png")
+                .col-lg-4
+                  ul.solutions-items
+                    li
+                      .head
+                        img.lazy(data-src="img/solution-1.png")
+                        p Lead Generation
+                      .text(data-aos="fade-down") We help engage new clients with top quality traffic: native ads, push notifications, banner ads, email and targeted search to boost conversions on clients' landing pages, custom funnels and websites
+                    li
+                      .head
+                        img.lazy(data-src="img/solution-2.png")
+                        p Full design studio services
+                      .text(data-aos="fade-down") Whether you need a website, funnel, LP, mailer or a banner, our design team is dedicated to high quality visual and user-friendly design
+                    li
+                      .head
+                        img.lazy(data-src="img/solution-3.png")
+                        p Media Buying
+                      .text(data-aos="fade-down") We specialize in media planning and buying in all markets, including targeted traffic, traffic from big publishers, small websites, niche sites and networks. Display and mobile on CPM, CPC
+                .col-lg-4
+                  ul.solutions-items.right
+                    li
+                      .head
+                        img.lazy(data-src="img/solution-4.png")
+                        p Affiliate Marketing
+                      .text(data-aos="fade-down") Filancy has an extensive expertise in building partner programs for the clients in various fields like forex, crypto, gadgets, nutra, gambling, games and others. Driving conversions to partners on CPL, CPA, CPI
+                    li
+                      .head
+                        img.lazy(data-src="img/solution-5.png")
+                        p Content management
+                      .text(data-aos="fade-down") Our content marketing services include content strategy creation, blogging, copywriting, translation services, SMM, videos, animation, infographics and much more
+                    li
+                      .head
+                        img.lazy(data-src="img/solution-6.png")
+                        p Campaign Optimization and Consulting
+                      .text(data-aos="fade-down") We know how to improve your sales results by optimizing your advertising campaigns. Real Time data and analytics will follow a data driven approach to best ROI
+          section.section.marketing-2
+            .container
+              h2 Our 
+                span Clients
+              p.subtitle Marketing is our essence
+              p.text We’ve helped a variety of companies, both large and small, realize the benefits of digital marketing. Over the years, we’ve developed a deep understanding of brand advertising, design and consumer engagement. Browse through a selection of our campaigns.
+            .slider-wrap
+              .container
+                .row
+                  .col-lg-8
+                    .slider.clients
+                      .slide
+                        .top
+                          img(src="img/slide-1-1.png", alt="slide")
+                        .bottom
+                          img(src="img/slide-1-2.png", alt="slide")
+                      .slide
+                        .top
+                          img(src="img/slide-2-1.png", alt="slide")
+                        .bottom
+                          img(src="img/slide-2-2.png", alt="slide")
+                      .slide
+                        .top
+                          img(src="img/slide-3-1.png", alt="slide")
+                        .bottom
+                          img(src="img/slide-3-2.png", alt="slide")
+                      .slide
+                        .top
+                          img(src="img/slide-1-1.png", alt="slide")
+                        .bottom
+                          img(src="img/slide-1-2.png", alt="slide")
+                      .slide
+                        .top
+                          img(src="img/slide-2-1.png", alt="slide")
+                        .bottom
+                          img(src="img/slide-2-2.png", alt="slide")
+                      .slide
+                        .top
+                          img(src="img/slide-3-1.png", alt="slide")
+                        .bottom
+                          img(src="img/slide-3-2.png", alt="slide")
+                    .slider-navigation
+                      .prev
+                        img(src="img/slide-prev.png", alt="prev")
+                      .next
+                        img(src="img/slide-next.png", alt="next")
+                  .col-lg-4
+                    img(src="img/clients-faces-2.png")
+                    img(src="img/clients-faces.png")
+
+        include layout/footer.pug
+        script(src="js/jquery.min.js")
+        script(src="js/bootstrap.min.js")
+        script(src="js/lazy-load.js")
+        script(src="js/aos.js")
+        script(type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")
+        script(src="js/script.js")
