@@ -47,16 +47,12 @@ $( document ).ready(function() {
     slidesToScroll: 1,
     prevArrow: $('.prev'),
     nextArrow: $('.next'),
-    // responsive: [{ 
-    //     breakpoint: 500,
-    //     settings: {
-    //         dots: false,
-    //         arrows: false,
-    //         infinite: false,
-    //         slidesToShow: 2,
-    //         slidesToScroll: 2
-    //     } 
-    // }]
+    responsive: [{ 
+        breakpoint: 768,
+        settings: {
+            slidesToShow: 2,
+        } 
+    }]
 });
 
 });
