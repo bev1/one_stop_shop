@@ -2465,6 +2465,7 @@ section
         width: 188px
         position: relative
         margin-left: 10px
+        overflow: hidden
         &:after
           content: ''
           position: absolute
@@ -2479,12 +2480,14 @@ section
           position: relative
           z-index: 1
         &>.image
-          text-align: right
-          overflow: hidden
+          margin-top: 85px
           img
             transition: .3s
+            position: absolute
+            bottom: 0
+            right: 0
           .hover
-            margin-right: -38px
+            transform: translateX(100px)
         ul
           list-style: none
           padding-left: 23px
@@ -2498,22 +2501,22 @@ section
             background-size: cover
         &:nth-of-type(1)
           background: url('../img/skill-1-bg.png')
-        &:nth-of-type(1)
+        &:nth-of-type(2)
           background: url('../img/skill-2-bg.png')
-        &:nth-of-type(1)
+        &:nth-of-type(3)
           background: url('../img/skill-3-bg.png')
-        &:nth-of-type(1)
+        &:nth-of-type(4)
           background: url('../img/skill-4-bg.png')
-        &:nth-of-type(1)
+        &:nth-of-type(5)
           background: url('../img/skill-5-bg.png')
         &:hover
           &:after
             opacity: 1
           &>.image
             img
-              transform: translateX(40px)
+              transform: translateY(100px)
             .hover
-              margin-right: 0
+              transform: translateX(0)              
           ul
             li
               color: #ffffff
