@@ -55,4 +55,24 @@ $( document ).ready(function() {
     }]
 });
 
+$(".slider.portfolio").slick({
+  // autoplay: true,
+  dots: true,
+  customPaging : function(slider, i) {
+  var thumb = $(slider.$slides[i]).data();
+  return '<a class="dot">' + (i+1) + '</a>';
+          },
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  prevArrow: $('.prev'),
+  nextArrow: $('.next'),
+  responsive: [{ 
+      breakpoint: 1600,
+      settings: {
+          slidesToShow: 3,
+      } 
+  }]
+});
+
 });

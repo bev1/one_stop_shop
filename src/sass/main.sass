@@ -2423,31 +2423,49 @@ section
 
   &.development-1
     padding-top: 66px
-    padding-bottom: 72px
-    @media (max-width:991px)
+    padding-bottom: 55px
+    @media (max-width:1199px)
       padding-top: 0 
     @media (max-width:575px)
       padding-bottom: 0    
     .container
-      @media (min-width: 1700px)
+      @media (min-width: 1200px)
         max-width: 100%
     h2
       margin: 80px 0 178px 237px
       span
         color: #81ad00
+      @media (max-width:1300px)
+        margin: 80px 0 0 100px
+      @media (max-width:1199px)
+        margin: 25px 0 10px 0px
       @media (max-width:991px)
         margin: 25px 0 10px 0px
+      &.right
+        margin: 70px 0 55px 220px
+        @media (max-width:1199px)
+          margin: 25px 0 10px 0px
+    .text
+      color: #7b7b7b
+      font-size: 18px
+      margin-left: 220px
+      max-width: 750px
+      @media (max-width:1199px)
+        margin-left: 0px
     .cubes
       margin-top: -192px
       margin-left: 85px
-      @media (max-width:991px)
+      @media (max-width:1300px)
+        margin-top: 0px
+        margin-left: -60px
+      @media (max-width:1199px)
         display: none !important
     .line
       width: 225px
       height: 29px
       background-color: #81ad00
       margin-left: -15px
-      @media (max-width:991px)
+      @media (max-width:1199px)
         width: 200px
         height: 10px
     .skills-items
@@ -2456,9 +2474,11 @@ section
       padding-left: 0px
       display: flex
       justify-content: start
-      @media (max-width:991px)
+      @media (max-width:1199px)
         margin-top: 35px
-        padding-left: 0
+      @media (max-width:991px)
+        flex-wrap: wrap
+        justify-content: center
       &>li
         padding: 65px 14px 20px 0
         border-top: 3px solid #81ad00
@@ -2467,6 +2487,11 @@ section
         margin-left: 10px
         overflow: hidden
         height: fit-content
+        @media (max-width:991px)
+          padding: 10px
+          margin-bottom: 10px
+        @media (max-width:430px)
+          width: 100%
         &:after
           content: ''
           position: absolute
@@ -2482,6 +2507,8 @@ section
           z-index: 1
         &>.image
           margin-top: 85px
+          @media (max-width:430px)
+            margin-top: 10px
           img
             transition: .3s
             position: absolute
@@ -2493,12 +2520,18 @@ section
           list-style: none
           padding-left: 23px
           margin-bottom: 37px
+          @media (max-width:430px)
+            margin-bottom: 0
           li
             color: #151515
             font-size: 18px
             font-weight: 600
             line-height: 25px
             transition: .3s
+            @media (max-width:991px)
+              font-size: 16px
+            @media (max-width:430px)
+              font-size: 18px
         &:nth-of-type(1)
           background: url('../img/skill-1-bg.png')
           background-size: cover
@@ -2511,14 +2544,20 @@ section
           background: url('../img/skill-3-bg.png')
           background-size: cover
           background-repeat: no-repeat
+          .image
+            margin-top: 97px
         &:nth-of-type(4)
           background: url('../img/skill-4-bg.png')
           background-size: cover
           background-repeat: no-repeat
+          .image
+            margin-top: 68px
         &:nth-of-type(5)
           background: url('../img/skill-5-bg.png')
           background-size: cover
           background-repeat: no-repeat
+          .image
+            margin-top: 34px
         &:hover
           &:after
             opacity: 1
@@ -2531,43 +2570,18 @@ section
             li
               color: #ffffff
           
-  &.marketing-2
-    padding-top: 103px
-    background-color: #f5f6f5
+  &.development-2
+    background-color: #efefef
     overflow: hidden
     @media (max-width:991px)
       padding-top: 40px
     .container
       @media (min-width: 1450px)
         max-width: 1426px
-    h2
-      margin-bottom: 20px
-      span
-        color: #cf093c
-    .subtitle
-      font-size: 24px
-      color: #cf093c
-      font-weight: 500
-      margin-bottom: 18px
-      @media (max-width:500px)
-        font-size: 18px
-    .text
-      font-size: 18px
-      max-width: 755px
-      letter-spacing: -.5px
-      font-weight: 500
-      line-height: 29px
-      margin-bottom: 58px
-      @media (max-width:1199px)
-        max-width: 680px
-      @media (max-width:991px)
-        margin-bottom: 20px
-      @media (max-width:500px)
-        font-size: 16px
     .slider-wrap
       background-color: #efefef
-      padding-top: 70px
-      padding-bottom: 125px
+      padding-top: 51px
+      padding-bottom: 146px
       @media (max-width:991px)
         padding-top: 20px
         padding-bottom: 50px
@@ -2577,34 +2591,36 @@ section
       .col-lg-8
         position: relative
         z-index: 1
+        padding: 0
       .col-lg-4
         position: relative
         img
           position: absolute
-          &:first-of-type
-            left: -167px
-            top: -82px
-          &:last-of-type
-            right: -133px
-            top: -421px
-            @media (max-width:1399px)
-              right: -25px
-              top: -270px
-              width: 500px
-            @media (max-width:1299px)
-              right: -75px
-            @media (max-width:1099px)
-              right: -100px
-              top: -200px
-              width: 450px
-          @media (max-width:991px)
-            display: none
+          right: -62px
+          top: 167px
+        h2
+          margin: 102px 0 20px 31px
+          span
+            color: #81ad00
+        .line
+          position: absolute
+          width: 274px
+          height: 28px
+          right: 0
+          top: 109px
+          background-color: #81ad00
+        .text
+          color: #7b7b7b
+          font-size: 24px
+          margin-left: 34px
       .slider-navigation
         position: absolute
         width: 100%
         display: flex
-        max-width: 900px
+        max-width: 260px
         justify-content: space-between
+        right: 77px
+        bottom: -77px
         @media (max-width:1399px)
           padding-right: 30px
         &>div
@@ -2613,53 +2629,71 @@ section
           &:hover
             transform: scale(1.1)
       .slick-slide
-        margin: 0 10px
         outline: none
-        .top, .bottom
+        .top
           background-color: #ffffff
-          width: 290px
-          height: 210px
           display: flex
           align-items: center
           justify-content: center
+          height: 680px
+          overflow: hidden
+          img
+            object-fit: cover
           @media (max-width:1399px)
             width: auto
             height: 200px
           @media (max-width:450px)
             width: auto
             height: 160px
-          img
-            filter: grayscale(100%)
-          &:hover
-            img
-              filter: grayscale(0)
-        .top
-          margin-bottom: 12px
+        .bottom
+          padding: 26px 0px 14px 32px
+          border: 1px solid #e1e1e1
+          background-color: #fafbfc
+          transition: .3s
+          .title
+            color: #81ad00
+            font-weight: 600
+            font-size: 21px
+            margin-bottom: 23px
+            transition: .3s
+          .text
+            color: #cbcbcb
+            font-size: 18px
+            margin-bottom: 0
+            transition: .3s
+        &:hover
+          .bottom
+            background-color: #8cb128
+            border-color: #8cb128
+            .title
+              color: #ffffff
+            .text
+              color: #ffffff
       .slick-list
-        margin: 0 -10px
-        max-width: 915px
-        margin-bottom: 35px
+        max-width: 1200px
       .slick-dots
         list-style: none
         padding: 0
         display: flex
-        max-width: 915px
-        justify-content: center
+        max-width: 85px
+        justify-content: flex-start
         position: absolute
         width: 100%
+        bottom: -97px
+        right: 170px
         li
           margin: 0 5px
           a
-            font-size: 18px
+            font-size: 21px
             font-weight: 500
             cursor: pointer
             position: relative
             z-index: 1
             &:hover
-              color: #cf093c
+              color: #8cb128
           &.slick-active
             a
-              color: #cf093c
+              color: #8cb128
 
 
 
