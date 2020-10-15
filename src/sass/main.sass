@@ -2767,7 +2767,7 @@ section
       @media (min-width: 1200px)
         max-width: 100%
     h2
-      margin: 104px 0 178px 237px
+      margin: 104px 0 0 237px
       span
         color: #f1c405
       @media (max-width:1300px)
@@ -2777,13 +2777,13 @@ section
       @media (max-width:991px)
         margin: 25px 0 10px 0px
       &.right
-        margin: 70px 0 55px 220px
+        margin: 70px 0 20px 60px
         @media (max-width:1199px)
           margin: 25px 0 10px 0px
     .text
       color: #7b7b7b
       font-size: 18px
-      margin-left: 220px
+      margin-left: 60px
       max-width: 750px
       @media (max-width:1199px)
         margin-left: 0px
@@ -2796,17 +2796,49 @@ section
         background-size: cover
         margin-left: -166px
         color: #ffffff
+        padding: 45px 53px 50px 67px
+        margin-top: -15px
         p
           font-size: 26px
-          font-weight: 600
-          margin-bottom: 15px
+          font-weight: 700
+          margin-bottom: 25px
       ul
         list-style: none
+        padding: 0 0 0 10px
         li
           position: relative
-          font-size: 18px
-          margin-bottom: 10px
+          font-size: 22px
+          margin-bottom: 6px
           font-weight: 500
-
+          padding-left: 25px
+          &::before
+            content: ''
+            position: absolute
+            top: 5px
+            left: -10px
+            width: 24px
+            height: 24px
+            background-image: url('../img/cryptocurrency-1-list.png')
+            background-size: cover
+    .section-list
+      list-style: none
+      margin-left: 46px
+      margin-bottom: 30px
+      li
+        color: #111111
+        position: relative
+        font-size: 21px
+        margin-bottom: 6px
+        font-weight: 700
+        padding-left: 25px
+        &::before
+          content: ''
+          position: absolute
+          top: 5px
+          left: -10px
+          width: 24px
+          height: 17px
+          background-image: url('../img/check-yellow.png')
+          background-size: cover
 
 
