@@ -62,7 +62,7 @@ html(lang="ru")
                   img.cubes.lazy(data-src="img/cryptocurrency_1_cubes.png")
                 .col-lg-7
                   .images
-                    img.lazy(data-src="img/cryptocurrency_1-1.png")
+                    img(src="img/cryptocurrency_1-1.png")
                     .text-block.lazy(data-src="../img/cryptocurrency_1-2.png")
                       p Идеально подходит для:
                       ul
@@ -100,7 +100,26 @@ html(lang="ru")
                     | под обмен криптовалют
                   .line.right
                   img.lazy.image(data-src="img/cryptocurrency_2-1.png")
-
+          section.section.cryptocurrency-3.lazy(data-src="../img/cryptocurrency_3_bg.png")
+            .container
+              .row
+                .col-lg-5
+                  h2
+                    span Правовой статус
+                    br
+                    | криптовалют
+                  img.cubes.lazy(data-src="img/cryptocurrency_3_cubes.png")
+                .col-lg-7
+                  .text-1
+                    p На сегодняшний нет в большинстве стран нет единой мировой правовой базы и практики, регулирующей криптовалюты. 
+                    p Одни юрисдикции пытаются соответствовать условиям быстро меняющейся индустрии разрабатывают нормативно-правовую базу для виртуальных денег, в то время как иные юрисдикции пытаются ввести жесткие меры по строгому регулированию и запрету деятельности, связанной с криптовалютами и их добычей.
+                  .text-2
+                    p Если Вы планируете окунуться в мир электронных денег, то 
+                      strong обращайтесь к нам.
+                    p
+                      strong Наши юристы и консультанты —
+                      br.d-none.d-lg-block
+                      | специалисты высочайшего класса!
         include layout/footer.pug
         script(src="js/jquery.min.js")
         script(src="js/bootstrap.min.js")
