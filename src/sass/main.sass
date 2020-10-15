@@ -2588,20 +2588,30 @@ section
       .container
         @media (min-width: 1480px)
           max-width: 1460px
-      .col-lg-8
+      .col-xl-8
         position: relative
         z-index: 1
         padding: 0
-      .col-lg-4
+      .col-xl-4
         position: relative
         img
           position: absolute
           right: -62px
           top: 167px
+          @media (max-width:1500px)
+            right: -100px
+            top: 130px
+            @media (max-width:1199px)
+              display: none !important
         h2
           margin: 102px 0 20px 31px
           span
             color: #81ad00
+          @media (max-width:1300px)
+            text-align: right
+          @media (max-width:1199px)
+            text-align: left
+            margin-top: 0
         .line
           position: absolute
           width: 274px
@@ -2612,10 +2622,26 @@ section
           @media (max-width:1600px)
             width: 180px
             height: 20px
+            top: 115px
+          @media (max-width:1300px)
+            width: 274px
+            height: 20px
+            top: 140px
+          @media (max-width:1199px)
+            left: 0
+            right: auto
+            height: 10px
+            top: 40px
+            width: 200px
+          @media (max-width:768px)
+            top: 30px
         .text
           color: #7b7b7b
           font-size: 24px
           margin-left: 34px
+          @media (max-width:1300px)
+            font-size: 18px
+            margin-bottom: 15px
       .slider-navigation
         position: absolute
         width: 100%
@@ -2624,43 +2650,53 @@ section
         justify-content: space-between
         right: 77px
         bottom: -77px
-        @media (max-width:1399px)
-          padding-right: 30px
+        @media (max-width:1199px)
+          max-width: 100%
+          position: static
+          padding-left: 10px
+          padding-right: 10px
+          margin-top: 10px
         &>div
           cursor: pointer
           transition: .3s
+          @media (max-width:1199px)
+            position: relative
+            z-index: 1
           &:hover
             transform: scale(1.1)
       .slick-slide
         outline: none
         .top
-          background-color: #ffffff
-          display: flex
-          align-items: center
-          justify-content: center
           height: 680px
           overflow: hidden
+          @media (max-width:550px)
+            height: 500px
           img
             object-fit: cover
-          @media (max-width:1599px)
-            width: 100%
-            object-fit: unset
+            min-width: 100%
         .bottom
           padding: 26px 0px 14px 32px
           border: 1px solid #e1e1e1
           background-color: #fafbfc
           transition: .3s
+          @media (max-width:550px)
+            padding: 10px 0px 15px 5px
           .title
             color: #81ad00
             font-weight: 600
             font-size: 21px
             margin-bottom: 23px
             transition: .3s
+            @media (max-width:550px)
+              font-size: 18px
+              margin-bottom: 15px
           .text
             color: #cbcbcb
             font-size: 18px
             margin-bottom: 0
             transition: .3s
+            @media (max-width:550px)
+              font-size: 16px
         &:hover
           .bottom
             background-color: #8cb128
@@ -2681,6 +2717,12 @@ section
         width: 100%
         bottom: -97px
         right: 170px
+        @media (max-width:1199px)
+          max-width: 100%
+          justify-content: center
+          right: auto
+          left: auto
+          bottom: -60px
         li
           margin: 0 5px
           a

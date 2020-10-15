@@ -72,6 +72,18 @@ $(".slider.portfolio").slick({
       settings: {
           slidesToShow: 3,
       } 
+  },
+  { 
+    breakpoint: 800,
+    settings: {
+        slidesToShow: 2,
+    } 
+  },
+  { 
+    breakpoint: 420,
+    settings: {
+        slidesToShow: 1,
+    } 
   }]
 });
 
