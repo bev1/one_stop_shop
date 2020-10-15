@@ -243,6 +243,7 @@ h3
         margin-right: 60px
       &:last-child
         font-size: 110px
+        white-space: nowrap
         span
           display: inline-block
           opacity: 0
@@ -280,6 +281,15 @@ h3
           
           &:nth-of-type(11)
             animation-delay: 1.1s
+          
+          &:nth-of-type(12)
+            animation-delay: 1.2s
+          
+          &:nth-of-type(13)
+            animation-delay: 1.3s
+          
+          &:nth-of-type(14)
+            animation-delay: 1.4s
           
     @media (max-width: 1500px)
       &
@@ -375,6 +385,15 @@ h3
       &>span:last-child
         span:nth-of-type(1)
           color: #cf093c
+  &.cryptocurrency
+    background-image: url('../img/cryptocurrency-bg.png')
+    background-repeat: no-repeat
+    background-position: top
+    background-size: cover
+    .title
+      &>span:last-child
+        span:nth-of-type(1)
+          color: #f1c405
   &.development
     background-image: url('../img/development-bg.png')
     background-repeat: no-repeat
