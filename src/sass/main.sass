@@ -2759,10 +2759,9 @@ section
   &.cryptocurrency-1
     padding-top: 45px
     padding-bottom: 55px
-    @media (max-width:1199px)
-      padding-top: 0 
     @media (max-width:575px)
-      padding-bottom: 0    
+      padding-bottom: 0
+      padding-top: 10px
     .container
       @media (min-width: 1200px)
         max-width: 100%
@@ -2770,38 +2769,75 @@ section
       margin: 104px 0 0 237px
       span
         color: #f1c405
-      @media (max-width:1300px)
+      @media (max-width:1400px)
         margin: 80px 0 0 100px
       @media (max-width:1199px)
         margin: 25px 0 10px 0px
       @media (max-width:991px)
-        margin: 25px 0 10px 0px
+        margin: 25px 0 20px 0px
       &.right
         margin: 70px 0 20px 60px
+        @media (max-width:1500px)
+          margin-left: 0
         @media (max-width:1199px)
           margin: 25px 0 10px 0px
+        @media (max-width:991px)
+          margin: 25px 0 20px 0px
+    .cubes
+      @media (max-width:1400px)
+        margin-left: -100px
+      @media (max-width:1199px)
+        display: none !important
     .text
       color: #7b7b7b
       font-size: 18px
       margin-left: 60px
       max-width: 750px
-      @media (max-width:1199px)
+      @media (max-width:1500px)
         margin-left: 0px
+      @media (max-width:1500px)
+        font-size: 16px
     .images
       display: flex
       justify-content: flex-start
       align-items: center
       margin-left: 63px
+      position: relative
+      @media (max-width:1500px)
+        margin-left: 0
+      @media (max-width:1199px)
+        justify-content: center
+      img
+        max-width: 100%
       .text-block
         background-size: cover
         margin-left: -166px
         color: #ffffff
         padding: 45px 53px 50px 67px
         margin-top: -15px
+        @media (max-width:1500px)
+          margin-left: -190px
+          padding: 25px 33px 30px 47px
+        @media (max-width:1400px)
+          margin-left: -350px
+        @media (max-width:768px)
+          margin-top: 0
+          margin-left: 0
+          position: absolute
+          top: 50%
+          left: 50%
+          margin-right: -50%
+          transform: translate(-50%, -50%)
+        @media (max-width:450px)
+          padding: 15px 33px 0px 30px
         p
           font-size: 26px
           font-weight: 700
           margin-bottom: 25px
+          @media (max-width:768px)
+            font-size: 18px
+          @media (max-width:450px)
+            margin-bottom: 10px
       ul
         list-style: none
         padding: 0 0 0 10px
@@ -2811,6 +2847,8 @@ section
           margin-bottom: 6px
           font-weight: 500
           padding-left: 25px
+          @media (max-width:768px)
+            font-size: 16px
           &::before
             content: ''
             position: absolute
@@ -2820,10 +2858,16 @@ section
             height: 24px
             background-image: url('../img/cryptocurrency-1-list.png')
             background-size: cover
+            @media (max-width:768px)
+              width: 20px
+              height: 20px
+              top: 0
     .section-list
       list-style: none
       margin-left: 46px
       margin-bottom: 30px
+      @media (max-width:1500px)
+        margin-left: 0
       li
         color: #111111
         position: relative
@@ -2831,6 +2875,8 @@ section
         margin-bottom: 6px
         font-weight: 700
         padding-left: 25px
+        @media (max-width:768px)
+          font-size: 18px
         &::before
           content: ''
           position: absolute
@@ -2844,6 +2890,10 @@ section
   &.cryptocurrency-2
     background-color: #f9f9f9
     padding-top: 90px
+    overflow-x: hidden
+    @media (max-width:992px)
+      padding-top: 30px
+      padding-bottom: 30px
     .color-text-block
       color: #111111
       font-size: 18px
@@ -2852,8 +2902,21 @@ section
       max-width: 865px
       padding: 68px 75px 37px 227px
       margin-bottom: 58px
+      @media (max-width:1699px)
+        padding: 68px 75px 37px 150px
+      @media (max-width:1480px)
+        padding: 68px 75px 37px 50px
+      @media (max-width:1280px)
+        padding: 30px 30px 30px 50px
+      @media (max-width:992px)
+        font-size: 16px
+        padding: 10px 15px 10px 15px
+        margin-bottom: 15px
       p
         margin-bottom: 30px
+        @media (max-width:768px)
+          margin-bottom: 10px
+          line-height: 26px
     .line
       background-color: #f1c405
       &.left
@@ -2862,12 +2925,34 @@ section
         position: absolute
         left: 0
         top: 466px
+        @media (max-width:1599px)
+          width: 130px
+        @media (max-width:1480px)
+          width: 181px
+          top: 420px
+        @media (max-width:1280px)
+          width: 181px
+          top: 380px
+        @media (max-width:1199px)
+          display: none
       &.right
         height: 28px
         width: 273px
         position: absolute
         right: 0
         top: 33px
+        @media (max-width:1699px)
+          top: 10px
+        @media (max-width:1199px)
+          height: 10px
+          top: 100px
+        @media (max-width:992px)
+          height: 10px
+          top: 100px
+          right: auto
+          left: 0
+        @media (max-width:768px)
+          top: 70px
     h2
       span
         color: #f1c405
@@ -2875,18 +2960,40 @@ section
         font-weight: 500
         font-size: 30px
         margin-left: 228px
+        @media (max-width:1599px)
+          margin-left: 150px
+        @media (max-width:1480px)
+          margin-left: 50px
+        @media (max-width:1199px)
+          font-size: 22px
+        @media (max-width:992px)
+          font-size: 18px
+          margin-left: 15px
       &.right
         margin-left: 145px
+        @media (max-width:1280px)
+          margin-left: 50px
+        @media (max-width:992px)
+          margin-left: 0
+          margin-bottom: 35px
     .image
       margin-top: -114px
       margin-left: 57px
       position: relative
       z-index: 1
+      @media (max-width:1280px)
+        margin-left: 0
+      @media (max-width:1199px)
+        margin-left: -50px
+      @media (max-width:991px)
+        display: none !important
 
   &.cryptocurrency-3
     margin-top: -156px
     padding-top: 73px
     padding-bottom: 133px
+    @media (max-width:992px)
+      margin-top: 0
     .container
       @media (min-width: 1430px)
         max-width: 1422px
