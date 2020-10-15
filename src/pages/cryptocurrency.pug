@@ -10,146 +10,187 @@ html(lang="ru")
         link(rel="stylesheet preload", as="style" href="css/main.css")
         link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")
     body
-        include layout/header.pug
-        main
-          section.main-section.cryptocurrency
-            .container
-              .row
-                .col-lg-6                  
-                  h1.title
-                    span(data-aos="fade" data-aos-delay="100") 04
-                    span.text-animate
-                      span C
-                      span r
-                      span y
-                      span p
-                      span t
-                      span o
-                      span c
-                      span u
-                      span r
-                      span r
-                      span e
-                      span n
-                      span c
-                      span y
-                  .sub-title
-                    .arrow(data-aos="fade-right" data-aos-delay="1000")
-                      img(src="img/yellow-arrow.png", alt="arrow")
-                    .text(data-aos="fade-left" data-aos-delay="1000") Lorem ipsum dolor sit amet, consectetur adipisicing
-                      br.d-none.d-lg-block
-                      | elit, sed do eiusmod tempor incididunt ut labore et
-                  a.video-link(href="index.html")
-                    .text Watch
-                      br
-                      | our trailer
-                    .link-img
-                      img(src="img/play_button.png", alt="play")
-                .col-lg-6
-                  a.cube-link(href="#consulting-1") Услуги по регистрации 
-                    br.d-block.d-sm-none
-                    | компаний
-                  a.cube-link(href="#consulting-10") Счета
-                  a.cube-link(href="#consulting-7") Лицензии
-                  img(src="img/cube-consulting.png", alt="cube")
-                  //- include components/cube.pug
-          section.section.cryptocurrency-1
-            .container
-              .row
-                .col-xl-5
-                  h2 Поставочная 
-                    span ликвидность
-                  img.cubes.lazy(data-src="img/cryptocurrency_1_cubes.png")
-                .col-xl-7
-                  .images
-                    img(src="img/cryptocurrency_1-1.png")
-                    .text-block.lazy(data-src="../img/cryptocurrency_1-2.png")
-                      p Идеально подходит для:
-                      ul
-                        li Обменников
-                        li Крупных инвесторов
-                        li Криптоброкеров
-                        li Криптофондов
-                  h2.right(data-aos="fade")
-                    span Торговля 
-                    | с физической поставкой актива
-                  ul.section-list
-                    li Крипто-крипто, фиат- крипто
-                    li Любые популярные криптовалюты
-                    li Минимальные комиссии
-                    li Круглосуточная поддержка
-                  p.text(data-aos="fade") Близкое присутствие со всеми центральными торговыми серверами основных бирж, поставщиков ликвидности, банков и других финансовых институтов, позволяет нам максимально сокращать время запроса на заявку, вплоть до сотых миллисекунд.
-          section.section.cryptocurrency-2
-            .container-fluid
-              .row
-                .col-lg-6.order-lg-2
-                  h2.right(data-aos="fade")
-                    span Лицензии 
-                    br
-                    | под обмен криптовалют
-                  .line.right
-                  img.lazy.image(data-src="img/cryptocurrency_2-1.png")
-                .col-lg-6.p-0
-                  .color-text-block
-                    p 
-                      strong Процесс получения лицензий, 
-                      | позволяющих заниматься деятельностью, связанной с обменом криптовалют — это трудоемкий процесс, требующий времени и серьезной подготовки. Всего лишь в нескольких юрисдикциях имеется возможность получения лицензии на занятие деятельностью, связанной с криптовалютам и технологией блокчейна. 
-                    p Получение разрешения для обмена криптовалют — долгий и трудоемкий процесс. 
-                  .line.left
-                  h2.black
-                    strong Профессиональное сопровождение — 
+      header.header
+        .container
+          .header-wrap
+            .logo
+              a(href="index.html")
+                img(src="img/logo.png", alt="logo")
+            ul.header-menu.collapse#navbar
+              li
+                a(href="index.html")
+                  .text Consulting
+                  .line
+                  .number 01
+              li
+                a(href="marketing.html")
+                  .text Marketing
+                  .line
+                  .number 02
+              li
+                a(href="development.html")
+                  .text Development
+                  .line
+                  .number 03
+              li
+                a.active(href="cryptocurrency.html")
+                  .text Cryptocurrency
+                  .line
+                  .number 04
+              li
+                a(href="index.html")
+                  .text Legal services
+                  .line
+                  .number 05
+              li
+                a(href="index.html")
+                  .text Real estate
+                  .line
+                  .number 06
+            button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation")
+              span(class="line line-1")
+              span(class="line line-2")
+              span(class="line line-3")
+      main
+        section.main-section.cryptocurrency
+          .container
+            .row
+              .col-lg-6                  
+                h1.title
+                  span(data-aos="fade" data-aos-delay="100") 04
+                  span.text-animate
+                    span C
+                    span r
+                    span y
+                    span p
+                    span t
+                    span o
+                    span c
+                    span u
+                    span r
+                    span r
+                    span e
+                    span n
+                    span c
+                    span y
+                .sub-title
+                  .arrow(data-aos="fade-right" data-aos-delay="1000")
+                    img(src="img/yellow-arrow.png", alt="arrow")
+                  .text(data-aos="fade-left" data-aos-delay="1000") Lorem ipsum dolor sit amet, consectetur adipisicing
                     br.d-none.d-lg-block
-                    | залог успеха в решении данного вопроса.
-          section.section.cryptocurrency-3.lazy(data-src="../img/cryptocurrency_3_bg.png")
-            .container
-              .row
-                .col-lg-5
-                  h2
-                    span Правовой статус
+                    | elit, sed do eiusmod tempor incididunt ut labore et
+                a.video-link(href="index.html")
+                  .text Watch
                     br
-                    | криптовалют
-                  img.cubes.lazy(data-src="img/cryptocurrency_3_cubes.png")
-                .col-lg-7
-                  .text-1
-                    p На сегодняшний нет в большинстве стран нет единой мировой правовой базы и практики, регулирующей криптовалюты. 
-                    p Одни юрисдикции пытаются соответствовать условиям быстро меняющейся индустрии разрабатывают нормативно-правовую базу для виртуальных денег, в то время как иные юрисдикции пытаются ввести жесткие меры по строгому регулированию и запрету деятельности, связанной с криптовалютами и их добычей.
-                  .text-2
-                    p Если Вы планируете окунуться в мир электронных денег, то 
-                      strong обращайтесь к нам.
-                    p
-                      strong Наши юристы и консультанты —
-                      br.d-none.d-lg-block
-                      | специалисты высочайшего класса!
-            .bottom
-              .container
-                ul
-                  li(data-aos="fade-down").left
-                    .head
-                      .left
-                        img(src="img/cryptocurrency-3-list-img-1.png")
-                      .right
-                        .title Консультация 
-                          br.d-none.d-block
-                          | по криптовалютам
-                        img(src="img/cryptocurrency-3-list-icon-1.png")
-                    .text
-                      p Наша команда специализируется на разработке стратегий, подготовке документов, комплексном юридическом консалтинге и сопровождении проектов, связанных с криптовалютами.
-                      p Мы предлагаем решения как для профессионалов индустрии, так и для начинающих предпринимателей, желающих внедрения блокчейн решений в свои бизнес процессы.
-                  li(data-aos="fade-down").right
-                    .head
-                      .left
-                        img(src="img/cryptocurrency-3-list-img-2.png")
-                      .right
-                        .title Регулирование 
-                          br.d-none.d-block
-                          | криптовалют
-                        img(src="img/cryptocurrency-3-list-icon-2.png")
-                    .text
-                      p Acalista  проконсультирует, проанализирует, подберет юрисдикцию специально под ваш проект и займется правовым сопровождением блокчейн проектов для достижения наилучших результатов.
-        include layout/footer.pug
-        script(src="js/jquery.min.js")
-        script(src="js/bootstrap.min.js")
-        script(src="js/lazy-load.js")
-        script(src="js/aos.js")
-        script(type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")
-        script(src="js/script.js")
+                    | our trailer
+                  .link-img
+                    img(src="img/play_button.png", alt="play")
+              .col-lg-6
+                a.cube-link(href="#consulting-1") Услуги по регистрации 
+                  br.d-block.d-sm-none
+                  | компаний
+                a.cube-link(href="#consulting-10") Счета
+                a.cube-link(href="#consulting-7") Лицензии
+                img(src="img/cube-consulting.png", alt="cube")
+                //- include components/cube.pug
+        section.section.cryptocurrency-1
+          .container
+            .row
+              .col-xl-5
+                h2 Поставочная 
+                  span ликвидность
+                img.cubes.lazy(data-src="img/cryptocurrency_1_cubes.png")
+              .col-xl-7
+                .images
+                  img(src="img/cryptocurrency_1-1.png")
+                  .text-block.lazy(data-src="../img/cryptocurrency_1-2.png")
+                    p Идеально подходит для:
+                    ul
+                      li Обменников
+                      li Крупных инвесторов
+                      li Криптоброкеров
+                      li Криптофондов
+                h2.right(data-aos="fade")
+                  span Торговля 
+                  | с физической поставкой актива
+                ul.section-list
+                  li Крипто-крипто, фиат- крипто
+                  li Любые популярные криптовалюты
+                  li Минимальные комиссии
+                  li Круглосуточная поддержка
+                p.text(data-aos="fade") Близкое присутствие со всеми центральными торговыми серверами основных бирж, поставщиков ликвидности, банков и других финансовых институтов, позволяет нам максимально сокращать время запроса на заявку, вплоть до сотых миллисекунд.
+        section.section.cryptocurrency-2
+          .container-fluid
+            .row
+              .col-lg-6.order-lg-2
+                h2.right(data-aos="fade")
+                  span Лицензии 
+                  br
+                  | под обмен криптовалют
+                .line.right
+                img.lazy.image(data-src="img/cryptocurrency_2-1.png")
+              .col-lg-6.p-0
+                .color-text-block
+                  p 
+                    strong Процесс получения лицензий, 
+                    | позволяющих заниматься деятельностью, связанной с обменом криптовалют — это трудоемкий процесс, требующий времени и серьезной подготовки. Всего лишь в нескольких юрисдикциях имеется возможность получения лицензии на занятие деятельностью, связанной с криптовалютам и технологией блокчейна. 
+                  p Получение разрешения для обмена криптовалют — долгий и трудоемкий процесс. 
+                .line.left
+                h2.black
+                  strong Профессиональное сопровождение — 
+                  br.d-none.d-lg-block
+                  | залог успеха в решении данного вопроса.
+        section.section.cryptocurrency-3.lazy(data-src="../img/cryptocurrency_3_bg.png")
+          .container
+            .row
+              .col-lg-5
+                h2
+                  span Правовой статус
+                  br
+                  | криптовалют
+                img.cubes.lazy(data-src="img/cryptocurrency_3_cubes.png")
+              .col-lg-7
+                .text-1
+                  p На сегодняшний нет в большинстве стран нет единой мировой правовой базы и практики, регулирующей криптовалюты. 
+                  p Одни юрисдикции пытаются соответствовать условиям быстро меняющейся индустрии разрабатывают нормативно-правовую базу для виртуальных денег, в то время как иные юрисдикции пытаются ввести жесткие меры по строгому регулированию и запрету деятельности, связанной с криптовалютами и их добычей.
+                .text-2
+                  p Если Вы планируете окунуться в мир электронных денег, то 
+                    strong обращайтесь к нам.
+                  p
+                    strong Наши юристы и консультанты —
+                    br.d-none.d-lg-block
+                    | специалисты высочайшего класса!
+          .bottom
+            .container
+              ul
+                li(data-aos="fade-down").left
+                  .head
+                    .left
+                      img(src="img/cryptocurrency-3-list-img-1.png")
+                    .right
+                      .title Консультация 
+                        br.d-none.d-block
+                        | по криптовалютам
+                      img(src="img/cryptocurrency-3-list-icon-1.png")
+                  .text
+                    p Наша команда специализируется на разработке стратегий, подготовке документов, комплексном юридическом консалтинге и сопровождении проектов, связанных с криптовалютами.
+                    p Мы предлагаем решения как для профессионалов индустрии, так и для начинающих предпринимателей, желающих внедрения блокчейн решений в свои бизнес процессы.
+                li(data-aos="fade-down").right
+                  .head
+                    .left
+                      img(src="img/cryptocurrency-3-list-img-2.png")
+                    .right
+                      .title Регулирование 
+                        br.d-none.d-block
+                        | криптовалют
+                      img(src="img/cryptocurrency-3-list-icon-2.png")
+                  .text
+                    p Acalista  проконсультирует, проанализирует, подберет юрисдикцию специально под ваш проект и займется правовым сопровождением блокчейн проектов для достижения наилучших результатов.
+                    
+      include layout/footer.pug
+      script(src="js/jquery.min.js")
+      script(src="js/bootstrap.min.js")
+      script(src="js/lazy-load.js")
+      script(src="js/aos.js")
+      script(type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")
+      script(src="js/script.js")
