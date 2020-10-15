@@ -13,7 +13,8 @@
 //   perspective: 800px
   
 .rubiks-cube
-  animation: rubiks-cube 20s linear infinite
+  // animation: rubiks-cube 20s linear infinite
+  transform: rotateX(384deg) rotateY(320deg) rotateZ(360deg)
 
 .cube-wrapper
   position: relative
@@ -74,8 +75,8 @@
         transform: translateX(50%) rotateY(90deg)
 
     &:nth-child(1)
-      margin-top: 0px
-      margin-left: 0px
+      margin-top: -25px
+      margin-left: -30px
       transform-origin: 150% 150% -90px
       transform: translateZ(0px)
 
@@ -86,8 +87,8 @@
       transform: translateZ(0px)
 
     &:nth-child(3)
-      margin-top: 0px
-      margin-left: 180px
+      margin-top: -24px
+      margin-left: 190px
       transform-origin: -50% 150% -90px
       transform: translateZ(0px)
 
@@ -188,8 +189,8 @@
       transform: translateZ(0px)
 
     &:nth-child(20)
-      margin-top: 180px
-      margin-left: 90px
+      margin-top: 200px
+      margin-left: 50px
       transform-origin: 50% -50% -90px
       transform: translateZ(0px)
 
@@ -242,17 +243,35 @@
     &:nth-child(7) .top, &:nth-child(8) .top, &:nth-child(9) .top, &:nth-child(6) .top, &:nth-child(3) .top, &:nth-child(2) .top, &:nth-child(1) .top, &:nth-child(4) .top, &:nth-child(5) .top
       background-color: #095fad
 
-    &:nth-child(25) .bottom, &:nth-child(26) .bottom, &:nth-child(27) .bottom, &:nth-child(24) .bottom, &:nth-child(21) .bottom, &:nth-child(20) .bottom, &:nth-child(19) .bottom, &:nth-child(22) .bottom, &:nth-child(23) .bottom
-      background-color: #f58220
+    &:nth-child(25) .bottom, &:nth-child(26) .bottom, &:nth-child(27) .bottom, &:nth-child(24) .bottom, &:nth-child(21) .bottom, &:nth-child(19) .bottom, &:nth-child(22) .bottom, &:nth-child(23) .bottom
+      background-color: #737373
+    &:nth-child(20) .bottom
+      background-color: #7a9c16
+    &:nth-child(20) .right
+      background-color: #b71e45
 
     &:nth-child(1) .left, &:nth-child(4) .left, &:nth-child(7) .left, &:nth-child(16) .left, &:nth-child(25) .left, &:nth-child(22) .left, &:nth-child(19) .left, &:nth-child(10) .left, &:nth-child(13) .left
       background-color: #fee208
 
     &:nth-child(3) .right, &:nth-child(6) .right, &:nth-child(9) .right, &:nth-child(18) .right, &:nth-child(27) .right, &:nth-child(24) .right, &:nth-child(21) .right, &:nth-child(12) .right, &:nth-child(15) .right
-      background-color: #ec1e35
+      background-color: #ededed
 
-    &:nth-child(1) .front, &:nth-child(2) .front, &:nth-child(3) .front, &:nth-child(12) .front, &:nth-child(21) .front, &:nth-child(20) .front, &:nth-child(19) .front, &:nth-child(10) .front, &:nth-child(11) .front
-      background-color: #01af4d
+    &:nth-child(2) .front, &:nth-child(12) .front, &:nth-child(21) .front, &:nth-child(19) .front, &:nth-child(10) .front, &:nth-child(11) .front
+      background-color: #dbdbdb
+    &:nth-child(1) .front
+      background-color: #7b8fb6
+    &:nth-child(1) .bottom
+      background-color: #a5bb63
+    &:nth-child(1) .right
+      background-color: #c84b6b
+    &:nth-child(3) .front
+      background-color: #516da1
+    &:nth-child(3) .bottom
+      background-color: #a5bb63
+    &:nth-child(3) .right
+      background-color: #c84b6b
+    &:nth-child(20) .front
+      background-color: #2e5398
 
     &:nth-child(7) .back, &:nth-child(8) .back, &:nth-child(9) .back, &:nth-child(18) .back, &:nth-child(27) .back, &:nth-child(26) .back, &:nth-child(25) .back, &:nth-child(16) .back, &:nth-child(17) .back
       background-color: #fff
