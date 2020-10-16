@@ -11,33 +11,35 @@
 //   margin: 0
 //   overflow: hidden
 //   perspective: 800px
+// rotateX(386deg) rotateY(318deg) rotateZ(357deg)
   
 .rubiks-cube
-  // animation: rubiks-cube 20s linear infinite
-  transform: rotateX(384deg) rotateY(320deg) rotateZ(360deg)
-
-.cube-wrapper
-  position: relative
-  &:hover .rubiks-cube
-    animation: cube-hover 1s
-  &:hover .detail
-    animation: cube-hover 1s
+  animation: rubiks-cube 20s linear infinite
+  &.default
+    animation: none
+    transition: 1s
+    // animation: rubiks-cube-hover .5s linear
+    // animation-fill-mode: forwards
 
 @keyframes rubiks-cube
-  100%
-    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg)
-
-@keyframes cube-hover
   0%
-    transform: rotateX(90deg) rotateY(90deg) rotateZ(90deg)
+    transform: rotateX(26deg) rotateY(-42deg) rotateZ(3deg)
   100%
-    transform: rotateX(0) rotateY(0) rotateZ(0)
+    transform: rotateX(386deg) rotateY(318deg) rotateZ(357deg)
+
+@keyframes rubiks-cube-hover
+  100%
+    transform: rotateX(26deg) rotateY(-42deg) rotateZ(3deg)
+
+.cube-wrapper:hover
+  .rubiks-cube
 
 .rubiks-cube-1
   transform-style: preserve-3d
   transform-origin: 50% 50% -90px
   width: 270px
   height: 270px
+  perspective: 3000px
 
   .detail
     position: relative
@@ -48,6 +50,7 @@
     animation-iteration-count: infinite
     animation-direction: alternate
     animation-timing-function: linear
+    transition: .3s
 
     .side
       position: absolute
@@ -67,16 +70,18 @@
 
       &.bottom
         transform: translateY(50%) rotateX(-90deg)
+        background-color: #707070
 
       &.left
         transform: translateX(-50%) rotateY(-90deg)
 
       &.right
         transform: translateX(50%) rotateY(90deg)
+        background-color: #787878
 
     &:nth-child(1)
-      margin-top: -25px
-      margin-left: -30px
+      margin-top: 0px
+      margin-left: 0px
       transform-origin: 150% 150% -90px
       transform: translateZ(0px)
 
@@ -87,8 +92,8 @@
       transform: translateZ(0px)
 
     &:nth-child(3)
-      margin-top: -24px
-      margin-left: 190px
+      margin-top: 0px
+      margin-left: 180px
       transform-origin: -50% 150% -90px
       transform: translateZ(0px)
 
@@ -189,8 +194,8 @@
       transform: translateZ(0px)
 
     &:nth-child(20)
-      margin-top: 200px
-      margin-left: 50px
+      margin-top: 180px
+      margin-left: 90px
       transform-origin: 50% -50% -90px
       transform: translateZ(0px)
 
@@ -237,24 +242,30 @@
       transform: translateZ(-180px)
 
     .side
-      border: 2px solid #555555
+      // border: 2px solid #555555
       background: #555555
 
     &:nth-child(7) .top, &:nth-child(8) .top, &:nth-child(9) .top, &:nth-child(6) .top, &:nth-child(3) .top, &:nth-child(2) .top, &:nth-child(1) .top, &:nth-child(4) .top, &:nth-child(5) .top
-      background-color: #095fad
+      background-color: #9a9a9a
 
     &:nth-child(25) .bottom, &:nth-child(26) .bottom, &:nth-child(27) .bottom, &:nth-child(24) .bottom, &:nth-child(21) .bottom, &:nth-child(19) .bottom, &:nth-child(22) .bottom, &:nth-child(23) .bottom
-      background-color: #737373
+      background-color:#9a9a9a
     &:nth-child(20) .bottom
       background-color: #7a9c16
     &:nth-child(20) .right
       background-color: #b71e45
 
     &:nth-child(1) .left, &:nth-child(4) .left, &:nth-child(7) .left, &:nth-child(16) .left, &:nth-child(25) .left, &:nth-child(22) .left, &:nth-child(19) .left, &:nth-child(10) .left, &:nth-child(13) .left
-      background-color: #fee208
-
-    &:nth-child(3) .right, &:nth-child(6) .right, &:nth-child(9) .right, &:nth-child(18) .right, &:nth-child(27) .right, &:nth-child(24) .right, &:nth-child(21) .right, &:nth-child(12) .right, &:nth-child(15) .right
       background-color: #ededed
+
+    &:nth-child(3) .right, &:nth-child(6) .right, &:nth-child(9) .right, &:nth-child(27) .right, &:nth-child(24) .right, &:nth-child(21) .right, &:nth-child(12) .right, &:nth-child(15) .right
+      background-color: #ededed
+    &:nth-child(18) .right
+      background-color: #a9405b
+    &:nth-child(18) .front
+      background-color: #516da0
+    &:nth-child(18) .bottom
+      background-color: #a3b962
 
     &:nth-child(2) .front, &:nth-child(12) .front, &:nth-child(21) .front, &:nth-child(19) .front, &:nth-child(10) .front, &:nth-child(11) .front
       background-color: #dbdbdb
@@ -384,6 +395,181 @@
       // animation-name: rubiks-cube-1-detail-27
       animation-duration: 16s
 
+  &:hover
+    .detail
+      &:nth-child(1)
+        margin-top: -15px
+        margin-left: -15px
+        transform-origin: 150% 150% -90px
+        transform: translateZ(15px)
+        &:hover
+          transform: translateZ(45px)
+
+      &:nth-child(2)
+        margin-top: -15px
+        margin-left: 90px
+        transform-origin: 50% 150% -90px
+        transform: translateZ(15px)
+
+      &:nth-child(3)
+        margin-top: -15px
+        margin-left: 195px
+        transform-origin: -50% 150% -90px
+        transform: translateZ(15px)
+        &:hover
+          margin-top: -45px
+          margin-left: 215px
+          
+
+      &:nth-child(4)
+        margin-top: -15px
+        margin-left: -15px
+        transform-origin: 150% 150% 0
+        transform: translateZ(-90px)
+
+      &:nth-child(5)
+        margin-top: -15px
+        margin-left: 90px
+        transform-origin: 50% 150% 0
+        transform: translateZ(-90px)
+
+      &:nth-child(6)
+        margin-top: -15px
+        margin-left: 195px
+        transform-origin: -50% 150% 0
+        transform: translateZ(-95px)
+
+      &:nth-child(7)
+        margin-top: -15px
+        margin-left: -15px
+        transform-origin: 150% 150% 90px
+        transform: translateZ(-195px)
+
+      &:nth-child(8)
+        margin-top: -15px
+        margin-left: 90px
+        transform-origin: 50% 150% 90px
+        transform: translateZ(-195px)
+
+      &:nth-child(9)
+        margin-top: -15px
+        margin-left: 200px
+        transform-origin: -50% 150% 90px
+        transform: translateZ(-195px)
+
+      &:nth-child(10)
+        margin-top: 90px
+        margin-left: -15px
+        transform-origin: 150% 50% -90px
+        transform: translateZ(15px)
+
+      &:nth-child(11)
+        margin-top: 90px
+        margin-left: 90px
+        transform-origin: 50% 50% -90px
+        transform: translateZ(15px)
+
+      &:nth-child(12)
+        margin-top: 90px
+        margin-left: 195px
+        transform-origin: -50% 50% -90px
+        transform: translateZ(15px)
+
+      &:nth-child(13)
+        margin-top: 90px
+        margin-left: -15px
+        transform-origin: 150% 50% 0
+        transform: translateZ(-90px)
+
+      &:nth-child(14)
+        margin-top: 90px
+        margin-left: 90px
+        transform-origin: 50% 50% 0
+        transform: translateZ(-90px)
+
+      &:nth-child(15)
+        margin-top: 90px
+        margin-left: 195px
+        transform-origin: -50% 50% 0
+        transform: translateZ(-95px)
+
+      &:nth-child(16)
+        margin-top: 90px
+        margin-left: -15px
+        transform-origin: 150% 50% 90px
+        transform: translateZ(-195px)
+
+      &:nth-child(17)
+        margin-top: 90px
+        margin-left: 90px
+        transform-origin: 50% 50% 90px
+        transform: translateZ(-195px)
+
+      &:nth-child(18)
+        margin-top: 90px
+        margin-left: 195px
+        transform-origin: -50% 50% 90px
+        transform: translateZ(-195px)
+        &:hover
+          margin-left: 230px
+
+      &:nth-child(19)
+        margin-top: 195px
+        margin-left: -15px
+        transform-origin: 150% -50% -90px
+        transform: translateZ(15px)
+
+      &:nth-child(20)
+        margin-top: 195px
+        margin-left: 95px
+        transform-origin: 50% -50% -90px
+        transform: translateZ(15px)
+        &:hover
+          transform: translateZ(50px)
+          margin-top: 230px
+
+      &:nth-child(21)
+        margin-top: 195px
+        margin-left: 195px
+        transform-origin: -50% -50% -90px
+        transform: translateZ(15px)
+
+      &:nth-child(22)
+        margin-top: 195px
+        margin-left: -15px
+        transform-origin: 150% -50% 0
+        transform: translateZ(-90px)
+
+      &:nth-child(23)
+        margin-top: 195px
+        margin-left: 90px
+        transform-origin: 50% -50% 0
+        transform: translateZ(-90px)
+
+      &:nth-child(24)
+        margin-top: 195px
+        margin-left: 195px
+        transform-origin: -50% -50% 0
+        transform: translateZ(-90px)
+
+      &:nth-child(25)
+        margin-top: 195px
+        margin-left: -15px
+        transform-origin: 150% -50% 90px
+        transform: translateZ(-195px)
+
+      &:nth-child(26)
+        margin-top: 195px
+        margin-left: 90px
+        transform-origin: 50% -50% 90px
+        transform: translateZ(-195px)
+
+      &:nth-child(27)
+        margin-top: 195px
+        margin-left: 195px
+        transform-origin: -50% -50% 90px
+        transform: translateZ(-195px)
+      
 @keyframes rubiks-cube-1-detail-1
   5%
     transform: translateZ(0px)
