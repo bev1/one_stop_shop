@@ -161,15 +161,15 @@ $( document ).ready(function() {
         $("#Result").html("Transform 3D [rotateX=" + mAngle.rotateX + "&deg;|rotateY=" + mAngle.rotateY + "&deg;|rotateZ=" + mAngle.rotateZ + "&deg;]");
       }
       $('.rubiks-cube').addClass('default')
-      $('.rubiks-cube').css('-webkit-transform','rotateX('+mAngle.rotateX+'deg) rotateY('+-mAngle.rotateY+'deg) rotateZ('+mAngle.rotateZ+'deg)')
-    //   $('.rubiks-cube').animate({  textIndent: 0 }, {
-    //     step: function(now,fx) {
-    //     console.log("fx", fx)
-    //     console.log("now", now)
-    //       $(this).css('-webkit-transform','rotateX('+26+'deg) rotateY('+-42+'deg) rotateZ('+3+'deg)'); 
-    //     },
-    //     duration: 'slow'
-    // },'linear');
+      $('.rubiks-cube').css('-webkit-transform','rotateX('+mAngle.rotateX+'deg) rotateY('+mAngle.rotateY+'deg) rotateZ('+mAngle.rotateZ+'deg)')
+      $('.rubiks-cube').animate({  textIndent: 0 }, {
+        step: function(now,fx) {
+        console.log("fx", fx)
+        console.log("now", now)
+          $(this).css('-webkit-transform','rotateX('+26+'deg) rotateY('+-42+'deg) rotateZ('+3+'deg)'); 
+        },
+        duration: 'slow'
+    },'linear');
       
       // .animate([
       //   // keyframes
