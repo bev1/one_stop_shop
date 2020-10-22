@@ -577,9 +577,13 @@ section
           padding-bottom: 100px
           .title-cube
             margin-left: 0
+      @media (max-width: 1280px)
+        &
+          background-size: 100% 100%
       @media (max-width: 1200px)
         &
           padding-bottom: 25px
+          background-size: 100%
       @media (max-width: 992px)
         &
           .title-cube
@@ -602,9 +606,12 @@ section
       &.top
         margin-top: -10px
         margin-left: 13px
+        @media (max-width: 1280px)
+          max-width: 534px
         @media (max-width: 1200px)
           margin-left: 10px
           margin-top: 0
+          max-width: unset
         li
           margin-bottom: 21px
           @media (min-width: 1700px)
@@ -1309,6 +1316,10 @@ section
         position: relative
         max-width: 550px
         margin-bottom: 25px
+        @media (max-width: 1400px)
+          max-width: 380px
+        @media (max-width: 992px)
+          max-width: unset
         span
           font-weight: 600
           color: #000000
@@ -1336,6 +1347,10 @@ section
       p
         &.small
           max-width: 700px
+          @media (max-width: 1400px)
+            max-width: 550px
+          @media (max-width: 992px)
+            max-width: unset
         &.big
           margin-top: 33px
           max-width: 620px
@@ -1953,6 +1968,9 @@ section
           max-width: 710px
           line-height: 49px
           font-size: 37px
+        @media (max-width: 1400px)
+          &.big
+            max-width: 550px
         @media (max-width: 1200px)
           &.big
             font-size: 24px
