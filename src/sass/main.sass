@@ -407,6 +407,16 @@ h3
       &>span:last-child
         span:nth-of-type(1)
           color: #81ad00
+  &.real
+    background-image: url('../img/real-bg.png')
+    background-repeat: no-repeat
+    background-position: top
+    background-size: cover
+    padding-bottom: 115px
+    .title
+      &>span:last-child
+        span:nth-of-type(1)
+          color: #8660ad
 
 .title-cube
   color: #ffffff
@@ -2628,7 +2638,7 @@ section
           ul
             li
               color: #ffffff
-          
+
   &.development-2
     background-color: #efefef
     overflow: hidden
@@ -3169,3 +3179,192 @@ section
                 margin-bottom: 10px
 
 
+  &.real-1
+    background-repeat: no-repeat
+    background-position: right
+    padding-top: 150px
+    padding-bottom: 140px
+    @media (max-width:991px)
+      padding-top: 40px
+    .container
+      @media (min-width: 1450px)
+        max-width: 1426px
+    h2
+      margin-bottom: 50px
+      span
+        color: #8660ad
+    p
+      color: #111111
+      font-size: 18px
+      line-height: 30px
+      &:nth-of-type(2)
+        font-weight: 600
+        margin: 40px 0 75px
+        border-left: 30px solid #8660ad
+        padding-left: 25px
+      &:nth-of-type(3)
+        font-size: 24px
+        line-height: 35px
+        span
+          color: #8660ad
+          font-weight: 600
+
+  &.real-2
+    padding-top: 50px
+    @media (max-width:991px)
+      padding-top: 40px
+    .container
+      @media (min-width: 1500px)
+        max-width: 1490px
+    h2
+      margin-bottom: 62px
+      margin-left: 137px
+      span
+        color: #8660ad
+    p
+      color: #111111
+      font-size: 18px
+      line-height: 30px
+      &.list-title
+        font-size: 21px
+        font-weight: 600
+        margin-top: 50px
+        margin-bottom: 6px
+      &.left
+        margin-left: 137px
+    .left-img
+      margin-left: -235px
+      margin-bottom: 37px
+    .list-wrapper
+      display: flex
+      justify-content: space-between
+    ul
+      list-style: none
+      &.left
+        margin-top: 33px
+        margin-left: 7px
+        padding-left: 0
+        li
+          position: relative
+          padding-left: 38px
+          font-size: 18px
+          font-weight: 600
+          margin-bottom: 10px
+          &::before
+            content: ''
+            position: absolute
+            top: 5px
+            left: -10px
+            width: 24px
+            height: 17px
+            background-image: url('../img/check-violet.png')
+      &.right
+        flex-direction: column
+        margin-left: 160px
+        li
+          position: relative
+          padding-left: 15px
+          font-size: 18px
+          font-weight: 600
+          margin-bottom: 9px
+          a
+            transition: .3s
+            &::before
+              content: ''
+              position: absolute
+              top: 5px
+              left: -10px
+              width: 16px
+              height: 24px
+              background-image: url('../img/map-point-black.png')
+              transition: .3s
+          a.active, a:hover
+            color: #8660ad
+            margin-left: 10px
+            &::before
+              background-image: url('../img/map-point-violet.png')
+              left: 0
+    .images
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 50%
+      img
+        &:not(.show)
+          display: none
+
+          
+  &.real-3
+    padding-top: 50px
+    padding-bottom: 140px
+    background-position: right
+    background-repeat: no-repeat
+    @media (max-width:991px)
+      padding-top: 40px
+    .container
+      @media (min-width: 1300px)
+        max-width: 1284px
+    h2
+      margin-bottom: 43px
+      span
+        color: #8660ad
+    .nav
+      flex-direction: column
+      @media (max-width: 1450px)
+        margin-left: 0
+      .nav-item
+        font-size: 18px
+        font-weight: 700
+        border-radius: 10px
+        border: 1px solid #d9d9d9
+        box-shadow: -13px 0px 12px rgba(49,54,57,0.21)
+        margin-bottom: 8px
+        transition: .2s
+        cursor: pointer
+        padding: 9px 0 10px 66px
+        line-height: 20px
+        min-height: 63px
+        max-width: 500px
+        display: flex
+        align-items: center
+        justify-content: start
+        position: relative
+        &:before
+          content: ''
+          position: absolute
+          top: 17px
+          left: 24px
+          width: 24px
+          height: 24px
+          background-image: url('../img/ribbon.png')
+        &.active, &:hover
+          &:before
+            background-image: url('../img/ribbon-white.png')
+        @media (max-width: 992px)
+          max-width: unset
+        @media (max-width: 450px)
+          font-size: 16px
+        span
+          font-size: 14px
+          font-weight: 500
+          @media (max-width: 450px)
+            font-size: 13px
+        &.active, &:hover
+          color: #ffffff
+          background-color: #8660ad
+    .tab-pane
+      margin-top: 60px
+      margin-left: 78px
+      @media (max-width: 992px)
+        margin-top: 24px
+      &:not(.active)
+        display: none
+      p
+        font-size: 24px
+        font-weight: 600
+        color: #111111
+        line-height: 36px
+        @media (max-width: 768px)
+          margin-bottom: 5px
+          font-size: 16px
+          line-height: 22px
