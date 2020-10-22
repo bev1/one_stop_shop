@@ -464,8 +464,12 @@ h3
     font-weight: 600
   p.small
     font-size: 24px
+    @media (max-width:992px)
+      max-width: 500px
   p.big
     font-size: 36px
+    @media (max-width:992px)
+      max-width: 500px
   p.red
     color: #cf093c
     text-align: center
@@ -1362,9 +1366,9 @@ section
             font-size: 24px
         @media (max-width: 992px)
           &.small
-            max-width: 100%
+            max-width: 500px
           &.big
-            max-width: 100%
+            max-width: 500px
             margin-top: 15px
         @media (max-width: 768px)
           &.small
@@ -1543,10 +1547,10 @@ section
             line-height: normal
         @media (max-width: 992px)
           &.small
-            max-width: 100%
+            max-width: 500px
             margin-top: 15px
           &.big
-            max-width: 100%
+            max-width: 500px
         @media (max-width: 768px)
           &.small
             font-size: 16px
@@ -1777,7 +1781,7 @@ section
             line-height: normal
         @media (max-width: 992px)
           &.big
-            max-width: 100%
+            max-width: 500px
         @media (max-width: 768px)
           &.big
             font-size: 18px
@@ -1977,7 +1981,7 @@ section
             line-height: normal
         @media (max-width: 992px)
           &.big
-            max-width: 100%
+            max-width: 500px
         @media (max-width: 768px)
           &.big
             font-size: 18px
