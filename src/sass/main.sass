@@ -93,6 +93,7 @@ h3
 @import './layout/footer'
 @import './layout/modal'
 @import './components/cube'
+// @import './components/cube2'
 
 .main-section
   padding: 50px 0
@@ -107,12 +108,13 @@ h3
         position: relative
         perspective: 1000px
         .cube-link
-          display: none
           position: absolute
           color: rgb(30, 78, 167)
           font-size: 24px
           font-weight: 500
           z-index: 1
+          &.animate
+            display: none
           @media (max-width: 1799px)
             font-size: 22px
           @media (max-width: 1200px)
@@ -889,6 +891,9 @@ section
           &.Marshall
             top: 765px
             right: -120px
+            @media (max-width: 1650px)
+              top: 600px
+              right: -70px
             @media (max-width: 1449px)
               top: 600px
               right: -60px
@@ -1235,6 +1240,8 @@ section
 
   &.consulting-5
     padding: 30px 0 108px
+    @media (max-width: 1600px)
+      overflow: hidden
     @media (max-width: 768px)
       padding-bottom: 50px
     .container
