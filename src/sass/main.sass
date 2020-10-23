@@ -3289,6 +3289,7 @@ section
       align-items: center
       justify-content: center
       width: 50%
+      height: 350px
       img
         &:not(.show)
           display: none
@@ -3296,7 +3297,7 @@ section
           
   &.real-3
     padding-top: 50px
-    padding-bottom: 140px
+    padding-bottom: 100px
     background-position: right
     background-repeat: no-repeat
     @media (max-width:991px)
@@ -3368,3 +3369,198 @@ section
           margin-bottom: 5px
           font-size: 16px
           line-height: 22px
+  &.real-4
+    h2
+      span
+        color: #8660ad
+    .container
+      position: relative
+      @media (min-width: 1300px)
+        max-width: 1280px
+    .tab-content
+      background-repeat: no-repeat
+      padding-bottom: 870px
+      background-position: center
+      background-size: 2000px 1000px
+      .country
+        position: absolute
+        cursor: pointer
+        *
+          transition: .3s
+        .dot
+          width: 10px
+          height: 10px
+          background-color: #855fad
+          position: relative
+          border-radius: 50%
+          &::after
+            content: ''
+            width: 20px
+            height: 20px
+            position: absolute
+            top: -5px
+            left: -5px
+            border: 1px solid #855fad
+            border-radius: 50%
+        .text
+          font-size: 14px
+          color: #111111
+          font-weight: 600
+          position: absolute
+          white-space: nowrap
+        .image
+          position: absolute
+        .line
+          width: 0
+          position: absolute
+          border-bottom: 1px dotted #855fad
+          transform-origin: left
+        .description
+          color: #111111
+          font-size: 18px
+          font-weight: 500
+          padding: 16px 10px 20px 29px
+          background-color: #ffffff
+          border: 1px solid #d9d9d9
+          border-radius: 10px
+          filter: drop-shadow(-13.926px 9.751px 12px rgba(49,54,57,0.21))
+          opacity: 0
+          visibility: hidden
+          position: absolute
+          width: 690px
+          &:before
+            content: ''
+            width: 12px
+            height: 12px
+            border-radius: 50%
+            background-color: #855fad
+            position: absolute
+            top: -6px
+            left: 25px
+        &:hover
+          .image
+            opacity: 1 !important
+          .dot
+            width: 12px
+            height: 12px
+            &::after
+              width: 22px
+              height: 22px
+          .description
+            visibility: visible
+            opacity: 1
+            transition-delay: .3s
+        &.britain
+          left: 605px
+          top: 265px
+          .text
+            top: -7px
+            left: -85px
+          .image
+            opacity: 0
+            top: -45px
+            left: -33px
+          .line
+            transform: rotate(134deg)
+          .description
+            top: 220px
+            left: -230px
+          &:hover
+            .line
+              width: 285px
+        &.usa
+          left: 190px
+          top: 350px
+          .text
+            top: -15px
+            left: -40px
+          .image
+            opacity: 0
+            top: -45px
+            left: -33px
+          .line
+            transform: rotate(31deg)
+            bottom: 8px
+          .description
+            top: 135px
+            left: 185px
+          &:hover
+            .line
+              width: 250px
+        &.canada
+          left: 215px
+          top: 290px
+          .text
+            top: -25px
+            left: 0px
+          .image
+            opacity: 0
+            top: -45px
+            left: -33px
+        &.portugal
+          left: 560px
+          top: 350px
+          .text
+            top: 12px
+            left: -40px
+          .image
+            opacity: 0
+            top: -45px
+            left: -33px
+          .line
+            transform: rotate(141deg)
+          .description
+            top: 135px
+            left: -185px
+          &:hover
+            .line
+              width: 200px
+        &.spain
+          left: 590px
+          top: 340px
+          .text
+            top: -23px
+            left: -23px
+          .image
+            opacity: 0
+            top: -45px
+            left: -33px
+        &.germany
+          left: 637px
+          top: 275px
+          .text
+            top: -25px
+            left: -5px
+          .image
+            opacity: 0
+            top: -45px
+            left: -33px
+          .line
+            transform: rotate(139deg)
+          .description
+            top: 210px
+            left: -260px
+          &:hover
+            .line
+              width: 300px
+        &.israel
+          left: 800px
+          top: 395px
+          .text
+            top: -23px
+            left: -28px
+          .image
+            opacity: 0
+            top: -45px
+            left: -33px
+          .line
+            transform: rotate(169deg)
+          .description
+            top: 90px
+            left: -423px
+          &:hover
+            .line
+              width: 400px
+
+
+
