@@ -346,7 +346,7 @@ h3
     margin-left: -18px
     display: flex
     width: fit-content
-    @media (max-width: 1500px)
+    @media (max-width: 1700px)
       &
         margin-left: 0
     @media (max-width: 992px)
@@ -1369,7 +1369,7 @@ section
             max-width: unset
         &.big
           margin-top: 33px
-          max-width: 620px
+          max-width: 530px
           line-height: 49px
         @media (max-width: 1200px)
           &.small
@@ -1987,7 +1987,7 @@ section
           font-size: 37px
         @media (max-width: 1400px)
           &.big
-            max-width: 550px
+            max-width: 500px
         @media (max-width: 1200px)
           &.big
             font-size: 24px
@@ -2064,6 +2064,9 @@ section
         &.first
           margin-top: 115px
       @media (max-width:992px)
+        &.first
+          margin-top: 120px
+      @media (max-width:768px)
         &.first
           margin-top: 70px
       @media (max-width:992px)
@@ -3777,8 +3780,20 @@ section
     background-position: left
     padding-top: 0
     padding-bottom: 10px
-    @media (max-width:991px)
-      padding-top: 40px
+    @media (max-width:1650px)
+      background-position: -40% 100%
+    @media (max-width:1450px)
+      background-position: -70% 100%
+      margin-top: -70px
+    @media (max-width:1350px)
+      background-position: -120% 100%
+    @media (max-width:1350px)
+      background-position: -140% 100%
+    @media (max-width:1250px)
+      background-position: -220% 100%
+    @media (max-width:1200px)
+      background-image: none !important
+      margin-top: 0
     .container
       @media (min-width: 1600px)
         max-width: 1580px
@@ -3786,12 +3801,18 @@ section
       margin-bottom: 62px
       margin-left: 14px
       line-height: 48px
+      @media (max-width:1450px)
+        line-height: normal
+        margin-bottom: 20px
       span
         color: #8660ad
     p
       color: #7b7b7b
       font-size: 18px
       line-height: 30px
+      @media (max-width:992px)
+        font-size: 16px
+        line-height: normal
       strong
         color: #111111
       &.sub-title
@@ -3800,16 +3821,25 @@ section
       list-style: none
       margin-top: 78px
       padding-left: 28px
+      @media (max-width:768px)
+        margin-top: 20px
+        padding-left: 0
       li
         position: relative
         padding-left: 38px
         font-size: 18px
         font-weight: 600
         margin-bottom: 40px
+        @media (max-width:992px)
+          font-size: 16px
+          margin-bottom: 15px
+          line-height: normal
         p
           margin-bottom: 0
           strong
             font-size: 24px
+            @media (max-width:992px)
+              font-size: 18px
         &::before
           content: ''
           position: absolute
@@ -3818,12 +3848,20 @@ section
           width: 25px
           height: 40px
           background-image: url('../img/home.png')
+          @media (max-width:768px)
+            width: 20px
+            height: 30px
+            background-size: cover
+            top: 0
+            left: 5px
 
   &.real-6
     background-color: #ffffff
     padding-top: 72px
     padding-bottom: 65px
     color: #111111
+    @media (max-width:1200px)
+      padding-top: 40px
     .container
       @media (min-width: 1600px)
         max-width: 1595px
@@ -3835,16 +3873,25 @@ section
       font-size: 21px
       font-weight: 600
       margin-bottom: 67px
+      @media (max-width:992px)
+        font-size: 18px
+        margin-bottom: 30px
     .item
       display: flex
       flex-direction: column
       align-items: center
       justify-content: start
+      @media (max-width:992px)
+        margin-bottom: 15px
       .title
         font-size: 24px
         font-weight: 700
         line-height: 30px
         margin-bottom: 45px
+        @media (max-width:1200px)
+          font-size: 18px
+        @media (max-width:992px)
+          margin-bottom: 10px
         &.left
           margin-bottom: 18px
       .icon
@@ -3854,24 +3901,39 @@ section
         font-weight: 600
         line-height: 30px
         max-width: 480px
+        @media (max-width:1200px)
+          font-size: 16px
     .bottom
       color: #7b7b7b
       font-size: 18px
       margin-top: 81px
       line-height: 30px
+      @media (max-width:1200px)
+        margin-top: 30px
+      @media (max-width:992px)
+        line-height: normal
 
   &.real-7
     background-repeat: no-repeat
     background-position: right
     padding-top: 72px
     padding-bottom: 150px
-    @media (max-width:991px)
+    @media (max-width:1800px)
+      background-position: 130% 0
+    @media (max-width:1350px)
+      padding-bottom: 40px
+    @media (max-width:992px)
+      background-image: none !important
       padding-top: 40px
     .container
       @media (min-width: 1480px)
         max-width: 1465px
     h2
       margin-bottom: 33px
+      @media (max-width:1350px)
+        margin-bottom: 75px
+      @media (max-width:992px)
+        margin-bottom: 20px
       span
         color: #8660ad
     p
@@ -3891,6 +3953,8 @@ section
         font-weight: 600
         margin-bottom: 30px
         line-height: 24px
+        @media (max-width:992px)
+          padding-left: 25px
         &::before
           content: ''
           position: absolute
@@ -3899,4 +3963,6 @@ section
           width: 26px
           height: 28px
           background-image: url('../img/secure.png')
+          @media (max-width:992px)
+            left: -10px
 
