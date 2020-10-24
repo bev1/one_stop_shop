@@ -3184,13 +3184,21 @@ section
     background-position: right
     padding-top: 150px
     padding-bottom: 140px
-    @media (max-width:991px)
-      padding-top: 40px
+    @media (max-width:1500px)
+      background-position: 130% 100%
+    @media (max-width:1300px)
+      background-position: 170% 100%
+      padding-top: 30px
+      padding-bottom: 30px
+    @media (max-width:1200px)
+      background-image: none !important
     .container
       @media (min-width: 1450px)
         max-width: 1426px
     h2
       margin-bottom: 50px
+      @media (max-width: 992px)
+        margin-bottom: 20px
       span
         color: #8660ad
     p
@@ -3202,15 +3210,23 @@ section
         margin: 40px 0 75px
         border-left: 30px solid #8660ad
         padding-left: 25px
+        @media (max-width:1200px)
+          border-left: 5px solid #8660ad
+          padding-left: 10px
+        @media (max-width: 992px)
+          margin-bottom: 20px
       &:nth-of-type(3)
         font-size: 24px
         line-height: 35px
+        @media (max-width: 992px)
+          font-size: 16px
         span
           color: #8660ad
           font-weight: 600
 
   &.real-2
     padding-top: 50px
+    overflow: hidden
     @media (max-width:991px)
       padding-top: 40px
     .container
@@ -3219,6 +3235,9 @@ section
     h2
       margin-bottom: 62px
       margin-left: 137px
+      @media (max-width:1200px)
+        margin-left: 0
+        margin-bottom: 30px
       span
         color: #8660ad
     p
@@ -3232,12 +3251,19 @@ section
         margin-bottom: 6px
       &.left
         margin-left: 137px
+        @media (max-width:1200px)
+          margin-left: 0
     .left-img
       margin-left: -235px
       margin-bottom: 37px
+      @media (max-width:1200px)
+        margin-left: 0
+        max-width: 100%
     .list-wrapper
       display: flex
       justify-content: space-between
+      @media (max-width:1200px)
+        justify-content: flex-start
     ul
       list-style: none
       &.left
@@ -3261,6 +3287,10 @@ section
       &.right
         flex-direction: column
         margin-left: 160px
+        @media (max-width:1200px)
+          margin-left: 0
+        @media (max-width:768px)
+          margin-left: 15px
         li
           position: relative
           padding-left: 15px
@@ -3290,7 +3320,13 @@ section
       justify-content: center
       width: 50%
       height: 350px
+      @media (max-width:1200px)
+        width: auto
+      @media (max-width:768px)
+        height: 250px
       img
+        @media (max-width:768px)
+          width: 200px
         &:not(.show)
           display: none
 
@@ -3302,6 +3338,7 @@ section
     background-repeat: no-repeat
     @media (max-width:991px)
       padding-top: 40px
+      padding-bottom: 40px
     .container
       @media (min-width: 1300px)
         max-width: 1284px
@@ -3356,8 +3393,9 @@ section
     .tab-pane
       margin-top: 60px
       margin-left: 78px
-      @media (max-width: 992px)
-        margin-top: 24px
+      @media (max-width:1100px)
+        margin-top: 15px
+        margin-left: 0
       &:not(.active)
         display: none
       p
@@ -3375,16 +3413,21 @@ section
         color: #8660ad
     .container
       position: relative
-      @media (min-width: 1300px)
-        max-width: 1280px
+      @media (min-width: 1200px)
+        max-width: 1180px
     .tab-content
       background-repeat: no-repeat
       padding-bottom: 870px
       background-position: center
       background-size: 2000px 1000px
+      @media (max-width: 1199px)
+        background-image: none !important
+        padding-bottom: 50px
       .country
         position: absolute
         cursor: pointer
+        @media (max-width: 1199px)
+          display: none !important
         *
           transition: .3s
         .dot
@@ -3452,7 +3495,7 @@ section
             opacity: 1
             transition-delay: .3s
         &.britain
-          left: 605px
+          left: 555px
           top: 265px
           .text
             top: -7px
@@ -3470,7 +3513,7 @@ section
             .line
               width: 285px
         &.usa
-          left: 190px
+          left: 140px
           top: 350px
           .text
             top: -15px
@@ -3489,7 +3532,7 @@ section
             .line
               width: 250px
         &.canada
-          left: 215px
+          left: 165px
           top: 290px
           .text
             top: -25px
@@ -3499,7 +3542,7 @@ section
             top: -45px
             left: -33px
         &.portugal
-          left: 560px
+          left: 510px
           top: 350px
           .text
             top: 12px
@@ -3517,7 +3560,7 @@ section
             .line
               width: 200px
         &.spain
-          left: 590px
+          left: 540px
           top: 340px
           .text
             top: -23px
@@ -3527,7 +3570,7 @@ section
             top: -45px
             left: -33px
         &.germany
-          left: 637px
+          left: 587px
           top: 275px
           .text
             top: -25px
@@ -3545,7 +3588,7 @@ section
             .line
               width: 300px
         &.israel
-          left: 800px
+          left: 750px
           top: 395px
           .text
             top: -23px
@@ -3563,7 +3606,7 @@ section
             .line
               width: 400px
         &.cyprus
-          left: 730px
+          left: 680px
           top: 365px
           .text
             top: 12px
@@ -3581,7 +3624,7 @@ section
             .line
               width: 340px
         &.thailand
-          right: 90px
+          right: 140px
           top: 490px
           .text
             top: -25px
@@ -3599,7 +3642,7 @@ section
             .line
               width: 766px
         &.montenegro
-          left: 715px
+          left: 665px
           top: 330px
           .text
             top: -13px
@@ -3617,7 +3660,7 @@ section
             .line
               width: 333px
         &.czech
-          left: 655px
+          left: 605px
           top: 285px
           .text
             top: -10px
@@ -3635,7 +3678,7 @@ section
             .line
               width: 305px
         &.hungary
-          left: 725px
+          left: 675px
           top: 300px
           .text
             top: -5px
@@ -3645,7 +3688,7 @@ section
             top: -45px
             left: -33px
         &.greece
-          left: 720px
+          left: 670px
           top: 347px
           .text
             top: -5px
@@ -3655,7 +3698,7 @@ section
             top: -45px
             left: -33px
         &.italy
-          left: 678px
+          left: 628px
           top: 332px
           .text
             top: -15px
@@ -3665,7 +3708,7 @@ section
             top: -45px
             left: -33px
         &.latvia
-          left: 745px
+          left: 695px
           top: 215px
           .text
             top: -5px
@@ -3675,7 +3718,7 @@ section
             top: -45px
             left: -33px
         &.uae
-          left: 800px
+          left: 750px
           top: 415px
           .text
             top: -5px
@@ -3685,7 +3728,7 @@ section
             top: -45px
             left: -33px
         &.turkey
-          left: 770px
+          left: 720px
           top: 345px
           .text
             top: -5px
@@ -3694,6 +3737,166 @@ section
             opacity: 0
             top: -45px
             left: -33px
+    .country-wrapper
+      padding: 10px
+      background-color: #ffffff
+      border: 1px solid #d9d9d9
+      border-radius: 10px
+      filter: drop-shadow(-13.926px 9.751px 12px rgba(49,54,57,0.21))
+      margin-bottom: 10px
+      .title
+        font-weight: 600
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        padding-left: 15px
+        .dot
+          width: 10px
+          height: 10px
+          background-color: #855fad
+          position: relative
+          border-radius: 50%
+          margin-right: 10px
+          &::after
+            content: ''
+            width: 20px
+            height: 20px
+            position: absolute
+            top: -5px
+            left: -5px
+            border: 1px solid #855fad
+            border-radius: 50%
+      .text
+        p
+          color: #111111
+          font-size: 16px
+          font-weight: 500
 
+  &.real-5
+    background-repeat: no-repeat
+    background-position: left
+    padding-top: 0
+    padding-bottom: 10px
+    @media (max-width:991px)
+      padding-top: 40px
+    .container
+      @media (min-width: 1600px)
+        max-width: 1580px
+    h2
+      margin-bottom: 62px
+      margin-left: 14px
+      line-height: 48px
+      span
+        color: #8660ad
+    p
+      color: #7b7b7b
+      font-size: 18px
+      line-height: 30px
+      strong
+        color: #111111
+      &.sub-title
+        margin-left: 12px
+    ul
+      list-style: none
+      margin-top: 78px
+      padding-left: 28px
+      li
+        position: relative
+        padding-left: 38px
+        font-size: 18px
+        font-weight: 600
+        margin-bottom: 40px
+        p
+          margin-bottom: 0
+          strong
+            font-size: 24px
+        &::before
+          content: ''
+          position: absolute
+          top: -12px
+          left: -2px
+          width: 25px
+          height: 40px
+          background-image: url('../img/home.png')
 
+  &.real-6
+    background-color: #ffffff
+    padding-top: 72px
+    padding-bottom: 65px
+    color: #111111
+    .container
+      @media (min-width: 1600px)
+        max-width: 1595px
+    h2
+      margin-bottom: 19px
+      span
+        color: #8660ad
+    .sub-title
+      font-size: 21px
+      font-weight: 600
+      margin-bottom: 67px
+    .item
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: start
+      .title
+        font-size: 24px
+        font-weight: 700
+        line-height: 30px
+        margin-bottom: 45px
+        &.left
+          margin-bottom: 18px
+      .icon
+        margin-bottom: 26px
+      .text
+        font-size: 18px
+        font-weight: 600
+        line-height: 30px
+        max-width: 480px
+    .bottom
+      color: #7b7b7b
+      font-size: 18px
+      margin-top: 81px
+      line-height: 30px
+
+  &.real-7
+    background-repeat: no-repeat
+    background-position: right
+    padding-top: 72px
+    padding-bottom: 150px
+    @media (max-width:991px)
+      padding-top: 40px
+    .container
+      @media (min-width: 1480px)
+        max-width: 1465px
+    h2
+      margin-bottom: 33px
+      span
+        color: #8660ad
+    p
+      color: #7b7b7b
+      font-size: 18px
+      line-height: 30px
+      strong
+        color: #111111
+    ul
+      list-style: none
+      margin-top: 27px
+      padding-left: 7px
+      li
+        position: relative
+        padding-left: 50px
+        font-size: 18px
+        font-weight: 600
+        margin-bottom: 30px
+        line-height: 24px
+        &::before
+          content: ''
+          position: absolute
+          top: -2px
+          left: -2px
+          width: 26px
+          height: 28px
+          background-image: url('../img/secure.png')
 
