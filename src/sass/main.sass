@@ -577,7 +577,6 @@ section
   &.consulting-1
     padding-top: 18px
     .container
-      // background-image: url('../img/consulting_1.png')
       background-repeat: no-repeat
       background-size: 96%
       background-position: 64px 0
@@ -620,6 +619,8 @@ section
       &.top
         margin-top: -10px
         margin-left: 13px
+        @media (max-width: 1400px)
+          max-width: 500px
         @media (max-width: 1280px)
           max-width: 534px
         @media (max-width: 1200px)
@@ -1376,6 +1377,7 @@ section
             font-size: 22px
           &.big
             font-size: 24px
+            max-width: 400px
         @media (max-width: 992px)
           &.small
             max-width: 500px
@@ -1529,6 +1531,8 @@ section
     .container
       @media (min-width: 1610px)
         max-width: 1590px
+      @media (max-width: 1600px)
+        max-width: 1480px
       @media (max-width: 1500px)
         padding-top: 63px
         padding-bottom: 82px
@@ -1551,12 +1555,21 @@ section
           max-width: 710px
           line-height: 49px
           font-size: 37px
+        @media (max-width: 1400px)
+          &.small
+            max-width: 600px
+        @media (max-width: 1300px)
+          &.small
+            max-width: 520px
         @media (max-width: 1200px)
           &.small
             font-size: 22px
           &.big
             font-size: 24px
             line-height: normal
+        @media (max-width: 1100px)
+          &.big
+            max-width: 440px
         @media (max-width: 992px)
           &.small
             max-width: 500px
@@ -1967,9 +1980,10 @@ section
     background-repeat: no-repeat
     background-size: cover
     background-position: center
+    @media (max-width: 1100px)
+      padding: 15px 0 25px
     @media (max-width: 992px)
       background-position: left
-      padding: 15px 0 25px
     .container
       @media (min-width: 1610px)
         max-width: 1590px
@@ -1992,6 +2006,7 @@ section
           &.big
             font-size: 24px
             line-height: normal
+            max-width: 400px
         @media (max-width: 992px)
           &.big
             max-width: 500px
@@ -2066,7 +2081,7 @@ section
       @media (max-width:992px)
         &.first
           margin-top: 120px
-      @media (max-width:768px)
+      @media (max-width:767px)
         &.first
           margin-top: 70px
       @media (max-width:992px)
@@ -2223,9 +2238,10 @@ section
     background-position: center
     @media (max-width: 1500px)
       margin-top: 0
+    @media (max-width: 1100px)
+      padding: 15px 0 25px
     @media (max-width: 992px)
       background-position: left
-      padding: 15px 0 25px
     .container
       @media (min-width: 1610px)
         max-width: 1590px
@@ -2244,6 +2260,12 @@ section
             font-size: 24px
             line-height: normal
             margin-top: 0
+        @media (max-width: 1400px)
+          &.big
+            max-width: 500px
+        @media (max-width: 1100px)
+          &.big
+            max-width: 400px
         @media (max-width: 992px)
           &.big
             max-width: 100%
