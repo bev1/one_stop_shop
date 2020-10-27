@@ -5,6 +5,8 @@
   width: 100%
   padding: 15px 0
   transition: .3s
+  @media (max-width: 768px)
+    padding: 5px 0
   .container
     @media (min-width: 1850px)
       max-width: 1830px
@@ -14,10 +16,21 @@
       color: #878787
       justify-content: space-between
       font-size: 14px
+      @media (max-width: 768px)
+        flex-direction: column-reverse
       .mail
         color: #8b8b8b
       .social
         display: flex
         margin-left: -110px
+        @media (max-width: 768px)
+          margin-left: 0
+          margin-top: 5px
+          margin-bottom: 5px
         .icon:first-child
           margin-right: 18px
+          @media (max-width: 768px)
+            margin-right: 0
+        @media (max-width: 768px)
+          .icon
+            margin: 0 10px
