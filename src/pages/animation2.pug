@@ -87,7 +87,8 @@ html(lang="ru")
                 a.cube-link.second(href="#consulting-10") Счета
                 a.cube-link.third(href="#consulting-7") Лицензии
                 //- img(src="img/cube-consulting.png", alt="cube")
-                include components/cube2.pug
+                //- include components/cube2.pug
+                <canvas width="800" height="600" id="canvas"></canvas>
         section.section.consulting-1#consulting-1
           div(data-src="../img/consulting_1.png").container.lazy
             .section-title
@@ -12244,4 +12245,5 @@ html(lang="ru")
       script(src="js/bootstrap.min.js")
       script(src="js/lazy-load.js")
       script(src="js/aos.js")
+      script(src="js/canvas.js")
       script(src="js/script.js")
