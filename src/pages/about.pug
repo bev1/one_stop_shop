@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no")
+        title Document
+        link(rel="stylesheet", href="css/bootstrap-reboot.min.css")
+        link(rel="stylesheet preload", as="style" href="css/bootstrap.min.css")
+        link(rel="stylesheet", href="css/aos.css")
+        link(rel="stylesheet preload", as="style" href="css/main.css")
+        link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")
+    body
+      header.header
+        .container
+          .header-wrap
+            .logo
+              a(href="index.html")
+                img(src="img/logo.png", alt="logo")
+            ul.header-menu.collapse#navbar
+              li
+                a.active(href="about.html")
+                  .text About us
+                  .line
+                  .number 00
+              li
+                a(href="index.html")
+                  .text Consulting
+                  .line
+                  .number 01
+              li
+                a(href="marketing.html")
+                  .text Marketing
+                  .line
+                  .number 02
+              li
+                a(href="development.html")
+                  .text Development
+                  .line
+                  .number 03
+              li
+                a(href="cryptocurrency.html")
+                  .text Cryptocurrency
+                  .line
+                  .number 04
+              li
+                a(href="legal.html")
+                  .text Legal services
+                  .line
+                  .number 05
+              li
+                a(href="realestate.html")
+                  .text Real estate
+                  .line
+                  .number 06
+            button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation")
+              span(class="line line-1")
+              span(class="line line-2")
+              span(class="line line-3")
+      main
+        section.section.about-1
+          .container
+            .out about us
+            .row
+              .col-lg-6
+                h1 Who are we?
+                p.top We are a group of professional and passionate lawyers, economists, and developers, here to help you start your business from scratch. Our team thoroughly examines all the details of your future business and plans appropriate actions to move forward
+                p.center
+                  span Acalista group provides 
+                  | you with support in all areas of 
+                  strong your business from A to Z 
+                  | to make sure everything runs smoothly. 
+                p.bottom All you need to do is to sit back and relax while your business starts running. We’ve helped hundreds of clients to get their businesses up and running
+        section.section.about-2
+          .container
+            .out where are we
+            .row
+              .col-lg-6
+                img(src="../img/about-2.png")
+              .col-lg-6
+                h2 Locations
+                p Our headquarters are in Israel 
+                  br.d-none.d-lg-block
+                  | with branches in 
+                ul
+                  li UK
+                  li Latvia
+                  li Estonia
+                  li Ukraine
+        section.section.about-3.lazy(data-src="../img/about-3.png")
+          .container
+            h2 Our Specialties
+            .item
+              .left
+                .title
+                  .icon
+                    img(src="../img/about-icon-1.png")
+                  .text Marketing
+                  .line
+                .text We develop ads and promote your business on appropriate online and offline channels.
+              .right
+                img(src="../img/about-3-1.png")
+
+      include layout/footer.pug
+      script(src="js/jquery.min.js")
+      script(src="js/bootstrap.min.js")
+      script(src="js/lazy-load.js")
+      script(src="js/aos.js")
+      script(type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")
+      script(src="js/script.js")
