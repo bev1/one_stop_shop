@@ -212,6 +212,36 @@ $( document ).ready(function() {
     $('.cube-wrapper').addClass('rotate')
   })
 
+  $.fn.isInViewport = function() {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+    return elementBottom > viewportTop-100 && elementTop < viewportBottom-100;
+  };
+  $(window).on('resize scroll', function() {
+    if($('.line.marketing').isInViewport()) {
+      $('.line.marketing').addClass('visible');
+    } else {
+      $('.line.marketing').removeClass('visible');
+    }
+    if($('.line.web').isInViewport()) {
+      $('.line.web').addClass('visible');
+    } else {
+      $('.line.web').removeClass('visible');
+    }
+    if($('.line.branding').isInViewport()) {
+      $('.line.branding').addClass('visible');
+    } else {
+      $('.line.branding').removeClass('visible');
+    }
+    if($('.line.admin').isInViewport()) {
+      $('.line.admin').addClass('visible');
+    } else {
+      $('.line.admin').removeClass('visible');
+    }
+  });
+
 });
 
 

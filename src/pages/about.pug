@@ -86,19 +86,57 @@ html(lang="ru")
                   li Latvia
                   li Estonia
                   li Ukraine
-        section.section.about-3.lazy(data-src="../img/about-3.png")
+        section.section.about-3
           .container
             h2 Our Specialties
-            .item
+            .item.left
               .left
                 .title
                   .icon
-                    img(src="../img/about-icon-1.png")
-                  .text Marketing
-                  .line
+                    img(src="../img/about-icon-1.png" data-aos="fade-right")
+                  a.link(data-aos="fade") Marketing
+                  .line-wrap
+                    .circle(data-aos="fade")
+                    .line.marketing
                 .text We develop ads and promote your business on appropriate online and offline channels.
+              .right.marketing
+                img(src="../img/about-3-1.png" data-aos="fade-left")
+            .item.right
               .right
-                img(src="../img/about-3-1.png")
+                .title
+                  .icon
+                    img(src="../img/about-icon-2.png" data-aos="fade-left")
+                  a.link(data-aos="fade") Web Development
+                  .line-wrap
+                    .circle(data-aos="fade")
+                    .line.web
+                .text Website development of any difficulty level.
+              .left.web
+                img(src="../img/about-3-2.png" data-aos="fade-right")
+            .item.left
+              .left
+                .title
+                  .icon
+                    img(src="../img/about-icon-3.png" data-aos="fade-right")
+                  a.link(data-aos="fade") Branding
+                  .line-wrap
+                    .circle(data-aos="fade")
+                    .line.branding
+                .text As an essential part of your business, we start by developing your brand. We set the tone, the voice, the style of your design, and everything else that’s tied with your brand. 
+              .right.branding
+                img(src="../img/about-3-3.png" data-aos="fade-left")
+            .item.right
+              .right
+                .title
+                  .icon
+                    img(src="../img/about-icon-4.png" data-aos="fade-left")
+                  a.link(data-aos="fade") Administrative and Legal Services
+                  .line-wrap
+                    .circle(data-aos="fade")
+                    .line.admin
+                .text Anything from registration of your business to bank selection and tax planning.
+              .left.admin
+                img(src="../img/about-3-4.png" data-aos="fade-right")
 
       include layout/footer.pug
       script(src="js/jquery.min.js")

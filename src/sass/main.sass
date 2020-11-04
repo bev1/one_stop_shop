@@ -4771,7 +4771,6 @@ section
   &.about-2
     background-color: #eef2f7
     padding-top: 72px
-    padding-bottom: 50px
     padding-top: 50px
     position: relative
     .container
@@ -4824,7 +4823,125 @@ section
           background-image: url('../img/map-point-red.png')
 
   &.about-3
+    background-image: url('../img/about-3.png')
     background-color: #efefef
-    padding-top: 72px
+    padding-top: 62px
     padding-bottom: 50px
-    padding-top: 50px
+    overflow: hidden
+    .container
+      @media (min-width: 1780px)
+        max-width: 1755px
+    h2
+      font-size: 72px
+      color: #151515
+      font-weight: 700
+      margin-bottom: 71px
+    .item
+      display: flex
+      justify-content: space-between
+      &:nth-of-type(2)
+        align-items: baseline
+        margin-top: 27px
+        .link
+          margin-bottom: 0
+        .right
+          margin-right: 126px
+      &:nth-of-type(3)
+        align-items: baseline
+        margin-top: 10px
+        .link
+          margin-bottom: 0
+        .text
+          max-width: 700px !important
+      &:nth-of-type(4)
+        align-items: baseline
+        margin-top: 60px
+        .link
+          margin-bottom: 0
+        .right
+          margin-right: 126px
+      .title
+        display: flex
+      .link
+        font-size: 36px
+        color: #151515
+        font-weight: 700
+        text-decoration: none
+        margin-bottom: 20px
+        cursor: pointer
+        &:hover
+          color: #cf093c
+      .text
+        font-size: 24px
+        line-height: 36px
+        color: #151515
+      .circle
+        width: 29px
+        height: 29px
+        border-radius: 15px
+        filter: drop-shadow(-3.277px 2.294px 2.5px rgba(49,54,57,0.6))
+        background-color: #ffffff
+        position: relative
+        &:before
+          content: ''
+          width: 45px
+          height: 45px
+          position: absolute
+          top: -8px
+          left: -8px
+          border: 1px solid #ffffff
+          border-radius: 50%
+      .line
+        height: 1px
+        background-color: #cf093c
+        transition: .5s
+        width: 0
+        margin-top: -14px
+        &.visible
+          &.marketing
+            width: 509px
+          &.web
+            width: 432px
+          &.branding
+            width: 509px
+          &.admin
+            width: 328px
+      &.left
+        .icon
+          margin-right: 20px
+        .line-wrap
+          margin-left: 25px
+          margin-top: 17px
+          .line
+            margin-left: 30px
+        .text
+          margin-left: 71px
+          margin-top: 5px
+          max-width: 600px
+        .right
+          &.marketing
+            img
+              margin-top: -77px
+      &.right
+        flex-direction: row-reverse
+        .title
+          flex-direction: row-reverse
+        .icon
+          margin-left: 20px
+        .line-wrap
+          margin-right: 25px
+          margin-top: 17px
+          position: relative
+          .circle
+            position: relative
+            z-index: 1
+          .line
+            position: absolute
+            top: 75%
+            right: 30px
+        .text
+          margin-right: 71px
+          margin-top: 5px
+          max-width: 600px
+
+
