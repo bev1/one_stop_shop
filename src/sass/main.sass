@@ -4285,7 +4285,7 @@ section
           margin-top: 25px
           align-items: flex-start
         @media (max-width: 599px)
-          padding: 15px 10px 5px
+          padding: 15px 10px
         @media (max-width: 530px)
           flex-wrap: wrap
           justify-content: center
@@ -4626,6 +4626,17 @@ section
     background-color: #fbfbfb
     padding-top: 55px
     padding-bottom: 62px
+    @media (max-width: 1850px)
+      background-position: 130%
+    @media (max-width: 1500px)
+      background-position: 180%
+    @media (max-width: 1250px)
+      background-position: 215%
+    @media (max-width: 1199px)
+      background-image: none !important
+    @media (max-width: 768px)
+      padding-top: 40px
+      padding-bottom: 0
     h2
       margin-bottom: 34px
       span
@@ -4638,11 +4649,15 @@ section
       line-height: 30px
       color: #7b7b7b
       margin-bottom: 30px
+      @media (max-width: 768px)
+        font-size: 16px
       &.bigger
         font-size: 24px
         color: #151515
         font-weight: 500
         margin-bottom: 20px
+        @media (max-width: 768px)
+          font-size: 18px
     ul
       padding: 0
       li
@@ -4652,6 +4667,8 @@ section
         font-weight: 500
         margin-left: 18px
         margin-bottom: 3px
+        @media (max-width: 768px)
+          font-size: 16px
 
   &.legal-9
     background-position: bottom left
@@ -4659,8 +4676,15 @@ section
     background-color: #fbfbfb
     padding-top: 72px
     padding-bottom: 122px
+    @media (max-width: 991px)
+      background-image: none !important
+    @media (max-width: 768px)
+      padding-bottom: 40px
+      padding-top: 40px
     h2
       margin-bottom: 52px
+      @media (max-width: 991px)
+        margin-bottom: 30px
       span
         color: #8d385c
     .subtitle
@@ -4668,10 +4692,14 @@ section
       line-height: 30px
       color: #7b7b7b
       font-weight: 500
+      @media (max-width: 991px)
+        font-size: 16px
       p
         margin: auto
         max-width: 1275px
         margin-bottom: 86px
+        @media (max-width: 991px)
+          margin-bottom: 30px
       strong
         color: #151515
     .container
@@ -4680,14 +4708,21 @@ section
     p
       font-size: 18px
       line-height: 30px
-        color: #151515
+      color: #151515
       margin-bottom: 30px
+      @media (max-width: 991px)
+        font-size: 16px
       &.first
         font-weight: 600
         border-left: 30px solid #8d385c
         padding-left: 25px
+        @media (max-width: 991px)
+          border-left: 15px solid #8d385c
+          padding-left: 20px
       &.bigger
         font-size: 24px
         font-weight: 500
         margin-bottom: 20px
+        @media (max-width: 991px)
+          font-size: 18px
 
