@@ -220,7 +220,7 @@ $( document ).ready(function() {
     return elementBottom > viewportTop-100 && elementTop < viewportBottom-100;
   };
   // TODO: refactor this code
-  if($('.line.marketing')) {
+  if($('.line.marketing').length) {
     $(window).on('resize scroll', function() {
       if($('.line.marketing').isInViewport()) {
         $('.line.marketing').addClass('visible');
