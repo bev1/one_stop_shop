@@ -220,38 +220,40 @@ $( document ).ready(function() {
     return elementBottom > viewportTop-100 && elementTop < viewportBottom-100;
   };
   // TODO: refactor this code
-  $(window).on('resize scroll', function() {
-    if($('.line.marketing').isInViewport()) {
-      $('.line.marketing').addClass('visible');
-    } else {
-      $('.line.marketing').removeClass('visible');
-    }
-    if($('.line.web').isInViewport()) {
-      $('.line.web').addClass('visible');
-    } else {
-      $('.line.web').removeClass('visible');
-    }
-    if($('.line.branding').isInViewport()) {
-      $('.line.branding').addClass('visible');
-    } else {
-      $('.line.branding').removeClass('visible');
-    }
-    if($('.line.admin').isInViewport()) {
-      $('.line.admin').addClass('visible');
-    } else {
-      $('.line.admin').removeClass('visible');
-    }
-    if($('.line.crypto').isInViewport()) {
-      $('.line.crypto').addClass('visible');
-    } else {
-      $('.line.crypto').removeClass('visible');
-    }
-    if($('.line.real').isInViewport()) {
-      $('.line.real').addClass('visible');
-    } else {
-      $('.line.real').removeClass('visible');
-    }
-  });
+  if($('.line.marketing')) {
+    $(window).on('resize scroll', function() {
+      if($('.line.marketing').isInViewport()) {
+        $('.line.marketing').addClass('visible');
+      } else {
+        $('.line.marketing').removeClass('visible');
+      }
+      if($('.line.web').isInViewport()) {
+        $('.line.web').addClass('visible');
+      } else {
+        $('.line.web').removeClass('visible');
+      }
+      if($('.line.branding').isInViewport()) {
+        $('.line.branding').addClass('visible');
+      } else {
+        $('.line.branding').removeClass('visible');
+      }
+      if($('.line.admin').isInViewport()) {
+        $('.line.admin').addClass('visible');
+      } else {
+        $('.line.admin').removeClass('visible');
+      }
+      if($('.line.crypto').isInViewport()) {
+        $('.line.crypto').addClass('visible');
+      } else {
+        $('.line.crypto').removeClass('visible');
+      }
+      if($('.line.real').isInViewport()) {
+        $('.line.real').addClass('visible');
+      } else {
+        $('.line.real').removeClass('visible');
+      }
+    });
+  }
 
 });
 
