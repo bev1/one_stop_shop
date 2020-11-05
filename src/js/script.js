@@ -25,6 +25,28 @@ $( document ).ready(function() {
     }, 500);
     return false;
   });
+
+  $('.langs .current').on('click', function(e) {
+    if($('.langs').hasClass('active')) {
+      $('.langs').removeClass('active');
+      $('.langs .list').fadeOut();
+    } else {
+      $('.langs').addClass('active');
+      $('.langs .list').fadeIn();
+    }
+  });
+
+  $(document).mouseup(function(e) 
+  {
+      const container = $('.langs .current');
+
+      // if the target of the click isn't the container nor a descendant of the container
+      if (!container.is(e.target) && container.has(e.target).length === 0) 
+      {
+        $('.langs').removeClass('active');
+        $('.langs .list').fadeOut();
+      }
+  });
   
   $('.read-more').on('click', function() {    
     let elem = $(this).parent().find('.read-more').text();
