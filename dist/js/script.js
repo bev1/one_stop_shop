@@ -219,6 +219,7 @@ $( document ).ready(function() {
     var viewportBottom = viewportTop + $(window).height();
     return elementBottom > viewportTop-100 && elementTop < viewportBottom-100;
   };
+  // TODO: refactor this code
   $(window).on('resize scroll', function() {
     if($('.line.marketing').isInViewport()) {
       $('.line.marketing').addClass('visible');
@@ -239,6 +240,16 @@ $( document ).ready(function() {
       $('.line.admin').addClass('visible');
     } else {
       $('.line.admin').removeClass('visible');
+    }
+    if($('.line.crypto').isInViewport()) {
+      $('.line.crypto').addClass('visible');
+    } else {
+      $('.line.crypto').removeClass('visible');
+    }
+    if($('.line.real').isInViewport()) {
+      $('.line.real').addClass('visible');
+    } else {
+      $('.line.real').removeClass('visible');
     }
   });
 
