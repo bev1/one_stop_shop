@@ -4806,6 +4806,8 @@ section
     position: relative
     @media (max-width: 1024px)
       overflow: visible
+    @media (max-width: 450px)
+      padding-top: 0
     .container
       @media (min-width: 1500px)
         max-width: 1480px
@@ -4832,6 +4834,13 @@ section
         margin-left: -270px
       @media (max-width: 991px)
         margin-left: -530px
+      @media (max-width: 767px)
+        margin-left: -260px
+        width: 635px
+        margin-top: -58px
+      @media (max-width: 376px)
+        margin-left: -200px
+        width: 500px
 
     h2 
       font-size: 72px
@@ -4847,6 +4856,9 @@ section
       @media (max-width: 767px)
         font-size: 40px
         margin-bottom: 30px
+      @media (max-width: 450px)
+        font-size: 30px
+        margin-bottom: 15px
     p
       font-size: 30px
       line-height: 36px
@@ -4860,11 +4872,15 @@ section
         font-size: 24px
       @media (max-width: 767px)
         font-size: 18px
+      @media (max-width: 450px)
+        line-height: normal
     ul
       list-style: none
       margin-left: 84px
       @media (max-width: 1150px)
         margin-left: 0
+      @media (max-width: 450px)
+        padding-left: 0
       li
         position: relative
         padding-left: 30px
@@ -4894,6 +4910,8 @@ section
     padding-top: 62px
     padding-bottom: 50px
     overflow: hidden
+    @media (max-width: 1099px)
+      background-position: top
     .container
       @media (min-width: 1780px)
         max-width: 1755px
@@ -4902,6 +4920,9 @@ section
       color: #151515
       font-weight: 700
       margin-bottom: 71px
+      @media (max-width: 1099px)
+        font-size: 40px
+        margin-bottom: 30px
     .item
       display: flex
       justify-content: space-between
@@ -4912,6 +4933,8 @@ section
           margin-bottom: 0
         .right
           margin-right: 126px
+          @media (max-width: 1600px)
+            margin-right: 0
       &:nth-of-type(3)
         align-items: baseline
         margin-top: 10px
@@ -4919,6 +4942,8 @@ section
           margin-bottom: 0
         .text
           max-width: 700px !important
+          @media (max-width: 991px)
+            max-width: 320px !important
       &:nth-of-type(4)
         align-items: baseline
         margin-top: 60px
@@ -4926,6 +4951,8 @@ section
           margin-bottom: 0
         .right
           margin-right: 126px
+          @media (max-width: 1600px)
+            margin-right: 0
       &:nth-of-type(5)
         align-items: baseline
         .link
@@ -4939,8 +4966,13 @@ section
           margin-bottom: 0
         .right
           margin-right: 94px
+          @media (max-width: 1600px)
+            margin-right: 0
       .title
         display: flex
+        .icon
+          img
+            width: 30px
       .link
         font-size: 36px
         color: #151515
@@ -4948,12 +4980,17 @@ section
         text-decoration: none
         margin-bottom: 20px
         cursor: pointer
+        @media (max-width: 1099px)
+          font-size: 26px
         &:hover
           color: #cf093c
       .text
         font-size: 24px
         line-height: 36px
         color: #151515
+        @media (max-width: 1099px)
+          font-size: 18px
+          line-height: normal
       .circle
         width: 29px
         height: 29px
@@ -4961,6 +4998,9 @@ section
         filter: drop-shadow(-3.277px 2.294px 2.5px rgba(49,54,57,0.6))
         background-color: #ffffff
         position: relative
+        @media (max-width: 991px)
+          width: 20px
+          height: 20px
         &:before
           content: ''
           width: 45px
@@ -4970,41 +5010,112 @@ section
           left: -8px
           border: 1px solid #ffffff
           border-radius: 50%
+          @media (max-width: 991px)
+            width: 35px
+            height: 35px
+            top: -7px
       .line
         height: 1px
         background-color: #cf093c
         transition: .5s
         width: 0
         margin-top: -14px
+        @media (max-width: 991px)
+          margin-top: -10px
         &.visible
           &.marketing
             width: 509px
+            @media (max-width: 1700px)
+              width: 350px
+            @media (max-width: 1600px)
+              width: 250px
+            @media (max-width: 1299px)
+              width: 150px
           &.web
             width: 432px
+            @media (max-width: 1600px)
+              width: 200px
+            @media (max-width: 991px)
+              width: 85px
           &.branding
             width: 509px
+            @media (max-width: 1600px)
+              width: 380px
+            @media (max-width: 1299px)
+              width: 260px
+            @media (max-width: 991px)
+              width: 80px
           &.admin
             width: 328px
+            @media (max-width: 1600px)
+              width: 240px
+            @media (max-width: 1299px)
+              width: 100px
           &.crypto
             width: 509px
+            @media (max-width: 1600px)
+              width: 390px
+            @media (max-width: 1299px)
+              width: 200px
+            @media (max-width: 991px)
+              width: 80px
           &.real
             width: 538px
+            @media (max-width: 1600px)
+              width: 450px
+            @media (max-width: 1299px)
+              width: 300px
+            @media (max-width: 991px)
+              width: 80px
       &.left
         .icon
           margin-right: 20px
         .line-wrap
           margin-left: 25px
           margin-top: 17px
+          @media (max-width: 1099px)
+            margin-top: 0
+          @media (max-width: 991px)
+            margin-top: 10px
           .line
             margin-left: 30px
+            @media (max-width: 991px)
+              margin-left: 20px
         .text
           margin-left: 71px
           margin-top: 5px
           max-width: 600px
+          @media (max-width: 1099px)
+            margin-left: 0
         .right
           &.marketing
             img
               margin-top: -77px
+              @media (max-width: 1499px)
+                width: 730px
+              @media (max-width: 1399px)
+                width: 640px
+              @media (max-width: 1099px)
+                width: 450px
+              @media (max-width: 991px)
+                width: 280px
+                margin-top: -40px
+          &.branding
+            img
+              @media (max-width: 1399px)
+                width: 500px
+              @media (max-width: 1099px)
+                width: 370px
+          &.crypto
+            img
+              @media (max-width: 1399px)
+                width: 390px
+              @media (max-width: 1099px)
+                width: 300px
+        &.width
+          .left
+            @media (max-width: 991px)
+              max-width: 340px
       &.right
         flex-direction: row-reverse
         .title
@@ -5015,6 +5126,8 @@ section
           margin-right: 25px
           margin-top: 17px
           position: relative
+          @media (max-width: 1099px)
+            margin-top: 0
           .circle
             position: relative
             z-index: 1
@@ -5022,12 +5135,41 @@ section
             position: absolute
             top: 75%
             right: 30px
+            @media (max-width: 991px)
+              right: 20px
+              top: 21px
+        &.width
+          .right
+            @media (max-width: 991px)
+              max-width: 340px
         .text
           margin-right: 71px
           margin-top: 5px
           max-width: 600px
+          @media (max-width: 1099px)
+            margin-right: 0
         .real
           img
             margin-left: -85px
+            @media (max-width: 1700px)
+              margin-left: -320px
+            @media (max-width: 1399px)
+              width: 700px
+            @media (max-width: 1099px)
+              width: 590px
+        .web
+          img
+            @media (max-width: 1700px)
+              width: 550px
+            @media (max-width: 1099px)
+              width: 350px
+            @media (max-width: 992px)
+              width: 270px
+        .admin
+          img
+            @media (max-width: 1399px)
+              width: 380px
+            @media (max-width: 1099px)
+              width: 300px
 
 
