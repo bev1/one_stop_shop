@@ -3472,7 +3472,7 @@ section
           background-color: #855fad
           position: relative
           border-radius: 50%
-          z-index: 1
+          z-index: 2
           &::after
             content: ''
             width: 20px
@@ -3488,13 +3488,18 @@ section
           font-weight: 600
           position: absolute
           white-space: nowrap
+          z-index: 2
         .image
           position: absolute
+          z-index: 1
+          img
+            filter: opacity(0.5)
         .line
           width: 0
           position: absolute
           border-bottom: 1px dotted #855fad
           transform-origin: left
+          z-index: 2
         .description
           color: #111111
           font-size: 18px
@@ -3508,6 +3513,7 @@ section
           visibility: hidden
           position: absolute
           width: 690px
+          z-index: 2
           &:before
             content: ''
             width: 12px
@@ -3556,8 +3562,8 @@ section
             left: -40px
           .image
             opacity: 0
-            top: -45px
-            left: -33px
+            top: -380px
+            left: -445px
           .line
             transform: rotate(31deg)
             bottom: 8px
@@ -3575,8 +3581,8 @@ section
             left: 0px
           .image
             opacity: 0
-            top: -45px
-            left: -33px
+            top: -404px
+            left: -297px
         &.portugal
           left: 510px
           top: 350px
@@ -3585,8 +3591,8 @@ section
             left: -40px
           .image
             opacity: 0
-            top: -45px
-            left: -33px
+            top: -18px
+            left: 3px
           .line
             transform: rotate(141deg)
           .description
@@ -3603,8 +3609,8 @@ section
             left: -23px
           .image
             opacity: 0
-            top: -45px
-            left: -33px
+            top: -15px
+            left: -24px
         &.germany
           left: 587px
           top: 275px
@@ -3613,8 +3619,8 @@ section
             left: -5px
           .image
             opacity: 0
-            top: -45px
-            left: -33px
+            top: -18px
+            left: -7px
           .line
             transform: rotate(139deg)
           .description
@@ -3631,8 +3637,8 @@ section
             left: -28px
           .image
             opacity: 0
-            top: -45px
-            left: -33px
+            top: -18px
+            left: 1px
           .line
             transform: rotate(169deg)
           .description
@@ -3649,8 +3655,8 @@ section
             left: -15px
           .image
             opacity: 0
-            top: -45px
-            left: -33px
+            top: 11px
+            left: 40px
           .line
             transform: rotate(162deg)
           .description
@@ -3660,15 +3666,15 @@ section
             .line
               width: 340px
         &.thailand
-          right: 140px
+          right: 40px
           top: 490px
           .text
             top: -25px
             left: -45px
           .image
             opacity: 0
-            top: -45px
-            left: -33px
+            top: -36px
+            left: -18px
           .line
             transform: rotate(179deg)
           .description
@@ -3685,8 +3691,8 @@ section
             left: 18px
           .image
             opacity: 0
-            top: -45px
-            left: -33px
+            top: -11px
+            left: -4px
           .line
             transform: rotate(155deg)
           .description
@@ -3703,8 +3709,8 @@ section
             left: 15px
           .image
             opacity: 0
-            top: -45px
-            left: -33px
+            top: -10px
+            left: 0px
           .line
             transform: rotate(143deg)
           .description
@@ -3721,8 +3727,8 @@ section
             left: 18px
           .image
             opacity: 0
-            top: -45px
-            left: -33px
+            top: -5px
+            left: -40px
         &.greece
           left: 670px
           top: 347px
@@ -3731,8 +3737,8 @@ section
             left: -51px
           .image
             opacity: 0
-            top: -45px
-            left: -33px
+            top: -9px
+            left: -13px
         &.italy
           left: 628px
           top: 332px
@@ -3741,8 +3747,8 @@ section
             left: -30px
           .image
             opacity: 0
-            top: -45px
-            left: -33px
+            top: -27px
+            left: -28px
         &.latvia
           left: 695px
           top: 215px
@@ -3751,18 +3757,18 @@ section
             left: 19px
           .image
             opacity: 0
-            top: -45px
-            left: -33px
+            top: 7px
+            left: -28px
         &.uae
-          left: 750px
-          top: 415px
+          left: 859px
+          top: 455px
           .text
             top: -5px
             left: 19px
           .image
-            opacity: 0
-            top: -45px
-            left: -33px
+            opacity: 0            
+            top: -24px
+            left: -7px
         &.turkey
           left: 720px
           top: 345px
@@ -3771,8 +3777,8 @@ section
             left: 19px
           .image
             opacity: 0
-            top: -45px
-            left: -33px
+            top: -8px
+            left: -17px
     .country-wrapper
       padding: 10px
       background-color: #ffffff
