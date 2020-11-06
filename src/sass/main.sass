@@ -4912,6 +4912,9 @@ section
     overflow: hidden
     @media (max-width: 1099px)
       background-position: top
+    @media (max-width: 991px)
+      padding-top: 40px
+      padding-bottom: 40px
     .container
       @media (min-width: 1780px)
         max-width: 1755px
@@ -4926,6 +4929,9 @@ section
     .item
       display: flex
       justify-content: space-between
+      @media (max-width: 767px)
+        flex-direction: column
+        margin-bottom: 40px
       &:nth-of-type(2)
         align-items: baseline
         margin-top: 27px
@@ -4944,6 +4950,8 @@ section
           max-width: 700px !important
           @media (max-width: 991px)
             max-width: 320px !important
+          @media (max-width: 767px)
+            max-width: 100% !important
       &:nth-of-type(4)
         align-items: baseline
         margin-top: 60px
@@ -4962,6 +4970,8 @@ section
       &:nth-of-type(6)
         align-items: baseline
         margin-top: -45px
+        @media (max-width: 767px)
+          margin-top: 0
         .link
           margin-bottom: 0
         .right
@@ -4982,6 +4992,8 @@ section
         cursor: pointer
         @media (max-width: 1099px)
           font-size: 26px
+        @media (max-width: 767px)
+          margin-bottom: 0
         &:hover
           color: #cf093c
       .text
@@ -5077,6 +5089,8 @@ section
             margin-top: 0
           @media (max-width: 991px)
             margin-top: 10px
+          @media (max-width: 767px)
+            display: none
           .line
             margin-left: 30px
             @media (max-width: 991px)
@@ -5100,24 +5114,36 @@ section
               @media (max-width: 991px)
                 width: 280px
                 margin-top: -40px
+              @media (max-width: 767px)
+                width: 100%
+                margin-top: 0
           &.branding
             img
               @media (max-width: 1399px)
                 width: 500px
               @media (max-width: 1099px)
                 width: 370px
+              @media (max-width: 767px)
+                width: 100%
           &.crypto
             img
               @media (max-width: 1399px)
                 width: 390px
               @media (max-width: 1099px)
                 width: 300px
+              @media (max-width: 767px)
+                width: 100%
         &.width
           .left
             @media (max-width: 991px)
               max-width: 340px
+            @media (max-width: 767px)
+              max-width: 100%
       &.right
         flex-direction: row-reverse
+        @media (max-width: 767px)
+          flex-direction: column
+          align-items: flex-end
         .title
           flex-direction: row-reverse
         .icon
@@ -5128,6 +5154,8 @@ section
           position: relative
           @media (max-width: 1099px)
             margin-top: 0
+          @media (max-width: 767px)
+            display: none
           .circle
             position: relative
             z-index: 1
@@ -5142,6 +5170,8 @@ section
           .right
             @media (max-width: 991px)
               max-width: 340px
+            @media (max-width: 767px)
+              max-width: 100%
         .text
           margin-right: 71px
           margin-top: 5px
@@ -5157,6 +5187,9 @@ section
               width: 700px
             @media (max-width: 1099px)
               width: 590px
+            @media (max-width: 767px)
+              width: 100%
+              margin-left: -60px
         .web
           img
             @media (max-width: 1700px)
@@ -5165,11 +5198,15 @@ section
               width: 350px
             @media (max-width: 992px)
               width: 270px
+            @media (max-width: 767px)
+              width: 100%
         .admin
           img
             @media (max-width: 1399px)
               width: 380px
             @media (max-width: 1099px)
               width: 300px
+            @media (max-width: 767px)
+              width: 100%
 
 
