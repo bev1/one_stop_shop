@@ -4791,8 +4791,9 @@ section
       font-size: 21px
       line-height: 30px
       color: #848484
-      position: relative
-      z-index: 1
+      &:last-of-type
+        position: relative
+        z-index: 1
       @media (max-width: 1199px)
         font-size: 18px
       &.center
