@@ -1,15 +1,15 @@
 const wrapper = document.getElementById('cube');
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
-  45, window.innerWidth / window.innerHeight,
+  35, window.innerWidth / window.innerHeight,
   1, 1000
 );
 const renderer = new THREE.WebGLRenderer({ alpha: true });
-renderer.setSize(800, 400);
+renderer.setSize(1000, 500);
 renderer.setClearColor( 0xffffff, 0);
 wrapper.appendChild(renderer.domElement);
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
-camera.position.set( 0, 0, 9 );
+camera.position.set( 0, 0, 10 );
 controls.enableZoom = false;
 controls.enablePan = false;
 controls.update();
