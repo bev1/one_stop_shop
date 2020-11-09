@@ -26,17 +26,33 @@ for(i=0; i<27; i++) {
 
 const loader = new THREE.TextureLoader();
 
+loader.load('../img/cube1/money.png',
+  function(texture) {
+    const material12 = [ 
+      new THREE.MeshBasicMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}),
+      new THREE.MeshBasicMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshBasicMaterial({color:0x7a9c16, transparent:true, opacity:1, side: THREE.DoubleSide}),
+      new THREE.MeshBasicMaterial({color:0x7a9c16, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshBasicMaterial({map: texture}), 
+      new THREE.MeshBasicMaterial({color:0x2e5398, transparent:true, opacity:0.8, side: THREE.DoubleSide}), 
+    ];
+    const cube12 = new THREE.Mesh(geometry, material12);
+    cube12.position.set(-1.1, 1.1, 1.1);
+    scene.add(cube12);
+  }
+);
+
+
 cubes.forEach((cube, i)=> {
   if(i===12) {
-    loader.load( '../img/cube1/money.png',
-      function(texture) {
-        console.log("texture", texture)
-        const material12 = new THREE.MeshBasicMaterial( { map: texture } );
-        const cube12 = new THREE.Mesh(geometry, material12);
-        cube12.position.set(-1.1, 1.1, 1.1);
-        scene.add(cube12);
-      }
-    );
+    // loader.load( '../img/cube1/money.png',
+    //   function(texture) {
+    //     const material12 = new THREE.MeshBasicMaterial( { map: texture } );
+    //     const cube12 = new THREE.Mesh(geometry, material12);
+    //     cube12.position.set(-1.1, 1.1, 1.1);
+    //     scene.add(cube12);
+    //   }
+    // );
   } else {
     scene.add(cube);
   }
