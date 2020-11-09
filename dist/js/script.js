@@ -581,49 +581,49 @@ $( document ).ready(function() {
 // scene.addEventListener('mousedown', mousedown);
 
 
-var cube;
+// var cube;
 
-function setSize(n)
-{
-	cube.setParam({size: n});
-}
+// function setSize(n)
+// {
+// 	cube.setParam({size: n});
+// }
 
-function shuffle(animation)
-{
-	cube.shuffle(50,animation);
-}
+// function shuffle(animation)
+// {
+// 	cube.shuffle(50,animation);
+// }
 
-function reset()
-{
-	cube.reset();
-}
+// function reset()
+// {
+// 	cube.reset();
+// }
 
-function zoomIn()
-{
-	cube.setParam({zoom: cube.zoom*1.2});
-}
+// function zoomIn()
+// {
+// 	cube.setParam({zoom: cube.zoom*1.2});
+// }
 
-function zoomOut()
-{
-	cube.setParam({zoom: cube.zoom/1.2});
-}
+// function zoomOut()
+// {
+// 	cube.setParam({zoom: cube.zoom/1.2});
+// }
 
-function zoomFit()
-{
-	cube.setParam({zoom: 1});
-}
+// function zoomFit()
+// {
+// 	cube.setParam({zoom: 1});
+// }
 
-function setShiny(n)
-{
-	cube.setParam({shiny: n});
-}
+// function setShiny(n)
+// {
+// 	cube.setParam({shiny: n});
+// }
 
-function undo()
-{
-	cube.undo();
-}
+// function undo()
+// {
+// 	cube.undo();
+// }
 
-function start()
-{
-cube = new RubikCube(document.getElementById("canvas"), {size: 5});
-}
+// function start()
+// {
+// cube = new RubikCube(document.getElementById("canvas"), {size: 5});
+// }

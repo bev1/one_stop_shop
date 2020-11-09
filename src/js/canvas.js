@@ -1,628 +1,1376 @@
-/*
-cube.js -- Canvas Rubik's Cube simulator library
-Version: 1.0
-Author: Tagir F. Valeev <lany@ngs.ru>
-License: MIT [ http://www.opensource.org/licenses/mit-license.php ]
-*/
 
-/*
-TODO:
-Rotate whole cube by keyboard
-Rotate slices by keyboard
-When rotating slice by mouse, highlight slice
-Perspective projection
-Redo
-Support IE6-8
-Save/load (in cookies?)
-*/
+        var id = "rubik";
+        var escena;
+        var camara;
+        var renderer;
+        var controls;
+        var webGLDisponible;
+        var luzDireccional;
+        var cubo;
+        var centroCubo;
+        var piezas;
+        var lado;
+        var eje;
+        var giroAplicado;
+        var giroRestante;
+        var giroObjetivo;
+        var getObjeto;
+        var getNormal;
+        var clickInicialGuardado;
+        var raycaster;
+        var winResize;
+        var botonPlay;
+        var botonRestart;
+        var textInfo;
+        var clockInfo;
+        var marcoInfo;
+        var direccion = "";
+        var autoRotandoCara = false;
+        var desordenando = false;
+        var bloqueo = true;
+        var rotandoCara = false;
+        var rotandoEscena = false;
+        var direccionSeleccionada = false;
+        var caraSeleccionada = false;
+        var pointer = false;
+        var jugando = false;
+        var caras = [false, false, false, false, false, false];
+        var indiceDesorden = 0;
+        var countDown = 6;
+        var min = 0;
+        var sec = 0;
+        var mouse =  new THREE.Vector2();
+        var clickInicial = new THREE.Vector2();
+        var cara = new THREE.Object3D();
+        var n = new THREE.Color(0x000000);
+        var blanco = new THREE.Color(0xFFFFFF);
+        var amarillo = new THREE.Color(0xAA8800);
+        var rojo = new THREE.Color(0xCC0000);
+        var naranja = new THREE.Color(0xBB0066);
+        var azul = new THREE.Color(0x0044FF);
+        var verde = new THREE.Color(0x00AA00);
+        var buttonNormal = new THREE.Color(0x444444);
+        var buttonHover = new THREE.Color(0xBBBBBB);
+        var invertirGiro = [1,1,1,1,1,1];
+        var distanciasIniciales = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+        var posicionesIniciales =
+                [
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0)
+                ];
+        var rotacionesIniciales =
+                [
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0)
+                ];
+        var rotacionesInicialesRelativas =
+                [
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0),
+                    new THREE.Vector3 (0,0,0), new THREE.Vector3 (0,0,0)
+                ];
 
-/**
- * Constructs cube
- * element -- canvas document element to attach to
- * params -- parameters (all optional), described in constructor body below
- */
-function RubikCube(element, params)
-{
-	var _this = this;
+        detectarWebGL();
+        iniciarApp();
 
-	// These are parameters user may set (set also setParams method to change already initialized object)
-	this.size = 3;	// cube difficulty (number of elements)
-	this.background = "#000000";	// canvas background color
-	this.colors = ["#007000","#0000FF","#FFFFFF","#FFEB00","#FF8000","#DD0000"];	// face colors
-	this.matrix = [[1,0,0],[0,1,0],[0,0,1]];
-	this.addRotation(-0.3,0.3);	// initial rotation matrix
-	this.zoom = 1;		// cube scale
-	this.z = 10;		// unused yet
-	this.speed = 300;	// milliseconds to perform single animation
-	this.borderColor = "#303030";	// cube borders
-	this.innerColor = "#202020";	// cube internals
-	this.lineWidth = 2;	// cube borders width
-	this.shiny = 0.25;	// 0 = flat faces, 0.25 = shiny faces
-	this.lookSensitivity = 0.005;	// sensitivity of free-look (higher numbers = faster rotation)
-	if(params != undefined)
-		for(key in params)
-			this[key] = params[key];
+        function detectarWebGL()
+        {
+            webGLDisponible = (Detector.webgl) ? true : false;
+        }
 
-	this.canvas = element;
-	this.ctx = element.getContext("2d");
-	this.width = element.width;
-	this.height = element.height;
-	this.scale = Math.min(this.width, this.height)/4*this.zoom;
-	this.faceNormals = [[0,0,1],[0,0,-1],[0,1,0],[0,-1,0],[1,0,0],[-1,0,0]];
-	this.neighbors = [[1,4,2,5,3],[0,5,2,4,3],[3,4,1,5,0],[2,4,0,5,1],[5,1,2,0,3],[4,0,2,1,3]];
-	this.animationQueue = [];
-	this.reset();
-	this.offsetX = 0;
-	this.offsetY = 0;
-	var element = this.canvas;
-	do {
-		this.offsetX += element.offsetLeft;
-		this.offsetY += element.offsetTop;
-		element = element.offsetParent;
-	} while(element != undefined);
-	this.canvas.onmousedown = function(e) {_this.onMouseDown(e);return false;}
-	this.canvas.onmousemove = function(e) {_this.onMouseMove(e);return false;}
-	this.canvas.onmouseup = function(e) {_this.onMouseUp(e);return false;}
-	this.canvas.oncontextmenu = function(e) {return false;}
-}
+        function iniciarApp()
+        {
+            if (webGLDisponible)
+            {
+                iniciarEscena();
+                iniciarCubo();
+                crearMenu();
+                instanciarMensaje();
+                instanciarReloj();
+                animarEscena();
+            }
+            else alert("Su navegador no soporta WebGL");
+        }
 
-/**
- * Changes parameters of already constructed cube
- */
-RubikCube.prototype.setParam = function(params)
-{
-	var oldSize = this.size;
-	if(params != undefined)
-		for(key in params)
-			this[key] = params[key];
-	this.scale = Math.min(this.width, this.height)/4*this.zoom;
-	if(oldSize != this.size)
-		this.reset();
-	this.invalidate();
-}
+        function iniciarEscena()
+        {
+            renderer =  new THREE.WebGLRenderer({antialias: true, alpha: true });
+            var canvasWidth = document.getElementById(id).offsetWidth; var canvasHeight = document.getElementById(id).offsetHeight;
+            renderer.setSize(canvasWidth, canvasHeight);
+            document.getElementById(id).appendChild(renderer.domElement);
+            escena = new THREE.Scene();
+            camara = new THREE.PerspectiveCamera(60, canvasWidth / canvasHeight, 0.1, 100);
+            camara.position.set(-3, 3, 6);
+            camara.lookAt(escena.position);
+            var luzAmbiente = new THREE.AmbientLight(0xFFFFFF, 10.0);
+            escena.add (luzAmbiente);
+            var luzDireccional1 = new THREE.DirectionalLight(0xFFFFFF, 1);
+            luzDireccional1.position.set (0,5,2);
+            var luzDireccional2 = new THREE.DirectionalLight(0xFFFFFF, 4);
+            luzDireccional2.position.set (10,3,2);
+            var luzDireccional3 = new THREE.DirectionalLight(0xFFFFFF, 4);
+            luzDireccional3.position.set (-10,3,2);
+            camara.add(luzDireccional1);
+            camara.add(luzDireccional2);
+            camara.add(luzDireccional3);
+            escena.add(camara);
+            raycaster = new THREE.Raycaster();
+            document.addEventListener("keydown", onDocumentKeyDown, false);
+            window.addEventListener( "mousedown", onDocumentMouseDown, false );
+            window.addEventListener( "mouseup", onDocumentMouseUp, false );
+            controls = new THREE.OrbitControls( camara, renderer.domElement );
+            controls.enablePan = false;
+            controls.enableKeys = false;
+            controls.enableZoom = false;
+            winResize = new THREEx.WindowResize(renderer, camara);
+            winResize.seleccionar(id);
+        }
 
-/**
- * Resets cube state (all faces will be in initial states)
- */
-RubikCube.prototype.reset = function()
-{
-	this.state = [];
-	for(var face=0; face<6; face++)
-	{
-		var faceElems = [];
-		for(var elem = 0; elem<this.size*this.size; elem++)
-			faceElems.push(face);
-		this.state.push(faceElems);
-	}
-	this.animationQueue = [];
-	this.angle = undefined;
-	this.slice = undefined;
-	this.undoBuffer = [];
-	this.invalidate();
-}
+        function crearPieza(texturaColor, texturaBump, color1, color2, color3, color4, color5, color6, posicion, nombre)
+        {
+            var geometria = new THREE.BoxGeometry(1,1,1,10,10,10);
+            var material = new THREE.MeshPhongMaterial({
+                vertexColors:THREE.VertexColors,
+                color:0x353535,
+                map:texturaColor,
+                bumpMap:texturaBump,
+                bumpScale  :  0.02,
+                shininess  :  24
+            });
+            var modifier = new THREE.SubdivisionModifier(1);
+            modifier.modify(geometria);
+            var pieza = new THREE.Mesh(geometria, material);
+            corregirUVs (geometria, color1, color2, color3, color4, color5, color6);
+            pieza.position.set(posicion.x, posicion.y, posicion.z);
+            pieza.name = nombre;
+            return pieza;
+        }
 
-/**
- * Undoes last move specified by rotateSlice or addSliceRotation (undo will be animated)
- */
-RubikCube.prototype.undo = function()
-{
-	if(this.undoBuffer.length==0) return;
-	this.addSliceRotation(this.undoBuffer.pop(), true);
-}
+        function corregirUVs ( geometry , color1 , color2, color3, color4, color5, color6 )
+        {
+            geometry.computeBoundingBox();
+            var max     = geometry.boundingBox.max;
+            var min     = geometry.boundingBox.min;
+            var offset  = new THREE.Vector3(0 - min.x, 0 - min.y, 0 - min.z);
+            var range   = new THREE.Vector3(max.x - min.x, max.y - min.y, max.z - min.z);
+            geometry.faceVertexUvs[0] = [];
+            var faces = geometry.faces;
+            for (var i = 0; i < geometry.faces.length ; i++) {
+                var v1 = geometry.vertices[faces[i].a];
+                var v2 = geometry.vertices[faces[i].b];
+                var v3 = geometry.vertices[faces[i].c];
+                if (faces[i].normal.z <= -0.5)
+                {
+                    faces[i].vertexColors[0] = new THREE.Color(color1);
+                    faces[i].vertexColors[1] = new THREE.Color(color1);
+                    faces[i].vertexColors[2] = new THREE.Color(color1);
+                    geometry.faceVertexUvs[0].push([
 
-/**
- * Shuffles cube
- * n -- number of random rotations to perform
- * animate = 0 -- no animation
- * animate = 1 -- fast animation (cube redrawn after each rotation)
- * animate = 2 -- full animation
- */
-RubikCube.prototype.shuffle = function(n, animate)
-{
-	var _this = this;
-	if(n == undefined) n = this.size*this.size*2;
-	if(animate == undefined) animate = 0;
-	if(n == 0) return;
-	var shuffleOnce = function()
-	{
-		_this.rotateSlice([Math.floor(Math.random()*6),Math.floor(Math.random()*_this.size),Math.random>0.5]);
-	}
-	if(animate == 0)
-	{
-		for(var i=0; i<n; i++) shuffleOnce();
-	}
-	if(animate == 1)
-	{
-		shuffleOnce();
-		if(n>0) setTimeout(function(){_this.shuffle(n-1,animate)},10);
-	}
-	if(animate == 2)
-	{
-		for(var i=0; i<n; i++) this.addSliceRotation([Math.floor(Math.random()*6),Math.floor(Math.random()*_this.size),Math.random>0.5]);
-	}
-}
+                        new THREE.Vector2(( v1.x + offset.x ) / range.x, ( v1.y + offset.y ) / range.y),
+                        new THREE.Vector2(( v2.x + offset.x ) / range.x, ( v2.y + offset.y ) / range.y),
+                        new THREE.Vector2(( v3.x + offset.x ) / range.x, ( v3.y + offset.y ) / range.y)
+                    ]);
+                }
+                if (faces[i].normal.z >= 0.5)
+                {
+                    faces[i].vertexColors[0] = new THREE.Color(color2);
+                    faces[i].vertexColors[1] = new THREE.Color(color2);
+                    faces[i].vertexColors[2] = new THREE.Color(color2);
+                    geometry.faceVertexUvs[0].push([
+                        new THREE.Vector2(( v1.x + offset.x ) / range.x, ( v1.y + offset.y ) / range.y),
+                        new THREE.Vector2(( v2.x + offset.x ) / range.x, ( v2.y + offset.y ) / range.y),
+                        new THREE.Vector2(( v3.x + offset.x ) / range.x, ( v3.y + offset.y ) / range.y)
+                    ]);
+                }
+                if (faces[i].normal.x <= -0.5)
+                {
+                    faces[i].vertexColors[0] = new THREE.Color(color3);
+                    faces[i].vertexColors[1] = new THREE.Color(color3);
+                    faces[i].vertexColors[2] = new THREE.Color(color3);
+                    geometry.faceVertexUvs[0].push([
+                        new THREE.Vector2(( v1.y + offset.y ) / range.y, ( v1.z + offset.z ) / range.z),
+                        new THREE.Vector2(( v2.y + offset.y ) / range.y, ( v2.z + offset.z ) / range.z),
+                        new THREE.Vector2(( v3.y + offset.y ) / range.y, ( v3.z + offset.z ) / range.z)
+                    ]);
+                }
+                if (faces[i].normal.x >= 0.5)
+                {
+                    faces[i].vertexColors[0] = new THREE.Color(color4);
+                    faces[i].vertexColors[1] = new THREE.Color(color4);
+                    faces[i].vertexColors[2] = new THREE.Color(color4);
+                    geometry.faceVertexUvs[0].push([
+                        new THREE.Vector2( ( v1.y + offset.y ) / range.y ,  ( v1.z + offset.z ) / range.z),
+                        new THREE.Vector2( ( v2.y + offset.y ) / range.y ,  ( v2.z + offset.z ) / range.z),
+                        new THREE.Vector2( ( v3.y + offset.y ) / range.y ,  ( v3.z + offset.z ) / range.z)
+                    ]);
+                }
+                if (faces[i].normal.y <= -0.5)
+                {
+                    faces[i].vertexColors[0] = new THREE.Color(color5);
+                    faces[i].vertexColors[1] = new THREE.Color(color5);
+                    faces[i].vertexColors[2] = new THREE.Color(color5);
+                    geometry.faceVertexUvs[0].push([
+                        new THREE.Vector2(( v1.x + offset.x ) / range.x, ( v1.z + offset.z ) / range.z),
+                        new THREE.Vector2(( v2.x + offset.x ) / range.x, ( v2.z + offset.z ) / range.z),
+                        new THREE.Vector2(( v3.x + offset.x ) / range.x, ( v3.z + offset.z ) / range.z)
+                    ]);
+                }
+                if (faces[i].normal.y >= 0.5)
+                {
+                    faces[i].vertexColors[0] = new THREE.Color(color6);
+                    faces[i].vertexColors[1] = new THREE.Color(color6);
+                    faces[i].vertexColors[2] = new THREE.Color(color6);
+                    geometry.faceVertexUvs[0].push([
+                        new THREE.Vector2(( v1.x + offset.x ) / range.x, ( v1.z + offset.z ) / range.z),
+                        new THREE.Vector2(( v2.x + offset.x ) / range.x, ( v2.z + offset.z ) / range.z),
+                        new THREE.Vector2(( v3.x + offset.x ) / range.x, ( v3.z + offset.z ) / range.z)
+                    ]);
+                }
+            }
+            geometry.uvsNeedUpdate = true;
+        }
 
-/**
- * adds rotation of slice to animation queue (performs animated slice rotation)
- * slice -- triple [face, slice, direction]
- *       face - either absolute face number (0-5) or letter specifying face orientation:
- *           (f)rontmost,(b)ackmost,(l)eftmost,(r)rightmost,(u)pmost,(d)ownmost
- *       slice - number of slice to rotate which is parallel to specified face (0-(cube size-1))
- *       direction - true = clockwise when looking from face, falce = counter-clockwise
- * skipUndo -- (optional) if true, then this rotation will not appear in undo buffer
- */
-RubikCube.prototype.addSliceRotation = function(slice, skipUndo)
-{
-	this.addAnimation({type: "slice", slice: this.convertSlice(slice), skipUndo: skipUndo});
-}
+        function iniciarCubo()
+        {
+            var texturaColor = new THREE.ImageUtils.loadTexture("img/pegatinaColor.png");
+            var texturaBump = new THREE.ImageUtils.loadTexture("img/pegatinaBump.png");
+            texturaColor.minFilter = THREE.LinearMipMapNearestFilter;
+            texturaColor.magFilter = THREE.LinearMipMapNearestFilter;
+            texturaBump.minFilter = THREE.LinearMipMapNearestFilter;
+            texturaBump.magFilter = THREE.LinearMipMapNearestFilter;
+            piezas =
+                    [
+                        crearPieza (texturaColor, texturaBump, n,       n,      azul,   n,      n,          blanco,     new THREE.Vector3 (-1, 1, 0), "arista BW"),
 
-/**
- * rotates slice (non-animated)
- * slice -- triple [face, slice, direction]
- *       face - either absolute face number (0-5) or letter specifying face orientation:
- *           (f)rontmost,(b)ackmost,(l)eftmost,(r)rightmost,(u)pmost,(d)ownmost
- *       slice - number of slice to rotate which is parallel to specified face (0-(cube size-1))
- *       direction - true = clockwise when looking from face, falce = counter-clockwise
- * skipUndo -- (optional) if true, then this rotation will not appear in undo buffer
- */
-RubikCube.prototype.rotateSlice = function(slice, skipUndo)
-{
-	slice = this.convertSlice(slice);
-	var direction = slice[2];
-	if(slice[1] == 0)	// face (non-inner) slice
-	{
-		var faceState = [];
-		for(var i=0; i<this.size; i++)
-			for(var j=0; j<this.size; j++)
-				faceState[i*this.size+j] = direction?this.state[slice[0]][(this.size-j-1)*this.size+i]:this.state[slice[0]][j*this.size+(this.size-i-1)];
-		this.state[slice[0]] = faceState;
-	}
-	var sliceState = [];
-	for(var i=0; i<=4; i++)
-	{
-		for(var elem=0; elem<this.size; elem++)
-		{
-			var state;
-			var face = this.neighbors[slice[0]][direction?(4-i)%4+1:(i+1)%4+1];
-			var nextFace = this.neighbors[slice[0]][direction?(7-i)%4+1:(i+2)%4+1];
-			var state = i==4?sliceState[elem]:this.state[nextFace][this.getSliceElement(slice,nextFace,elem)];
-			if(i==0) sliceState[elem] = state;
-			else this.state[face][this.getSliceElement(slice,face,elem)] = state;
-		}
-	}
-	if(!skipUndo) this.undoBuffer.push([slice[0],slice[1],!direction]);
-	this.invalidate();
-}
+                        crearPieza (texturaColor, texturaBump, n,       n,      n,      n,      n,          blanco,     new THREE.Vector3 ( 0, 1, 0), "centro W"),
+                        crearPieza (texturaColor, texturaBump, n,       n,      n,      n,      amarillo,   n,          new THREE.Vector3 ( 0,-1, 0), "centro Y"),
+                        crearPieza (texturaColor, texturaBump, n,       rojo,   n,      n,      n,          n,          new THREE.Vector3 ( 0, 0, 1), "centro R"),
+                        crearPieza (texturaColor, texturaBump, naranja, n,      n,      n,      n,          n,          new THREE.Vector3 ( 0, 0,-1), "centro O"),
+                        crearPieza (texturaColor, texturaBump, n,       n,      azul,   n,      n,          n,          new THREE.Vector3 (-1, 0, 0), "centro B"),
+                        crearPieza (texturaColor, texturaBump, n,       n,      n,      verde,  n,          n,          new THREE.Vector3 ( 1, 0, 0), "centro G"),
 
-/**
- * Returns cube element by point
- * x,y -- point position (in pixels, relative to canvas position)
- * returns either undefined (if cube doesn't contain this point) or triple [face,i,j]
- * where face is face number (0-5) and i,j is element coordinates within face (0-(cube size-1))
- */
-RubikCube.prototype.getPick = function(x,y)
-{
-	x = (x-this.width/2)/this.scale;
-	y = (y-this.height/2)/this.scale;
-	for(var face = 0; face<6; face++)
-	{
-		var norm = this.getFaceNormal(face);
-		if(norm[2] <= 0) continue;
-		var a = (1-x*norm[0]-y*norm[1])/norm[2];
-		var l = [x-norm[0],y-norm[1],a-norm[2]];
-		var normL = this.getFaceNormal(this.neighbors[face][3]);
-		var normU = this.getFaceNormal(this.neighbors[face][2]);
-		var i = Math.floor((1-normL[0]*l[0]-normL[1]*l[1]-normL[2]*l[2])/2*this.size);
-		var j = Math.floor((1-normU[0]*l[0]-normU[1]*l[1]-normU[2]*l[2])/2*this.size);
-		if(i<0 || i>=this.size || j<0 || j>=this.size) continue;
-		return [face,i,j];
-	}
-}
+                        crearPieza (texturaColor, texturaBump, n,       rojo,   azul,   n,      n,          blanco,     new THREE.Vector3 (-1, 1, 1), "esquina RBW"),
+                        crearPieza (texturaColor, texturaBump, naranja, n,      azul,   n,      n,          blanco,     new THREE.Vector3 (-1, 1,-1), "esquina OBW"),
+                        crearPieza (texturaColor, texturaBump, n,       rojo,   n,      verde,  n,          blanco,     new THREE.Vector3 ( 1, 1, 1), "esquina RGW"),
+                        crearPieza (texturaColor, texturaBump, naranja, n,      n,      verde,  n,          blanco,     new THREE.Vector3 ( 1, 1,-1), "esquina OGW"),
+                        crearPieza (texturaColor, texturaBump, naranja, n,      azul,   n,      amarillo,   n,          new THREE.Vector3 (-1,-1,-1), "esquina OBY"),
+                        crearPieza (texturaColor, texturaBump, n,       rojo,   azul,   n,      amarillo,   n,          new THREE.Vector3 (-1,-1, 1), "esquina RBY"),
+                        crearPieza (texturaColor, texturaBump, n,       rojo,   n,      verde,  amarillo,   n,          new THREE.Vector3 ( 1,-1, 1), "esquina RGY"),
+                        crearPieza (texturaColor, texturaBump, naranja, n,      n,      verde,  amarillo,   n,          new THREE.Vector3 ( 1,-1,-1), "esquina OGY"),
 
-/**
- * Converts face letter-code to absolute face number (0-5)
- * face letter-code might be:
- * (f)rontmost,(b)ackmost,(l)eftmost,(r)rightmost,(u)pmost,(d)ownmost
- */
-RubikCube.prototype.convertFace = function(face)
-{
-	if(parseInt(face)==face) return parseInt(face);
-	if(this.bestFront == undefined)
-	{
-		for(var i=0; i<6; i++)
-		{
-			if(this.norm[i] == undefined)
-				this.norm[i] = this.multMatVec(this.matrix,this.faceNormals[i]);
-			if(this.bestFront == undefined || this.bestFront[1]<this.norm[i][2]) this.bestFront = [i,this.norm[i][2]];
-		}
-		for(var i=0; i<6; i++)
-		{
-			if(i != this.bestFront[0] && (this.bestLeft == undefined || this.bestLeft[1]>this.norm[i][0])) this.bestLeft = [i,this.norm[i][0]];
-		}
-		for(var i=0; i<6; i++)
-		{
-			if(i != this.bestFront[0] && i != this.bestLeft[0] && (this.bestUp == undefined || this.bestUp[1]>this.norm[i][1])) this.bestUp = [i,this.norm[i][1]];
-		}
-	}
-	if(face == "f") return this.bestFront[0];
-	if(face == "b") return this.neighbors[this.bestFront[0]][0];
-	if(face == "l") return this.bestLeft[0];
-	if(face == "r") return this.neighbors[this.bestLeft[0]][0];
-	if(face == "u") return this.bestUp[0];
-	if(face == "d") return this.neighbors[this.bestUp[0]][0];
-}
+                        crearPieza (texturaColor, texturaBump, n,       n,      n,      verde,  n,          blanco,     new THREE.Vector3 ( 1, 1, 0), "arista GW"),
+                        crearPieza (texturaColor, texturaBump, n,       rojo,   n,      n,      n,          blanco,     new THREE.Vector3 ( 0, 1, 1), "arista RW"),
+                        crearPieza (texturaColor, texturaBump, naranja, n,      n,      n,      n,          blanco,     new THREE.Vector3 ( 0, 1,-1), "arista OW"),
+                        crearPieza (texturaColor, texturaBump, n,       rojo,   azul,   n,      n,          n,          new THREE.Vector3 (-1, 0, 1), "arista RB"),
+                        crearPieza (texturaColor, texturaBump, n,       rojo,   n,      verde,  n,          n,          new THREE.Vector3 ( 1, 0, 1), "arista RG"),
+                        crearPieza (texturaColor, texturaBump, naranja, n,      n,      verde,  n,          n,          new THREE.Vector3 ( 1, 0,-1), "arista OG"),
+                        crearPieza (texturaColor, texturaBump, naranja, n,      azul,   n,      n,          n,          new THREE.Vector3 (-1, 0,-1), "arista OB"),
+                        crearPieza (texturaColor, texturaBump, n,       n,      azul,   n,      amarillo,   n,          new THREE.Vector3 (-1,-1, 0), "arista BY"),
+                        crearPieza (texturaColor, texturaBump, n,       n,      n,      verde,  amarillo,   n,          new THREE.Vector3 ( 1,-1, 0), "arista GY"),
+                        crearPieza (texturaColor, texturaBump, n,       rojo,   n,      n,      amarillo,   n,          new THREE.Vector3 ( 0,-1, 1), "arista RY"),
+                        crearPieza (texturaColor, texturaBump, naranja, n,      n,      n,      amarillo,   n,          new THREE.Vector3 ( 0,-1,-1), "arista OY")
+                    ];
+            cubo = new THREE.Object3D();
+            for (var i = 0; i < piezas.length; i++) {cubo.add(piezas[i]);}
+            escena.add(cubo);
+            guardarPosicionInicial();
+        }
 
-/**
- * Invalidates cube view (signals to rerender it)
- */
-RubikCube.prototype.invalidate = function()
-{
-	var _this = this;
-	if(this.nextRender == undefined) this.nextRender = setTimeout(function() {_this.render()}, 0);
-}
+        function guardarPosicionInicial()
+        {
+            for (var i = 0; i < piezas.length; i++)
+            {
+                posicionesIniciales[i].x = piezas[i].position.x;
+                posicionesIniciales[i].y = piezas[i].position.y;
+                posicionesIniciales[i].z = piezas[i].position.z;
+                rotacionesIniciales[i].x = piezas[i].rotation.x;
+                rotacionesIniciales[i].y = piezas[i].rotation.y;
+                rotacionesIniciales[i].z = piezas[i].rotation.z;
+                distanciasIniciales[i] = distancia(piezas[0].position,piezas[i].position);
+                rotacionesInicialesRelativas[i].x = (piezas[i].rotation.x - piezas[0].rotation.x)* 180 / Math.PI;
+                rotacionesInicialesRelativas[i].y = (piezas[i].rotation.y - piezas[0].rotation.y)* 180 / Math.PI;
+                rotacionesInicialesRelativas[i].z = (piezas[i].rotation.z - piezas[0].rotation.z)* 180 / Math.PI;
+            }
+        }
 
-/**
- * renders cube
- */
-RubikCube.prototype.render = function()
-{
-	this.nextRender = undefined;
-	this.ctx.strokeStyle = this.borderColor;
-	this.ctx.lineWidth = this.lineWidth;
-	this.ctx.lineJoin = "round";
-	this.ctx.fillStyle = this.background;
-	this.ctx.fillRect(0,0,this.width,this.height);
-	var faces = [];
-	for(var face = 0; face<18; face++)
-	{
-		var zOrder = this.getFaceZOrder(face);
-		if(zOrder != undefined) faces.push([face,zOrder]);
-	}
-	faces.sort(function(a,b) {return a[1]-b[1]});
-	for(var faceNum = 0; faceNum < faces.length; faceNum++)
-	{
-		var face = faces[faceNum][0];
-		var elementCount = this.getFaceElementCount(face);
-		for(var i = 0; i<elementCount; i++)
-		{
-			var vert2d = [];
-			for(var ii = 0; ii<4; ii++)
-			{
-				var vertPos = this.getElementVector(face, i, ii);
-				vert2d[ii] = [vertPos[0]*this.scale+this.width/2,vertPos[1]*this.scale+this.height/2];
-			}
-			this.ctx.beginPath();
-			this.ctx.moveTo(vert2d[0][0],vert2d[0][1]);
-			this.ctx.lineTo(vert2d[1][0],vert2d[1][1]);
-			this.ctx.lineTo(vert2d[3][0],vert2d[3][1]);
-			this.ctx.lineTo(vert2d[2][0],vert2d[2][1]);
-			this.ctx.closePath();
-			this.ctx.fillStyle = this.getElementFillStyle(face, i);
-			this.ctx.fill();
-			this.ctx.stroke();
-		}
-	}
-}
+        function resetearCubo()
+        {
+            for (var i = 0; i < piezas.length; i++)
+            {
+                piezas[i].position.x = posicionesIniciales[i].x;
+                piezas[i].position.y = posicionesIniciales[i].y;
+                piezas[i].position.z = posicionesIniciales[i].z;
+                piezas[i].rotation.x = rotacionesIniciales[i].x;
+                piezas[i].rotation.y = rotacionesIniciales[i].y;
+                piezas[i].rotation.z = rotacionesIniciales[i].z;
+            }
+            sec = 0;
+            min = 0;
+            actualizarReloj();
+        }
 
-////////////////////////////////////////////////////
-// Internal methods go here
+        function girarCaraAutomaticamente(lado, direccion, rotacionInicial, duracion)
+        {
+            autoRotandoCara = true;
+            var index = 0;
+            caras = (lado == "M" || lado == "S" || lado == "E") ? [null, null, null, null, null, null, null, null] : [null, null, null, null, null, null, null, null, null];
+            switch (lado) {
+                case "F":direccion = -direccion;for (var f = 0; f < piezas.length; f++){ if (piezas[f].position.z >  0.5)                               {caras[index] = piezas[f];index++;}} break;
+                case "B":                       for (var b = 0; b < piezas.length; b++){ if (piezas[b].position.z < -0.5)                               {caras[index] = piezas[b];index++;}} break;
+                case "U":direccion = -direccion;for (var u = 0; u < piezas.length; u++){ if (piezas[u].position.y >  0.5)                               {caras[index] = piezas[u];index++;}} break;
+                case "D":                       for (var d = 0; d < piezas.length; d++){ if (piezas[d].position.y < -0.5)                               {caras[index] = piezas[d];index++;}} break;
+                case "R":direccion = -direccion;for (var r = 0; r < piezas.length; r++){ if (piezas[r].position.x >  0.5)                               {caras[index] = piezas[r];index++;}} break;
+                case "L":                       for (var l = 0; l < piezas.length; l++){ if (piezas[l].position.x < -0.5)                               {caras[index] = piezas[l];index++;}} break;
+                case "M":                       for (var m = 0; m < piezas.length; m++){ if (piezas[m].position.x > -0.5 && piezas[m].position.x < 0.5) {caras[index] = piezas[m];index++;}} break;
+                case "S":direccion = -direccion;for (var s = 0; s < piezas.length; s++){ if (piezas[s].position.z > -0.5 && piezas[s].position.z < 0.5) {caras[index] = piezas[s];index++;}} break;
+                case "E":direccion = -direccion;for (var e = 0; e < piezas.length; e++){ if (piezas[e].position.y > -0.5 && piezas[e].position.y < 0.5) {caras[index] = piezas[e];index++;}} break;
+            }
+            var nulo = new THREE.Object3D();
+            for (var i = 0; i < caras.length; i++) {
+                caras[i].updateMatrixWorld();
+                THREE.SceneUtils.attach(caras[i], cubo, nulo);
+            }
+            var origen = {x:rotacionInicial,y:0};
+            var destino = {x:direccion*90*Math.PI/180, y:0};
+            var movimiento = new TWEEN.Tween(origen).to(destino,duracion);
+            movimiento.onUpdate(function(){
+                switch (lado) {
+                    case "F": nulo.rotation.set(0,        0,        origen.x); break;
+                    case "B": nulo.rotation.set(0,        0,        origen.x); break;
+                    case "U": nulo.rotation.set(0,        origen.x, 0       ); break;
+                    case "D": nulo.rotation.set(0,        origen.x, 0       ); break;
+                    case "R": nulo.rotation.set(origen.x, 0,        0       ); break;
+                    case "L": nulo.rotation.set(origen.x, 0,        0       ); break;
+                    case "M": nulo.rotation.set(origen.x, 0,        0       ); break;
+                    case "S": nulo.rotation.set(0,        0,        origen.x); break;
+                    case "E": nulo.rotation.set(0,        origen.x, 0       ); break;
+                }
+            });
+            movimiento.easing(TWEEN.Easing.Exponential.InOut);
+            movimiento.start();
+            movimiento.onComplete(function(){
+                nulo.updateMatrixWorld();
+                for (var i = 0; i < caras.length; i++) {
+                    THREE.SceneUtils.detach(caras[i], nulo, cubo);
+                    caras[i].updateMatrixWorld();
+                }
+                if (!desordenando)
+                {
+                    autoRotandoCara = false;
+                    if (jugando)
+                    {
+                        if (chequearResuelto())
+                        {
+                            marcoInfo.material.opacity = 0.75;
+                            var secText = (sec < 10) ? "0" + sec : "" + sec;
+                            actualizarMensaje(+min + "'" + secText + "''", 0.3);
+                            jugando = false;
+                        }
+                    }
+                }
+            });
+            escena.add(nulo);
+        }
 
-RubikCube.prototype.animate = function()
-{
-	var _this = this;
-	if(this.animationQueue.length == 0) return;
-	if(this.animationQueue[0].phase == undefined)
-	{
-		this.animationQueue[0].phase = 0;
-		this.animationStart = (new Date()).getTime();
-	} else
-	{
-		this.animationQueue[0].phase = ((new Date()).getTime()-this.animationStart)/this.speed;
-		if(this.animationQueue[0].phase >= 1)	// animation finished
-		{
-			if(this.animationQueue[0].type = "slice")
-			{
-				this.rotateSlice(this.animationQueue[0].slice, this.animationQueue[0].skipUndo);
-				this.slice = undefined;
-				this.angle = undefined;
-				this.norm = [];
-			}
-			this.animationQueue.shift();
-		} else
-		{
-			this.slice = this.animationQueue[0].slice;
-			this.angle = this.animationQueue[0].phase*Math.PI/2*(this.slice[2]?1:-1);
-			this.norm = [];
-			this.invalidate();
-		}
-	}
-	if(this.animationQueue.length > 0) setTimeout(function() {_this.animate()}, 0);
-}
+        function ran(rango)
+        {
+            return Math.floor((Math.random() * rango) + 1);
+        }
 
-RubikCube.prototype.addAnimation = function(params)
-{
-	var _this = this;
-	this.animationQueue.push(params);
-	if(this.animationQueue.length==1) setTimeout(function() {_this.animate()}, 0);
-}
+        function desordenar()
+        {
+            autoRotandoCara = true;
+            desordenando = true;
+            var tiempo = 200;
+            indiceDesorden++;
+            var aleatorio = ran(18);
+            switch (aleatorio){
+                case 1:  girarCaraAutomaticamente("R",-1,0,tiempo); break;
+                case 2:  girarCaraAutomaticamente("U",-1,0,tiempo); break;
+                case 3:  girarCaraAutomaticamente("F",-1,0,tiempo); break;
+                case 4:  girarCaraAutomaticamente("B",-1,0,tiempo); break;
+                case 5:  girarCaraAutomaticamente("L",-1,0,tiempo); break;
+                case 6:  girarCaraAutomaticamente("D",-1,0,tiempo); break;
+                case 7:  girarCaraAutomaticamente("M",-1,0,tiempo); break;
+                case 8:  girarCaraAutomaticamente("S",-1,0,tiempo); break;
+                case 9:  girarCaraAutomaticamente("E",-1,0,tiempo); break;
+                case 10: girarCaraAutomaticamente("R", 1,0,tiempo); break;
+                case 11: girarCaraAutomaticamente("U", 1,0,tiempo); break;
+                case 12: girarCaraAutomaticamente("F", 1,0,tiempo); break;
+                case 13: girarCaraAutomaticamente("B", 1,0,tiempo); break;
+                case 14: girarCaraAutomaticamente("L", 1,0,tiempo); break;
+                case 15: girarCaraAutomaticamente("D", 1,0,tiempo); break;
+                case 16: girarCaraAutomaticamente("M", 1,0,tiempo); break;
+                case 17: girarCaraAutomaticamente("S", 1,0,tiempo); break;
+                case 18: girarCaraAutomaticamente("E", 1,0,tiempo); break;
+            }
+            if (indiceDesorden<19)
+            {
+                setTimeout (desordenar,270);
+            }
+            else
+            {
+                indiceDesorden = 0;
+                setTimeout (terminarDesorden,270);
+            }
+        }
 
-RubikCube.prototype.onMouseDown = function(event)
-{
-	if(event.shiftKey || event.button==2)
-	{
-		this.dragStart = [event.clientX,event.clientY];
-		return;
-	}
-	if(this.animationQueue.length>0) return;
-	var pos = this.getPick(event.clientX-this.offsetX,event.clientY-this.offsetY);
-	if(pos != undefined)
-	{
-		this.dragStart = [event.clientX,event.clientY];
-		this.dragPos = pos;
-		this.dragSlices = [[this.neighbors[pos[0]][3],pos[1],true],[this.neighbors[pos[0]][2],pos[2],true]];
-		this.dragNormals = [this.getFaceNormal(this.neighbors[pos[0]][2]),this.getFaceNormal(this.neighbors[pos[0]][1])];
-		for(var i=0; i<2; i++)
-		{
-			var norm2d = Math.sqrt(this.dragNormals[i][0]*this.dragNormals[i][0]+this.dragNormals[i][1]*this.dragNormals[i][1]);
-			this.dragNormals[i] = [this.dragNormals[i][0]/norm2d,this.dragNormals[i][1]/norm2d];
-		}
-	}
-}
+        function terminarDesorden()
+        {
+            autoRotandoCara = false;
+            desordenando = false;
+        }
 
-RubikCube.prototype.onMouseMove = function(event)
-{
-	if(this.dragStart != undefined)
-	{
-		if(this.dragSlices != undefined)
-		{
-			var delta = [event.clientX-this.dragStart[0], event.clientY-this.dragStart[1]];
-			var bestSlice;
-			var bestProj = 50;
-			for(var sliceNum in this.dragSlices)
-			{
-				var slice = this.dragSlices[sliceNum];
-				var norm = this.dragNormals[sliceNum];
-				var proj = delta[0]*norm[0]+delta[1]*norm[1];
-				if(Math.abs(proj) > bestProj)
-				{
-					bestProj = Math.abs(proj);
-					bestSlice = [slice[0],slice[1],proj>0];
-				}
-			}
-			if(bestSlice != undefined)
-			{
-				this.addSliceRotation(bestSlice);
-				this.dragStart = this.dragPos = this.dragSlices = undefined;
-			}
-		} else
-		{
-//			this.addRotation((event.clientX-this.dragStart[0])*this.lookSensitivity, (event.clientY-this.dragStart[1])*this.lookSensitivity);
-			this.addSmartRotation((event.clientX-this.dragStart[0])*this.lookSensitivity, (event.clientY-this.dragStart[1])*this.lookSensitivity);
-			this.dragStart = [event.clientX,event.clientY];
-		}
-	}
-}
+        function selecccionarCara (pieza, normal, direccion)
+        {
+            var cuadrante = conocerCuadrante();
+            var normalMatrix = new THREE.Matrix3().getNormalMatrix( pieza.matrixWorld );
+            var worldNormal = normal.clone().applyMatrix3( normalMatrix ).normalize();
+            var cara;
+            if (pieza.position.x > 0.9 && pieza.position.y < 0.1 && pieza.position.y > -0.1 && pieza.position.z < 0.1 && pieza.position.z > -0.1 ) { //CARA VERDE
+                if (worldNormal.x > 0.9) {
+                    if (direccion == "H"){   eje = "Y";  invertirGiro[3] =  1;   cara = "E"; }
+                    if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "S"; }}
+            }
+            if (pieza.position.x < -0.9 && pieza.position.y < 0.1 && pieza.position.y > -0.1 && pieza.position.z < 0.1 && pieza.position.z > -0.1 ) { //CARA AZUL
+                if (worldNormal.x < -0.9) {
+                    if (direccion == "H"){   eje = "Y";  invertirGiro[3] =  1;   cara = "E"; }
+                    if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "S"; }}
+            }
+            if (pieza.position.x < 0.1 && pieza.position.x > -0.1 && pieza.position.y < 0.1 && pieza.position.y > -0.1 && pieza.position.z < -0.9) { //CARA NARANJA
+                if (worldNormal.z < -0.9) {
+                    if (direccion == "H"){   eje = "Y";  invertirGiro[3] =  1;   cara = "E"; }
+                    if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "M"; }}
+            }
+            if (pieza.position.x < 0.1 && pieza.position.x > -0.1 && pieza.position.y < 0.1 && pieza.position.y > -0.1 && pieza.position.z > 0.9) { //CARA ROJA
+                if (worldNormal.z > 0.9) {
+                    if (direccion == "H"){   eje = "Y";  invertirGiro[3] =  1;   cara = "E"; }
+                    if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "M"; }}
+            }
+            if (pieza.position.x < 0.1 && pieza.position.x > -0.1 && pieza.position.y < -0.9 && pieza.position.z < 0.1 && pieza.position.z > -0.1) { //CARA AMARILLA
+                if (worldNormal.y < -0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "M"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "S"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "M"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "S"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "M"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "S"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "M"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "S"; }}}
+            }
+            if (pieza.position.x < 0.1 && pieza.position.x > -0.1 && pieza.position.y > 0.9 && pieza.position.z < 0.1 && pieza.position.z > -0.1) { //CARA BLANCA
+                if (worldNormal.y > 0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "M"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "S"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "M"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "S"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "M"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "S"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "M"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "S"; }}}
+            }
+            if (pieza.position.x > 0.9 && pieza.position.y < 0.1 && pieza.position.y > -0.1 && pieza.position.z < -0.9) { //ARISTA NARANJA-VERDE
+                if (worldNormal.x > 0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "E"; }
+                    if (direccion == "V"){       eje = "Z";  invertirGiro[4] =  1;   cara = "B"; }}
+                if (worldNormal.z < -0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "E"; }
+                    if (direccion == "V"){       eje = "X";  invertirGiro[0] =  1;   cara = "R"; }}
+            }
+            if (pieza.position.x > 0.9 && pieza.position.y < 0.1 && pieza.position.y > -0.1 && pieza.position.z > 0.9) { //ARISTA ROJA-VERDE
+                if (worldNormal.x > 0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "E"; }
+                    if (direccion == "V"){       eje = "Z";  invertirGiro[4] =  1;   cara = "F"; }}
+                if (worldNormal.z > 0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "E"; }
+                    if (direccion == "V"){       eje = "X";  invertirGiro[0] = -1;   cara = "R"; }}
+            }
+            if (pieza.position.x < -0.9 && pieza.position.y < 0.1 && pieza.position.y > -0.1 && pieza.position.z < -0.9) { //ARISTA NARANJA-AZUL
+                if (worldNormal.x < -0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "E"; }
+                    if (direccion == "V"){       eje = "Z";  invertirGiro[4] = -1;   cara = "B"; }}
+                if (worldNormal.z < -0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "E"; }
+                    if (direccion == "V"){       eje = "X";  invertirGiro[0] =  1;   cara = "L"; }}
+            }
+            if (pieza.position.x < -0.9 && pieza.position.y < 0.1 && pieza.position.y > -0.1 && pieza.position.z > 0.9) { //ARISTA ROJA-AZUL
+                if (worldNormal.x < -0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "E"; }
+                    if (direccion == "V"){       eje = "Z";  invertirGiro[4] = -1;   cara = "F"; }}
+                if (worldNormal.z > 0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "E"; }
+                    if (direccion == "V"){       eje = "X";  invertirGiro[0] = -1;   cara = "L"; }}
+            }
+            if (pieza.position.x > 0.9 && pieza.position.y < -0.9 && pieza.position.z < 0.1 && pieza.position.z > -0.1) { //ARISTA VERDE-AMARILLA
+                if (worldNormal.x > 0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "D"; }
+                    if (direccion == "V"){       eje = "Z";  invertirGiro[4] =  1;   cara = "S"; }}
+                if (worldNormal.y < -0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "R"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "S"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "R"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "S"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "R"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "S"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "R"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "S"; }}}
+            }
+            if (pieza.position.x > 0.9 && pieza.position.y > 0.9 && pieza.position.z < 0.1 && pieza.position.z > -0.1) { //ARISTA VERDE-BLANCA
+                if (worldNormal.x > 0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "U"; }
+                    if (direccion == "V"){       eje = "Z";  invertirGiro[4] =  1;   cara = "S"; }}
+                if (worldNormal.y > 0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "R"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "S"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "R"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "S"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "R"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "S"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "R"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "S"; }}}
+            }
+            if (pieza.position.x < -0.9 && pieza.position.y < -0.9 && pieza.position.z < 0.1 && pieza.position.z > -0.1) { //ARISTA AZUL-AMARILLA
+                if (worldNormal.x < -0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "D"; }
+                    if (direccion == "V"){       eje = "Z";  invertirGiro[4] = -1;   cara = "S"; }}
+                if (worldNormal.y < -0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "L"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "S"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "L"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "S"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "L"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "S"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "L"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "S"; }}}
+            }
+            if (pieza.position.x < -0.9 && pieza.position.y > 0.9 && pieza.position.z < 0.1 && pieza.position.z > -0.1) { //ARISTA AZUL-BLANCA
+                if (worldNormal.x < -0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "U"; }
+                    if (direccion == "V"){       eje = "Z";  invertirGiro[4] = -1;   cara = "S"; }}
+                if (worldNormal.y > 0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "L"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "S"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "L"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "S"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "L"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "S"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "L"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "S"; }}}
+            }
+            if (pieza.position.x < 0.1 && pieza.position.x > -0.1 && pieza.position.y < -0.9 && pieza.position.z < -0.9) { //ARISTA NARANJA-AMARILLA
+                if (worldNormal.y < -0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "M"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "B"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "M"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "B"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "M"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "B"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "M"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "B"; }}}
+                if (worldNormal.z < -0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "D"; }
+                    if (direccion == "V"){       eje = "X";  invertirGiro[0] =  1;   cara = "M"; }}
+            }
+            if (pieza.position.x < 0.1 && pieza.position.x > -0.1 && pieza.position.y > 0.9 && pieza.position.z < -0.9) { //ARISTA NARANJA-BLANCA
+                if (worldNormal.y > 0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "M"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "B"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "M"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "B"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "M"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "B"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "M"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "B"; }}}
+                if (worldNormal.z < -0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "U"; }
+                    if (direccion == "V"){       eje = "X";  invertirGiro[0] =  1;   cara = "M"; }}
+            }
+            if (pieza.position.x < 0.1 && pieza.position.x > -0.1 && pieza.position.y < -0.9 && pieza.position.z > 0.9) { //ARISTA ROJA-AMARILLA
+                if (worldNormal.y < -0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "M"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "F"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "M"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "F"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "M"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "F"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "M"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "F"; }}}
+                if (worldNormal.z > 0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "D"; }
+                    if (direccion == "V"){       eje = "X";  invertirGiro[0] = -1;   cara = "M"; }}
+            }
+            if (pieza.position.x < 0.1 && pieza.position.x > -0.1 && pieza.position.y > 0.9 && pieza.position.z > 0.9) { //ARISTA ROJA-BLANCA
+                if (worldNormal.y > 0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "M"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "F"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "M"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "F"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "M"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "F"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "M"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "F"; }}}
+                if (worldNormal.z > 0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "U"; }
+                    if (direccion == "V"){       eje = "X";  invertirGiro[0] = -1;   cara = "M"; }}
+            }
+            if (pieza.position.x < -0.9 && pieza.position.y > 0.9 && pieza.position.z > 0.9) { //ESQUINA ROJA-AZUL-BLANCA
+                if (worldNormal.x < -0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "U"; }
+                    if (direccion == "V"){       eje = "Z";  invertirGiro[4] = -1;   cara = "F"; }}
+                if (worldNormal.y > 0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "L"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "F"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "L"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "F"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "L"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "F"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "L"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "F"; }}}
+                if (worldNormal.z > 0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "U"; }
+                    if (direccion == "V"){       eje = "X";  invertirGiro[0] = -1;   cara = "L"; }}
+            }
+            if (pieza.position.x < -0.9 && pieza.position.y < -0.9 && pieza.position.z > 0.9) { //ESQUINA ROJA-AZUL-AMARILLA
+                if (worldNormal.x < -0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "D"; }
+                    if (direccion == "V"){       eje = "Z";  invertirGiro[4] = -1;   cara = "F"; }}
+                if (worldNormal.y < -0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "L"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "F"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "L"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "F"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "L"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "F"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "L"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "F"; }}}
+                if (worldNormal.z > 0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "D"; }
+                    if (direccion == "V"){       eje = "X";  invertirGiro[0] = -1;   cara = "L"; }}
+            }
+            if (pieza.position.x > 0.9 && pieza.position.y > 0.9 && pieza.position.z > 0.9) { //ESQUINA ROJA-VERDE-BLANCA
+                if (worldNormal.x > 0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "U"; }
+                    if (direccion == "V"){       eje = "Z";  invertirGiro[4] =  1;   cara = "F"; }}
+                if (worldNormal.y > 0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "R"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "F"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "R"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "F"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "R"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "F"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "R"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "F"; }}}
+                if (worldNormal.z > 0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "U"; }
+                    if (direccion == "V"){       eje = "X";  invertirGiro[0] = -1;   cara = "R"; }}
+            }
+            if (pieza.position.x > 0.9 && pieza.position.y < -0.9 && pieza.position.z > 0.9) { //ESQUINA ROJA-VERDE-AMARILLA
+                if (worldNormal.x > 0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "D"; }
+                    if (direccion == "V"){       eje = "Z";  invertirGiro[4] =  1;   cara = "F"; }}
+                if (worldNormal.y < -0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "R"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "F"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "R"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "F"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "R"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "F"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "R"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "F"; }}}
+                if (worldNormal.z > 0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "D"; }
+                    if (direccion == "V"){       eje = "X";  invertirGiro[0] = -1;   cara = "R"; }}
+            }
+            if (pieza.position.x > 0.9 && pieza.position.y > 0.9 && pieza.position.z < -0.9) { //ESQUINA NARANJA-VERDE-BLANCA
+                if (worldNormal.x > 0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "U"; }
+                    if (direccion == "V"){       eje = "Z";  invertirGiro[4] =  1;   cara = "B"; }}
+                if (worldNormal.y > 0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "R"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "B"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "R"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "B"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "R"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "B"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "R"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "B"; }}}
+                if (worldNormal.z < -0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "U"; }
+                    if (direccion == "V"){       eje = "X";  invertirGiro[0] =  1;   cara = "R"; }}
+            }
+            if (pieza.position.x > 0.9 && pieza.position.y < -0.9 && pieza.position.z < -0.9) { //ESQUINA NARANJA-VERDE-AMARILLA
+                if (worldNormal.x > 0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "D"; }
+                    if (direccion == "V"){       eje = "Z";  invertirGiro[4] =  1;   cara = "B"; }}
+                if (worldNormal.y < -0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "R"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "B"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "R"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "B"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "R"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "B"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "R"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "B"; }}}
+                if (worldNormal.z < -0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "D"; }
+                    if (direccion == "V"){       eje = "X";  invertirGiro[0] =  1;   cara = "R"; }}
+            }
+            if (pieza.position.x < -0.9 && pieza.position.y > 0.9 && pieza.position.z < -0.9) { //ESQUINA NARANJA-AZUL-BLANCA
+                if (worldNormal.x < -0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "U"; }
+                    if (direccion == "V"){       eje = "Z";  invertirGiro[4] = -1;   cara = "B"; }}
+                if (worldNormal.y > 0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "L"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "B"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "L"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "B"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "L"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "B"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "L"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "B"; }}}
+                if (worldNormal.z < -0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "U"; }
+                    if (direccion == "V"){       eje = "X";  invertirGiro[0] =  1;   cara = "L"; }}
+            }
+            if (pieza.position.x < -0.9 && pieza.position.y < -0.9 && pieza.position.z < -0.9) { //ESQUINA NARANJA-AZUL-AMARILLA
+                if (worldNormal.x < -0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "D"; }
+                    if (direccion == "V"){       eje = "Z";  invertirGiro[4] = -1;   cara = "B"; }}
+                if (worldNormal.y < -0.9) {
+                    if (cuadrante == 1) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] = -1;   cara = "L"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] =  1;   cara = "B"; }}
+                    if (cuadrante == 2) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] = -1;   cara = "L"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] = -1;   cara = "B"; }}
+                    if (cuadrante == 3) {
+                        if (direccion == "V"){   eje = "X";  invertirGiro[0] =  1;   cara = "L"; }
+                        if (direccion == "H"){   eje = "Z";  invertirGiro[5] = -1;   cara = "B"; }}
+                    if (cuadrante == 4) {
+                        if (direccion == "H"){   eje = "X";  invertirGiro[1] =  1;   cara = "L"; }
+                        if (direccion == "V"){   eje = "Z";  invertirGiro[4] =  1;   cara = "B"; }}}
+                if (worldNormal.z < -0.9){
+                    if (direccion == "H"){       eje = "Y";  invertirGiro[3] =  1;   cara = "D"; }
+                    if (direccion == "V"){       eje = "X";  invertirGiro[0] =  1;   cara = "L"; }}
+            }
 
-RubikCube.prototype.onMouseUp = function(event)
-{
-	this.dragStart = this.dragPos = this.dragSlices = undefined;
-}
+            var index = 0;
+            var caras = (cara == "M" || cara == "S" || cara == "E") ? [null, null, null, null, null, null, null, null] : [null, null, null, null, null, null, null, null, null];
+            switch (cara) {
+                case "F":for (var f = 0; f < piezas.length; f++){ if (piezas[f].position.z >  0.5)                              {caras[index] = piezas[f];index++;}} break;
+                case "B":for (var b = 0; b < piezas.length; b++){ if (piezas[b].position.z < -0.5)                              {caras[index] = piezas[b];index++;}} break;
+                case "U":for (var u = 0; u < piezas.length; u++){ if (piezas[u].position.y >  0.5)                              {caras[index] = piezas[u];index++;}} break;
+                case "D":for (var d = 0; d < piezas.length; d++){ if (piezas[d].position.y < -0.5)                              {caras[index] = piezas[d];index++;}} break;
+                case "R":for (var r = 0; r < piezas.length; r++){ if (piezas[r].position.x >  0.5)                              {caras[index] = piezas[r];index++;}} break;
+                case "L":for (var l = 0; l < piezas.length; l++){ if (piezas[l].position.x < -0.5)                              {caras[index] = piezas[l];index++;}} break;
+                case "M":for (var m = 0; m < piezas.length; m++){ if (piezas[m].position.x > -0.5 && piezas[m].position.x < 0.5){caras[index] = piezas[m];index++;}} break;
+                case "S":for (var s = 0; s < piezas.length; s++){ if (piezas[s].position.z > -0.5 && piezas[s].position.z < 0.5){caras[index] = piezas[s];index++;}} break;
+                case "E":for (var e = 0; e < piezas.length; e++){ if (piezas[e].position.y > -0.5 && piezas[e].position.y < 0.5){caras[index] = piezas[e];index++;}} break;
+            }
+            var nulo = new THREE.Object3D();
 
-RubikCube.prototype.convertSlice = function(slice)
-{
-	slice = [this.convertFace(slice[0]),slice[1],slice[2]];
-	if(slice[1]>=this.size/2) return [this.neighbors[slice[0]][0],this.size-slice[1]-1,!slice[2]];
-	return slice;
-}
+            for (var i = 0; i < caras.length; i++) {
+                caras[i].updateMatrixWorld();
+                THREE.SceneUtils.attach(caras[i], cubo, nulo);
+            }
+            escena.add(nulo);
 
-RubikCube.prototype.getSliceElement = function(slice, face, n)
-{
-	var pos;
-	for(var i=1; i<=4; i++)
-	{
-		if(this.neighbors[face][i] == slice[0])
-		{
-			pos = i;
-			break;
-		}
-	}
-	if(pos == undefined) return -1;	// bad face specified
-	if(pos == 1) return slice[1]*this.size+n;
-	if(pos == 2) return n*this.size+this.size-slice[1]-1;
-	if(pos == 3) return (this.size-slice[1]-1)*this.size+(this.size-n-1);
-	if(pos == 4) return (this.size-n-1)*this.size+slice[1];
-}
+            return nulo;
+        }
 
-RubikCube.prototype.multMatVec = function(m,v)
-{
-	var res = [0,0,0];
-	for(var i=0; i<3; i++)
-		for(var j=0; j<3; j++)
-			res[i] += m[i][j]*v[j];
-	return res;
-}
+        function conocerCuadrante()
+        {
+            var anguloCamara;
+            var cuadrante;
+            if (camara.position.x <  0 && camara.position.z >= 0) anguloCamara = Math.abs (Math.atan(camara.position.x / camara.position.z) * 180 / Math.PI);
+            if (camara.position.x <  0 && camara.position.z  < 0) anguloCamara = Math.abs (Math.atan(camara.position.z / camara.position.x) * 180 / Math.PI) + 90;
+            if (camara.position.x >= 0 && camara.position.z  < 0) anguloCamara = Math.abs (Math.atan(camara.position.x / camara.position.z) * 180 / Math.PI) + 180;
+            if (camara.position.x >= 0 && camara.position.z >= 0) anguloCamara = Math.abs (Math.atan(camara.position.z / camara.position.x) * 180 / Math.PI) + 270;
+            if (anguloCamara >= 315 || anguloCamara < 45 ) cuadrante = 1;
+            if (anguloCamara >= 45  && anguloCamara < 135) cuadrante = 2;
+            if (anguloCamara >= 135 && anguloCamara < 225) cuadrante = 3;
+            if (anguloCamara >= 225 && anguloCamara < 315) cuadrante = 4;
+            return (cuadrante);
+        }
 
-RubikCube.prototype.multMatNum = function(m,n)
-{
-	var res = [];
-	for(var i=0; i<3; i++)
-	{
-		res[i] = [];
-		for(var j=0; j<3; j++)
-			res[i][j] = m[i][j]*n;
-	}
-	return res;
-}
+        function guardarClickInicial ()
+        {
+            if (!clickInicialGuardado)
+            {
+                clickInicialGuardado = true;
+                clickInicial.x = mouse.x;
+                clickInicial.y = mouse.y;
+                bloqueo = false;
+            }
+        }
 
-RubikCube.prototype.multMatMat = function(m1,m2)
-{
-	var res = [];
-	for(var i=0; i<3; i++)
-	{
-		res[i] = [];
-		for(var j=0; j<3; j++)
-		{
-			var coef = 0;
-			for(var k=0; k<3; k++)
-				coef += m1[i][k]*m2[k][j];
-			res[i][j] = coef;
-		}
-	}
-	return res;
-}
+        function actualizarRotacionCara(cara, desplazamiento, eje, direccion)
+        {
+            if (!bloqueo)
+            {
+                switch (eje){
+                    case "X" :
+                        if (direccion == "V") {cara.rotation.x = desplazamiento.y*3*invertirGiro[0]; giroAplicado = desplazamiento.y*3*invertirGiro[0]*180/Math.PI; }
+                        if (direccion == "H") {cara.rotation.x = desplazamiento.x*3*invertirGiro[1]; giroAplicado = desplazamiento.x*3*invertirGiro[1]*180/Math.PI; }
+                        break;
+                    case "Y" :
+                        if (direccion == "V") {cara.rotation.y = desplazamiento.y*3*invertirGiro[2]; giroAplicado = desplazamiento.y*3*invertirGiro[2]*180/Math.PI; }
+                        if (direccion == "H") {cara.rotation.y = desplazamiento.x*3*invertirGiro[3]; giroAplicado = desplazamiento.x*3*invertirGiro[3]*180/Math.PI; }
+                        break;
+                    case "Z" :
+                        if (direccion == "V") {cara.rotation.z = desplazamiento.y*3*invertirGiro[4]; giroAplicado = desplazamiento.y*3*invertirGiro[4]*180/Math.PI; }
+                        if (direccion == "H") {cara.rotation.z = desplazamiento.x*3*invertirGiro[5]; giroAplicado = desplazamiento.x*3*invertirGiro[5]*180/Math.PI; }
+                        break;
+                }
+                giroAplicado = giroAplicado%360;
+                if (giroAplicado >= -45 && giroAplicado <    45) giroObjetivo =    0;
+                if (giroAplicado >=  45 && giroAplicado <   135) giroObjetivo =   90;
+                if (giroAplicado >= 135 && giroAplicado <   225) giroObjetivo =  180;
+                if (giroAplicado >= 225                        ) giroObjetivo =  360;
+                if (giroAplicado <  -45 && giroAplicado >= -135) giroObjetivo =  -90;
+                if (giroAplicado < -135 && giroAplicado >= -225) giroObjetivo = -180;
+                if (giroAplicado < -225                        ) giroObjetivo = -360;
+            }
+        }
 
-RubikCube.prototype.multVecNum = function(v,n)
-{
-	return [v[0]*n,v[1]*n,v[2]*n];
-}
+        function terminarGiro(inicio, fin)
+        {
+            var origen = {x:inicio*Math.PI/180,y:0};
+            var destino = {x:fin*Math.PI/180, y:0};
+            var movimiento = new TWEEN.Tween(origen).to(destino,Math.abs(Math.floor(600*((fin-inicio)/90))));
+            movimiento.onUpdate(function(){
+                switch (eje) {
+                    case "X": cara.rotation.set(origen.x, 0,        0       ); break;
+                    case "Y": cara.rotation.set(0,        origen.x, 0       ); break;
+                    case "Z": cara.rotation.set(0,        0,        origen.x); break;
+                }
+            });
+            movimiento.easing(TWEEN.Easing.Exponential.Out);
+            movimiento.start();
+            movimiento.onComplete(function(){
+                lapsoDeSeguridad();
+            });
 
-RubikCube.prototype.sumVec = function(v1,v2)
-{
-	return [v1[0]+v2[0],v1[1]+v2[1],v1[2]+v2[2]];
-}
+        }
 
-RubikCube.prototype.addRotation = function(x,y)
-{
-	var sinX = Math.sin(x);
-	var sinY = Math.sin(y);
-	var cosX = Math.cos(x);
-	var cosY = Math.cos(y);
-	this.matrix = this.multMatMat([[cosX,0,sinX],[0,1,0],[-sinX,0,cosX]], this.matrix);
-	this.matrix = this.multMatMat([[1,0,0],[0,cosY,sinY],[0,-sinY,cosY]], this.matrix);
-	this.bestFront = this.bestLeft = this.bestUp = undefined;
-	this.norm = [];
-	this.invalidate();
-}
+        function lapsoDeSeguridad()
+        {
+            setTimeout(restaurarCaras,1);
+        }
 
-RubikCube.prototype.getRotationMatrix = function(v,angle)
-{
-	var sin = Math.sin(angle);
-	var cos = Math.cos(angle);
-	return [
-		[v[0]*v[0]*(1-cos)+cos, v[0]*v[1]*(1-cos)-v[2]*sin, v[0]*v[2]*(1-cos)+v[1]*sin],
-		[v[1]*v[0]*(1-cos)+v[2]*sin, v[1]*v[1]*(1-cos)+cos, v[1]*v[2]*(1-cos)-v[0]*sin],
-		[v[2]*v[0]*(1-cos)-v[1]*sin, v[2]*v[1]*(1-cos)+v[0]*sin, v[2]*v[2]*(1-cos)+cos],
-	];
-}
+        function restaurarCaras()
+        {
+            var array = [null, null, null, null, null, null, null, null, null];
+            for (var i = 0; i < cara.children.length; i++) array[i] = cara.children[i];
+            for (var u = 0; u < array.length; u++)
+            {
+                if (array[u] != null)
+                {
+                    THREE.SceneUtils.detach(array[u], cara, cubo);
+                }
 
-RubikCube.prototype.normalizeMatrix = function(mat)
-{
-	var det = mat[0][0]*(mat[1][1]*mat[2][2]-mat[1][2]*mat[2][1])+mat[0][1]*(mat[1][2]*mat[2][0]-mat[1][0]*mat[2][2])+mat[0][2]*(mat[1][0]*mat[2][1]-mat[1][1]*mat[2][0]);
-	det = Math.pow(det,1/3);
-	return [
-		[mat[0][0]/det, mat[0][1]/det, mat[0][2]/det],
-		[mat[1][0]/det, mat[1][1]/det, mat[1][2]/det],
-		[mat[2][0]/det, mat[2][1]/det, mat[2][2]/det]
-	];
-}
+            }
+            rotandoCara = false;
+            clickInicialGuardado = false;
+            if (jugando)
+            {
+                if (chequearResuelto())
+                {
+                    marcoInfo.material.opacity = 0.75;
+                    var secText = (sec < 10) ? "0" + sec : "" + sec;
+                    actualizarMensaje(+min + "'" + secText + "''", 0.3);
+                    jugando = false;
+                }
+            }
+        }
 
-RubikCube.prototype.addSmartRotation = function(x,y)
-{
-	if(x==0 && y==0) return;
-	if(Math.abs(x)>Math.abs(y))
-		this.matrix = this.multMatMat(this.getRotationMatrix(this.getFaceNormal(this.convertFace("d")),x), this.matrix);
-	else
-		this.matrix = this.multMatMat(this.getRotationMatrix(this.getFaceNormal(this.convertFace("l")),y), this.matrix);
-	this.matrix = this.normalizeMatrix(this.matrix);
-	this.bestFront = this.bestLeft = this.bestUp = undefined;
-	this.norm = [];
-	this.invalidate();
-}
+		function crearMenu()
+        {
+            var texturaColorPlay = new THREE.ImageUtils.loadTexture("img/pegatinaPlay.png");
+            var texturaBumpPlay = new THREE.ImageUtils.loadTexture("img/pegatinaBump.png");
+            var posicionPlay = new THREE.Vector3(0,0,0);
+            botonPlay = crearPieza(texturaColorPlay, texturaBumpPlay, buttonNormal, buttonNormal, buttonNormal, buttonNormal, buttonNormal, buttonNormal, posicionPlay, "Play");
+            escena.add(botonPlay);
+            botonPlay.updateMatrixWorld();
+            camara.updateMatrixWorld();
+            THREE.SceneUtils.attach(botonPlay, escena, camara);
+            botonPlay.scale.set(0.4,0.4,0.4);
+            botonPlay.position.set(-1.7,0,-4);
 
-RubikCube.prototype.getFaceElementCount = function(face)
-{
-	if(this.slice == undefined) return this.size*this.size;
-	if(face>=12 && this.slice[1]==0) return 0;
-	if(face%6==this.slice[0]) return (face>=12 || (face>=6 && this.slice[1]==0))?this.size*this.size:1;
-	if(face%6==this.neighbors[this.slice[0]][0]) return face<6?this.size*this.size:1;
-	if(face>=12) return this.slice[1]*this.size;
-	if(face>=6) return this.size;
-	return (this.size-this.slice[1]-1)*this.size;
-}
+            var texturaColorRestart = new THREE.ImageUtils.loadTexture("img/pegatinaRestart.png");
+            var texturaBumpRestart = new THREE.ImageUtils.loadTexture("img/pegatinaBump.png");
+            var posicionRestart = new THREE.Vector3(0,0,0);
+            botonRestart = crearPieza(texturaColorRestart, texturaBumpRestart, buttonNormal, buttonNormal, buttonNormal, buttonNormal, buttonNormal, buttonNormal, posicionRestart, "Restart");
+            escena.add(botonRestart);
 
-RubikCube.prototype.getFaceNormal = function(face)
-{
-	if(this.norm[face] == undefined)
-	{
-		if((face>=6 && this.slice == undefined) || (face>=12 && this.slice[1]==0))
-		{
-			this.norm[face] = [0,0,-1];
-		} else
-		{
-			if(face>=6)
-			{
-				if(face>=12 || face%6==this.slice[0] || face%6==this.neighbors[this.slice[0]][0])
-					this.norm[face] = this.getFaceNormal(face%6);
-				else
-				{
-					var nextFace;
-					for(var i=1; i<=4; i++)
-						if(this.neighbors[this.slice[0]][i]==face%6)
-							nextFace = this.neighbors[this.slice[0]][i%4+1];
-					this.norm[face] = this.multMatVec(this.matrix, this.sumVec(
-						this.multVecNum(this.faceNormals[face%6],Math.cos(this.angle)),
-						this.multVecNum(this.faceNormals[nextFace],Math.sin(this.angle))));
-				}
-			} else
-				this.norm[face] = this.multMatVec(this.matrix,this.faceNormals[face]);
-		}
-	}
-	return this.norm[face];
-}
+            THREE.SceneUtils.attach(botonRestart, escena, camara);
+            botonRestart.scale.set(0.4,0.4,0.4);
+            botonRestart.position.set(1.7,0,-4);
+        }
+		
+        function marcoMensaje()
+        {
+            var circuloGeometria = new THREE.Geometry();
+            circuloGeometria.vertices.push(new THREE.Vector3(0.0,  0.0, 0.0));
+            for (var i = 0; i<360; i++)
+            {
+                var posX = Math.sin(i*Math.PI/180)*0.8;
+                var posY = Math.cos(i*Math.PI/180)*0.8;
+                circuloGeometria.vertices.push(new THREE.Vector3(posX,  posY, 0.0));
+                if (i != 0)
+                {
+                    (i != 359) ? circuloGeometria.faces.push(new THREE.Face3(0, i, i + 1)) : circuloGeometria.faces.push(new THREE.Face3(0, i, 1));
+                }
+            }
+            var circuloMaterial = new THREE.MeshLambertMaterial({color:0x000000, transparent:true, opacity:0, side:THREE.DoubleSide});
+            marcoInfo = new THREE.Mesh(circuloGeometria, circuloMaterial);
+            escena.add(marcoInfo);
+            THREE.SceneUtils.attach(marcoInfo, escena, camara);
+            marcoInfo.position.set(0, 0, -4.1);
+            marcoInfo.rotation.set(0, 0, 0);
+            marcoInfo.name = "MARCO";
+        }
 
-/**
- * Returns 3D-vector in screen coords of specified vertice of specified element of specified face
- * face ranges from 0 to 17
- * elementNum ranges from 0 to getFaceElementCount(face)-1
- * vertNum ranges from 0 to 3 (edges) or -1 (center)
- */
-RubikCube.prototype.getElementVector = function(face, elementNum, vertNum)
-{
-	var norm = this.getFaceNormal(face);
-	var normL = this.getFaceNormal(Math.floor(face/6)*6+this.neighbors[face%6][3]);
-	var normU = this.getFaceNormal(Math.floor(face/6)*6+this.neighbors[face%6][2]);
-	elementNum = this.convertElementNum(face, elementNum);
-	if(this.slice!=undefined && ((face<6 || this.slice[1]>0) && face<12 && face%6==this.slice[0]) || (face>=6 && face%6==this.neighbors[this.slice[0]][0]))
-	{
-		var depth = face%6==this.slice[0]?this.size-this.slice[1]+Math.floor(face/6)-1:this.slice[1]-Math.floor(face/6)+2;
-		var vertPos = this.multVecNum(norm, (depth/this.size*2-1));
-		vertPos = this.sumVec(vertPos,this.multVecNum(normL,(vertNum==-1?0.5:Math.floor(vertNum/2))*2-1));
-		vertPos = this.sumVec(vertPos,this.multVecNum(normU,(vertNum==-1?0.5:vertNum%2)*2-1));
-		return vertPos;
-	}
-	var vertPos = norm;
-	vertPos = this.sumVec(vertPos,this.multVecNum(normL,(Math.floor(elementNum/this.size)+(vertNum==-1?0.5:Math.floor(vertNum/2)))/this.size*2-1));
-	vertPos = this.sumVec(vertPos,this.multVecNum(normU,(elementNum%this.size+(vertNum==-1?0.5:vertNum%2))/this.size*2-1));
-	return vertPos;
-}
+        function instanciarMensaje()
+        {
+            marcoMensaje();
+            var textGeometry = new THREE.TextGeometry ("");
+            textInfo = new THREE.Mesh (textGeometry, new THREE.MeshBasicMaterial({color: 0xFFFFFF}));
+            marcoInfo.add(textInfo);
+        }
 
-RubikCube.prototype.getFaceZOrder = function(face)
-{
-	if(this.getFaceNormal(face)[2] < 0) return undefined;
-	if(this.slice == undefined) return 1;
-	var norm = this.getFaceNormal(this.slice[0]);
-	return norm[2]<0?-face:face;
-}
+        function actualizarMensaje (mensaje, size)
+        {
+            var textGeometry = new THREE.TextGeometry (mensaje, {size:size, height:0.001});
+            THREE.GeometryUtils.center(textGeometry);
+            textInfo.geometry = textGeometry;
+            textInfo.geometry.needsUpdate = true;
+        }
 
-RubikCube.prototype.convertElementNum = function(face, elementNum)
-{
-	if(this.slice == undefined || face%6==this.slice[0] || face%6==this.neighbors[this.slice[0]][0]) return elementNum;
-	if(face>=12) return this.getSliceElement([this.slice[0],Math.floor(elementNum/this.size)], face%6, elementNum%this.size);
-	if(face>=6) return this.getSliceElement(this.slice, face%6, elementNum%this.size);
-	return this.getSliceElement([this.slice[0],Math.floor(elementNum/this.size+this.slice[1]+1)], face, elementNum%this.size);
-}
+        function instanciarReloj()
+        {
+            var secText = (sec < 10) ? "0" + sec : "" + sec;
+            var textGeometry = new THREE.TextGeometry (min+"'"+" "+secText+"''", {size:0.1, height:0.001});
+            clockInfo = new THREE.Mesh (textGeometry, new THREE.MeshBasicMaterial({color: 0xFFFFFF}));
+            THREE.GeometryUtils.center(textGeometry);
+            clockInfo.position.set(0,1.45,0);
+            marcoInfo.add(clockInfo);
+        }
 
-RubikCube.prototype.getElementFillStyle = function(face, elementNum)
-{
-	if(this.slice!=undefined && (face<6 || this.slice[1]>0) && face<12 && face%6==this.slice[0]) return this.innerColor;
-	if(face>=6 && face%6==this.neighbors[this.slice[0]][0]) return this.innerColor;
-	var state = this.state[face%6][this.convertElementNum(face, elementNum)];
-	if(this.shiny == 0) return this.colors[state];
-	var gradPos = this.getElementVector(face, elementNum, -1);
-	var norm = this.getFaceNormal(face);
-	gradPos = [(gradPos[0]-norm[0]/this.size/2)*this.scale+this.width/2,(gradPos[1]-norm[1]/this.size/2)*this.scale+this.height/2];
-	var fillStyle = this.ctx.createRadialGradient(gradPos[0],gradPos[1],0,gradPos[0],gradPos[1],this.scale/this.size/this.shiny);
-	fillStyle.addColorStop(0,this.colors[state]);
-	fillStyle.addColorStop(1,"black");
-	return fillStyle;
-}
+        function actualizarReloj()
+        {
+            var secText = (sec < 10) ? "0" + sec : "" + sec;
+            var textGeometry = new THREE.TextGeometry (min+"'"+" "+secText+"''", {size:0.1, height:0.001});
+            THREE.GeometryUtils.center(textGeometry);
+            clockInfo.geometry = textGeometry;
+            clockInfo.geometry.needsUpdate = true;
+        }
+
+        function hacerCountDown()
+        {
+            jugando = false;
+            sec = 0;
+            min = 0;
+            actualizarReloj();
+            countDown --;
+            if (desordenando)
+            {
+                setTimeout(hacerCountDown, (countDown > 0)?1000:500);
+                actualizarMensaje((countDown > 0) ? ""+countDown : "GO!", (countDown > 0) ? 0.7 : 0.4);
+                marcoInfo.material.opacity = 0.75;
+            }
+            else
+            {
+                actualizarMensaje("", 1);
+                countDown = 6;
+                marcoInfo.material.opacity = 0;
+                jugando = true;
+                setTimeout (crono, 500);
+            }
+        }
+
+        function crono()
+        {
+            sec++;
+            if (jugando)
+            {
+                setTimeout (crono, 1000)
+            }
+            else
+            {
+                sec = 0;
+                min = 0;
+            }
+            if (sec == 60)
+            {
+                sec = 0;
+                min ++;
+            }
+            actualizarReloj();
+        }
+
+        function distancia(vector1, vector2)
+        {
+            var d = Math.sqrt(Math.pow(vector1.x - vector2.x , 2) + Math.pow(vector1.y - vector2.y , 2));
+            var D = Math.sqrt(Math.pow(d , 2) + Math.pow(vector1.z - vector2.z , 2));
+            D = parseInt(D*1000);
+            return D;
+        }
+
+        function chequearResuelto()
+        {
+            for (var i = 0; i < piezas.length; i++)
+            {
+                if (piezas[i].position.x < 0.5 && piezas[i].position.x > -0.5) piezas[i].position.x = 0;
+                if (piezas[i].position.y < 0.5 && piezas[i].position.y > -0.5) piezas[i].position.y = 0;
+                if (piezas[i].position.z < 0.5 && piezas[i].position.z > -0.5) piezas[i].position.z = 0;
+                if (piezas[i].position.x > 0.5) piezas[i].position.x = 1;
+                if (piezas[i].position.x < -0.5) piezas[i].position.x = -1;
+                if (piezas[i].position.y > 0.5) piezas[i].position.y = 1;
+                if (piezas[i].position.y < -0.5) piezas[i].position.y = -1;
+                if (piezas[i].position.z > 0.5) piezas[i].position.z = 1;
+                if (piezas[i].position.z < -0.5) piezas[i].position.z = -1;
+                giroAplicado = giroAplicado%360;
+                if (piezas[i].rotation.x * 180/Math.PI < -135 && piezas[i].rotation.x * 180/Math.PI > -225) piezas[i].rotation.x = (-180)*(Math.PI/180);
+                if (piezas[i].rotation.x * 180/Math.PI <  -45 && piezas[i].rotation.x * 180/Math.PI > -135) piezas[i].rotation.x = (-90)*(Math.PI/180);
+                if (piezas[i].rotation.x * 180/Math.PI <   45 && piezas[i].rotation.x * 180/Math.PI >  -45) piezas[i].rotation.x = (0)*(Math.PI/180);
+                if (piezas[i].rotation.x * 180/Math.PI >   45 && piezas[i].rotation.x * 180/Math.PI <  135) piezas[i].rotation.x = (90)*(Math.PI/180);
+                if (piezas[i].rotation.x * 180/Math.PI >  135 && piezas[i].rotation.x * 180/Math.PI <  225) piezas[i].rotation.x = (180)*(Math.PI/180);
+                if (piezas[i].rotation.y * 180/Math.PI < -135 && piezas[i].rotation.y * 180/Math.PI > -225) piezas[i].rotation.y = (-180)*(Math.PI/180);
+                if (piezas[i].rotation.y * 180/Math.PI <  -45 && piezas[i].rotation.y * 180/Math.PI > -135) piezas[i].rotation.y = (-90)*(Math.PI/180);
+                if (piezas[i].rotation.y * 180/Math.PI <   45 && piezas[i].rotation.y * 180/Math.PI >  -45) piezas[i].rotation.y = (0)*(Math.PI/180);
+                if (piezas[i].rotation.y * 180/Math.PI >   45 && piezas[i].rotation.y * 180/Math.PI <  135) piezas[i].rotation.y = (90)*(Math.PI/180);
+                if (piezas[i].rotation.y * 180/Math.PI >  135 && piezas[i].rotation.y * 180/Math.PI <  225) piezas[i].rotation.y = (180)*(Math.PI/180);
+                if (piezas[i].rotation.z * 180/Math.PI < -135 && piezas[i].rotation.z * 180/Math.PI > -225) piezas[i].rotation.z = (-180)*(Math.PI/180);
+                if (piezas[i].rotation.z * 180/Math.PI <  -45 && piezas[i].rotation.z * 180/Math.PI > -135) piezas[i].rotation.z = (-90)*(Math.PI/180);
+                if (piezas[i].rotation.z * 180/Math.PI <   45 && piezas[i].rotation.z * 180/Math.PI >  -45) piezas[i].rotation.z = (0)*(Math.PI/180);
+                if (piezas[i].rotation.z * 180/Math.PI >   45 && piezas[i].rotation.z * 180/Math.PI <  135) piezas[i].rotation.z = (90)*(Math.PI/180);
+                if (piezas[i].rotation.z * 180/Math.PI >  135 && piezas[i].rotation.z * 180/Math.PI <  225) piezas[i].rotation.z = (180)*(Math.PI/180);
+            }
+            var resuelto = true;
+            for (var u = 1; u < piezas.length; u++) {
+                piezas[u].updateMatrixWorld();
+
+                if (u >=1 && u <=6)
+                {
+                    if (distancia(piezas[0].position,piezas[u].position) != distanciasIniciales[u])
+                    {
+                        resuelto = false;
+                    }
+                }
+                else
+                {
+                    if (distancia(piezas[0].position,piezas[u].position) != distanciasIniciales[u] ||
+                            ((piezas[0].rotation.x - piezas[u].rotation.x)* 180 / Math.PI )%360 != 0 ||
+                            ((piezas[0].rotation.y - piezas[u].rotation.y)* 180 / Math.PI )%360 != 0 ||
+                            ((piezas[0].rotation.z - piezas[u].rotation.z)* 180 / Math.PI )%360 != 0
+                    )
+                    {
+                        resuelto = false;
+                    }
+                }
+            }
+            return resuelto;
+        }
+
+        function GUI()
+        {
+            var ray2 = new THREE.Raycaster();
+            ray2.setFromCamera(mouse, camara);
+            var intersects2 = ray2.intersectObjects(camara.children);
+            if (intersects2.length > 0) {
+                if (intersects2[0].object.name != "MARCO")
+                {
+                    intersects2[0].object.material.color = buttonHover;
+                    document.getElementById(id).style.cursor = "pointer";
+                }
+                else
+                {
+                    botonPlay.material.color = buttonNormal;
+                    botonRestart.material.color = buttonNormal;
+                    if (!pointer) document.getElementById(id).style.cursor = "default";
+                }
+            }
+            else
+            {
+                botonPlay.material.color = buttonNormal;
+                botonRestart.material.color = buttonNormal;
+                if (!pointer) document.getElementById(id).style.cursor = "default";
+            }
+        }
+
+        function onDocumentMouseDown(event)
+        {
+            if ( event.button === THREE.MOUSE.LEFT) {
+                event.preventDefault();
+                mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+                mouse.y = -( event.clientY / window.innerHeight ) * 2 + 1;
+
+                clickInicial.x = mouse.x;
+                clickInicial.y = mouse.y;
+
+                if (!desordenando && !autoRotandoCara && !rotandoEscena && !rotandoCara) {
+                    var ray = new THREE.Raycaster();
+                    ray.setFromCamera(mouse, camara);
+                    var intersects = ray.intersectObjects(cubo.children);
+                    if (intersects.length > 0) {
+                        bloqueo = rotandoCara;
+                        rotandoCara = true;
+                        direccionSeleccionada = false;
+                        direccion = "";
+                        caraSeleccionada = false;
+                    }
+                    var intersects2 = ray.intersectObjects(camara.children);
+                    if (intersects2.length > 0)
+                    {
+                        if (intersects2[0].object.name == "Play")
+                        {
+                            desordenar();
+                            hacerCountDown();
+                        }
+                        if (intersects2[0].object.name == "Restart")
+                        {
+                            resetearCubo();
+                            actualizarMensaje ("",1);
+                            marcoInfo.material.opacity = 0;
+                            jugando = false;
+                        }
+                    }
+
+                } else rotandoEscena = true;
+            }
+        }
+
+        function onDocumentMouseMove(event)
+        {
+            if (event.button === THREE.MOUSE.LEFT)
+            {
+                var desplazamiento = new THREE.Vector2();
+                mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+                mouse.y = -( event.clientY / window.innerHeight ) * 2 + 1;
+                var ray = new THREE.Raycaster();
+                ray.setFromCamera(mouse, camara);
+                var intersects = ray.intersectObjects(cubo.children);
+                if (intersects.length > 0)
+                {
+                    getObjeto = intersects[0].object;
+                    getNormal = intersects[0].face.normal;
+                    document.getElementById(id).style.cursor = "pointer";
+                    pointer = true;
+                }
+                else pointer = false;
+
+                if (rotandoCara && !rotandoEscena && !bloqueo)
+                {
+                    desplazamiento.x = mouse.x - clickInicial.x;
+                    desplazamiento.y = mouse.y - clickInicial.y;
+
+                    if (!direccionSeleccionada)
+                    {
+                        if (desplazamiento.y > 0.01 || desplazamiento.y < -0.01)
+                        {
+                            direccionSeleccionada = true;
+                            direccion = "V";
+                            guardarClickInicial();
+                        }
+                        if (desplazamiento.x > 0.01 || desplazamiento.x < -0.01)
+                        {
+                            direccionSeleccionada = true;
+                            direccion = "H";
+                            guardarClickInicial();
+                        }
+                    }
+                    else if (!caraSeleccionada)
+                    {
+                        caraSeleccionada = true;
+                        cara = selecccionarCara(getObjeto, getNormal, direccion);
+                    }
+                    actualizarRotacionCara(cara, desplazamiento, eje, direccion);
+                }
+            }
+            if (rotandoCara)
+            {
+                pointer = true;
+            }
+        }
+
+        function onDocumentMouseUp(event)
+        {
+            if ( event.button === THREE.MOUSE.LEFT ) {
+                document.getElementById(id).style.cursor = "default";
+                if (rotandoCara && !bloqueo) {
+                    bloqueo = true;
+                    terminarGiro(giroAplicado, giroObjetivo);
+                }
+                else rotandoEscena = false;
+
+            }
+        }
+
+        function onDocumentKeyDown(event)
+        {
+            var keyCode = event.which;
+            if (!autoRotandoCara && !rotandoCara)
+            {
+                if (event.shiftKey)
+                {
+                    switch (keyCode)
+                    {
+                        case 82: girarCaraAutomaticamente("R",-1,0,500); break;
+                        case 85: girarCaraAutomaticamente("U",-1,0,500); break;
+                        case 70: girarCaraAutomaticamente("F",-1,0,500); break;
+                        case 66: girarCaraAutomaticamente("B",-1,0,500); break;
+                        case 76: girarCaraAutomaticamente("L",-1,0,500); break;
+                        case 68: girarCaraAutomaticamente("D",-1,0,500); break;
+                        case 77: girarCaraAutomaticamente("M",-1,0,500); break;
+                        case 83: girarCaraAutomaticamente("S",-1,0,500); break;
+                        case 69: girarCaraAutomaticamente("E",-1,0,500); break;
+                    }
+                }
+                else
+                {
+                    switch (keyCode)
+                    {
+                        case 82: girarCaraAutomaticamente("R",1,0,500); break;
+                        case 85: girarCaraAutomaticamente("U",1,0,500); break;
+                        case 70: girarCaraAutomaticamente("F",1,0,500); break;
+                        case 66: girarCaraAutomaticamente("B",1,0,500); break;
+                        case 76: girarCaraAutomaticamente("L",1,0,500); break;
+                        case 68: girarCaraAutomaticamente("D",1,0,500); break;
+                        case 77: girarCaraAutomaticamente("M",1,0,500); break;
+                        case 83: girarCaraAutomaticamente("S",1,0,500); break;
+                        case 69: girarCaraAutomaticamente("E",1,0,500); break;
+                        case 88:
+                        {
+                            desordenar();
+                            hacerCountDown();
+                        } break;
+                    }
+                }
+            }
+        }
+
+        function animarEscena()
+        {
+            TWEEN.update();
+            controls.enableRotate = bloqueo;
+            controls.update();
+            botonPlay.rotation.x += 0.01;
+            botonPlay.rotation.y -= 0.015;
+            botonPlay.rotation.z -= 0.01;
+            botonRestart.rotation.x -= 0.01;
+            botonRestart.rotation.y += 0.015;
+            botonRestart.rotation.z += 0.01;
+            GUI();
+            requestAnimationFrame(animarEscena);
+            renderizarEscena();
+        }
+
+        function renderizarEscena()
+        {
+            renderer.render(escena, camara);
+        }
+
+        window.addEventListener("mousemove", onDocumentMouseMove, false);
+        window.requestAnimationFrame(renderizarEscena);
+    

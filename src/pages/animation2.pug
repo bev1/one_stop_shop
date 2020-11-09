@@ -80,7 +80,7 @@ html(lang="ru")
                     | our trailer
                   .link-img
                     img(src="img/play_button.png", alt="play")
-              .col-lg-6.cube-wrapper.rotate
+              .col-lg-6
                 a.cube-link.first(href="#consulting-1") Услуги по регистрации 
                   br.d-block.d-sm-none
                   | компаний
@@ -88,7 +88,8 @@ html(lang="ru")
                 a.cube-link.third(href="#consulting-7") Лицензии
                 //- img(src="img/cube-consulting.png", alt="cube")
                 //- include components/cube2.pug
-                <canvas width="800" height="600" id="canvas"></canvas>
+                #cube
+
         section.section.consulting-1#consulting-1
           div(data-src="../img/consulting_1.png").container.lazy
             .section-title
@@ -122,5 +123,6 @@ html(lang="ru")
       script(src="js/lazy-load.js")
       script(src="js/aos.js")
       script(src="js/three.min.js")
+      script(src="js/OrbitControls.js")
       script(src="js/cube.js")
       script(src="js/script.js")
