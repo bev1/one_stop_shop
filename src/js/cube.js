@@ -2,16 +2,17 @@
 const wrapper = document.getElementById('cube');
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
-  35, window.innerWidth / window.innerHeight,
+  35, wrapper.offsetWidth / wrapper.offsetHeight,
   1, 1000
 );
 const renderer = new THREE.WebGLRenderer({ alpha: true });
-renderer.setSize(1000, 500);
+renderer.setSize(wrapper.offsetWidth, wrapper.offsetHeight);
 renderer.setClearColor( 0xffffff, 0);
 wrapper.appendChild(renderer.domElement);
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 camera.position.set( 6, -3, 8 );
+camera.lookAt(scene.position);
 controls.enableZoom = false;
 controls.enablePan = false;
 controls.update();
@@ -22,6 +23,15 @@ pointLight.castShadow = true;
 lightHolder.add(pointLight);
 scene.add(lightHolder);
 scene.add(new THREE.AmbientLight(0xffffff, 0.95));
+const mouse = new THREE.Vector2();
+const raycaster = new THREE.Raycaster();
+const quaternion = new THREE.Quaternion()
+window.addEventListener( 'resize', onWindowResize, false ); 
+function onWindowResize() {
+  camera.aspect = wrapper.offsetWidth / wrapper.offsetHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize( wrapper.offsetWidth, wrapper.offsetHeight );
+}
 
 
 
@@ -30,7 +40,7 @@ scene.add(new THREE.AmbientLight(0xffffff, 0.95));
 const geometry = new THREE.CubeGeometry(1, 1, 1);
 const material = new THREE.MeshPhongMaterial({color: 0xdbdbdb});
 
-const cubes = []; 
+const cubes = [];
 
 for(i=0; i<27; i++) {
   cubes.push(new THREE.Mesh(geometry, material));
@@ -453,10 +463,67 @@ function build() {
         break;
     }
   })
-  }
+  };
+
+  setTimeout(() => {
+    renderer.domElement.addEventListener("click", onDblClick);
+    const cubes = scene.children.filter(cube => cube.name.includes('cube'));
+    function onDblClick(event){
+      mouse.x = ( ( event.clientX - renderer.domElement.getBoundingClientRect().left ) / renderer.domElement.clientWidth ) * 2 - 1;
+      mouse.y = - ( ( event.clientY - renderer.domElement.getBoundingClientRect().top ) / renderer.domElement.clientHeight ) * 2 + 1;
+      raycaster.setFromCamera(mouse, camera);
+      const intersects = raycaster.intersectObjects(cubes);
+      const rotationGroup = new THREE.Group();
+      cubes.forEach(el => {
+        if(el.position.z == 1.1) {
+          rotationGroup.add(el)
+        }
+      });
+      console.log("onDblClick -> rotationGroup.rotation.zzzzzzzzzzzzzzzzzzzzzzzzzzzz", rotationGroup.children[0].matrixWorld.getPosition())
+      scene.add(rotationGroup)
+      new TWEEN.Tween(rotationGroup.rotation)
+      .to( {
+              x: 0,            
+              y: 0,
+              z: THREE.Math.degToRad(90)
+          },)
+          .onComplete(function() {
+            rotationGroup.updateMatrix();
+            console.log("onDblClick -> rotationGroup.rotation.z11111111111111111111111111111", rotationGroup.children[0].matrixWorld.getPosition())
+          })
+      .start();
+      console.log("onDblClick -> scene", scene)
+      // rotationGroup.rotation.z = THREE.Math.degToRad(90)
+      
+      
+      // raycaster.setFromCamera(mouse, camera);
+      
+      // let intersects = raycaster.intersectObject(box);
+      
+      // if (intersects.length < 1) return;
+      
+      // let o = intersects[0];
+      // let pIntersect = o.point.clone();
+      // box.worldToLocal(pIntersect);
+      
+      // let sprite = new THREE.Sprite(spriteMat);
+      // sprite.position.copy(o.face.normal).multiplyScalar(0.25).add(pIntersect);
+      // box.add(sprite);
+    }
+
+    // const rotate = scene.children.filter(cube => cube.position.z == 0 && cube.name.includes('cube'));
+    // const group = new THREE.Group();
+    // rotate.forEach(el => {
+    //   group.add(el)
+    // });
+    // group.rotation.z = 2
+    // scene.add(group)
+    // console.log("rotate", scene)
+  }, 1500);
+
   setTimeout(() => {
     build();
-    const dragsCubes =scene.children.filter(cube => cube.name.includes('cube'))
+    
     // const dragControls = new THREE.DragControls( dragsCubes, camera, renderer.domElement );
     
     // dragControls.addEventListener("hoveron", function () {
@@ -504,16 +571,7 @@ function build() {
     
   }, 1000);
 
-  var axis = new THREE.Vector3(4, 5, 7).normalize();
-var speed = 0.01;
 
-
-// dragControls.addEventListener('dragstart', function (event) {
-//   event.object.material.opacity = 0.33
-// })
-// dragControls.addEventListener('dragend', function (event) {
-//   event.object.material.opacity = 1
-// })
 
 function animate() {
   requestAnimationFrame( animate );
@@ -521,9 +579,6 @@ function animate() {
 	controls.update();
   renderer.render( scene, camera );
   TWEEN.update();
-  if (scene.children[5]) {
-    scene.children[5].rotateOnAxis(axis, speed);
-}
   
 }
 
