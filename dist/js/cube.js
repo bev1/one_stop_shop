@@ -32,9 +32,7 @@ function onWindowResize() {
   camera.updateProjectionMatrix();
   renderer.setSize( wrapper.offsetWidth, wrapper.offsetHeight );
 }
-
-
-
+const target = new THREE.Vector3();
 
 // Cubes
 const geometry = new THREE.CubeGeometry(1, 1, 1);
@@ -135,7 +133,7 @@ loader.load('../img/cube1/location.png',
 
 
 cubes.forEach((cube, i)=> {
-  if(i != 12 && i != 10 && i != 14) {
+  if(i != 12 && i != 10 && i != 14 && i != 15 && i != 24) {
     cube.name = `cube${i}`;
     cube.castShadow = true;
     cube.receiveShadow = true;
@@ -468,31 +466,67 @@ function build() {
   setTimeout(() => {
     renderer.domElement.addEventListener("click", onDblClick);
     const cubes = scene.children.filter(cube => cube.name.includes('cube'));
+    console.log("TCL: scene", scene)
     function onDblClick(event){
+
       mouse.x = ( ( event.clientX - renderer.domElement.getBoundingClientRect().left ) / renderer.domElement.clientWidth ) * 2 - 1;
       mouse.y = - ( ( event.clientY - renderer.domElement.getBoundingClientRect().top ) / renderer.domElement.clientHeight ) * 2 + 1;
+
       raycaster.setFromCamera(mouse, camera);
+
       const intersects = raycaster.intersectObjects(cubes);
+
       const rotationGroup = new THREE.Group();
+      rotationGroup.updateMatrixWorld( true )
       cubes.forEach(el => {
-        if(el.position.z == 1.1) {
+        if(el.position.z === 1.1) {
           rotationGroup.add(el)
+          el.updateMatrixWorld( true )
         }
       });
-      console.log("onDblClick -> rotationGroup.rotation.zzzzzzzzzzzzzzzzzzzzzzzzzzzz", rotationGroup.children[0].matrixWorld.getPosition())
-      scene.add(rotationGroup)
+      console.log("TCL: onDblClick -> rotationGroup", rotationGroup)
+      // console.log("onDblClick -> rotationGroup.rotation.zzzzzzzzzzzzzzzzzzzzzzzzzzzz", rotationGroup.children[1].getWorldPosition( target ))
+      scene.add(rotationGroup);
+      console.log("TCL: onDblClick -> scene", scene)
       new TWEEN.Tween(rotationGroup.rotation)
       .to( {
-              x: 0,            
-              y: 0,
               z: THREE.Math.degToRad(90)
           },)
           .onComplete(function() {
-            rotationGroup.updateMatrix();
-            console.log("onDblClick -> rotationGroup.rotation.z11111111111111111111111111111", rotationGroup.children[0].matrixWorld.getPosition())
+            
+            console.log("TCL: onDblClick -> rotationGroup", rotationGroup)
+            // arr.forEach((el, i) => {
+            //   console.log(rotationGroup.children[i].getWorldPosition(target).x);
+            //   console.log(rotationGroup.children[i].getWorldPosition(target).y);
+            //   console.log(rotationGroup.children[i].getWorldPosition(target).z);
+            // })
+            // console.log("TCL: onDblClick -> arr", arr)
+            console.log("onDblClick -> rotationGroup.rotation.z11111111111111111111111111111", rotationGroup.children[1].getWorldPosition( target ))
+            // for(let i=0;i<=arr.length-1; i++) {
+            //   console.log("TCL: onDblClick -> rotationGroup.children", rotationGroup.children[i]);
+              // scene.add(rotationGroup.children[0]);
+              // scene.add(rotationGroup.children[1]);
+              // scene.add(rotationGroup.children[2]);
+              // scene.add(rotationGroup.children[3]);
+              // scene.add(rotationGroup.children[4]);
+              // scene.add(rotationGroup.children[5]);
+              // scene.add(rotationGroup.children[6]);
+              // scene.add(rotationGroup.children[7]);
+              // scene.add(rotationGroup.children[8]);
+            // }
+            
+            console.log("TCL: onDblClick -> scene", scene)
+            // rotationGroup.children.forEach(cube => {
+            // console.log("TCL: onDblClick -> cube", cube)
+            //   scene.add(cube)
+            //   return;
+            // });
+            // console.log("TCL: onDblClick -> rotationGroup", rotationGroup)
+            // console.log("TCL: onDblClick -> rotationGroup", rotationGroup)
+            // scene.remove(rotationGroup);
+            // console.log("TCL: onDblClick -> scene", scene)
           })
       .start();
-      console.log("onDblClick -> scene", scene)
       // rotationGroup.rotation.z = THREE.Math.degToRad(90)
       
       
