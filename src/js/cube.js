@@ -493,26 +493,25 @@ function build() {
               z: THREE.Math.degToRad(90)
           },)
           .onComplete(function() {
+            const pos = []
             
             console.log("TCL: onDblClick -> rotationGroup", rotationGroup)
-            // arr.forEach((el, i) => {
-            //   console.log(rotationGroup.children[i].getWorldPosition(target).x);
-            //   console.log(rotationGroup.children[i].getWorldPosition(target).y);
-            //   console.log(rotationGroup.children[i].getWorldPosition(target).z);
-            // })
-            // console.log("TCL: onDblClick -> arr", arr)
+            rotationGroup.children.forEach((el, i) => {
+              pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}))
+            })
+            console.log("TCL: onDblClick -> arr", pos)
             console.log("onDblClick -> rotationGroup.rotation.z11111111111111111111111111111", rotationGroup.children[1].getWorldPosition( target ))
             // for(let i=0;i<=arr.length-1; i++) {
             //   console.log("TCL: onDblClick -> rotationGroup.children", rotationGroup.children[i]);
-              // scene.add(rotationGroup.children[0]);
-              // scene.add(rotationGroup.children[1]);
-              // scene.add(rotationGroup.children[2]);
-              // scene.add(rotationGroup.children[3]);
-              // scene.add(rotationGroup.children[4]);
-              // scene.add(rotationGroup.children[5]);
-              // scene.add(rotationGroup.children[6]);
-              // scene.add(rotationGroup.children[7]);
-              // scene.add(rotationGroup.children[8]);
+              scene.add(rotationGroup.children[0]);
+              scene.add(rotationGroup.children[1]);
+              scene.add(rotationGroup.children[2]);
+              scene.add(rotationGroup.children[3]);
+              scene.add(rotationGroup.children[4]);
+              scene.add(rotationGroup.children[5]);
+              scene.add(rotationGroup.children[6]);
+              scene.add(rotationGroup.children[7]);
+              scene.add(rotationGroup.children[8]);
             // }
             
             console.log("TCL: onDblClick -> scene", scene)
