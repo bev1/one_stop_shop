@@ -82,7 +82,6 @@ html(lang="ru")
                     span n
                     span g
                 .sub-title
-                  //- #Result
                   .arrow(data-aos="fade-right" data-aos-delay="1000")
                     img(src="img/blue_arrow.png", alt="arrow")
                   .text(data-aos="fade-left" data-aos-delay="1000") Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -100,8 +99,7 @@ html(lang="ru")
                   | компаний
                 a.cube-link(href="#consulting-10") Счета
                 a.cube-link(href="#consulting-7") Лицензии
-                img(src="img/cube-consulting.png", alt="cube")
-                //- include components/cube.pug
+                #cube
         section.section.consulting-1#consulting-1
           div(data-src="../img/consulting_1.png").container.lazy
             .section-title
@@ -12259,4 +12257,8 @@ html(lang="ru")
       script(src="js/bootstrap.min.js")
       script(src="js/lazy-load.js")
       script(src="js/aos.js")
+      script(src="js/three.min.js")
+      script(src="js/OrbitControls.js")
+      script(src="js/Tween.js")
+      script(src="js/cube1.js")
       script(src="js/script.js")

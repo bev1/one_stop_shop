@@ -34,8 +34,6 @@ function onWindowResize() {
 }
 const target = new THREE.Vector3();
 var clickInicial = new THREE.Vector2();
-const axesHelper = new THREE.AxesHelper( 5 );
-scene.add( axesHelper );
 // x - horisontal
 // y - vertical
 // Cubes
@@ -118,15 +116,15 @@ loader.load('../img/cube1/payment.png',
   }
 );
 // cube24
-loader.load('../img/cube1/location.png',
+loader.load('../img/cube1/youtube.png',
   function(texture) {
     const material24 = [ 
       new THREE.MeshPhongMaterial({map: texture}),
-      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
-      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}),
-      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
-      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
-      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0x7a9c16, transparent:true, opacity:1, side: THREE.DoubleSide}),
+      new THREE.MeshPhongMaterial({color:0x7a9c16, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0x2e5398, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0x2e5398, transparent:true, opacity:1, side: THREE.DoubleSide}), 
     ];
     const cube24 = new THREE.Mesh(geometry, material24);
     cube24.position.set(4, 0, -4);
@@ -134,10 +132,78 @@ loader.load('../img/cube1/location.png',
     scene.add(cube24);
   }
 );
+// cube8
+loader.load('../img/cube1/location.png',
+  function(texture) {
+    const material8 = [ 
+      new THREE.MeshPhongMaterial({map: texture}),
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}),
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+    ];
+    const cube8 = new THREE.Mesh(geometry, material8);
+    cube8.position.set(4, -4, 0);
+    cube8.name = 'cube8';
+    scene.add(cube8);
+  }
+);
+// cube26
+loader.load('../img/cube1/location.png',
+  function(texture) {
+    const material26 = [ 
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}),
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({map: texture}),
+    ];
+    const cube26 = new THREE.Mesh(geometry, material26);
+    cube26.position.set(0, 4, -4);
+    cube26.name = 'cube26';
+    scene.add(cube26);
+  }
+);
+// cube20
+loader.load('../img/cube1/payment.png',
+  function(texture) {
+    const material20 = [ 
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}),
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({map: texture}),
+    ];
+    const cube20 = new THREE.Mesh(geometry, material20);
+    cube20.position.set(0, 4, -4);
+    cube20.name = 'cube20';
+    scene.add(cube20);
+  }
+);
+// cube2
+loader.load('../img/cube1/payment.png',
+  function(texture) {
+    const material2 = [ 
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({map: texture}),
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}),
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+    ];
+    const cube2 = new THREE.Mesh(geometry, material2);
+    cube2.position.set(-4, 0, 0);
+    cube2.name = 'cube2';
+    scene.add(cube2);
+  }
+);
 
 
 cubes.forEach((cube, i)=> {
-  if(i != 12 && i != 10 && i != 14 && i != 15 && i != 24) {
+  if(i != 12 && i != 10 && i != 14 && i != 15 && i != 24 && i != 8) {
     cube.name = `cube${i}`;
     cube.castShadow = true;
     cube.receiveShadow = true;
@@ -147,9 +213,9 @@ cubes.forEach((cube, i)=> {
     case 1:
       cube.position.set(4, 0, 0);
       break;
-    case 2:
-      cube.position.set(-4, 0, 0);
-      break;
+    // case 2:
+    //   cube.position.set(-4, 0, 0);
+    //   break;
     case 3:
       cube.position.set(0, 4, 0);
       break;
@@ -165,9 +231,9 @@ cubes.forEach((cube, i)=> {
     case 7:
       cube.position.set(-4, 4, 0);
       break;
-    case 8:
-      cube.position.set(4, -4, 0);
-      break;
+    // case 8:
+    //   cube.position.set(4, -4, 0);
+    //   break;
     case 9:
       cube.position.set(0, 0, 4);
       break;
@@ -201,9 +267,9 @@ cubes.forEach((cube, i)=> {
     case 19:
       cube.position.set(4, 4, -4);
       break;
-    case 20:
-      cube.position.set(-4, -4, -4);
-      break;
+    // case 20:
+    //   cube.position.set(-4, -4, -4);
+    //   break;
     case 21:
       cube.position.set(-4, 4, -4);
       break;
@@ -219,9 +285,9 @@ cubes.forEach((cube, i)=> {
     case 25:
       cube.position.set(-4, 0, -4);
       break;
-    case 26:
-      cube.position.set(0, 4, -4);
-      break;
+    // case 26:
+    //   cube.position.set(0, 4, -4);
+    //   break;
   }
 });
 
@@ -240,7 +306,7 @@ function build() {
       case 'cube2':
         new TWEEN.Tween(cube.position)
                 .to( {
-                        x: -1.1,            
+                        x: -1.1,
                         y: 0,
                         z: 0            
                     },)
@@ -263,7 +329,6 @@ function build() {
                         z: 0            
                     },)
                 .start();
-        cube.position.set(0, -1.1, 0);
         break;
       case 'cube5':
         new TWEEN.Tween(cube.position)
