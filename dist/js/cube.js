@@ -33,7 +33,11 @@ function onWindowResize() {
   renderer.setSize( wrapper.offsetWidth, wrapper.offsetHeight );
 }
 const target = new THREE.Vector3();
-
+var clickInicial = new THREE.Vector2();
+const axesHelper = new THREE.AxesHelper( 5 );
+scene.add( axesHelper );
+// x - horisontal
+// y - vertical
 // Cubes
 const geometry = new THREE.CubeGeometry(1, 1, 1);
 const material = new THREE.MeshPhongMaterial({color: 0xdbdbdb});
@@ -465,6 +469,8 @@ function build() {
 
   setTimeout(() => {
     const cubes = scene.children.filter(cube => cube.name.includes('cube'));
+    const selectedCubeName = '';
+    const selectedCubeSide = null;
 
     renderer.domElement.addEventListener('pointerdown', onMouseDown, false);
 
@@ -473,46 +479,84 @@ function build() {
       mouse.x = ( ( event.clientX - renderer.domElement.getBoundingClientRect().left ) / renderer.domElement.clientWidth ) * 2 - 1;
       mouse.y = - ( ( event.clientY - renderer.domElement.getBoundingClientRect().top ) / renderer.domElement.clientHeight ) * 2 + 1;
 
+      clickInicial.x = mouse.x;
+      clickInicial.y = mouse.y;
+
       raycaster.setFromCamera(mouse, camera);
 
       const intersects = raycaster.intersectObjects(cubes);
       if (intersects.length > 0) {
-        renderer.domElement.addEventListener( 'pointermove', onMouseMove, false );
+        // selectedCubeName = intersects[0].object.name;
+        // selectedCubeSide = Math.floor( intersects[0].faceIndex / 2 );
+        // if(intersects[0].object.name === 'cube10') {
+        //   if
+        // }
+        window.addEventListener( 'pointermove', onMouseMove, false );
       }
 
-      const rotationGroup = new THREE.Group();
-      rotationGroup.updateMatrixWorld( true )
-      cubes.forEach(el => {
-        if(el.position.z === 1.1) {
-          rotationGroup.add(el)
-        }
-      });
-      scene.add(rotationGroup);
-      new TWEEN.Tween(rotationGroup.rotation)
-      .to( {
-              z: THREE.Math.degToRad(90)
-          },300)
-          .onComplete(function() {
-            const pos = []
-            rotationGroup.children.forEach(el => {
-              let rotation = new THREE.Euler()
-              el.getWorldQuaternion(quaternion)
-              rotation.setFromQuaternion(quaternion)
-              pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}, {rotation: rotation._z}))
-            })
-            for(let i=0;i<9; i++) {
-              rotationGroup.children[0].position.x = pos[i].x;
-              rotationGroup.children[0].position.y = pos[i].y;
-              rotationGroup.children[0].position.z = pos[i].z;
-              rotationGroup.children[0].rotation.z = pos[i].rotation;
-              scene.add(rotationGroup.children[0]);
-            }
-            scene.remove(rotationGroup);
-          })
-      .start();
     }
     function onMouseMove(event) {
+      const group = scene.children[scene.children.length - 1]
+      mouse.x = ( ( event.clientX - renderer.domElement.getBoundingClientRect().left ) / renderer.domElement.clientWidth ) * 2 - 1;
+      mouse.y = - ( ( event.clientY - renderer.domElement.getBoundingClientRect().top ) / renderer.domElement.clientHeight ) * 2 + 1;
       const path = new THREE.Vector2();
+      const ray = new THREE.Raycaster();
+      ray.setFromCamera(mouse, camera);
+      path.x = mouse.x - clickInicial.x;
+      path.y = mouse.y - clickInicial.y;
+      const normal = new THREE.Vector3();
+      const nextRay = new THREE.Raycaster();
+      nextRay.setFromCamera(normal, camera);
+      console.log("onMouseMove -> normal", nextRay)
+
+      
+      if (path.y > 0.01 || path.y < -0.01) {
+
+        if (selectedCubeName === 'cube10') {
+          if(selectedCubeSide === 4) {
+
+          }
+        }
+        
+        const rotationGroup = new THREE.Group();
+        rotationGroup.updateMatrixWorld( true )
+        cubes.forEach(el => {
+          if(el.position.x > 1) {
+            rotationGroup.add(el)
+          }
+        });
+        scene.add(rotationGroup);
+        // console.log("onMouseMove -> rotationGroup", scene)
+        group.rotation.z = path.y
+        // new TWEEN.Tween(rotationGroup.rotation)
+        // .to( {
+        //         z: THREE.Math.degToRad(90)
+        //     },300)
+        //     .onComplete(function() {
+        //       const pos = []
+        //       rotationGroup.children.forEach(el => {
+        //         let rotation = new THREE.Euler()
+        //         el.getWorldQuaternion(quaternion)
+        //         rotation.setFromQuaternion(quaternion)
+        //         pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}, {rotation: rotation._z}))
+        //       })
+        //       for(let i=0;i<9; i++) {
+        //         rotationGroup.children[0].position.x = pos[i].x;
+        //         rotationGroup.children[0].position.y = pos[i].y;
+        //         rotationGroup.children[0].position.z = pos[i].z;
+        //         rotationGroup.children[0].rotation.z = pos[i].rotation;
+        //         scene.add(rotationGroup.children[0]);
+        //       }
+        //       scene.remove(rotationGroup);
+        //     })
+        // .start();
+      }
+      if (path.x > 0.01 || path.x < -0.01) {
+      }
+
+      // window.addEventListener( 'pointerup', onMouseUp, false );
+
+
       const projector = new THREE.Projector();
       const planeZ = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
       const mv = new THREE.Vector3(
@@ -529,6 +573,37 @@ function build() {
       } else {
         controls.enableRotate = true;
       }
+    }
+
+    function onMouseUp(event) {
+      renderer.domElement.removeEventListener('pointerdown', onMouseDown, false);
+      window.removeEventListener( 'pointermove', onMouseMove, false );
+      const group = scene.children[scene.children.length - 1];
+      new TWEEN.Tween(group.rotation)
+      .to( {
+              z: THREE.Math.degToRad(group.rotation.z > 0 ? 90 : -90)
+          },300)
+          .onComplete(function() {
+            const pos = []
+            group.children.forEach(el => {
+              let rotation = new THREE.Euler()
+              el.getWorldQuaternion(quaternion)
+              rotation.setFromQuaternion(quaternion)
+              pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}, {rotation: rotation._z}))
+            })
+            for(let i=0;i<9; i++) {
+              group.children[0].position.x = pos[i].x;
+              group.children[0].position.y = pos[i].y;
+              group.children[0].position.z = pos[i].z;
+              group.children[0].rotation.z = pos[i].rotation;
+              scene.add(group.children[0]);
+            }
+            scene.remove(group);
+            console.log(".onComplete -> scene", scene);
+            renderer.domElement.addEventListener('pointerdown', onMouseDown, false);
+            window.addEventListener( 'pointermove', onMouseMove, false );
+          })
+      .start();
     }
     
     // const dragControls = new THREE.DragControls( dragsCubes, camera, renderer.domElement );
