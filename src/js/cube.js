@@ -464,10 +464,11 @@ function build() {
   };
 
   setTimeout(() => {
-    renderer.domElement.addEventListener("click", onClick);
-    renderer.domElement.addEventListener( 'mousemove', onMouseMove, false );
     const cubes = scene.children.filter(cube => cube.name.includes('cube'));
-    function onClick(event) {
+
+    renderer.domElement.addEventListener('pointerdown', onMouseDown, false);
+
+    function onMouseDown(event) {
 
       mouse.x = ( ( event.clientX - renderer.domElement.getBoundingClientRect().left ) / renderer.domElement.clientWidth ) * 2 - 1;
       mouse.y = - ( ( event.clientY - renderer.domElement.getBoundingClientRect().top ) / renderer.domElement.clientHeight ) * 2 + 1;
@@ -476,6 +477,7 @@ function build() {
 
       const intersects = raycaster.intersectObjects(cubes);
       if (intersects.length > 0) {
+        renderer.domElement.addEventListener( 'pointermove', onMouseMove, false );
       }
 
       const rotationGroup = new THREE.Group();
@@ -492,8 +494,7 @@ function build() {
           },300)
           .onComplete(function() {
             const pos = []
-            rotationGroup.children.forEach((el, i) => {
-              // el.updateMatrixWorld( true )
+            rotationGroup.children.forEach(el => {
               let rotation = new THREE.Euler()
               el.getWorldQuaternion(quaternion)
               rotation.setFromQuaternion(quaternion)
@@ -511,21 +512,23 @@ function build() {
       .start();
     }
     function onMouseMove(event) {
+      const path = new THREE.Vector2();
       const projector = new THREE.Projector();
-              const planeZ = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
-              const mv = new THREE.Vector3(
-                ( ( event.clientX - renderer.domElement.getBoundingClientRect().left ) / renderer.domElement.clientWidth ) * 2 - 1,
-                - ( ( event.clientY - renderer.domElement.getBoundingClientRect().top ) / renderer.domElement.clientHeight ) * 2 + 1,
-                  0.5 );
-              const raycaster = projector.pickingRay(mv, camera);
-              const pos = raycaster.ray.intersectPlane(planeZ);
-              const intersects = raycaster.intersectObjects(cubes);
-              if (intersects.length > 0) {
-                controls.enableRotate = false;
-              } else {
-                controls.enableRotate = true;
-              }
-              console.log("onMouseMove -> pos", intersects)
+      const planeZ = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
+      const mv = new THREE.Vector3(
+        ( ( event.clientX - renderer.domElement.getBoundingClientRect().left ) / renderer.domElement.clientWidth ) * 2 - 1,
+        - ( ( event.clientY - renderer.domElement.getBoundingClientRect().top ) / renderer.domElement.clientHeight ) * 2 + 1,
+          0 );
+      // const raycaster = projector.pickingRay(mv, camera);
+      // const pos = raycaster.ray.intersectPlane(planeZ);
+      // raycaster.setFromCamera(mouse, camera);
+      const intersects = raycaster.intersectObjects(cubes);
+      if (intersects.length > 0) {
+        controls.enableRotate = false;
+        // console.log(scene)
+      } else {
+        controls.enableRotate = true;
+      }
     }
     
     // const dragControls = new THREE.DragControls( dragsCubes, camera, renderer.domElement );
