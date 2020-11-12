@@ -15,7 +15,7 @@ camera.position.set( 6, -3, 8 );
 camera.lookAt(scene.position);
 controls.enableZoom = false;
 controls.enablePan = false;
-controls.update();
+// controls.update();
 const pointLight = new THREE.PointLight(0xffffff, 0.15, 400, 2);
 pointLight.position.set(3, 3, 3);
 const lightHolder = new THREE.Group();
@@ -464,10 +464,10 @@ function build() {
   };
 
   setTimeout(() => {
-    renderer.domElement.addEventListener("click", onDblClick);
+    renderer.domElement.addEventListener("click", onClick);
+    renderer.domElement.addEventListener( 'mousemove', onMouseMove, false );
     const cubes = scene.children.filter(cube => cube.name.includes('cube'));
-    console.log("TCL: scene", scene)
-    function onDblClick(event){
+    function onClick(event) {
 
       mouse.x = ( ( event.clientX - renderer.domElement.getBoundingClientRect().left ) / renderer.domElement.clientWidth ) * 2 - 1;
       mouse.y = - ( ( event.clientY - renderer.domElement.getBoundingClientRect().top ) / renderer.domElement.clientHeight ) * 2 + 1;
@@ -475,87 +475,58 @@ function build() {
       raycaster.setFromCamera(mouse, camera);
 
       const intersects = raycaster.intersectObjects(cubes);
+      if (intersects.length > 0) {
+      }
 
       const rotationGroup = new THREE.Group();
       rotationGroup.updateMatrixWorld( true )
       cubes.forEach(el => {
         if(el.position.z === 1.1) {
           rotationGroup.add(el)
-          el.updateMatrixWorld( true )
         }
       });
-      console.log("TCL: onDblClick -> rotationGroup", rotationGroup)
-      // console.log("onDblClick -> rotationGroup.rotation.zzzzzzzzzzzzzzzzzzzzzzzzzzzz", rotationGroup.children[1].getWorldPosition( target ))
       scene.add(rotationGroup);
-      console.log("TCL: onDblClick -> scene", scene)
       new TWEEN.Tween(rotationGroup.rotation)
       .to( {
               z: THREE.Math.degToRad(90)
-          },)
+          },300)
           .onComplete(function() {
             const pos = []
-            
-            console.log("TCL: onDblClick -> rotationGroup", rotationGroup)
             rotationGroup.children.forEach((el, i) => {
-              pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}))
+              // el.updateMatrixWorld( true )
+              let rotation = new THREE.Euler()
+              el.getWorldQuaternion(quaternion)
+              rotation.setFromQuaternion(quaternion)
+              pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}, {rotation: rotation._z}))
             })
-            console.log("TCL: onDblClick -> arr", pos)
-            console.log("onDblClick -> rotationGroup.rotation.z11111111111111111111111111111", rotationGroup.children[1].getWorldPosition( target ))
-            // for(let i=0;i<=arr.length-1; i++) {
-            //   console.log("TCL: onDblClick -> rotationGroup.children", rotationGroup.children[i]);
+            for(let i=0;i<9; i++) {
+              rotationGroup.children[0].position.x = pos[i].x;
+              rotationGroup.children[0].position.y = pos[i].y;
+              rotationGroup.children[0].position.z = pos[i].z;
+              rotationGroup.children[0].rotation.z = pos[i].rotation;
               scene.add(rotationGroup.children[0]);
-              scene.add(rotationGroup.children[1]);
-              scene.add(rotationGroup.children[2]);
-              scene.add(rotationGroup.children[3]);
-              scene.add(rotationGroup.children[4]);
-              scene.add(rotationGroup.children[5]);
-              scene.add(rotationGroup.children[6]);
-              scene.add(rotationGroup.children[7]);
-              scene.add(rotationGroup.children[8]);
-            // }
-            
-            console.log("TCL: onDblClick -> scene", scene)
-            // rotationGroup.children.forEach(cube => {
-            // console.log("TCL: onDblClick -> cube", cube)
-            //   scene.add(cube)
-            //   return;
-            // });
-            // console.log("TCL: onDblClick -> rotationGroup", rotationGroup)
-            // console.log("TCL: onDblClick -> rotationGroup", rotationGroup)
-            // scene.remove(rotationGroup);
-            // console.log("TCL: onDblClick -> scene", scene)
+            }
+            scene.remove(rotationGroup);
           })
       .start();
-      // rotationGroup.rotation.z = THREE.Math.degToRad(90)
-      
-      
-      // raycaster.setFromCamera(mouse, camera);
-      
-      // let intersects = raycaster.intersectObject(box);
-      
-      // if (intersects.length < 1) return;
-      
-      // let o = intersects[0];
-      // let pIntersect = o.point.clone();
-      // box.worldToLocal(pIntersect);
-      
-      // let sprite = new THREE.Sprite(spriteMat);
-      // sprite.position.copy(o.face.normal).multiplyScalar(0.25).add(pIntersect);
-      // box.add(sprite);
     }
-
-    // const rotate = scene.children.filter(cube => cube.position.z == 0 && cube.name.includes('cube'));
-    // const group = new THREE.Group();
-    // rotate.forEach(el => {
-    //   group.add(el)
-    // });
-    // group.rotation.z = 2
-    // scene.add(group)
-    // console.log("rotate", scene)
-  }, 1500);
-
-  setTimeout(() => {
-    build();
+    function onMouseMove(event) {
+      const projector = new THREE.Projector();
+              const planeZ = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
+              const mv = new THREE.Vector3(
+                ( ( event.clientX - renderer.domElement.getBoundingClientRect().left ) / renderer.domElement.clientWidth ) * 2 - 1,
+                - ( ( event.clientY - renderer.domElement.getBoundingClientRect().top ) / renderer.domElement.clientHeight ) * 2 + 1,
+                  0.5 );
+              const raycaster = projector.pickingRay(mv, camera);
+              const pos = raycaster.ray.intersectPlane(planeZ);
+              const intersects = raycaster.intersectObjects(cubes);
+              if (intersects.length > 0) {
+                controls.enableRotate = false;
+              } else {
+                controls.enableRotate = true;
+              }
+              console.log("onMouseMove -> pos", intersects)
+    }
     
     // const dragControls = new THREE.DragControls( dragsCubes, camera, renderer.domElement );
     
@@ -600,8 +571,10 @@ function build() {
     //     controls.enabled = !event.value
     //   })
     // })
-    
-    
+  }, 1500);
+
+  setTimeout(() => {
+    build();
   }, 1000);
 
 
