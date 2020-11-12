@@ -17,7 +17,6 @@ camera.position.set( 6, -3, 8 );
 camera.lookAt(scene.position);
 controls.enableZoom = false;
 controls.enablePan = false;
-// controls.update();
 const pointLight = new THREE.PointLight(0xffffff, 0.15, 400, 2);
 pointLight.position.set(3, 3, 3);
 const lightHolder = new THREE.Group();
@@ -25,19 +24,13 @@ pointLight.castShadow = true;
 lightHolder.add(pointLight);
 scene.add(lightHolder);
 scene.add(new THREE.AmbientLight(0xffffff, 0.95));
-const mouse = new THREE.Vector2();
-const raycaster = new THREE.Raycaster();
-const quaternion = new THREE.Quaternion()
 window.addEventListener( 'resize', onWindowResize, false ); 
 function onWindowResize() {
   camera.aspect = wrapper.offsetWidth / wrapper.offsetHeight;
   camera.updateProjectionMatrix();
   renderer.setSize( wrapper.offsetWidth, wrapper.offsetHeight );
 }
-const target = new THREE.Vector3();
-var clickInicial = new THREE.Vector2();
-// x - horisontal
-// y - vertical
+
 // Cubes
 const geometry = new THREE.CubeGeometry(1, 1, 1);
 const material = new THREE.MeshPhongMaterial({color: 0xdbdbdb});
@@ -266,12 +259,26 @@ cubes.forEach((cube, i)=> {
   }
 });
 
+$('.cube-link-2').mouseover(() => {
+    controls.autoRotate = false;
+    new TWEEN.Tween(camera.position)
+            .to( {
+                    x: 6        
+                },300)
+                .complete( )
+            .start();
+    // camera.position.set( 6, -3, 8 );
+})
+.mouseout(() => {
+    controls.autoRotate = true;    
+})
+
 
 
 function animate() {
   requestAnimationFrame( animate );
   lightHolder.quaternion.copy(camera.quaternion);
-	controls.update();
+  controls.update();
   renderer.render( scene, camera );
   TWEEN.update();
   
