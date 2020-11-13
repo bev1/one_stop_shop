@@ -324,9 +324,9 @@ function build() {
       case 'cube4':
         new TWEEN.Tween(cube.position)
                 .to( {
-                        x: 0,            
+                        x: 0,
                         y: -1.1,
-                        z: 0            
+                        z: 0
                     },)
                 .start();
         break;
