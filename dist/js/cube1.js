@@ -11,9 +11,9 @@ renderer.setClearColor( 0xffffff, 0);
 wrapper.appendChild(renderer.domElement);
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
-// controls.autoRotate = true;
-controls.autoRotateSpeed = 5;
-camera.position.set( 6, -3, 8 );
+controls.autoRotate = true;
+controls.autoRotateSpeed = 22;
+camera.position.set( 5, -3, 8 );
 camera.lookAt(scene.position);
 controls.enableZoom = false;
 controls.enablePan = false;
@@ -206,8 +206,6 @@ loader.load('../img/cube1/payment.png',
 cubes.forEach((cube, i)=> {
   if(i != 12 && i != 10 && i != 14 && i != 15 && i != 24 && i != 8 && i != 26 && i != 20 && i != 2) {
     cube.name = `cube${i}`;
-    cube.castShadow = true;
-    cube.receiveShadow = true;
     scene.add(cube);
   }
   switch(i) {
@@ -265,197 +263,480 @@ cubes.forEach((cube, i)=> {
   }
 });
 
-
-function animation1() {
-  const rotationGroup1 = new THREE.Group();
-  const cubes = scene.children.filter(cube => cube.name.includes('cube'));
-  cubes.forEach(el => {
-    if(el.name === 'cube10' || 
-    el.name === 'cube15' || 
-    el.name === 'cube24' || 
-    el.name === 'cube8' || 
-    el.name === 'cube1' || 
-    el.name === 'cube5' || 
-    el.name === 'cube13' || 
-    el.name === 'cube19' || 
-    el.name === 'cube22') {
-      rotationGroup1.add(el)
-    }
-  });
-  scene.add(rotationGroup1)
-  console.log("animation1 -> rotationGroup1", rotationGroup1)
-    rotationGroup1.updateMatrixWorld()
-      rotationGroup1.getWorldPosition(target)
-      console.log(".onComplete -> rotationGroup1", rotationGroup1)
-  // new TWEEN.Tween(rotationGroup1.rotation)
-  // .to({
-  //     x: THREE.Math.degToRad(-90)
-  //   },1000)
-  //   .onComplete(function() {
-  //     let position = new THREE.Vector3(0, 0, 0)
-  //     // rotationGroup1.getWorldPosition(position)
-  //     console.log(".onComplete -> rotationGroup1", rotationGroup1)
-  //     // let quaternion1 = new THREE.Quaternion()
-  //     // rotationGroup1.getWorldQuaternion(quaternion1)
-  //     rotationGroup1.children.forEach(el => {
-  //       // el.position.copy(position)
-  //       // el.setRotationFromQuaternion(quaternion1)
-  //       // console.log(".onComplete -> el", el)
-  //       // let rotation = new THREE.Euler()
-  //       // rotation.setFromQuaternion(quaternion)
-  //       // pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}, {rotation: rotation._x}))
-  //     })
-  //     for(let i=0;i<9; i++) {
-  //       // rotationGroup1.children[0].position.x = pos[i].x;
-  //       // rotationGroup1.children[0].position.y = pos[i].y;
-  //       // rotationGroup1.children[0].position.z = pos[i].z;
-  //       // rotationGroup1.children[0].rotation.x = pos[i].rotation;
-  //       // scene.add(rotationGroup1.children[0]);
-  //     }
-  //   })
-  //   .start()
-}
-function animation2() {
-  const rotationGroup2 = new THREE.Group();
-  const cubes = scene.children.filter(cube => cube.name.includes('cube'));
-  cubes.forEach(el => {
-    if(el.name === 'cube13' || 
-    el.name === 'cube17' || 
-    el.name === 'cube12' || 
-    el.name === 'cube15' || 
-    el.name === 'cube3' || 
-    el.name === 'cube7' || 
-    el.name === 'cube10' || 
-    el.name === 'cube21' || 
-    el.name === 'cube26') {
-      rotationGroup2.add(el)
-    }
-  });
-  console.log("animation2 -> rotationGroup2", rotationGroup2)
-  // scene.add(rotationGroup2)
-  // new TWEEN.Tween(rotationGroup2.rotation)
-  // .to({
-  //     y: THREE.Math.degToRad(90)
-  //   },1000)
-  //   .onComplete(function() {
-  //         const pos = []
-  //         rotationGroup2.children.forEach(el => {
-  //           let rotation = new THREE.Euler()
-  //           el.getWorldQuaternion(quaternion)
-  //           rotation.setFromQuaternion(quaternion)
-  //           pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}, {rotation: rotation._y}))
-  //         })
-  //         for(let i=0;i<9; i++) {
-  //           rotationGroup2.children[0].position.x = pos[i].x;
-  //           rotationGroup2.children[0].position.y = pos[i].y;
-  //           rotationGroup2.children[0].position.z = pos[i].z;
-  //           rotationGroup2.children[0].rotation.y = pos[i].rotation;
-  //           scene.add(rotationGroup2.children[0]);
-  //         }
-  //   })
-  //   .start()
-}
-setTimeout(() => {
-  animation1()
-}, 1000);
-setTimeout(() => {
-  // animation2()
-}, 2000);
-
-function build() {
-  const rotationGroup = new THREE.Group();
-  const cubes = scene.children.filter(cube => cube.name.includes('cube'));
-  cubes.forEach(el => {
-    if(el.position.x > 1) {
+function findCubes(cubesNames, name) {
+  let rotationGroup = new THREE.Group();
+  rotationGroup.name = name;
+  const sceneCubes = scene.children.filter(cube => cube.name.includes('cube'));
+  const sceneGroups = scene.children.filter(cube => cube.name.includes('group'));
+  sceneCubes.forEach(el => {
+    if(cubesNames.includes(el.name)) {
       rotationGroup.add(el)
     }
   });
-  scene.add(rotationGroup);
+  if(sceneGroups.length) {
+    sceneGroups.forEach(group => {
+      group.children.forEach(el => {
+        if(cubesNames.includes(el.name)) {
+          rotationGroup.add(el)
+        }
+      })
+    });
+  }
+  scene.add(rotationGroup)
+};
 
-  new TWEEN.Tween(rotationGroup.rotation)
+
+function animation1() {
+  controls.enableDamping = false;
+  findCubes(['cube10', 'cube15', 'cube24', 'cube8', 'cube1', 'cube5', 'cube13', 'cube19', 'cube22'], 'group1');
+  const group = scene.children.filter(el => el.name === 'group1');
+  new TWEEN.Tween(group[0].rotation)
   .to({
-      x: THREE.Math.degToRad(-90)
-    },1000)
-    .delay(2000)
-    // .onComplete(function() {
-    //   setTimeout(() => {
-    //     const pos = []
-    //     rotationGroup.children.forEach(el => {
-    //       let rotation = new THREE.Euler()
-    //       el.getWorldQuaternion(quaternion)
-    //       rotation.setFromQuaternion(quaternion)
-    //       pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}, {rotation: rotation._x}))
-    //     })
-    //     console.log(".onComplete -> rotationGroup.children[000000000]", rotationGroup.children[1].getWorldPosition(target))
-    //     for(let i=0;i<9; i++) {
-    //       rotationGroup.children[i].worldToLocal( target )
-    //       console.log(".onComplete -> rotationGroup.children[i]", rotationGroup.children[i].position)
-    //       // rotationGroup.children[0].position.x = pos[i].x;
-    //       // rotationGroup.children[0].position.y = pos[i].y;
-    //       // rotationGroup.children[0].position.z = pos[i].z;
-    //       // rotationGroup.children[0].rotation.x = pos[i].rotation;
-    //       // scene.add(rotationGroup.children[0]);
-    //     }
-    //     cubes.forEach(el => {
-    //       if(el.position.x > 1) {
-    //         rotationGroup.add(el)
-    //       }
-    //     });
-    //     new TWEEN.Tween(rotationGroup.rotation)
-    //     .to({
-    //         x: THREE.Math.degToRad(-90)
-    //       },1000)
-    //       .delay(5000)
-    //       .onComplete(function() {
-    //       })
-        
-    //   }, 1000);
-    // })
-  .start();
+      x: -(Math.PI / 2)
+    },200)
+    .onComplete(function() {
+      const pos = []
+      group[0].children.forEach(el => {
+        el.getWorldQuaternion(quaternion);
+        el.rotation.setFromQuaternion(quaternion);
+
+        pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}));
+      })
+      for(let i=0;i<9; i++) {
+        group[0].children[0].position.x = pos[i].x;
+        group[0].children[0].position.y = pos[i].y;
+        group[0].children[0].position.z = pos[i].z;
+        // group[0].children[0].rotation.x = pos[i].rotation;
+        scene.add(group[0].children[0]);
+      }
+      animation2()
+    })
+    .start()
+}
+function animation2() {
+  findCubes(['cube3', 'cube7', 'cube13', 'cube17', 'cube21', 'cube12', 'cube15', 'cube26', 'cube10'], 'group2');
+  const group = scene.children.filter(el => el.name === 'group2');
+  new TWEEN.Tween(group[0].rotation)
+  .to({
+      y: (Math.PI / 2)
+    },200)
+    .onComplete(function() {
+      const pos = []
+      group[0].children.forEach(el => {
+        el.getWorldQuaternion(quaternion);
+        el.rotation.setFromQuaternion(quaternion);
+        pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}));
+      })
+      for(let i=0;i<9; i++) {
+        group[0].children[0].position.x = pos[i].x;
+        group[0].children[0].position.y = pos[i].y;
+        group[0].children[0].position.z = pos[i].z;
+        // group[0].children[0].rotation.y = pos[i].rotation;
+        scene.add(group[0].children[0]);
+      }
+      animation3()
+    })
+    .start()
+}
+function animation3() {
+  findCubes(['cube3', 'cube4', 'cube7', 'cube9', 'cube18', 'cube23', 'cube14', 'cube0', 'cube15'], 'group3');
+  const group = scene.children.filter(el => el.name === 'group3');
+  new TWEEN.Tween(group[0].rotation)
+  .to({
+      x: (Math.PI / 2)
+    },200)
+    .onComplete(function() {
+      const pos = []
+      group[0].children.forEach(el => {
+        el.getWorldQuaternion(quaternion);
+        el.rotation.setFromQuaternion(quaternion);
+        pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}))
+      })
+      for(let i=0;i<9; i++) {
+        group[0].children[0].position.x = pos[i].x;
+        group[0].children[0].position.y = pos[i].y;
+        group[0].children[0].position.z = pos[i].z;
+        // group[0].children[0].rotation.x = pos[i].rotation;
+        scene.add(group[0].children[0]);
+      }
+      animation4()
+    })
+    .start()
+}
+function animation4() {
+  findCubes(['cube0', 'cube1', 'cube3', 'cube4', 'cube5', 'cube16', 'cube25', 'cube2', 'cube8'], 'group4');
+  const group = scene.children.filter(el => el.name === 'group4');
+  new TWEEN.Tween(group[0].rotation)
+  .to({
+      y: -(Math.PI / 2)
+    },200)
+    .onComplete(function() {
+      const pos = []
+      group[0].children.forEach(el => {
+        el.getWorldQuaternion(quaternion)
+        el.rotation.setFromQuaternion(quaternion)
+        pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}))
+      })
+      for(let i=0;i<9; i++) {
+        group[0].children[0].position.x = pos[i].x;
+        group[0].children[0].position.y = pos[i].y;
+        group[0].children[0].position.z = pos[i].z;
+        scene.add(group[0].children[0]);
+      }
+      animation5();
+    })
+    .start()
+}
+function animation5() {
+  findCubes(['cube0', 'cube1', 'cube7', 'cube9', 'cube18', 'cube23', 'cube2', 'cube15', 'cube14'], 'group5');
+  const group = scene.children.filter(el => el.name === 'group5');
+  new TWEEN.Tween(group[0].rotation)
+  .to({
+      x: (Math.PI / 2)
+    },200)
+    .onComplete(function() {
+      const pos = []
+      group[0].children.forEach(el => {
+        el.getWorldQuaternion(quaternion)
+        el.rotation.setFromQuaternion(quaternion)
+        pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}))
+      })
+      for(let i=0;i<9; i++) {
+        group[0].children[0].position.x = pos[i].x;
+        group[0].children[0].position.y = pos[i].y;
+        group[0].children[0].position.z = pos[i].z;
+        scene.add(group[0].children[0]);
+      }
+      animation6();
+    })
+    .start()
+}
+function animation6() {
+  findCubes(['cube12', 'cube24', 'cube4', 'cube5', 'cube13', 'cube17', 'cube19', 'cube22', 'cube25'], 'group6');
+  const group = scene.children.filter(el => el.name === 'group6');
+  new TWEEN.Tween(group[0].rotation)
+  .to({
+      x: (Math.PI / 2)
+    },200)
+    .onComplete(function() {
+      const pos = []
+      group[0].children.forEach(el => {
+        el.getWorldQuaternion(quaternion)
+        el.rotation.setFromQuaternion(quaternion)
+        pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}))
+      })
+      for(let i=0;i<9; i++) {
+        group[0].children[0].position.x = pos[i].x;
+        group[0].children[0].position.y = pos[i].y;
+        group[0].children[0].position.z = pos[i].z;
+        scene.add(group[0].children[0]);
+      }
+      animation7();
+    })
+    .start()
+}
+function animation7() {
+  findCubes(['cube0', 'cube1', 'cube7', 'cube9', 'cube18', 'cube23', 'cube2', 'cube15', 'cube14'], 'group7');
+  const group = scene.children.filter(el => el.name === 'group7');
+  new TWEEN.Tween(group[0].rotation)
+  .to({
+      x: -(Math.PI / 2)
+    },200)
+    .onComplete(function() {
+      const pos = []
+      group[0].children.forEach(el => {
+        el.getWorldQuaternion(quaternion)
+        el.rotation.setFromQuaternion(quaternion)
+        pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}))
+      })
+      for(let i=0;i<9; i++) {
+        group[0].children[0].position.x = pos[i].x;
+        group[0].children[0].position.y = pos[i].y;
+        group[0].children[0].position.z = pos[i].z;
+        scene.add(group[0].children[0]);
+      }
+      animation8();
+    })
+    .start()
+}
+function animation8() {
+  findCubes(['cube12', 'cube24', 'cube4', 'cube5', 'cube13', 'cube17', 'cube19', 'cube22', 'cube25'], 'group8');
+  const group = scene.children.filter(el => el.name === 'group8');
+  new TWEEN.Tween(group[0].rotation)
+  .to({
+      x: -(Math.PI / 2)
+    },200)
+    .onComplete(function() {
+      const pos = []
+      group[0].children.forEach(el => {
+        el.getWorldQuaternion(quaternion)
+        el.rotation.setFromQuaternion(quaternion)
+        pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}))
+      })
+      for(let i=0;i<9; i++) {
+        group[0].children[0].position.x = pos[i].x;
+        group[0].children[0].position.y = pos[i].y;
+        group[0].children[0].position.z = pos[i].z;
+        scene.add(group[0].children[0]);
+      }
+      animation9();
+    })
+    .start()
+}
+function animation9() {
+  findCubes(['cube0', 'cube1', 'cube3', 'cube4', 'cube5', 'cube16', 'cube25', 'cube2', 'cube8'], 'group9');
+  const group = scene.children.filter(el => el.name === 'group9');
+  new TWEEN.Tween(group[0].rotation)
+  .to({
+      y: (Math.PI / 2)
+    },200)
+    .onComplete(function() {
+      const pos = []
+      group[0].children.forEach(el => {
+        el.getWorldQuaternion(quaternion)
+        el.rotation.setFromQuaternion(quaternion)
+        pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}))
+      })
+      for(let i=0;i<9; i++) {
+        group[0].children[0].position.x = pos[i].x;
+        group[0].children[0].position.y = pos[i].y;
+        group[0].children[0].position.z = pos[i].z;
+        scene.add(group[0].children[0]);
+      }
+      animation10();
+    })
+    .start()
+}
+function animation10() {
+  findCubes(['cube3', 'cube4', 'cube7', 'cube9', 'cube18', 'cube23', 'cube14', 'cube0', 'cube15'], 'group10');
+  const group = scene.children.filter(el => el.name === 'group10');
+  new TWEEN.Tween(group[0].rotation)
+  .to({
+      x: -(Math.PI / 2)
+    },200)
+    .onComplete(function() {
+      const pos = []
+      group[0].children.forEach(el => {
+        el.getWorldQuaternion(quaternion);
+        el.rotation.setFromQuaternion(quaternion);
+        pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}))
+      })
+      for(let i=0;i<9; i++) {
+        group[0].children[0].position.x = pos[i].x;
+        group[0].children[0].position.y = pos[i].y;
+        group[0].children[0].position.z = pos[i].z;
+        // group[0].children[0].rotation.x = pos[i].rotation;
+        scene.add(group[0].children[0]);
+      }
+      animation11();
+    })
+    .start()
+}
+function animation11() {
+  findCubes(['cube3', 'cube7', 'cube13', 'cube17', 'cube21', 'cube12', 'cube15', 'cube26', 'cube10'], 'group11');
+  const group = scene.children.filter(el => el.name === 'group11');
+  new TWEEN.Tween(group[0].rotation)
+  .to({
+      y: -(Math.PI / 2)
+    },200)
+    .onComplete(function() {
+      const pos = []
+      group[0].children.forEach(el => {
+        el.getWorldQuaternion(quaternion);
+        el.rotation.setFromQuaternion(quaternion);
+        pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}));
+      })
+      for(let i=0;i<9; i++) {
+        group[0].children[0].position.x = pos[i].x;
+        group[0].children[0].position.y = pos[i].y;
+        group[0].children[0].position.z = pos[i].z;
+        // group[0].children[0].rotation.y = pos[i].rotation;
+        scene.add(group[0].children[0]);
+      }
+      animation12()
+    })
+    .start()
+}
+function animation12() {
+  findCubes(['cube10', 'cube15', 'cube24', 'cube8', 'cube1', 'cube5', 'cube13', 'cube19', 'cube22'], 'group12');
+  const group = scene.children.filter(el => el.name === 'group12');
+  new TWEEN.Tween(group[0].rotation)
+  .to({
+      x: (Math.PI / 2)
+    },200)
+    .onComplete(function() {
+      const pos = []
+      group[0].children.forEach(el => {
+        el.getWorldQuaternion(quaternion);
+        el.rotation.setFromQuaternion(quaternion);
+
+        pos.push(Object.assign({}, el.getWorldPosition(target), {name: el.name}));
+      })
+      for(let i=0;i<9; i++) {
+        group[0].children[0].position.x = pos[i].x;
+        group[0].children[0].position.y = pos[i].y;
+        group[0].children[0].position.z = pos[i].z;
+        scene.add(group[0].children[0]);
+      }
+      new TWEEN.Tween(camera.position)
+        .to( {
+                x: 5,
+                y: -3,
+                z: 8
+            },200)
+        .start();
+      controls.autoRotate = false;
+      controls.enableDamping = true;
+      setTimeout(() => {
+        $('.cube-link').each(function() {
+          $(this).fadeIn(1000)
+        })        
+      }, 100);
+    })
+    .start()
 }
 
 setTimeout(() => {
-  // build()
-}, 500);
+  animation1()
+}, 1000);
+
+function animateCube(cubeName) {
+  const cube = scene.children.filter(el => el.name === cubeName)[0];
+  if(cube.name === 'cube12') {    
+    new TWEEN.Tween(cube.position)
+      .to( {
+        y: 1.2,
+        z: 1.6
+      },200)
+      .start();  
+  }
+  if(cube.name === 'cube10') {    
+    new TWEEN.Tween(cube.position)
+      .to( {
+        x: 1.3,
+        y: 1.3
+      },200)
+      .start();  
+  }
+  if(cube.name === 'cube14') {    
+    new TWEEN.Tween(cube.position)
+      .to( {
+        y: -1.4,
+        z: 1.4
+      },200)
+      .start();  
+  }
+}
+function hideCube(cubeName) {
+  const cube = scene.children.filter(el => el.name === cubeName)[0];
+  if(cube.name === 'cube12') {    
+    new TWEEN.Tween(cube.position)
+      .to( {
+        y: 1.1,
+        z: 1.1
+      },200)
+      .start();  
+  }
+  if(cube.name === 'cube10') {    
+    new TWEEN.Tween(cube.position)
+      .to( {
+        x: 1.1,
+        y: 1.1
+      },200)
+      .start();  
+  }
+  if(cube.name === 'cube14') {    
+    new TWEEN.Tween(cube.position)
+      .to( {
+        y: -1.1,
+        z: 1.1
+      },200)
+      .start();  
+  }
+}
+
+$('.cube-link-1').mouseover(() => {
+    controls.autoRotate = false;
+    new TWEEN.Tween(camera.position)
+      .to( {
+        x: 5,
+        y: -3,
+        z: 8
+      },200)
+      .onComplete(function() {
+        animateCube('cube10')            
+      })
+      .start();      
+})
+.mouseout(() => {
+  setTimeout(() => {
+    hideCube('cube10')    
+  }, 300);
+});
 
 $('.cube-link-2').mouseover(() => {
     controls.autoRotate = false;
     new TWEEN.Tween(camera.position)
       .to( {
-              x: 6
-          },300)
-      .start();
-    // camera.position.set( 6, -3, 8 );
+        x: 5,
+        y: -3,
+        z: 8
+      },200)
+      .onComplete(function() {
+        animateCube('cube12')            
+      })
+      .start();      
 })
 .mouseout(() => {
-    // controls.autoRotate = true;
+  setTimeout(() => {
+    hideCube('cube12')    
+  }, 300);
+});
+
+$('.cube-link-3').mouseover(() => {
+    controls.autoRotate = false;
+    new TWEEN.Tween(camera.position)
+      .to( {
+        x: 5,
+        y: -3,
+        z: 8
+      },200)
+      .onComplete(function() {
+        animateCube('cube14')            
+      })
+      .start();      
+})
+.mouseout(() => {
+  setTimeout(() => {
+    hideCube('cube14')    
+  }, 300);
 })
 
 // window.addEventListener( 'pointermove', onMouseMove, false );
 
-function onMouseMove(event) {
-  const cubes = scene.children.filter(cube => cube.name.includes('cube'));
+// function onMouseMove(event) {
+//   const cubes = scene.children.filter(cube => cube.name.includes('cube'));
 
-  mouse.x = ( ( event.clientX - renderer.domElement.getBoundingClientRect().left ) / renderer.domElement.clientWidth ) * 2 - 1;
-  mouse.y = - ( ( event.clientY - renderer.domElement.getBoundingClientRect().top ) / renderer.domElement.clientHeight ) * 2 + 1;
+//   mouse.x = ( ( event.clientX - renderer.domElement.getBoundingClientRect().left ) / renderer.domElement.clientWidth ) * 2 - 1;
+//   mouse.y = - ( ( event.clientY - renderer.domElement.getBoundingClientRect().top ) / renderer.domElement.clientHeight ) * 2 + 1;
 
-  raycaster.setFromCamera(mouse, camera);
+//   raycaster.setFromCamera(mouse, camera);
 
-  const intersects = raycaster.intersectObjects(cubes);
-  if (intersects.length > 0) {
-    $('.name').text(intersects[0].object.name)
-    console.log("onMouseMove -> intersects[0]", intersects[0].object)
-    intersects[ 0 ].object.rotation.x = 10
-    // selectedCubeName = intersects[0].object.name;
-    // selectedCubeSide = Math.floor( intersects[0].faceIndex / 2 );
-    // if(intersects[0].object.name === 'cube10') {
-    //   if
-    } else {
-      scene.children.forEach(el => {
-        el.rotation.x = 0
-      })
-    }
-}
+//   const intersects = raycaster.intersectObjects(cubes);
+//   if (intersects.length > 0) {
+//     $('.name').text(intersects[0].object.name)
+//     console.log("onMouseMove -> intersects[0]", intersects[0].object)
+//     intersects[ 0 ].object.rotation.x = 10
+//     // selectedCubeName = intersects[0].object.name;
+//     // selectedCubeSide = Math.floor( intersects[0].faceIndex / 2 );
+//     // if(intersects[0].object.name === 'cube10') {
+//     //   if
+//     } else {
+//       scene.children.forEach(el => {
+//         el.rotation.x = 0
+//       })
+//     }
+// }
 
 
 
