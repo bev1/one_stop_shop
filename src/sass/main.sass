@@ -116,22 +116,26 @@ h3
         position: relative
         perspective: 1000px
         .button.red
+          display: none
           background-color: transparent
           color: #cf093c
           border: 2px solid #cf093c
-          border-left-width: 0
           position: absolute
-          z-index: -1
+          width: 245px
           top: 355px
           right: 90px
           font-weight: 700
+          justify-content: center
+          padding-right: 0
+          text-align: center
+          padding-top: 15px
           &::before
             display: none
           &::after
             display: none
-          &:hover
-            background-color:  #cf093c  
-            color: #ffffff         
+          // &:hover
+          //   background-color:  #cf093c  
+          //   color: #ffffff         
         .cube-link
           display: none
           position: absolute

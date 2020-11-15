@@ -588,6 +588,7 @@ function animation12() {
       controls.autoRotate = false;
       controls.enableDamping = true;
       setTimeout(() => {
+        $('.cube-button').fadeIn(1000)
         $('.cube-link').each(function() {
           $(this).fadeIn(1000)
         })        
@@ -626,6 +627,13 @@ function animateCube(cubeName) {
       },200)
       .start();  
   }
+  if(cube.name === 'cube24') {    
+    new TWEEN.Tween(cube.position)
+      .to( {
+        x: 1.4,
+      },200)
+      .start();  
+  }
 }
 function hideCube(cubeName) {
   const cube = scene.children.filter(el => el.name === cubeName)[0];
@@ -650,6 +658,13 @@ function hideCube(cubeName) {
       .to( {
         y: -1.1,
         z: 1.1
+      },200)
+      .start();  
+  }
+  if(cube.name === 'cube24') {    
+    new TWEEN.Tween(cube.position)
+      .to( {
+        x: 1.1,
       },200)
       .start();  
   }
@@ -709,6 +724,25 @@ $('.cube-link-3').mouseover(() => {
 .mouseout(() => {
   setTimeout(() => {
     hideCube('cube14')    
+  }, 300);
+});
+
+$('.cube-button').mouseover(() => {
+    controls.autoRotate = false;
+    new TWEEN.Tween(camera.position)
+      .to( {
+        x: 5,
+        y: -3,
+        z: 8
+      },200)
+      .onComplete(function() {
+        animateCube('cube24')            
+      })
+      .start();      
+})
+.mouseout(() => {
+  setTimeout(() => {
+    hideCube('cube24')    
   }, 300);
 })
 
