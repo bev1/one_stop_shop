@@ -96,13 +96,13 @@ html(lang="ru")
                   .link-img
                     img(src="img/play_button.png", alt="play")
               .col-lg-6
-                a.cube-link(href="#consulting-1") Услуги по регистрации
-                  br.d-block.d-sm-none
-                  | компаний
-                a.cube-link(href="#consulting-10") Счета
-                a.cube-link(href="#consulting-7") Лицензии
-                img(src="img/cube-consulting.png", alt="cube")
-                //- include components/cube.pug
+                //- a.cube-link(href="#consulting-1") Услуги по регистрации
+                //-   br.d-block.d-sm-none
+                //-   | компаний
+                //- a.cube-link(href="#consulting-10") Счета
+                //- a.cube-link(href="#consulting-7") Лицензии
+                a.button.red.cube-button(href="#") START TODAY
+                #cube
         section.section.real-1.lazy(data-src="../img/real-1.png")
           .container
             .row
@@ -502,5 +502,9 @@ html(lang="ru")
       script(src="js/bootstrap.min.js")
       script(src="js/lazy-load.js")
       script(src="js/aos.js")
+      script(src="js/three.min.js")
+      script(src="js/OrbitControls.js")
+      script(src="js/Tween.js")
+      script(src="js/cube2.js")
       script(type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")
       script(src="js/script.js")
