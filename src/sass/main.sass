@@ -141,6 +141,7 @@ h3
           padding-right: 0
           text-align: center
           padding-top: 15px
+          z-index: 1
           @media (max-width: 1800px)
             right: 30px
           @media (max-width: 1400px)
@@ -375,6 +376,104 @@ h3
                 left: 50px
               @media (max-width: 450px)
                 left: 30px
+          &.real
+            color: #8660ad
+            &:after
+              width: 17px
+              height: 8px
+              background-image: url('../img/violet_arrow_cube.png')
+              padding-bottom: 10px
+            &:nth-of-type(1)
+              top: 140px
+              right: 110px
+              &:before
+                top: 45px
+                left: -40px
+              @media (max-width: 1800px)
+                top: 152px
+                right: 145px
+                &:before
+                  top: 35px
+                  left: 0px
+              @media (max-width: 1400px)
+                top: 120px
+                right: 70px
+                &:before
+                  top: 40px
+                  left: 67px
+              @media (max-width: 1300px)
+                top: 140px
+                right: 40px
+              @media (max-width: 1100px)
+                right: 20px
+              @media (max-width: 991px)
+                right: 140px
+                top: 90px
+              @media (max-width: 767px)
+                right: 80px
+              @media (max-width: 450px)
+                top: 85px
+                &:before
+                  top: 65px
+              @media (max-width: 380px)
+                right: 60px
+            &:nth-of-type(2)
+              top: 275px
+              left: 15px
+              &:before
+                top: -30px
+                right: -30px
+              @media (max-width: 1800px)
+                top: 275px
+                left: -27px
+              @media (max-width: 1400px)
+                top: 240px
+                left: -10px
+              @media (max-width: 1300px)
+                top: 250px
+              @media (max-width: 1100px)
+                top: 195px
+                &:before
+                  top: 27px
+                  right: 15px
+              @media (max-width: 991px)
+                top: 143px
+                left: 110px
+              @media (max-width: 767px)
+                left: 50px
+              @media (max-width: 450px)
+                left: 25px
+              @media (max-width: 380px)
+                &:before
+                  right: 55px
+            &:nth-of-type(3)
+              bottom: 184px
+              left: 0
+              &:before
+                top: -33px
+                right: -40px
+              @media (max-width: 1800px)
+                left: -45px
+              @media (max-width: 1400px)
+                bottom: 150px
+              @media (max-width: 1300px)
+                bottom: 160px
+              @media (max-width: 1100px)
+                left: -80px
+              @media (max-width: 991px)
+                left: 35px
+                bottom: 110px
+              @media (max-width: 767px)
+                left: -7px
+                bottom: 115px
+              @media (max-width: 450px)
+                left: 80px
+                &:before
+                  top: -35px
+                  right: 95px
+              @media (max-width: 380px)
+                &:before
+                  right: 130px
         // .cube-circle
         //   position: absolute
         //   &.dev

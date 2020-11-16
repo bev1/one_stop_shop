@@ -583,13 +583,23 @@ function animation12() {
         group[0].children[0].position.z = pos[i].z;
         scene.add(group[0].children[0]);
       }
-      new TWEEN.Tween(camera.position)
-        .to( {
-                x: 5,
-                y: -3,
-                z: 8
-            },200)
-        .start();
+      if($(window).width() > 576) {
+        new TWEEN.Tween(camera.position)
+          .to( {
+            x: 5,
+            y: -3,
+            z: 8
+          },200)
+          .start(); 
+      } else {
+        new TWEEN.Tween(camera.position)
+          .to( {
+            x: 5,
+            y: -3,
+            z: 11
+          },200)
+          .start(); 
+      }    
       controls.autoRotate = false;
       controls.enableDamping = true;
       setTimeout(() => {
@@ -677,16 +687,29 @@ function hideCube(cubeName) {
 
 $('.cube-link-1').mouseover(() => {
     controls.autoRotate = false;
-    new TWEEN.Tween(camera.position)
-      .to( {
-        x: 5,
-        y: -3,
-        z: 8
-      },200)
-      .onComplete(function() {
-        animateCube('cube10')            
-      })
-      .start();      
+    if($(window).width() > 576) {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 5,
+          y: -3,
+          z: 8
+        },200)
+        .onComplete(function() {
+          animateCube('cube10')
+        })
+        .start(); 
+    } else {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 5,
+          y: -3,
+          z: 11
+        },200)
+        .onComplete(function() {
+          animateCube('cube10')
+        })
+        .start(); 
+    }
 })
 .mouseout(() => {
   setTimeout(() => {
@@ -696,16 +719,29 @@ $('.cube-link-1').mouseover(() => {
 
 $('.cube-link-2').mouseover(() => {
     controls.autoRotate = false;
-    new TWEEN.Tween(camera.position)
-      .to( {
-        x: 5,
-        y: -3,
-        z: 8
-      },200)
-      .onComplete(function() {
-        animateCube('cube12')            
-      })
-      .start();      
+    if($(window).width() > 576) {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 5,
+          y: -3,
+          z: 8
+        },200)
+        .onComplete(function() {
+          animateCube('cube12')
+        })
+        .start(); 
+    } else {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 5,
+          y: -3,
+          z: 11
+        },200)
+        .onComplete(function() {
+          animateCube('cube12')
+        })
+        .start(); 
+    }       
 })
 .mouseout(() => {
   setTimeout(() => {
@@ -715,16 +751,29 @@ $('.cube-link-2').mouseover(() => {
 
 $('.cube-link-3').mouseover(() => {
     controls.autoRotate = false;
-    new TWEEN.Tween(camera.position)
-      .to( {
-        x: 5,
-        y: -3,
-        z: 8
-      },200)
-      .onComplete(function() {
-        animateCube('cube14')            
-      })
-      .start();      
+    if($(window).width() > 576) {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 5,
+          y: -3,
+          z: 8
+        },200)
+        .onComplete(function() {
+          animateCube('cube14')
+        })
+        .start(); 
+    } else {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 5,
+          y: -3,
+          z: 11
+        },200)
+        .onComplete(function() {
+          animateCube('cube14')
+        })
+        .start(); 
+    }
 })
 .mouseout(() => {
   setTimeout(() => {
@@ -734,16 +783,29 @@ $('.cube-link-3').mouseover(() => {
 
 $('.cube-button').mouseover(() => {
     controls.autoRotate = false;
-    new TWEEN.Tween(camera.position)
-      .to( {
-        x: 5,
-        y: -3,
-        z: 8
-      },200)
-      .onComplete(function() {
-        animateCube('cube24')            
-      })
-      .start();      
+    if($(window).width() > 576) {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 5,
+          y: -3,
+          z: 8
+        },200)
+        .onComplete(function() {
+          animateCube('cube24')
+        })
+        .start(); 
+    } else {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 5,
+          y: -3,
+          z: 11
+        },200)
+        .onComplete(function() {
+          animateCube('cube24')
+        })
+        .start(); 
+    }
 })
 .mouseout(() => {
   setTimeout(() => {

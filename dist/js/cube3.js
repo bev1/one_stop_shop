@@ -121,7 +121,7 @@ loader.load('../img/cube2/payment.png',
   }
 );
 // cube24
-loader.load('../img/cube2/research.png',
+loader.load('../img/cube3/research.png',
   function(texture) {
     const material24 = [ 
       new THREE.MeshPhongMaterial({map: texture}),
