@@ -49,13 +49,13 @@ for(i=0; i<27; i++) {
 
 const loader = new THREE.TextureLoader();
 // cube12
-loader.load('../img/cube2/doc.png',
+loader.load('../img/cube3/iconfinder.png',
   function(texture) {
     const material12 = [ 
-      new THREE.MeshPhongMaterial({color:0x89a33f, transparent:true, opacity:1, side: THREE.DoubleSide}),
-      new THREE.MeshPhongMaterial({color:0x89a33f, transparent:true, opacity:1, side: THREE.DoubleSide}), 
-      new THREE.MeshPhongMaterial({color:0xcdb343, transparent:true, opacity:1, side: THREE.DoubleSide}),
-      new THREE.MeshPhongMaterial({color:0xcdb343, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0x85435f, transparent:true, opacity:1, side: THREE.DoubleSide}),
+      new THREE.MeshPhongMaterial({color:0x85435f, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0xc5471a6, transparent:true, opacity:1, side: THREE.DoubleSide}),
+      new THREE.MeshPhongMaterial({color:0xc5471a6, transparent:true, opacity:1, side: THREE.DoubleSide}), 
       new THREE.MeshPhongMaterial({map: texture}), 
       new THREE.MeshPhongMaterial({color:0x8660ad, transparent:true, opacity:1, side: THREE.DoubleSide}), 
     ];
@@ -66,7 +66,7 @@ loader.load('../img/cube2/doc.png',
   }
 );
 // cube14
-loader.load('../img/cube2/build.png',
+loader.load('../img/cube3/api.png',
   function(texture) {
     const material14 = [ 
       new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}),
@@ -83,11 +83,11 @@ loader.load('../img/cube2/build.png',
   }
 );
 // cube10
-loader.load('../img/cube2/relocation.png',
+loader.load('../img/cube3/content.png',
   function(texture) {
     const material10 = [ 
-      new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}),
-      new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0xb9a82b2, transparent:true, opacity:1, side: THREE.DoubleSide}),
+      new THREE.MeshPhongMaterial({color:0xb9a82b2, transparent:true, opacity:1, side: THREE.DoubleSide}), 
       new THREE.MeshPhongMaterial({color:0xcdb343, transparent:true, opacity:1, side: THREE.DoubleSide}),
       new THREE.MeshPhongMaterial({color:0xcdb343, transparent:true, opacity:1, side: THREE.DoubleSide}), 
       new THREE.MeshPhongMaterial({map: texture}), 
@@ -122,10 +122,10 @@ loader.load('../img/cube2/research.png',
     const material24 = [ 
       new THREE.MeshPhongMaterial({map: texture}),
       new THREE.MeshPhongMaterial({color:0x846f98, transparent:true, opacity:1, side: THREE.DoubleSide}), 
-      new THREE.MeshPhongMaterial({color:0x9f6a81, transparent:true, opacity:1, side: THREE.DoubleSide}),
-      new THREE.MeshPhongMaterial({color:0x9f6a81, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}),
       new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}), 
-      new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0x85435f, transparent:true, opacity:1, side: THREE.DoubleSide}), 
+      new THREE.MeshPhongMaterial({color:0x85435f, transparent:true, opacity:1, side: THREE.DoubleSide}), 
     ];
     const cube24 = new THREE.Mesh(geometry, material24);
     cube24.position.set(1.1, 0, -1.1);
@@ -670,7 +670,7 @@ function hideCube(cubeName) {
   }
 }
 
-$('.cube-link-1').mouseover(() => {
+$('.cube-link-1').mouseenter(() => {
     controls.autoRotate = false;
     new TWEEN.Tween(camera.position)
       .to( {
@@ -683,13 +683,13 @@ $('.cube-link-1').mouseover(() => {
       })
       .start();      
 })
-.mouseout(() => {
+.mouseleave(() => {
   setTimeout(() => {
     hideCube('cube10')    
   }, 300);
 });
 
-$('.cube-link-2').mouseover(() => {
+$('.cube-link-2').mouseenter(() => {
     controls.autoRotate = false;
     new TWEEN.Tween(camera.position)
       .to( {
@@ -702,13 +702,13 @@ $('.cube-link-2').mouseover(() => {
       })
       .start();      
 })
-.mouseout(() => {
+.mouseleave(() => {
   setTimeout(() => {
     hideCube('cube12')    
   }, 300);
 });
 
-$('.cube-link-3').mouseover(() => {
+$('.cube-link-3').mouseenter(() => {
     controls.autoRotate = false;
     new TWEEN.Tween(camera.position)
       .to( {
@@ -721,13 +721,13 @@ $('.cube-link-3').mouseover(() => {
       })
       .start();      
 })
-.mouseout(() => {
+.mouseleave(() => {
   setTimeout(() => {
     hideCube('cube14')    
   }, 300);
 });
 
-$('.cube-button').mouseover(() => {
+$('.cube-button').mouseenter(() => {
     controls.autoRotate = false;
     new TWEEN.Tween(camera.position)
       .to( {
@@ -740,7 +740,7 @@ $('.cube-button').mouseover(() => {
       })
       .start();      
 })
-.mouseout(() => {
+.mouseleave(() => {
   setTimeout(() => {
     hideCube('cube24')    
   }, 300);

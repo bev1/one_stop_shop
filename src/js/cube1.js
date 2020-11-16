@@ -599,7 +599,7 @@ function animation12() {
 
 setTimeout(() => {
   animation1()
-}, 1000);
+}, 2000);
 
 function animateCube(cubeName) {
   const cube = scene.children.filter(el => el.name === cubeName)[0];
@@ -670,7 +670,7 @@ function hideCube(cubeName) {
   }
 }
 
-$('.cube-link-1').mouseover(() => {
+$('.cube-link-1').mouseenter(() => {
     controls.autoRotate = false;
     new TWEEN.Tween(camera.position)
       .to( {
@@ -683,13 +683,13 @@ $('.cube-link-1').mouseover(() => {
       })
       .start();      
 })
-.mouseout(() => {
+.mouseleave(() => {
   setTimeout(() => {
     hideCube('cube10')    
   }, 300);
 });
 
-$('.cube-link-2').mouseover(() => {
+$('.cube-link-2').mouseenter(() => {
     controls.autoRotate = false;
     new TWEEN.Tween(camera.position)
       .to( {
@@ -702,13 +702,13 @@ $('.cube-link-2').mouseover(() => {
       })
       .start();      
 })
-.mouseout(() => {
+.mouseleave(() => {
   setTimeout(() => {
     hideCube('cube12')    
   }, 300);
 });
 
-$('.cube-link-3').mouseover(() => {
+$('.cube-link-3').mouseenter(() => {
     controls.autoRotate = false;
     new TWEEN.Tween(camera.position)
       .to( {
@@ -721,13 +721,13 @@ $('.cube-link-3').mouseover(() => {
       })
       .start();      
 })
-.mouseout(() => {
+.mouseleave(() => {
   setTimeout(() => {
     hideCube('cube14')    
   }, 300);
 });
 
-$('.cube-button').mouseover(() => {
+$('.cube-button').mouseenter(() => {
     controls.autoRotate = false;
     new TWEEN.Tween(camera.position)
       .to( {
@@ -740,7 +740,7 @@ $('.cube-button').mouseover(() => {
       })
       .start();      
 })
-.mouseout(() => {
+.mouseleave(() => {
   setTimeout(() => {
     hideCube('cube24')    
   }, 300);
