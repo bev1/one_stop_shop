@@ -310,14 +310,76 @@ h3
               text-align: center
               top: 140px
               right: 310px
+              text-align: center
+              &:before
+                top: 33px
+                left: -40px
+              @media (max-width: 1799px)
+                top: 140px
+                right: 320px
+                &:before
+                  top: 35px
+                  left: 0px
+              @media (max-width: 1400px)
+                top: 124px
+                right: 185px
+              @media (max-width: 1300px)
+                top: 150px
+              @media (max-width: 1100px)
+                top: 145px
+                right: 130px
+              @media (max-width: 991px)
+                top: 90px
+                right: 235px
+              @media (max-width: 767px)
+                right: 160px
+              @media (max-width: 450px)
+                right: 90px
+                top: 120px
             &:nth-of-type(2)
               top: 275px
               left: 95px
               @media (max-width: 1800px)
-                left: 33px
+                left: 43px
+              @media (max-width: 1400px)
+                left: 65px
+                top: 240px
+              @media (max-width: 1300px)
+                top: 255px
+              @media (max-width: 1100px)
+                left: 12px
+              @media (max-width: 991px)
+                top: 200px
+                left: 130px
+              @media (max-width: 767px)
+                left: 45px
+              @media (max-width: 450px)
+                left: 15px
+              @media (max-width: 414px)
+                top: 150px
             &:nth-of-type(3)
               bottom: 180px
               left: 113px
+              @media (max-width: 1800px)
+                left: 70px
+              @media (max-width: 1400px)
+                bottom: 150px
+              @media (max-width: 1300px)
+                bottom: 165px
+              @media (max-width: 1100px)
+                left: 20px
+              @media (max-width: 991px)
+                bottom: 115px
+                left: 135px
+              @media (max-width: 767px)
+                left: 50px
+              @media (max-width: 450px)
+                left: 30px
+        // .cube-circle
+        //   position: absolute
+        //   &.dev
+        //     top: 100px
+        //     left: 100px
         img
           margin-left: -162px
           @media (max-width: 1699px)
@@ -353,6 +415,13 @@ h3
       &:last-child
         font-size: 110px
         white-space: nowrap
+        &.dev
+          @media (max-width: 1800px)
+            font-size: 80px
+          @media (max-width: 1100px)
+            font-size: 70px
+          @media (max-width: 450px)
+            font-size: 40px
         span
           display: inline-block
           opacity: 0
@@ -508,6 +577,8 @@ h3
     background-repeat: no-repeat
     background-position: top
     background-size: cover
+    @media (max-width: 450px)
+      background-size: auto
     .title
       &>span:last-child
         span:nth-of-type(1)

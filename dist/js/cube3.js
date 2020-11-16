@@ -12,13 +12,17 @@ wrapper.appendChild(renderer.domElement);
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.autoRotate = true;
-controls.autoRotateSpeed = 17;
-camera.position.set( 5, -3, 8 );
+controls.autoRotateSpeed = 17;// camera.position.set( 5, -3, 8 );
+if($(window).width() > 576) {
+  camera.position.set( 5, -3, 8 );
+} else {
+  camera.position.set( 5, -3, 11 );
+}
 camera.lookAt(scene.position);
 controls.enableZoom = false;
 controls.enablePan = false;
 const pointLight = new THREE.PointLight(0xffffff, 0.15, 400, 2);
-pointLight.position.set(3, 3, 3);
+pointLight.position.set(1, 3, 3);
 const lightHolder = new THREE.Group();
 pointLight.castShadow = true;
 lightHolder.add(pointLight);
@@ -578,13 +582,23 @@ function animation12() {
         group[0].children[0].position.z = pos[i].z;
         scene.add(group[0].children[0]);
       }
-      new TWEEN.Tween(camera.position)
-        .to( {
-                x: 5,
-                y: -3,
-                z: 8
-            },200)
-        .start();
+      if($(window).width() > 576) {
+        new TWEEN.Tween(camera.position)
+          .to( {
+            x: 5,
+            y: -3,
+            z: 8
+          },200)
+          .start(); 
+      } else {
+        new TWEEN.Tween(camera.position)
+          .to( {
+            x: 5,
+            y: -3,
+            z: 11
+          },200)
+          .start(); 
+      }    
       controls.autoRotate = false;
       controls.enableDamping = true;
       setTimeout(() => {
@@ -672,16 +686,29 @@ function hideCube(cubeName) {
 
 $('.cube-link-1').mouseenter(() => {
     controls.autoRotate = false;
-    new TWEEN.Tween(camera.position)
-      .to( {
-        x: 5,
-        y: -3,
-        z: 8
-      },200)
-      .onComplete(function() {
-        animateCube('cube10')            
-      })
-      .start();      
+    if($(window).width() > 576) {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 5,
+          y: -3,
+          z: 8
+        },200)
+        .onComplete(function() {
+          animateCube('cube10')
+        })
+        .start(); 
+    } else {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 5,
+          y: -3,
+          z: 11
+        },200)
+        .onComplete(function() {
+          animateCube('cube10')
+        })
+        .start(); 
+    }         
 })
 .mouseleave(() => {
   setTimeout(() => {
@@ -691,16 +718,29 @@ $('.cube-link-1').mouseenter(() => {
 
 $('.cube-link-2').mouseenter(() => {
     controls.autoRotate = false;
-    new TWEEN.Tween(camera.position)
-      .to( {
-        x: 5,
-        y: -3,
-        z: 8
-      },200)
-      .onComplete(function() {
-        animateCube('cube12')            
-      })
-      .start();      
+    if($(window).width() > 576) {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 5,
+          y: -3,
+          z: 8
+        },200)
+        .onComplete(function() {
+          animateCube('cube12')
+        })
+        .start(); 
+    } else {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 5,
+          y: -3,
+          z: 11
+        },200)
+        .onComplete(function() {
+          animateCube('cube12')
+        })
+        .start(); 
+    }         
 })
 .mouseleave(() => {
   setTimeout(() => {
@@ -710,16 +750,29 @@ $('.cube-link-2').mouseenter(() => {
 
 $('.cube-link-3').mouseenter(() => {
     controls.autoRotate = false;
-    new TWEEN.Tween(camera.position)
-      .to( {
-        x: 5,
-        y: -3,
-        z: 8
-      },200)
-      .onComplete(function() {
-        animateCube('cube14')            
-      })
-      .start();      
+    if($(window).width() > 576) {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 5,
+          y: -3,
+          z: 8
+        },200)
+        .onComplete(function() {
+          animateCube('cube14')
+        })
+        .start(); 
+    } else {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 5,
+          y: -3,
+          z: 11
+        },200)
+        .onComplete(function() {
+          animateCube('cube14')
+        })
+        .start(); 
+    }       
 })
 .mouseleave(() => {
   setTimeout(() => {
@@ -729,50 +782,35 @@ $('.cube-link-3').mouseenter(() => {
 
 $('.cube-button').mouseenter(() => {
     controls.autoRotate = false;
-    new TWEEN.Tween(camera.position)
-      .to( {
-        x: 5,
-        y: -3,
-        z: 8
-      },200)
-      .onComplete(function() {
-        animateCube('cube24')            
-      })
-      .start();      
+    if($(window).width() > 576) {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 5,
+          y: -3,
+          z: 8
+        },200)
+        .onComplete(function() {
+          animateCube('cube24')
+        })
+        .start(); 
+    } else {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 5,
+          y: -3,
+          z: 11
+        },200)
+        .onComplete(function() {
+          animateCube('cube24')
+        })
+        .start(); 
+    }        
 })
 .mouseleave(() => {
   setTimeout(() => {
     hideCube('cube24')    
   }, 300);
 })
-
-// window.addEventListener( 'pointermove', onMouseMove, false );
-
-// function onMouseMove(event) {
-//   const cubes = scene.children.filter(cube => cube.name.includes('cube'));
-
-//   mouse.x = ( ( event.clientX - renderer.domElement.getBoundingClientRect().left ) / renderer.domElement.clientWidth ) * 2 - 1;
-//   mouse.y = - ( ( event.clientY - renderer.domElement.getBoundingClientRect().top ) / renderer.domElement.clientHeight ) * 2 + 1;
-
-//   raycaster.setFromCamera(mouse, camera);
-
-//   const intersects = raycaster.intersectObjects(cubes);
-//   if (intersects.length > 0) {
-//     $('.name').text(intersects[0].object.name)
-//     console.log("onMouseMove -> intersects[0]", intersects[0].object)
-//     intersects[ 0 ].object.rotation.x = 10
-//     // selectedCubeName = intersects[0].object.name;
-//     // selectedCubeSide = Math.floor( intersects[0].faceIndex / 2 );
-//     // if(intersects[0].object.name === 'cube10') {
-//     //   if
-//     } else {
-//       scene.children.forEach(el => {
-//         el.rotation.x = 0
-//       })
-//     }
-// }
-
-
 
 function animate() {
   requestAnimationFrame( animate );
