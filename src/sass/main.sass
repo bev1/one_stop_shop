@@ -48,6 +48,16 @@ canvas
   height: 500px
   margin-left: -110px
   margin-top: 45px
+  @media (max-width: 1400px)
+    transform: scale(.8)
+    margin-left: 0
+  @media (max-width: 1300px)
+    transform: scale(.7)
+    margin-left: 0
+  @media (max-width: 575px)
+    // margin-left: 50px
+  @media (max-width: 500px)
+    transform: scale(.8)
 h3
   font-size: 36px
   text-align: center
@@ -100,12 +110,14 @@ h3
 @import './layout/header'
 @import './layout/footer'
 @import './layout/modal'
-@import './components/cube'
+// @import './components/cube'
 // @import './components/cube2'
 
 .main-section
   padding: 50px 0
   min-height: 100vh
+  @media (max-width: 1100px)
+    min-height: unset
   .container
     position: relative
     .row
@@ -114,7 +126,7 @@ h3
         align-items: center
         justify-content: center
         position: relative
-        perspective: 1000px
+        // perspective: 1000px
         .button.red
           display: none
           background-color: transparent
@@ -129,6 +141,31 @@ h3
           padding-right: 0
           text-align: center
           padding-top: 15px
+          @media (max-width: 1800px)
+            right: 30px
+          @media (max-width: 1400px)
+            right: 10px
+            height: 40px
+            width: 160px
+            font-size: 18px
+            padding-top: 6px
+            top: 310px
+          @media (max-width: 1300px)
+            right: 15px
+          @media (max-width: 1100px)
+            right: -19px
+            font-size: 16px
+            width: 135px
+          @media (max-width: 991px)
+            right: 100px
+            top: 255px
+          @media (max-width: 767px)
+            right: 10px
+          @media (max-width: 575px)
+            bottom: 0
+            right: auto
+            left: auto
+            top: auto
           &::before
             display: none
           &::after
@@ -178,52 +215,58 @@ h3
             @media (max-width: 1799px)
               top: 160px
               right: 67px
-            @media (max-width: 1599px)
-              top: 170px
-              right: 13px
-            @media (max-width: 1500px)
-              top: 130px
-              right: auto
-              left: 24px
-            @media (max-width: 1299px)
-              top: 130px
-              left: 0
-            @media (max-width: 1199px)
-              top: 140px
-            @media (max-width: 992px)
-              top: 120px
-            @media (max-width: 575px)
-              top: 100px
-              left: 130px
-            @media (max-width: 490px)
-              left: 100px
-            @media (max-width: 400px)
-              left: 70px
+              &:before
+                top: 24px
+                left: 0px
+            @media (max-width: 1400px)
+              top: 125px
+              &:before
+                top: 32px
+                left: 130px
+            @media (max-width: 1300px)
+              top: 150px
+              right: 45px
+            @media (max-width: 1100px)
+              top: 145px
+              right: 25px
+            @media (max-width: 991px)
+              top: 95px
+              right: 140px
+            @media (max-width: 767px)
+              right: 82px
+            @media (max-width: 414px)
+              &:before
+                top: 57px
+                left: 86px
+            @media (max-width: 350px)
+              right: 40px
           &:nth-child(2)
             top: 268px
             left: 80px
             &:before
               top: -30px
               right: -30px
-            @media (max-width: 1799px)
-              left: 57px
-            @media (max-width: 1500px)
-              top: 230px
-              left: 95px
-            @media (max-width: 1199px)
-              top: 244px
-              left: 60px
-            @media (max-width: 992px)
-              top: 200px
-              left: 130px
-            @media (max-width: 767px)
-              left: 100px
-            @media (max-width: 490px)
-              left: 80px
-            @media (max-width: 450px)
+            @media (max-width: 1800px)
+              left: 33px
+              top: 275px
+            @media (max-width: 1400px)
               left: 50px
-            @media (max-width: 400px)
-              left: 30px
+              top: 240px
+            @media (max-width: 1300px)
+              top: 253px
+            @media (max-width: 1100px)
+              left: 5px
+            @media (max-width: 991px)
+              left: 125px
+              top: 200px
+            @media (max-width: 767px)
+              left: 42px
+            @media (max-width: 414px)
+              left: 10px
+              top: 150px
+              &:before
+                top: 26px
+                right: -10px
           &:nth-child(3)
             bottom: 180px
             left: 113px
@@ -233,21 +276,25 @@ h3
             @media (max-width: 1799px)
               bottom: 190px
               left: 63px
-            @media (max-width: 1500px)
-              bottom: 175px
-              left: 100px
-            @media (max-width: 1199px)
-              bottom: 170px
-              left: 60px
-            @media (max-width: 992px)
-              bottom: 130px
-              left: 80px
-            @media (max-width: 490px)
+            @media (max-width: 1400px)
+              bottom: 150px
               left: 65px
-            @media (max-width: 450px)
-              left: 40px
-            @media (max-width: 400px)
+            @media (max-width: 1300px)
+              bottom: 165px
+            @media (max-width: 1100px)
+              left: 15px
+            @media (max-width: 991px)
+              left: 130px
+              bottom: 110px
+            @media (max-width: 767px)
+              left: 60px
+              bottom: 113px
+            @media (max-width: 414px)
               left: 20px
+            @media (max-width: 380px)
+              &:before
+                top: -38px
+                right: -20px
           &:hover
             text-decoration: underline
             &:before
@@ -259,14 +306,16 @@ h3
               height: 8px
               background-image: url('../img/green_arrow_cube.png')
               padding-bottom: 10px
-            &:nth-child(1)
+            &:nth-of-type(1)
               text-align: center
               top: 140px
               right: 310px
-            &:nth-child(2)
+            &:nth-of-type(2)
               top: 275px
               left: 95px
-            &:nth-child(3)
+              @media (max-width: 1800px)
+                left: 33px
+            &:nth-of-type(3)
               bottom: 180px
               left: 113px
         img
