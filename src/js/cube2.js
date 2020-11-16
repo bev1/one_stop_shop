@@ -614,7 +614,7 @@ function animation12() {
 
 setTimeout(() => {
   animation1()
-}, 2000);
+}, 1000);
 
 function animateCube(cubeName) {
   const cube = scene.children.filter(el => el.name === cubeName)[0];
