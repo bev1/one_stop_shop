@@ -71,7 +71,7 @@ html(lang="ru")
               .col-lg-6
                 h1.title
                   span(data-aos="fade" data-aos-delay="100") 05
-                  span.text-animate
+                  span.text-animate.legal
                     span L
                     span e
                     span g
@@ -99,13 +99,12 @@ html(lang="ru")
                   .link-img
                     img(src="img/play_button.png", alt="play")
               .col-lg-6
-                a.cube-link(href="#consulting-1") Услуги по регистрации
-                  br.d-block.d-sm-none
-                  | компаний
-                a.cube-link(href="#consulting-10") Счета
-                a.cube-link(href="#consulting-7") Лицензии
-                img(src="img/cube-consulting.png", alt="cube")
-                //- include components/cube.pug
+                a.cube-link.legal.cube-link-1(href="#legal-4") FinTech
+                a.cube-link.legal.cube-link-2(href="#legal-2") IT
+                a.cube-link.legal.cube-link-3(href="#legal-3") Gambling
+                a.cube-link.legal.cube-link-4(href="#legal-5") Team of lawyers
+                a.button.red.cube-button(href="#") START TODAY
+                #cube
         section.section.legal-1
           .container
             .row
@@ -133,7 +132,7 @@ html(lang="ru")
                   strong Personal information and data 
                   | are an indispensable part of any modern business. For companies working via the Internet as well as for European clients or partners, it is especially important to ensure the correct handling of personal data, as such activities are strictly regulated by the GDPR (General Data Protection Regulation). If you work in IT, be sure to handle the issue of compliance with the GDPR. 
                 p Acalista specialists will gladly help you configure the processes of working with personal data and bring them into conformity with the GDPR and laws concerning the protection of personal information.
-        section.section.legal-2.lazy(data-src="../img/legal-2.png")
+        section#legal-2.section.legal-2.lazy(data-src="../img/legal-2.png")
           .container
             .row
               .col-xl-6
@@ -147,7 +146,7 @@ html(lang="ru")
                 .subtitle
                   span Acalista 
                   | will select the best solution for you according to your particular goals.
-        section.section.legal-3.lazy(data-src="../img/legal-3.png")
+        section#legal-3.section.legal-3.lazy(data-src="../img/legal-3.png")
           .container
             h2.text-center
               span Gambling
@@ -163,7 +162,7 @@ html(lang="ru")
             .tab-pane.fade#gambling3
               p Among the few countries where a gaming license can be obtained, the most popular option is Curaçao. There are a number of reasons for that: the license does not require a personal visit, only a minimum time period is required, the procedure is extremely simple, and, finally, the budget is most comfortable.
               p Moreover, global suppliers of games willingly collaborate with a company if it has a Curaçao license. In addition, the country has some of the most favorable tax benefits, no sales tax, no import duties, no VAT, and no restrictions on dividend withdrawal.
-        section.section.legal-4
+        section#legal-4.section.legal-4
           .container
             h2.text-center FinTech
             .row
@@ -217,7 +216,7 @@ html(lang="ru")
                 br.d-none.d-lg-block
                 | licenses are available
               a.button.red(href="#") START TODAY
-        section.section.legal-5
+        section#legal-5.section.legal-5
           .container-fluid
             .row
               .col-lg-6
@@ -341,5 +340,9 @@ html(lang="ru")
       script(src="js/bootstrap.min.js")
       script(src="js/lazy-load.js")
       script(src="js/aos.js")
+      script(src="js/three.min.js")
+      script(src="js/OrbitControls.js")
+      script(src="js/Tween.js")
+      script(src="js/cube6.js")
       script(type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")
       script(src="js/script.js")
