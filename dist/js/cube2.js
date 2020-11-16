@@ -13,12 +13,17 @@ const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.autoRotate = true;
 controls.autoRotateSpeed = 17;
-camera.position.set( 5, -3, 8 );
+// camera.position.set( 5, -3, 8 );
+if($(window).width() > 576) {
+  camera.position.set( 5, -3, 8 );
+} else {
+  camera.position.set( 5, -3, 11 );
+}
 camera.lookAt(scene.position);
 controls.enableZoom = false;
 controls.enablePan = false;
 const pointLight = new THREE.PointLight(0xffffff, 0.15, 400, 2);
-pointLight.position.set(3, 3, 3);
+pointLight.position.set(1, 3, 3);
 const lightHolder = new THREE.Group();
 pointLight.castShadow = true;
 lightHolder.add(pointLight);

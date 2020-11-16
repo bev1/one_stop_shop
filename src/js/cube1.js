@@ -18,7 +18,7 @@ if($(window).width() > 576) {
   camera.position.set( 5, -3, 8 );
 } else {
   camera.position.set( 5, -3, 11 );
-}  
+}
 camera.lookAt(scene.position);
 controls.enableZoom = false;
 controls.enablePan = false;

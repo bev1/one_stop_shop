@@ -11,13 +11,18 @@ renderer.setClearColor( 0xffffff, 0);
 wrapper.appendChild(renderer.domElement);
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
-camera.position.set( 6, -3, 8 );
+// camera.position.set( 6, -3, 8 );
+if($(window).width() > 576) {
+  camera.position.set( 5, -3, 8 );
+} else {
+  camera.position.set( 5, -3, 11 );
+}
 camera.lookAt(scene.position);
 controls.enableZoom = false;
 controls.enablePan = false;
 // controls.update();
 const pointLight = new THREE.PointLight(0xffffff, 0.15, 400, 2);
-pointLight.position.set(3, 3, 3);
+pointLight.position.set(1, 3, 3);
 const lightHolder = new THREE.Group();
 pointLight.castShadow = true;
 lightHolder.add(pointLight);
