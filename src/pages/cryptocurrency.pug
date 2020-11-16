@@ -71,7 +71,7 @@ html(lang="ru")
               .col-lg-6                  
                 h1.title
                   span(data-aos="fade" data-aos-delay="100") 04
-                  span.text-animate
+                  span.text-animate.crypto
                     span C
                     span r
                     span y
@@ -99,14 +99,12 @@ html(lang="ru")
                   .link-img
                     img(src="img/play_button.png", alt="play")
               .col-lg-6
-                a.cube-link(href="#consulting-1") Услуги по регистрации 
-                  br.d-block.d-sm-none
-                  | компаний
-                a.cube-link(href="#consulting-10") Счета
-                a.cube-link(href="#consulting-7") Лицензии
-                img(src="img/cube-consulting.png", alt="cube")
-                //- include components/cube.pug
-        section.section.cryptocurrency-1
+                a.cube-link.crypto.cube-link-1(href="#cryptocurrency-1") Trading
+                a.cube-link.crypto.cube-link-2(href="#cryptocurrency-2") About
+                a.cube-link.crypto.cube-link-3(href="#cryptocurrency-3") Currency
+                a.button.red.cube-button(href="#") START TODAY
+                #cube
+        section#cryptocurrency-1.section.cryptocurrency-1
           .container
             .row
               .col-xl-5
@@ -132,7 +130,7 @@ html(lang="ru")
                   li Минимальные комиссии
                   li Круглосуточная поддержка
                 p.text(data-aos="fade") Близкое присутствие со всеми центральными торговыми серверами основных бирж, поставщиков ликвидности, банков и других финансовых институтов, позволяет нам максимально сокращать время запроса на заявку, вплоть до сотых миллисекунд.
-        section.section.cryptocurrency-2
+        section#cryptocurrency-2.section.cryptocurrency-2
           .container-fluid
             .row
               .col-lg-6.order-lg-2
@@ -153,7 +151,7 @@ html(lang="ru")
                   strong Профессиональное сопровождение — 
                   br.d-none.d-lg-block
                   | залог успеха в решении данного вопроса.
-        section.section.cryptocurrency-3.lazy(data-src="../img/cryptocurrency_3_bg.png")
+        section#cryptocurrency-3.section.cryptocurrency-3.lazy(data-src="../img/cryptocurrency_3_bg.png")
           .container
             .row
               .col-lg-5
@@ -205,5 +203,9 @@ html(lang="ru")
       script(src="js/bootstrap.min.js")
       script(src="js/lazy-load.js")
       script(src="js/aos.js")
+      script(src="js/three.min.js")
+      script(src="js/OrbitControls.js")
+      script(src="js/Tween.js")
+      script(src="js/cube4.js")
       script(type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")
       script(src="js/script.js")
