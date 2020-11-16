@@ -92,14 +92,12 @@ html(lang="ru")
                   .link-img
                     img(src="img/play_button.png", alt="play")
               .col-lg-6
-                a.cube-link(href="#consulting-1") Услуги по регистрации 
-                  br.d-block.d-sm-none
-                  | компаний
-                a.cube-link(href="#consulting-10") Счета
-                a.cube-link(href="#consulting-7") Лицензии
-                img(src="img/cube-consulting.png", alt="cube")
-                //- include components/cube.pug
-        section.section.marketing-1.lazy(data-src="../img/marketing_1.png")
+                a.cube-link.crypto.cube-link-1(href="#marketing-1") Lead Generation
+                a.cube-link.crypto.cube-link-2(href="#marketing-2") Media Buying
+                a.cube-link.crypto.cube-link-3(href="#marketing-2") Content manegement
+                a.button.red.cube-button(href="#") START TODAY
+                #cube
+        section#marketing-1.section.marketing-1.lazy(data-src="../img/marketing_1.png")
           .container
             .row
               .col-lg-4
@@ -141,7 +139,7 @@ html(lang="ru")
                       img.lazy(data-src="img/solution-6.png")
                       p Campaign Optimization and Consulting
                     .text(data-aos="fade-down") We know how to improve your sales results by optimizing your advertising campaigns. Real Time data and analytics will follow a data driven approach to best ROI
-        section.section.marketing-2
+        section#marketing-2.section.marketing-2
           .container
             h2 Our 
               span Clients
@@ -211,5 +209,9 @@ html(lang="ru")
       script(src="js/bootstrap.min.js")
       script(src="js/lazy-load.js")
       script(src="js/aos.js")
+      script(src="js/three.min.js")
+      script(src="js/OrbitControls.js")
+      script(src="js/Tween.js")
+      script(src="js/cube5.js")
       script(type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")
       script(src="js/script.js")
