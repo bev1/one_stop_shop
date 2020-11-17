@@ -621,7 +621,7 @@ function animation12() {
           .to( {
             x: 8,
             y: 5,
-            z: 7
+            z: 10
           },200)
           .start(); 
       }    
@@ -710,7 +710,7 @@ $('.cube-link-1').mouseenter(() => {
         .to( {
           x: 8,
           y: 5,
-          z: 7
+          z: 10
         },200)
         .onComplete(function() {
           animateCube('cube12')
@@ -742,7 +742,7 @@ $('.cube-link-2').mouseenter(() => {
         .to( {
           x: 8,
           y: 5,
-          z: 7
+          z: 10
         },200)
         .onComplete(function() {
           animateCube('cube9')
@@ -774,7 +774,7 @@ $('.cube-link-3').mouseenter(() => {
         .to( {
           x: 8,
           y: 5,
-          z: 7
+          z: 10
         },200)
         .onComplete(function() {
           animateCube('cube13')
