@@ -48,6 +48,8 @@ canvas
   height: 500px
   margin-left: -110px
   margin-top: 45px
+  &.market
+    margin-top: 0
   @media (max-width: 1400px)
     transform: scale(.8)
     margin-left: 0
@@ -686,6 +688,90 @@ h3
                 left: 50px
               @media (max-width: 450px)
                 left: 30px
+          &.market
+            color: #cf093c
+            &:after
+              width: 17px
+              height: 8px
+              background-image: url('../img/arrow_cube_red.png')
+              padding-bottom: 10px
+            &:nth-of-type(1)
+              top: 235px
+              left: 170px
+              right: auto
+              &:before
+                top: 41px
+                left: 18px
+              @media (max-width: 1800px)
+                left: 120px
+              @media (max-width: 1400px)
+                top: 190px
+                left: 135px
+              @media (max-width: 1300px)
+                top: 197px
+                left: 129px
+              @media (max-width: 1100px)
+                top: 170px
+                left: 75px
+              @media (max-width: 991px)
+                top: 120px
+                left: 195px
+              @media (max-width: 767px)
+                top: 122px
+                left: 105px
+              @media (max-width: 450px)
+                top: 112px
+                left: 40px
+            &:nth-of-type(2)
+              top: 390px
+              left: 60px
+              &:before
+                top: -10px
+                left: 175px
+              @media (max-width: 1800px)
+                left: 8px
+              @media (max-width: 1400px)
+                top: 328px
+                left: 15px
+              @media (max-width: 1300px)
+                left: 5px
+              @media (max-width: 1100px)
+                top: 298px
+                left: -48px
+              @media (max-width: 991px)
+                top: 250px
+                left: 70px
+              @media (max-width: 767px)
+                top: 250px
+                left: 20px
+                &:before
+                  left: 135px
+              @media (max-width: 450px)
+                &:before
+                  left: 78px
+            &:nth-of-type(3)
+              bottom: 180px
+              left: 85px
+              &:before
+                top: -37px
+                right: 8px
+              @media (max-width: 1800px)
+                left: 50px
+              @media (max-width: 1400px)
+                left: 42px
+                bottom: 145px
+              @media (max-width: 1100px)
+                left: -9px
+                bottom: 130px
+              @media (max-width: 991px)
+                left: 109px
+                bottom: 89px
+              @media (max-width: 767px)
+                left: 70px
+                bottom: 75px
+              @media (max-width: 450px)
+                left: 25px
+                bottom: 57px
         // .cube-circle
         //   position: absolute
         //   &.dev

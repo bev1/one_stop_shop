@@ -56,6 +56,7 @@ const loader = new THREE.TextureLoader();
 // cube12
 loader.load('../img/cube2/doc.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material12 = [ 
       new THREE.MeshPhongMaterial({color:0x89a33f, transparent:true, opacity:1, side: THREE.DoubleSide}),
       new THREE.MeshPhongMaterial({color:0x89a33f, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -73,6 +74,7 @@ loader.load('../img/cube2/doc.png',
 // cube14
 loader.load('../img/cube2/build.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material14 = [ 
       new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}),
       new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -90,6 +92,7 @@ loader.load('../img/cube2/build.png',
 // cube10
 loader.load('../img/cube2/relocation.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material10 = [ 
       new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}),
       new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -107,6 +110,7 @@ loader.load('../img/cube2/relocation.png',
 // cube15
 loader.load('../img/cube2/payment.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material15 = [ 
       new THREE.MeshPhongMaterial({map: texture}),
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -124,6 +128,7 @@ loader.load('../img/cube2/payment.png',
 // cube24
 loader.load('../img/cube2/research.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material24 = [ 
       new THREE.MeshPhongMaterial({map: texture}),
       new THREE.MeshPhongMaterial({color:0x846f98, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -141,6 +146,7 @@ loader.load('../img/cube2/research.png',
 // cube8
 loader.load('../img/cube2/location.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material8 = [ 
       new THREE.MeshPhongMaterial({map: texture}),
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -158,6 +164,7 @@ loader.load('../img/cube2/location.png',
 // cube26
 loader.load('../img/cube2/location.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material26 = [ 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}),
@@ -175,6 +182,7 @@ loader.load('../img/cube2/location.png',
 // cube20
 loader.load('../img/cube2/payment.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material20 = [ 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}),
@@ -192,6 +200,7 @@ loader.load('../img/cube2/payment.png',
 // cube2
 loader.load('../img/cube2/payment.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material2 = [ 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
       new THREE.MeshPhongMaterial({map: texture}),

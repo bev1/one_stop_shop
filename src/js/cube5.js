@@ -22,7 +22,7 @@ camera.lookAt(scene.position);
 controls.enableZoom = false;
 controls.enablePan = false;
 const pointLight = new THREE.PointLight(0xffffff, 0.15, 400, 2);
-pointLight.position.set(1, 3, 3);
+pointLight.position.set(3, 3, 3);
 const lightHolder = new THREE.Group();
 pointLight.castShadow = true;
 lightHolder.add(pointLight);
@@ -56,6 +56,7 @@ const loader = new THREE.TextureLoader();
 // cube21
 loader.load('../img/cube5/accept.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material21 = [ 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}),
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}),
@@ -74,6 +75,7 @@ loader.load('../img/cube5/accept.png',
 // cube12
 loader.load('../img/cube5/mission.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material12 = [ 
       new THREE.MeshPhongMaterial({color:0x7f619c, transparent:true, opacity:1, side: THREE.DoubleSide}),
       new THREE.MeshPhongMaterial({color:0x7f619c, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -91,6 +93,7 @@ loader.load('../img/cube5/mission.png',
 // cube9
 loader.load('../img/cube5/ecommerce.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material9 = [ 
       new THREE.MeshPhongMaterial({color:0x7f619c, transparent:true, opacity:1, side: THREE.DoubleSide}),
       new THREE.MeshPhongMaterial({color:0x7f619c, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -108,6 +111,7 @@ loader.load('../img/cube5/ecommerce.png',
 // cube13
 loader.load('../img/cube5/chart.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material13 = [ 
       new THREE.MeshPhongMaterial({map: loader.load('../img/cube5/law.png')}),
       new THREE.MeshPhongMaterial({color:0x7a9c16, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -122,26 +126,10 @@ loader.load('../img/cube5/chart.png',
     scene.add(cube13);
   }
 );
-// cube24
-loader.load('../img/cube2/research.png',
-  function(texture) {
-    const material24 = [ 
-      new THREE.MeshPhongMaterial({map: texture}),
-      new THREE.MeshPhongMaterial({color:0x85709a, transparent:true, opacity:1, side: THREE.DoubleSide}), 
-      new THREE.MeshPhongMaterial({color:0x89a33f, transparent:true, opacity:1, side: THREE.DoubleSide}),
-      new THREE.MeshPhongMaterial({color:0x89a33f, transparent:true, opacity:1, side: THREE.DoubleSide}), 
-      new THREE.MeshPhongMaterial({color:0x85435f, transparent:true, opacity:1, side: THREE.DoubleSide}), 
-      new THREE.MeshPhongMaterial({color:0x85435f, transparent:true, opacity:1, side: THREE.DoubleSide}), 
-    ];
-    const cube24 = new THREE.Mesh(geometry, material24);
-    cube24.position.set(1.1, 0, -1.1);
-    cube24.name = 'cube24';
-    scene.add(cube24);
-  }
-);
 // cube26
 loader.load('../img/cube2/location.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material26 = [ 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}),
@@ -159,6 +147,7 @@ loader.load('../img/cube2/location.png',
 // cube20
 loader.load('../img/cube2/payment.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material20 = [ 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}),
@@ -176,6 +165,7 @@ loader.load('../img/cube2/payment.png',
 // cube2
 loader.load('../img/cube2/payment.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material2 = [ 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
       new THREE.MeshPhongMaterial({map: texture}),
@@ -193,6 +183,7 @@ loader.load('../img/cube2/payment.png',
 // cube10
 loader.load('../img/cube5/economy.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material10 = [ 
       new THREE.MeshPhongMaterial({map: texture}),
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -210,6 +201,7 @@ loader.load('../img/cube5/economy.png',
 // cube5
 loader.load('../img/cube5/ribbon.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material5 = [ 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}),
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}),
@@ -227,6 +219,7 @@ loader.load('../img/cube5/ribbon.png',
 // cube1
 loader.load('../img/cube5/ethereum.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material1 = [ 
       new THREE.MeshPhongMaterial({map: texture}),
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -244,7 +237,7 @@ loader.load('../img/cube5/ethereum.png',
 
 
 cubes.forEach((cube, i)=> {
-  if(i != 12 && i != 24 && i != 26 && i != 20 && i != 2 && i != 13 && i != 9 && i != 21 && i != 10 && i != 5 && i != 1) {
+  if(i != 12 && i != 26 && i != 20 && i != 2 && i != 13 && i != 9 && i != 21 && i != 10 && i != 5 && i != 1) {
     cube.name = `cube${i}`;
     scene.add(cube);
   }
@@ -290,6 +283,9 @@ cubes.forEach((cube, i)=> {
       break;
     case 23:
       cube.position.set(0, -1.1, -1.1);
+      break;
+    case 24:
+      cube.position.set(1.1, 0, -1.1);
       break;
     case 25:
       cube.position.set(-1.1, 0, -1.1);
@@ -616,16 +612,16 @@ function animation12() {
         new TWEEN.Tween(camera.position)
           .to( {
             x: 8,
-            y: 8,
-            z: 8
+            y: 5,
+            z: 7
           },200)
           .start(); 
       } else {
         new TWEEN.Tween(camera.position)
           .to( {
-            x: 5,
-            y: 3,
-            z: 11
+            x: 8,
+            y: 5,
+            z: 7
           },200)
           .start(); 
       }    
@@ -655,26 +651,17 @@ function animateCube(cubeName) {
       },200)
       .start();  
   }
-  if(cube.name === 'cube10') {    
+  if(cube.name === 'cube9') {    
     new TWEEN.Tween(cube.position)
       .to( {
-        x: 1.3,
-        y: 1.3
+        z: 1.6
       },200)
       .start();  
   }
-  if(cube.name === 'cube14') {    
+  if(cube.name === 'cube13') {    
     new TWEEN.Tween(cube.position)
       .to( {
-        y: -1.4,
         z: 1.4
-      },200)
-      .start();  
-  }
-  if(cube.name === 'cube24') {    
-    new TWEEN.Tween(cube.position)
-      .to( {
-        x: 1.4,
       },200)
       .start();  
   }
@@ -689,26 +676,17 @@ function hideCube(cubeName) {
       },200)
       .start();  
   }
-  if(cube.name === 'cube10') {    
+  if(cube.name === 'cube9') {    
     new TWEEN.Tween(cube.position)
       .to( {
-        x: 1.1,
-        y: 1.1
-      },200)
-      .start();  
-  }
-  if(cube.name === 'cube14') {    
-    new TWEEN.Tween(cube.position)
-      .to( {
-        y: -1.1,
         z: 1.1
       },200)
       .start();  
   }
-  if(cube.name === 'cube24') {    
+  if(cube.name === 'cube13') {    
     new TWEEN.Tween(cube.position)
       .to( {
-        x: 1.1,
+        z: 1.1
       },200)
       .start();  
   }
@@ -719,41 +697,9 @@ $('.cube-link-1').mouseenter(() => {
     if($(window).width() > 576) {
       new TWEEN.Tween(camera.position)
         .to( {
-          x: 5,
-          y: 3,
-          z: 8
-        },200)
-        .onComplete(function() {
-          animateCube('cube10')
-        })
-        .start(); 
-    } else {
-      new TWEEN.Tween(camera.position)
-        .to( {
-          x: 5,
-          y: 3,
-          z: 11
-        },200)
-        .onComplete(function() {
-          animateCube('cube10')
-        })
-        .start(); 
-    }         
-})
-.mouseleave(() => {
-  setTimeout(() => {
-    hideCube('cube10')    
-  }, 300);
-});
-
-$('.cube-link-2').mouseenter(() => {
-    controls.autoRotate = false;
-    if($(window).width() > 576) {
-      new TWEEN.Tween(camera.position)
-        .to( {
-          x: 5,
-          y: 3,
-          z: 8
+          x: 8,
+          y: 5,
+          z: 7
         },200)
         .onComplete(function() {
           animateCube('cube12')
@@ -762,9 +708,9 @@ $('.cube-link-2').mouseenter(() => {
     } else {
       new TWEEN.Tween(camera.position)
         .to( {
-          x: 5,
-          y: 3,
-          z: 11
+          x: 8,
+          y: 5,
+          z: 7
         },200)
         .onComplete(function() {
           animateCube('cube12')
@@ -778,69 +724,69 @@ $('.cube-link-2').mouseenter(() => {
   }, 300);
 });
 
-$('.cube-link-3').mouseenter(() => {
+$('.cube-link-2').mouseenter(() => {
     controls.autoRotate = false;
     if($(window).width() > 576) {
       new TWEEN.Tween(camera.position)
         .to( {
-          x: 5,
-          y: 3,
-          z: 8
+          x: 8,
+          y: 5,
+          z: 7
         },200)
         .onComplete(function() {
-          animateCube('cube14')
+          animateCube('cube9')
         })
         .start(); 
     } else {
       new TWEEN.Tween(camera.position)
         .to( {
-          x: 5,
-          y: 3,
-          z: 11
+          x: 8,
+          y: 5,
+          z: 7
         },200)
         .onComplete(function() {
-          animateCube('cube14')
+          animateCube('cube9')
+        })
+        .start(); 
+    }         
+})
+.mouseleave(() => {
+  setTimeout(() => {
+    hideCube('cube9')    
+  }, 300);
+});
+
+$('.cube-link-3').mouseenter(() => {
+    controls.autoRotate = false;
+    if($(window).width() > 576) {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 8,
+          y: 5,
+          z: 7
+        },200)
+        .onComplete(function() {
+          animateCube('cube13')
+        })
+        .start(); 
+    } else {
+      new TWEEN.Tween(camera.position)
+        .to( {
+          x: 8,
+          y: 5,
+          z: 7
+        },200)
+        .onComplete(function() {
+          animateCube('cube13')
         })
         .start(); 
     }       
 })
 .mouseleave(() => {
   setTimeout(() => {
-    hideCube('cube14')    
+    hideCube('cube13')    
   }, 300);
 });
-
-$('.cube-button').mouseenter(() => {
-    controls.autoRotate = false;
-    if($(window).width() > 576) {
-      new TWEEN.Tween(camera.position)
-        .to( {
-          x: 5,
-          y: 3,
-          z: 8
-        },200)
-        .onComplete(function() {
-          animateCube('cube24')
-        })
-        .start(); 
-    } else {
-      new TWEEN.Tween(camera.position)
-        .to( {
-          x: 5,
-          y: 3,
-          z: 11
-        },200)
-        .onComplete(function() {
-          animateCube('cube24')
-        })
-        .start(); 
-    }        
-})
-.mouseleave(() => {
-  setTimeout(() => {
-    hideCube('cube24')    
-  }, 300);
-})
 
 function animate() {
   requestAnimationFrame( animate );

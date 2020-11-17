@@ -56,6 +56,7 @@ const loader = new THREE.TextureLoader();
 // cube12
 loader.load('../img/cube1/money.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material12 = [ 
       new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}),
       new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -73,6 +74,7 @@ loader.load('../img/cube1/money.png',
 // cube14
 loader.load('../img/cube1/ribbon.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material14 = [ 
       new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}),
       new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -90,6 +92,7 @@ loader.load('../img/cube1/ribbon.png',
 // cube10
 loader.load('../img/cube1/accept.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material10 = [ 
       new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}),
       new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -107,6 +110,7 @@ loader.load('../img/cube1/accept.png',
 // cube15
 loader.load('../img/cube1/payment.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material15 = [ 
       new THREE.MeshPhongMaterial({map: texture}),
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -124,6 +128,7 @@ loader.load('../img/cube1/payment.png',
 // cube24
 loader.load('../img/cube1/youtube.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material24 = [ 
       new THREE.MeshPhongMaterial({map: texture}),
       new THREE.MeshPhongMaterial({color:0xb71e45, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -141,6 +146,7 @@ loader.load('../img/cube1/youtube.png',
 // cube8
 loader.load('../img/cube1/location.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material8 = [ 
       new THREE.MeshPhongMaterial({map: texture}),
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
@@ -158,6 +164,7 @@ loader.load('../img/cube1/location.png',
 // cube26
 loader.load('../img/cube1/location.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material26 = [ 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}),
@@ -175,6 +182,7 @@ loader.load('../img/cube1/location.png',
 // cube20
 loader.load('../img/cube1/payment.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material20 = [ 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}),
@@ -192,6 +200,7 @@ loader.load('../img/cube1/payment.png',
 // cube2
 loader.load('../img/cube1/payment.png',
   function(texture) {
+    texture.anisotropy = renderer.getMaxAnisotropy();
     const material2 = [ 
       new THREE.MeshPhongMaterial({color:0xdbdbdb, transparent:true, opacity:1, side: THREE.DoubleSide}), 
       new THREE.MeshPhongMaterial({map: texture}),
