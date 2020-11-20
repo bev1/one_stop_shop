@@ -11,7 +11,7 @@ renderer.setClearColor( 0xffffff, 0);
 wrapper.appendChild(renderer.domElement);
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
-controls.autoRotate = true;
+controls.autoRotate = false;
 controls.autoRotateSpeed = 22;
 // camera.position.set( 5, -3, 8 );
 if($(window).width() > 576) {
@@ -608,7 +608,7 @@ function animation12() {
             z: 11
           },200)
           .start(); 
-      }     
+      }
       controls.autoRotate = false;
       controls.enableDamping = true;
       setTimeout(() => {
