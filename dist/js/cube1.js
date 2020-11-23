@@ -5,7 +5,7 @@ const camera = new THREE.PerspectiveCamera(
   35, wrapper.offsetWidth / wrapper.offsetHeight,
   1, 1000
 );
-const renderer = new THREE.WebGLRenderer({ alpha: true });
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 renderer.setSize(wrapper.offsetWidth, wrapper.offsetHeight);
 renderer.setClearColor( 0xffffff, 0);
 wrapper.appendChild(renderer.domElement);
