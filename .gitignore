@@ -1,1 +1,4 @@
 node_modules/
+dist/components
+dist/css/components
+dist/css/layout
