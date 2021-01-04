@@ -1,4 +1,5 @@
 node_modules/
-dist/components
+# dist/components
+# dist/layout
 # dist/css/components
-dist/css/layout
+# dist/css/layout
