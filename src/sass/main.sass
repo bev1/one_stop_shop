@@ -1181,6 +1181,8 @@ section
       color: #1e4ea7
   &.consulting-1
     padding-top: 18px
+    .cubes
+      display: none
     .container
       background-repeat: no-repeat
       background-size: 96%
@@ -1195,6 +1197,21 @@ section
           padding-bottom: 100px
           .title-cube
             margin-left: 0
+      @media (max-width: 1400px)
+        background-image: url('../img/consulting_1-1.png') !important
+        background-size: cover
+        position: relative
+        .cubes
+          display: block
+          position: absolute
+          right: 0
+          bottom: -87px
+          width: 500px
+          img
+            width: 100%
+      @media (max-width: 1299px)
+        .cubes
+          bottom: -35px
       @media (max-width: 1280px)
         &
           background-size: 100% 100%
@@ -1202,10 +1219,15 @@ section
         &
           padding-bottom: 25px
           background-size: 100%
+      @media (max-width: 1024px)
+        .cubes
+          bottom: 0px
       @media (max-width: 992px)
         &
           .title-cube
             margin-top: -10px
+          .cubes
+            display: none
       @media (max-width: 768px)
         &
           .title-cube
@@ -2230,6 +2252,8 @@ section
 
   &.consulting-9
     padding-top: 28px
+    .cubes
+      display: none
     .title-cube
       margin-top: 11px
     h2
@@ -2258,8 +2282,23 @@ section
           padding-bottom: 100px
           .title-cube
             margin-left: 0
+      @media (max-width: 1400px)
+        background-image: url('../img/consulting_9-1.png') !important
+        background-size: cover
+        position: relative
+        .cubes
+          display: block
+          position: absolute
+          right: 0
+          bottom: -67px
+          width: 375px
+          img
+            width: 100%
       @media (max-width: 1100px)
         padding-bottom: 50px
+      @media (max-width: 1024px)
+        .cubes
+          display: none
       @media (max-width: 768px)
         &
           .title-cube
@@ -2267,6 +2306,7 @@ section
             margin-right: 15px
       @media (max-width: 450px)
         &
+          background-image: url('../img/consulting_9.png') !important
           background-position: 0 15px
           background-size: 100%
           padding-bottom: 50px
@@ -2489,6 +2529,9 @@ section
         max-width: 1805px
       @media (max-width:1300px)
         padding-bottom: 50px
+        background-size: auto
+      @media (max-width:992px)
+        background-size: 100%
 
   &.consulting-13
     padding-bottom: 120px
@@ -4588,6 +4631,8 @@ section
         max-width: 1465px
     h2
       margin-bottom: 33px
+      @media (max-width:1500px)
+        margin-bottom: 65px
       @media (max-width:1350px)
         margin-bottom: 75px
       @media (max-width:992px)
@@ -4679,10 +4724,14 @@ section
     padding-bottom: 75px
     @media (max-width: 1500px)
       background-position: 150%
+    @media (max-width: 1400px)
+      background-position: 190%
     @media (max-width: 1350px)
       background-position: 215%
       padding-top: 40px
       padding-bottom: 40px
+    @media (max-width: 1280px)
+      background-position: 230%
     @media (max-width: 1250px)
       background-position: 390%
     @media (max-width: 1199px)
@@ -5208,6 +5257,8 @@ section
       img
         @media (max-width: 1500px)
           margin-left: -190px
+        @media (max-width: 1400px)
+          margin-left: -150px
         @media (max-width: 991px)
           display: none
       p
@@ -5304,6 +5355,10 @@ section
     background-color: #fbfbfb
     padding-top: 72px
     padding-bottom: 122px
+    @media (max-width: 1366px)
+      background-position: -188px 301px
+    @media (max-width: 1200px)
+      background-position: -315px 301px
     @media (max-width: 991px)
       background-image: none !important
     @media (max-width: 768px)
@@ -5818,6 +5873,8 @@ section
               width: 700px
             @media (max-width: 1099px)
               width: 590px
+            @media (max-width: 1024px)
+              margin-left: -230px
             @media (max-width: 767px)
               width: 100%
               margin-left: -60px
