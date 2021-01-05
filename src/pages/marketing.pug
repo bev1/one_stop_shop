@@ -97,7 +97,7 @@ html(lang="ru")
                   br.d-block.d-sm-none
                   | Buying
                 a.cube-link.market.cube-link-3(href="#marketing-2") Content manegement
-                a.button.red.cube-button(href="#") START TODAY
+                a.button.red.cube-button(href="#form" data-toggle="modal" data-target="#form") START TODAY
                 #cube.market
         section#marketing-1.section.marketing-1.lazy(data-src="../img/marketing_1.png")
           .container
@@ -205,6 +205,29 @@ html(lang="ru")
                 .col-lg-4
                   img(src="img/clients-faces-2.png")
                   img(src="img/clients-faces.png")
+        .modal.form.marketing.fade(id="form" aria-hidden="true")
+          .modal-dialog
+            .modal-content
+              .modal-header
+                .container
+                  h5.modal-title C
+                    span ontact us
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-form.png" alt="close")
+              .modal-body
+                .main-info
+                  .container
+                    form
+                      .form-group
+                        input#name.form-control(type='text' required placeholder='Name person *')
+                      .form-group
+                        input#email.form-control(type='email' required placeholder='Email *')
+                      .form-group
+                        input#phone.form-control(type='tel' required placeholder='Phone *')
+                      .form-group
+                        textarea#msg.form-control(type='text' cols="30", rows="5" placeholder='Message')
+                      button(type="submit") SEND A REQUEST
 
       include layout/footer.pug
       script(src="js/jquery.min.js")

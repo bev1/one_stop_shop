@@ -103,7 +103,7 @@ html(lang="ru")
                 a.cube-link.legal.cube-link-2(href="#legal-2") IT
                 a.cube-link.legal.cube-link-3(href="#legal-3") Gambling
                 a.cube-link.legal.cube-link-4(href="#legal-5") Team of lawyers
-                a.button.red.cube-button(href="#") START TODAY
+                a.button.red.cube-button(href="#form" data-toggle="modal" data-target="#form") START TODAY
                 #cube
         section.section.legal-1
           .container
@@ -215,7 +215,7 @@ html(lang="ru")
               p Ready-made companies with payment 
                 br.d-none.d-lg-block
                 | licenses are available
-              a.button.red(href="#") START TODAY
+              a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
         section#legal-5.section.legal-5
           .container-fluid
             .row
@@ -266,7 +266,7 @@ html(lang="ru")
                   p.red LEGAL
                     br.d-none.d-lg-block
                     span SERVICES
-                  a.button.red(href="#") START TODAY
+                  a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
         section.section.legal-7
           .container
             .row
@@ -331,7 +331,30 @@ html(lang="ru")
               .col-lg-6.offset-lg-6
                 p.first Clients' tasks are above all. Legal support of business is not just work for us but rather a vocation and responsibility to the client. We maintain regular communication with clients, try to provide options for a variety of outcomes, and accompany clients with full commitment to the business.
                 p.bigger Expertise in international jurisprudence.
-                p Although our head office is in Israel, we regularly cooperate with lawyers from the USA, UK, Switzerland, Latvia, Cyprus, Lithuania, Malta, Liechtenstein, and other countries to solve legal problems for our clients. We are aware of the nuances of interaction with international lawyers, which allows us to provide services in the most high-quality and productive manner. You can't buy a residence permit in Europe. 
+                p Although our head office is in Israel, we regularly cooperate with lawyers from the USA, UK, Switzerland, Latvia, Cyprus, Lithuania, Malta, Liechtenstein, and other countries to solve legal problems for our clients. We are aware of the nuances of interaction with international lawyers, which allows us to provide services in the most high-quality and productive manner. You can't buy a residence permit in Europe.
+        .modal.form.legal.fade(id="form" aria-hidden="true")
+          .modal-dialog
+            .modal-content
+              .modal-header
+                .container
+                  h5.modal-title C
+                    span ontact us
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-form.png" alt="close")
+              .modal-body
+                .main-info
+                  .container
+                    form
+                      .form-group
+                        input#name.form-control(type='text' required placeholder='Name person *')
+                      .form-group
+                        input#email.form-control(type='email' required placeholder='Email *')
+                      .form-group
+                        input#phone.form-control(type='tel' required placeholder='Phone *')
+                      .form-group
+                        textarea#msg.form-control(type='text' cols="30", rows="5" placeholder='Message')
+                      button(type="submit") SEND A REQUEST
 
 
 

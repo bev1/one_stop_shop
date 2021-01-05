@@ -1356,4 +1356,109 @@
             @media (max-width: 1100px)
               font-size: 16px
               margin-top: 10px
-                  
+// Modal form
+
+.modal.form
+  z-index: 1051
+  .modal-body
+    &:after
+      width: 100%
+      height: 5px
+      top: auto
+      bottom: 0
+      left: 0
+      @media (max-width: 992px)
+        display: block
+  .modal-dialog
+    width: 500px
+    @media (max-width:575px)
+      width: auto      
+    .modal-header
+      padding-left: 0
+      padding-top: 40px
+      box-shadow: none
+      .modal-title
+        font-size: 36px
+        font-weight: 700
+        span
+          color: #151515
+        &:before
+          display: none
+      .close
+        position: absolute
+        top: 29px
+        right: 22px
+    .container
+      max-width: 390px !important
+      padding: 0
+      @media (max-width:575px)
+        padding: 15px
+    form
+      padding-top: 3px
+      padding-bottom: 58px
+      .form-group
+        margin-bottom: 23px
+        .form-control
+          border: none
+          border-radius: 0
+          border-bottom: 1px solid #cdcdcd
+          font-size: 18px
+          color: #7b7b7b
+          height: calc(1.5em + .75rem + 6px)
+        textarea
+          resize: none !important
+          height: auto !important
+      button
+        width: 100%
+        height: 67px
+        display: flex
+        align-items: center
+        justify-content: center
+        background-color: #cf093c
+        color: white
+        font-size: 24px
+        font-weight: 600
+        margin-top: 43px
+        border: none
+        outline: none
+        &:hover
+          opacity: .8
+  &.consulting
+    .modal-body
+      &:after
+        background-color: #1e4ea7
+    .modal-title
+      color: #1e4ea7
+  &.marketing
+    .modal-body
+      &:after
+        background-color: #cf093c
+    .modal-title
+      color: #cf093c
+  &.dev
+    .modal-body
+      &:after
+        background-color: #81ad00
+    .modal-title
+      color: #81ad00
+  &.crypto
+    .modal-body
+      &:after
+        background-color: #f1c405
+    .modal-title
+      color: #f1c405
+  &.legal
+    .modal-body
+      &:after
+        background-color: #8d385c
+    .modal-title
+      color: #8d385c
+  &.real
+    .modal-body
+      &:after
+        background-color: #8660ad
+    .modal-title
+      color: #8660ad
+
+.modal-backdrop:nth-child(even)
+    z-index: 1050 !important

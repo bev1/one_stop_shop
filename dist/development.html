@@ -68,7 +68,7 @@
 								<div class="text">Watch<br/>our trailer</div>
 								<div class="link-img"><img src="img/play_button.png" alt="play"/></div></a>
 						</div>
-						<div class="col-lg-6"><a class="cube-link dev cube-link-1" href="#development-2">Portfolio</a><a class="cube-link dev cube-link-2" href="#development-1">Skills</a><a class="cube-link dev cube-link-3" href="#development-1">Mobile App</a><a class="button red cube-button" href="#">START TODAY</a>
+						<div class="col-lg-6"><a class="cube-link dev cube-link-1" href="#development-2">Portfolio</a><a class="cube-link dev cube-link-2" href="#development-1">Skills</a><a class="cube-link dev cube-link-3" href="#development-1">Mobile App</a><a class="button red cube-button" href="#form" data-toggle="modal" data-target="#form">START TODAY</a>
 							<div id="cube"></div>
 						</div>
 					</div>
@@ -218,6 +218,39 @@
 					</div>
 				</div>
 			</section>
+			<div class="modal form dev fade" id="form" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<div class="container">
+								<h5 class="modal-title">C<span>ontact us</span></h5>
+								<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="close-icon" aria-hidden="true"><img class="lazy" data-src="img/close-form.png" alt="close"/></span></button>
+							</div>
+						</div>
+						<div class="modal-body">
+							<div class="main-info">
+								<div class="container">
+									<form>
+										<div class="form-group">
+											<input class="form-control" id="name" type="text" required="required" placeholder="Name person *"/>
+										</div>
+										<div class="form-group">
+											<input class="form-control" id="email" type="email" required="required" placeholder="Email *"/>
+										</div>
+										<div class="form-group">
+											<input class="form-control" id="phone" type="tel" required="required" placeholder="Phone *"/>
+										</div>
+										<div class="form-group">
+											<textarea class="form-control" id="msg" type="text" cols="30" rows="5" placeholder="Message"></textarea>
+										</div>
+										<button type="submit">SEND A REQUEST</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>
 		<footer class="footer">
 			<div class="container">

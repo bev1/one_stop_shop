@@ -101,7 +101,7 @@ html(lang="ru")
                   | Permit
                 a.cube-link.real.cube-link-2(href="#real-4") Jurisdictions
                 a.cube-link.real.cube-link-3(href="#real-7") Fiduciary management
-                a.button.red.cube-button(href="#") START TODAY
+                a.button.red.cube-button(href="#form" data-toggle="modal" data-target="#form") START TODAY
                 #cube
         section#real-1.section.real-1.lazy(data-src="../img/real-1.png")
           .container
@@ -494,6 +494,29 @@ html(lang="ru")
                 li If necessary, we will register you as a taxpayer when renting the property, prepare a tax return, and help you to pay this tax correctly.
                 li We will solve any legal issues and disputes, if any.
                 li We will insure your property in case of unforeseen or force majeure damage.
+        .modal.form.real.fade(id="form" aria-hidden="true")
+          .modal-dialog
+            .modal-content
+              .modal-header
+                .container
+                  h5.modal-title C
+                    span ontact us
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-form.png" alt="close")
+              .modal-body
+                .main-info
+                  .container
+                    form
+                      .form-group
+                        input#name.form-control(type='text' required placeholder='Name person *')
+                      .form-group
+                        input#email.form-control(type='email' required placeholder='Email *')
+                      .form-group
+                        input#phone.form-control(type='tel' required placeholder='Phone *')
+                      .form-group
+                        textarea#msg.form-control(type='text' cols="30", rows="5" placeholder='Message')
+                      button(type="submit") SEND A REQUEST
 
 
 

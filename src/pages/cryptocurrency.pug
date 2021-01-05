@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 html(lang="ru")
     head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no")
-        title Document
-        link(rel="stylesheet", href="css/bootstrap-reboot.min.css")
-        link(rel="stylesheet preload", as="style" href="css/bootstrap.min.css")
-        link(rel="stylesheet", href="css/aos.css")
-        link(rel="stylesheet preload", as="style" href="css/main.css")
-        link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")
+      meta(charset="UTF-8")
+      meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no")
+      title Document
+      link(rel="stylesheet", href="css/bootstrap-reboot.min.css")
+      link(rel="stylesheet preload", as="style" href="css/bootstrap.min.css")
+      link(rel="stylesheet", href="css/aos.css")
+      link(rel="stylesheet preload", as="style" href="css/main.css")
+      link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")
     body
       header.header
         .container
@@ -102,7 +102,7 @@ html(lang="ru")
                 a.cube-link.crypto.cube-link-1(href="#cryptocurrency-1") Trading
                 a.cube-link.crypto.cube-link-2(href="#cryptocurrency-2") About
                 a.cube-link.crypto.cube-link-3(href="#cryptocurrency-3") Currency
-                a.button.red.cube-button(href="#") START TODAY
+                a.button.red.cube-button(href="#form" data-toggle="modal" data-target="#form") START TODAY
                 #cube
         section#cryptocurrency-1.section.cryptocurrency-1
           .container
@@ -197,6 +197,29 @@ html(lang="ru")
                       img(src="img/cryptocurrency-3-list-icon-2.png")
                   .text
                     p Acalista  проконсультирует, проанализирует, подберет юрисдикцию специально под ваш проект и займется правовым сопровождением блокчейн проектов для достижения наилучших результатов.
+        .modal.form.crypto.fade(id="form" aria-hidden="true")
+          .modal-dialog
+            .modal-content
+              .modal-header
+                .container
+                  h5.modal-title C
+                    span ontact us
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-form.png" alt="close")
+              .modal-body
+                .main-info
+                  .container
+                    form
+                      .form-group
+                        input#name.form-control(type='text' required placeholder='Name person *')
+                      .form-group
+                        input#email.form-control(type='email' required placeholder='Email *')
+                      .form-group
+                        input#phone.form-control(type='tel' required placeholder='Phone *')
+                      .form-group
+                        textarea#msg.form-control(type='text' cols="30", rows="5" placeholder='Message')
+                      button(type="submit") SEND A REQUEST
                     
       include layout/footer.pug
       script(src="js/jquery.min.js")
