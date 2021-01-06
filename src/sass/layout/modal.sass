@@ -712,11 +712,14 @@
       .modal-section
         &.list
           margin-top: 0
-          background-position: right -168px
+          background-position: 800px !important
+          background-size: cover
           padding-bottom: 50px
           position: relative
           @media (max-width: 1400px)
-            background-position: 450px -168px
+            background-position: 600px !important
+          @media (max-width: 1100px)
+            background-position: 450px !important
           &::after
             content: ''
             width: 38%
