@@ -1,4 +1,4 @@
-Use npm "gulp" command to start
+Use "gulp" command to start
 
 node -v 10.22.0
 
