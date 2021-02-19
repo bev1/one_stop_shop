@@ -1,4 +1,5 @@
-Use npm run gulp to start
+Use npm "gulp" command to start
+
 node -v 10.22.0
 
 Technologies: Pug, Sass, jQuery, WebGL (Three.js)
