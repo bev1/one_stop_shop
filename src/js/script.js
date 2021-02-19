@@ -154,10 +154,24 @@ $( document ).ready(function() {
     });
   }
 
-  $('.modal').on("hidden.bs.modal", function (e) { 
-    if ($('.modal:visible').length) { 
-        $('body').addClass('modal-open');
-    }
-});
+  $('.modal').on("hidden.bs.modal", function (e) {
+      if ($('.modal:visible').length) { 
+          $('body').addClass('modal-open');
+      }
+  });
+
+  $('#form').on("shown.bs.modal", function (e) {
+        if($('.modal-backdrop').length > 1) {
+          $('.modal-backdrop').first().css('z-index', '1050')
+        }  
+    console.log($('.modal-backdrop').first())
+  });
+
+  $('#form').on("hidden.bs.modal", function (e) {
+        if($('.modal-backdrop').length < 2) {
+          $('.modal-backdrop').first().css('z-index', '1040')
+        }  
+    console.log($('.modal-backdrop').first())
+  });
 
 });
