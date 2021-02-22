@@ -708,7 +708,7 @@ function animation12() {
       //     $(this).fadeIn(1000)
       //   })        
       // }, 100);
-      animation1()
+      animation1();
     })
     .start()
 }
@@ -946,12 +946,6 @@ function onMouseClick(event) {
     if(targetLink === 'link4') {
       $('#form').modal('show');
     }
-    console.log("onMouseMove -> intersects[0]", intersects[0].object.name)
-    // intersects[ 0 ].object.rotation.x = 10
-    // selectedCubeName = intersects[0].object.name;
-    // selectedCubeSide = Math.floor( intersects[0].faceIndex / 2 );
-    // if(intersects[0].object.name === 'cube10') {
-    //   if
     }
 }
 
