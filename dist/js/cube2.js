@@ -347,7 +347,6 @@ function findCubes(cubesNames, name) {
 
 
 function animation1() {
-  controls.enableDamping = false;
   findCubes(['cube10', 'cube15', 'cube24', 'cube8', 'cube1', 'cube5', 'cube13', 'cube19', 'cube22'], 'group1');
   let group = scene.children.filter(el => el.name === 'group1');
   if(group.length > 1) {
