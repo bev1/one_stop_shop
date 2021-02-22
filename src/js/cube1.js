@@ -13,7 +13,6 @@ const controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.autoRotate = true;
 controls.autoRotateSpeed = 5;
-// camera.position.set( 5, -3, 8 );
 if($(window).width() > 576) {
   camera.position.set( 5, -3, 8 );
 } else {
@@ -912,7 +911,7 @@ $('.cube-button').mouseenter(() => {
   setTimeout(() => {
     hideCube('cube24')    
   }, 300);
-})
+});
 
 window.addEventListener( 'pointerdown', onMouseClick, false );
 
@@ -946,7 +945,7 @@ function onMouseClick(event) {
     if(targetLink === 'link4') {
       $('#form').modal('show');
     }
-    }
+  }
 }
 
 

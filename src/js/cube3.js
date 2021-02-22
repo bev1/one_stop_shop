@@ -714,7 +714,7 @@ function onMouseClick(event) {
     if(targetLink === 'link4') {
       $('#form').modal('show');
     }
-    }
+  }
 }
 
 function animate() {
