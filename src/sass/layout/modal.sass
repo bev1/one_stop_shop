@@ -11,6 +11,7 @@
       padding-left: 50px
     .close
       padding: 5px
+      z-index: 10
     .modal-title
       color: #151515
       font-weight: 600
@@ -1443,6 +1444,11 @@
         background-color: #cf093c
     .modal-title
       color: #cf093c
+    &.info
+      .modal-body
+        padding-top: 0
+      .modal-header
+        padding-top: 0
   &.dev
     .modal-body
       &:after
