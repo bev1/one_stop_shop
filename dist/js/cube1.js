@@ -41,7 +41,24 @@ function onWindowResize() {
   renderer.setSize( wrapper.offsetWidth, wrapper.offsetHeight );
 }
 
-const myText1 = new SpriteText('Счета →', '0.23', '#1e4ea7');
+const lang = $(wrapper).attr('data-lang');
+
+let myText1, myText2, myText3, button;
+
+if(lang === 'en') {
+  myText1 = new SpriteText('Accounts →', '0.23', '#1e4ea7');
+  myText2 = new SpriteText('Licenses →', '0.23', '#1e4ea7');
+  myText3 = new SpriteText('Services →', '0.23', '#1e4ea7');
+  button = new SpriteText('START TODAY', '0.2', '#cf093c');
+}
+
+if(lang === 'ru') {
+  myText1 = new SpriteText('Счета →', '0.23', '#1e4ea7'); 
+  myText2 = new SpriteText('Лицензии →', '0.23', '#1e4ea7');
+  myText3 = new SpriteText('Услуги →', '0.23', '#1e4ea7');
+  button = new SpriteText('НАЧНИТЕ СЕЙЧАС', '0.2', '#cf093c');
+}
+
 myText1.strokeWidth = 0.15;
 myText1.strokeColor = '#1e4ea7';
 myText1.name = 'link1';
@@ -50,7 +67,6 @@ myText1.position.y = 0;
 myText1.position.z = 1;
 // scene.add(myText1);
 
-const myText2 = new SpriteText('Лицензии →', '0.23', '#1e4ea7');
 myText2.strokeColor = '#1e4ea7';
 myText2.strokeWidth = 0.15;
 myText2.name = 'link2';
@@ -59,7 +75,6 @@ myText2.position.y = -1;
 myText2.position.z = 0.5;
 // scene.add(myText2);
 
-const myText3 = new SpriteText('Услуги →', '0.23', '#1e4ea7');
 myText3.strokeColor = '#1e4ea7';
 myText3.strokeWidth = 0.15;
 myText3.name = 'link3';
@@ -68,7 +83,6 @@ myText3.position.y = 1;
 myText3.position.z = 0;
 // scene.add(myText3);
 
-const button = new SpriteText('START TODAY', '0.2', '#cf093c');
 button.strokeColor = '#cf093c';
 button.strokeWidth = 0.2;
 button.position.x = 1.5;
