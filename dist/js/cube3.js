@@ -39,9 +39,27 @@ function onWindowResize() {
   camera.aspect = wrapper.offsetWidth / wrapper.offsetHeight;
   camera.updateProjectionMatrix();
   renderer.setSize( wrapper.offsetWidth, wrapper.offsetHeight );
+};
+
+const lang = $(wrapper).attr('data-lang');
+
+let myText1, myText2, myText3, button;
+
+if(lang === 'en') {
+  myText1 = new SpriteText('Skills →', '0.23', '#81ad00');
+  myText2 = new SpriteText('Mobile App →', '0.23', '#81ad00');
+  myText3 = new SpriteText('Portfolio →', '0.23', '#81ad00');
+  button = new SpriteText('START TODAY', '0.2', '#cf093c');
 }
 
-const myText1 = new SpriteText('Skills →', '0.23', '#81ad00');
+if(lang === 'ru') {
+  myText1 = new SpriteText('Возможности →', '0.23', '#81ad00'); 
+  myText2 = new SpriteText('Мобильные приложения →', '0.23', '#81ad00');
+  myText3 = new SpriteText('Портфолио →', '0.23', '#81ad00');
+  button = new SpriteText('НАЧНИТЕ СЕЙЧАС', '0.2', '#cf093c');
+}
+
+// const myText1 = new SpriteText('Skills →', '0.23', '#81ad00');
 myText1.strokeWidth = 0.15;
 myText1.strokeColor = '#81ad00';
 myText1.name = 'link1';
@@ -49,7 +67,7 @@ myText1.position.x = -0.8;
 myText1.position.y = 0;
 myText1.position.z = 1;
 
-const myText2 = new SpriteText('Mobile App →', '0.23', '#81ad00');
+// const myText2 = new SpriteText('Mobile App →', '0.23', '#81ad00');
 myText2.strokeColor = '#81ad00';
 myText2.strokeWidth = 0.15;
 myText2.name = 'link2';
@@ -57,7 +75,7 @@ myText2.position.x = -0.3;
 myText2.position.y = -1;
 myText2.position.z = 0.5;
 
-const myText3 = new SpriteText('Portfolio →', '0.23', '#81ad00');
+// const myText3 = new SpriteText('Portfolio →', '0.23', '#81ad00');
 myText3.strokeColor = '#81ad00';
 myText3.strokeWidth = 0.15;
 myText3.name = 'link3';
@@ -65,7 +83,7 @@ myText3.position.x = 0.7;
 myText3.position.y = 1;
 myText3.position.z = 0;
 
-const button = new SpriteText('START TODAY', '0.2', '#cf093c');
+// const button = new SpriteText('START TODAY', '0.2', '#cf093c');
 button.strokeColor = '#cf093c';
 button.strokeWidth = 0.2;
 button.position.x = 1.5;
