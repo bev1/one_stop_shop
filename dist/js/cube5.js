@@ -40,9 +40,27 @@ function onWindowResize() {
   camera.aspect = wrapper.offsetWidth / wrapper.offsetHeight;
   camera.updateProjectionMatrix();
   renderer.setSize( wrapper.offsetWidth, wrapper.offsetHeight );
+};
+
+const lang = $(wrapper).attr('data-lang');
+
+let myText1, myText2, myText3, button;
+
+if(lang === 'en') {
+  myText1 = new SpriteText('Lead Generation →', '0.3', '#cf093c');
+  myText2 = new SpriteText('Media Buying →', '0.3', '#cf093c');
+  myText3 = new SpriteText('Content manegement →', '0.3', '#cf093c');
+  button = new SpriteText('START TODAY', '0.28', '#cf093c');
 }
 
-const myText1 = new SpriteText('Lead Generation →', '0.3', '#cf093c');
+if(lang === 'ru') {
+  myText1 = new SpriteText('Лидогенерация →', '0.3', '#cf093c'); 
+  myText2 = new SpriteText('Покупка рекламы →', '0.3', '#cf093c');
+  myText3 = new SpriteText('Управление контентом →', '0.3', '#cf093c');
+  button = new SpriteText('НАЧНИТЕ СЕЙЧАС', '0.25', '#cf093c');
+}
+
+// const myText1 = new SpriteText('Lead Generation →', '0.3', '#cf093c');
 myText1.strokeWidth = 0.15;
 myText1.strokeColor = '#cf093c';
 myText1.name = 'link1';
@@ -50,7 +68,7 @@ myText1.position.x = 0;
 myText1.position.y = 0.7;
 myText1.position.z = 0;
 
-const myText2 = new SpriteText('Media Buying →', '0.3', '#cf093c');
+// const myText2 = new SpriteText('Media Buying →', '0.3', '#cf093c');
 myText2.strokeColor = '#cf093c';
 myText2.strokeWidth = 0.15;
 myText2.name = 'link2';
@@ -58,7 +76,7 @@ myText2.position.x = -0.5;
 myText2.position.y = 0.5;
 myText2.position.z = 1.5;
 
-const myText3 = new SpriteText('Content manegement →', '0.3', '#cf093c');
+// const myText3 = new SpriteText('Content manegement →', '0.3', '#cf093c');
 myText3.strokeColor = '#cf093c';
 myText3.strokeWidth = 0.15;
 myText3.name = 'link3';
@@ -66,7 +84,7 @@ myText3.position.x = -1;
 myText3.position.y = -1;
 myText3.position.z = 1;
 
-const button = new SpriteText('START TODAY', '0.28', '#cf093c');
+// const button = new SpriteText('START TODAY', '0.28', '#cf093c');
 button.strokeColor = '#cf093c';
 button.strokeWidth = 0.2;
 button.position.x = 1.5;
