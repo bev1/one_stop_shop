@@ -39,9 +39,27 @@ function onWindowResize() {
   camera.aspect = wrapper.offsetWidth / wrapper.offsetHeight;
   camera.updateProjectionMatrix();
   renderer.setSize( wrapper.offsetWidth, wrapper.offsetHeight );
+};
+
+const lang = $(wrapper).attr('data-lang');
+
+let myText1, myText2, myText3, button;
+
+if(lang === 'en') {
+  myText1 = new SpriteText('Jurisdictions →', '0.23', '#8660ad');
+  myText2 = new SpriteText('Fiduciary management →', '0.23', '#8660ad');
+  myText3 = new SpriteText('Obtaining a Residence Permit →', '0.23', '#8660ad');
+  button = new SpriteText('START TODAY', '0.2', '#cf093c');
 }
 
-const myText1 = new SpriteText('Jurisdictions →', '0.23', '#8660ad');
+if(lang === 'ru') {
+  myText1 = new SpriteText('Юрисдикции →', '0.23', '#8660ad'); 
+  myText2 = new SpriteText('Фидуциарное управление →', '0.23', '#8660ad');
+  myText3 = new SpriteText('Получение вида на жительство →', '0.23', '#8660ad');
+  button = new SpriteText('НАЧНИТЕ СЕЙЧАС', '0.2', '#cf093c');
+}
+
+// const myText1 = new SpriteText('Jurisdictions →', '0.23', '#8660ad');
 myText1.strokeWidth = 0.15;
 myText1.strokeColor = '#8660ad';
 myText1.name = 'link1';
@@ -49,7 +67,7 @@ myText1.position.x = -1.3;
 myText1.position.y = 0;
 myText1.position.z = 1;
 
-const myText2 = new SpriteText('Fiduciary management →', '0.23', '#8660ad');
+// const myText2 = new SpriteText('Fiduciary management →', '0.23', '#8660ad');
 myText2.strokeColor = '#8660ad';
 myText2.strokeWidth = 0.15;
 myText2.name = 'link2';
@@ -57,7 +75,7 @@ myText2.position.x = -0.3;
 myText2.position.y = -1;
 myText2.position.z = 0.5;
 
-const myText3 = new SpriteText('Obtaining a Residence Permit →', '0.23', '#8660ad');
+// const myText3 = new SpriteText('Obtaining a Residence Permit →', '0.23', '#8660ad');
 myText3.strokeColor = '#8660ad';
 myText3.strokeWidth = 0.15;
 myText3.name = 'link3';
@@ -65,7 +83,7 @@ myText3.position.x = 0.7;
 myText3.position.y = 1;
 myText3.position.z = 0;
 
-const button = new SpriteText('START TODAY', '0.2', '#cf093c');
+// const button = new SpriteText('START TODAY', '0.2', '#cf093c');
 button.strokeColor = '#cf093c';
 button.strokeWidth = 0.2;
 button.position.x = 1.5;
