@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ar", dir="rtl")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no")
-        title Consulting
+        title الاستشارة
         link(rel="stylesheet", href="css/bootstrap-reboot.min.css")
         link(rel="stylesheet preload", as="style" href="css/bootstrap.min.css")
         link(rel="stylesheet", href="css/aos.css")
         link(rel="stylesheet preload", as="style" href="css/main.css")
-    body
+        link(rel="stylesheet preload", as="style" href="css/rtl.css")
+    body.rtl
       header.header
         .container
           .header-wrap
@@ -23,7 +24,7 @@ html(lang="en")
                   .number 00
               li
                 a.active(href="consulting.html")
-                  .text Consulting
+                  .text الاستشارة
                   .line
                   .number 01
               li
@@ -53,11 +54,11 @@ html(lang="en")
                   .number 06
             .langs
               .current
-                span EN
+                span AR
                 .arrow
               .list
+                a(href="./consulting.html") EN
                 a(href="./consulting-ru.html") RU
-                a(href="./consulting-ar.html") AR
             button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation")
               span(class="line line-1")
               span(class="line line-2")
@@ -69,17 +70,16 @@ html(lang="en")
               .col-lg-6                  
                 h1.title
                   span(data-aos="fade" data-aos-delay="100") 01
-                  span.text-animate
-                    span C
-                    span o
-                    span n
-                    span s
-                    span u
-                    span l
-                    span t
-                    span i
-                    span n
-                    span g
+                  span.text-animate الاستشارة
+                    //- span ا
+                    //- span ل
+                    //- span ا
+                    //- span س
+                    //- span ت
+                    //- span ش
+                    //- span ا
+                    //- span ر
+                    //- span ة
                 .sub-title
                   .arrow(data-aos="fade-right" data-aos-delay="1000")
                     img(src="img/blue_arrow.png", alt="arrow")
@@ -87,9 +87,7 @@ html(lang="en")
                     br
                     .name
                 a.video-link(href="index.html")
-                  .text Watch
-                    br
-                    | our trailer
+                  .text مشاهدة المقدمة الخاصة بنا
                   .link-img
                     img(src="img/play_button.png", alt="play")
               .col-lg-6.cube-wrapper
@@ -98,775 +96,773 @@ html(lang="en")
                 //-   | компаний
                 //- a.cube-link.cube-link-2(href="#consulting-10") Счета
                 //- a.cube-link.cube-link-3(href="#consulting-7") Лицензии
-                //- a.button.red.cube-button(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                //- a.button.red.cube-button(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
                 #cube(data-lang="en")
         section.section.consulting-1#consulting-1
           div(data-src="../img/consulting_1.png").container.lazy
             .section-title
               .title-cube
                 img.lazy(data-src="img/stamp.png")
-                p Registrations
-              h2 Company registration 
-                br
-                span services
+                p التسجيلات
+              h2 خدمات تسجيل الشركة
             .row
               .col-xl-6
                 ul.check-list.left
-                  li(data-aos="fade-right" data-aos-delay="100") Registration and provision with high-quality services on a global basis, including jurisdictions in the offshore territories;
-                  li(data-aos="fade-right" data-aos-delay="150") Secretarial aid for companies;
-                  li(data-aos="fade-right" data-aos-delay="200") Accounting services such as bookkeeping, report preparation, audits, as well as reporting to the tax offices;
-                  li(data-aos="fade-right" data-aos-delay="250") Provision with domicile and legal seat;
-                  li(data-aos="fade-right" data-aos-delay="300") Certifying of company documents (notarization and apostilization);
+                  li(data-aos="fade-right" data-aos-delay="100") تسجيل وتوفير خدمات عالية الجودة على أساس عالمي، بما في ذلك السلطات القضائية في الأراضي الخارجية (الاوفشور)؛
+                  li(data-aos="fade-right" data-aos-delay="150") مساعدة سكرتارية للشركات؛
+                  li(data-aos="fade-right" data-aos-delay="200") خدمات محاسبة مثل مسك الدفاتر، إعداد التقارير، عمليات التدقيق، وكذلك التقرير عن المكاتب الضريبية؛
+                  li(data-aos="fade-right" data-aos-delay="250") توفير موطن ومقعد قانوني؛
+                  li(data-aos="fade-right" data-aos-delay="300") التصديق على وثائق الشركة (التوثيق والختم)؛
               .col-xl-6
                 ul.check-list.top
-                  li(data-aos="fade-right" data-aos-delay="100") Expert preparation of the necessary documents, including agreements, articles and memorandums of association and others;
-                  li(data-aos="fade-right" data-aos-delay="150") Assistance in obtaining approvals in the offshore territories;
-                  li(data-aos="fade-right" data-aos-delay="200") High-quality local service – partner, director, shareholder;
-                  li(data-aos="fade-right" data-aos-delay="250") Bank and merchant accounts opening, payment systems integration;
-                  li(data-aos="fade-right" data-aos-delay="300") Obtaining financial, Forex, EML, gaming licenses;
-                  li(data-aos="fade-right" data-aos-delay="350") And a number of other services.
+                  li(data-aos="fade-right" data-aos-delay="100") إعداد الخبراء للوثائق اللازمة، بما في ذلك الاتفاقات والمقالات ومذكرات الجمعيات وغيرها؛
+                  li(data-aos="fade-right" data-aos-delay="150") المساعدة في الحصول على الموافقات في الأراضي الخارجية (الاوفشور)؛
+                  li(data-aos="fade-right" data-aos-delay="200") الخدمة المحلية عالية الجودة - شريك، مدير، مساهم؛
+                  li(data-aos="fade-right" data-aos-delay="250") افتتاح حسابات البنك والتاجر، تكامل أنظمة الدفع؛
+                  li(data-aos="fade-right" data-aos-delay="300") الحصول على تراخيص المالية، الفوركس، EML، الألعاب؛
+                  li(data-aos="fade-right" data-aos-delay="350") وعدد من الخدمات الأخرى.
             .cubes
               img.lazy(data-src="../img/consulting_1-2.png")
 
         section.section.consulting-2
           .container
-            h3.letter Jurisdictions
+            h3.letter السلطات القضائية
             .tabs
               ul.nav
                 li.nav-item
-                  a(href="#content1" data-toggle="tab").nav-link.active Offshore jurisdictions
+                  a(href="#content1" data-toggle="tab").nav-link.active السلطات القضائية الخارجية (الاوفشور)؛
                 li.nav-item
-                  a(href="#content2" data-toggle="tab").nav-link Low-tax jurisdictions
+                  a(href="#content2" data-toggle="tab").nav-link اختصاصات منخفضة الضرائب؛
                 li.nav-item
-                  a(href="#content3" data-toggle="tab").nav-link European jurisdictions
+                  a(href="#content3" data-toggle="tab").nav-link السلطات القضائية الأوروبية؛
                 li.nav-item
-                  a(href="#content4" data-toggle="tab").nav-link Jurisdictions in Asia
+                  a(href="#content4" data-toggle="tab").nav-link اختصاصات في آسيا؛
                 li.nav-item
-                  a(href="#content5" data-toggle="tab").nav-link Jurisdictions in North and South America
+                  a(href="#content5" data-toggle="tab").nav-link اختصاصات في أمريكا الشمالية والجنوبية؛
                 li.nav-item
-                  a(href="#content6" data-toggle="tab").nav-link Jurisdictions in Africa
+                  a(href="#content6" data-toggle="tab").nav-link الاختصاصات في أفريقيا؛
                 li.nav-item
-                  a(href="#content7" data-toggle="tab").nav-link Jurisdictions in Australia and others contries in Oceania
+                  a(href="#content7" data-toggle="tab").nav-link السلطات القضائية في أستراليا ودول أخرى في أوقيانوسيا.
           div(data-src="../img/map.png").tab-content.lazy
             .container
               div.tab-pane.fade.show.active#content1
                 .table
                   .row
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Anguilla
+                      .table-item أنغيلا
                         a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
                           img.lazy(data-src="../img/link.png")
-                      .table-item BVI
+                      .table-item جزر بريطانيا العذراء
                         a.link(href="#modalBVI" data-toggle="modal" data-target="#modalBVI")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Dominica
+                      .table-item دومينيكا
                         a.link(href="#modalDominica" data-toggle="modal" data-target="#modalDominica")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Mauritius
-                      .table-item Nauru
+                      .table-item موريشيوس
+                      .table-item ناورو
                         a.link(href="#modalNauru" data-toggle="modal" data-target="#modalNauru")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Samoa
+                      .table-item ساموا
                         a.link(href="#modalSamoa" data-toggle="modal" data-target="#modalSamoa")
                           img.lazy(data-src="../img/link.png")
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Antigua
+                      .table-item أنتيغوا
                         a.link(href="#modalAntigua" data-toggle="modal" data-target="#modalAntigua")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Vanuatu
+                      .table-item فانواتو
                         a.link(href="#modalVanuatu" data-toggle="modal" data-target="#modalVanuatu")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Cayman islands
-                      .table-item Madeira
-                      .table-item St. Kitts&Nevis
-                      .table-item San Marino
+                      .table-item جزر كايمان
+                      .table-item الماديرا
+                      .table-item سانت كيتس ونيفيس
+                      .table-item سان مارينو
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Aruba
+                      .table-item أروبا
                         a.link(href="#modalAruba" data-toggle="modal" data-target="#modalAruba")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Guernsey
+                      .table-item غيرنسي
                         a.link(href="#modalGuernsey" data-toggle="modal" data-target="#modalGuernsey")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Costa Rica
-                      .table-item Macau
-                      .table-item Niue
+                      .table-item كوستا ريكا
+                      .table-item ماكاو
+                      .table-item نيوي
                         a.link(href="#modalNiue" data-toggle="modal" data-target="#modalNiue")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Sark
+                      .table-item سارك
                         a.link(href="#modalSark" data-toggle="modal" data-target="#modalSark")
                           img.lazy(data-src="../img/link.png")
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Bahamas
+                      .table-item جزر البهاما
                         a.link(href="#modalBahamas" data-toggle="modal" data-target="#modalBahamas")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Gibraltar
+                      .table-item جبل طارق
                         a.link(href="#modalGibraltar" data-toggle="modal" data-target="#modalGibraltar")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Curacao
-                      .table-item Malta
+                      .table-item كوراكاو
+                      .table-item مالطا
                         a.link(href="#modalMalta" data-toggle="modal" data-target="#modalMalta")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Isle Of Man
-                      .table-item Saint Lucia
+                      .table-item جزيرة آيل أوف مان
+                      .table-item سانت لوسيا
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Barbados
+                      .table-item بربادوس
                         a.link(href="#modalBarbados" data-toggle="modal" data-target="#modalBarbados")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Hong Kong
+                      .table-item هونج كونج
                         a.link(href="#modalHongKong" data-toggle="modal" data-target="#modalHongKong")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Labuan
+                      .table-item لابوان
                         a.link(href="#modalLabuan" data-toggle="modal" data-target="#modalLabuan")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Marshall Islands
+                      .table-item جزر مارشال
                         a.link(href="#modalMarshall" data-toggle="modal" data-target="#modalMarshall")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Cook Islands
-                      .table-item Singapore
+                      .table-item جزر كوك
+                      .table-item سنغافورة
                         a.link(href="#modalSingapore" data-toggle="modal" data-target="#modalSingapore")
                           img.lazy(data-src="../img/link.png")
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Belize
+                      .table-item بليز
                         a.link(href="#modalBelize" data-toggle="modal" data-target="#modalBelize")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Jersey
+                      .table-item جيرسي
                         a.link(href="#modalJersey" data-toggle="modal" data-target="#modalJersey")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Liberia
-                      .table-item Monaco
+                      .table-item ليبيريا
+                      .table-item موناكو
                         a.link(href="#modalMonaco" data-toggle="modal" data-target="#modalMonaco")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Panama
+                      .table-item بنما
                         a.link(href="#modalPanama" data-toggle="modal" data-target="#modalPanama")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Turks & Caicos
+                      .table-item تركس وكايكوس
                 a.map-dot.d-flex.align-items-center.Anguilla(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
                   .dot
                   .name
                     span 1.
-                    span Anguilla
+                    span أنغيلا
                 a.map-dot.d-flex.align-items-center.BVI(href="#modalBVI" data-toggle="modal" data-target="#modalBVI")
                   .dot
                   .name
                     span 2.
-                    span BVI
+                    span جزر بريطانيا العذراء
                 a.map-dot.d-flex.align-items-center.Dominica(href="#modalDominica" data-toggle="modal" data-target="#modalDominica")
                   .dot
                   .name
                     span 3.
-                    span Dominica
+                    span دومينيكا
                 a.map-dot.d-flex.align-items-center.Nauru(href="#modalNauru" data-toggle="modal" data-target="#modalNauru")
                   .dot
                   .name
                     span 4.
-                    span Nauru
+                    span ناورو
                 a.map-dot.d-flex.align-items-center.Samoa(href="#modalSamoa" data-toggle="modal" data-target="#modalSamoa")
                   .dot
                   .name
                     span 5.
-                    span Samoa
+                    span ساموا
                 a.map-dot.d-flex.align-items-center.Antigua(href="#modalAntigua" data-toggle="modal" data-target="#modalAntigua")
                   .dot
                   .name
                     span 6.
-                    span Antigua
+                    span أنتيغوا
                 a.map-dot.d-flex.align-items-center.Vanuatu(href="#modalVanuatu" data-toggle="modal" data-target="#modalVanuatu")
                   .dot
                   .name
                     span 7.
-                    span Vanuatu
+                    span فانواتو
                 a.map-dot.d-flex.align-items-center.Aruba(href="#modalAruba" data-toggle="modal" data-target="#modalAruba")
                   .dot
                   .name
                     span 8.
-                    span Aruba
+                    span أروبا
                 a.map-dot.d-flex.align-items-center.Guernsey(href="#modalGuernsey" data-toggle="modal" data-target="#modalGuernsey")
                   .dot
                   .name
                     span 9.
-                    span Guernsey
+                    span غيرنسي
                 a.map-dot.d-flex.align-items-center.Niue(href="#modalNiue" data-toggle="modal" data-target="#modalNiue")
                   .dot
                   .name
                     span 10.
-                    span Niue
+                    span نيوي
                 a.map-dot.d-flex.align-items-center.Sark(href="#modalSark" data-toggle="modal" data-target="#modalSark")
                   .dot
                   .name
                     span 11.
-                    span Sark
+                    span سارك
                 a.map-dot.d-flex.align-items-center.Bahamas(href="#modalBahamas" data-toggle="modal" data-target="#modalBahamas")
                   .dot
                   .name
                     span 12.
-                    span Bahamas
+                    span جزر البهاما
                 a.map-dot.d-flex.align-items-center.Gibraltar(href="#modalGibraltar" data-toggle="modal" data-target="#modalGibraltar")
                   .dot
                   .name
                     span 13.
-                    span Gibraltar
+                    span جبل طارق
                 a.map-dot.d-flex.align-items-center.Malta(href="#modalMalta" data-toggle="modal" data-target="#modalMalta")
                   .dot
                   .name
                     span 14.
-                    span Malta
+                    span مالطا
                 a.map-dot.d-flex.align-items-center.Barbados(href="#modalBarbados" data-toggle="modal" data-target="#modalBarbados")
                   .dot
                   .name
                     span 15.
-                    span Barbados
+                    span بربادوس
                 a.map-dot.d-flex.align-items-center.HongKong(href="#modalHongKong" data-toggle="modal" data-target="#modalHongKong")
                   .dot
                   .name
                     span 16.
-                    span Hong Kong
+                    span هونج كونج
                 a.map-dot.d-flex.align-items-center.Labuan(href="#modalLabuan" data-toggle="modal" data-target="#modalLabuan")
                   .dot
                   .name
                     span 17.
-                    span Labuan
+                    span لابوان
                 a.map-dot.d-flex.align-items-center.Marshall(href="#modalMarshall" data-toggle="modal" data-target="#modalMarshall")
                   .name
                     span 18.
-                    span Marshall Islands
+                    span جزر مارشال
                   .dot
                 a.map-dot.d-flex.align-items-center.Singapore(href="#modalSingapore" data-toggle="modal" data-target="#modalSingapore")
                   .name
                     span 19.
-                    span Singapore
+                    span سنغافورة
                   .dot
                 a.map-dot.d-flex.align-items-center.Belize(href="#modalBelize" data-toggle="modal" data-target="#modalBelize")
                   .name
                     span 20.
-                    span Belize
+                    span بليز
                   .dot
                 a.map-dot.d-flex.align-items-center.Jersey(href="#modalJersey" data-toggle="modal" data-target="#modalJersey")
                   .name
                     span 21.
-                    span Jersey
+                    span جيرسي
                   .dot
                 a.map-dot.d-flex.align-items-center.Monaco(href="#modalMonaco" data-toggle="modal" data-target="#modalMonaco")
                   .dot
                   .name
                     span 22.
-                    span Monaco
+                    span موناكو
                 a.map-dot.d-flex.align-items-center.Panama(href="#modalPanama" data-toggle="modal" data-target="#modalPanama")
                   .name
                     span 23.
-                    span Panama
+                    span بنما
                   .dot
               div.tab-pane.fade#content2
                 .table
                   .row
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Malta
+                      .table-item مالطا
                         a.link(href="#modalMalta" data-toggle="modal" data-target="#modalMalta")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Lithuania
-                      .table-item Romania
+                      .table-item ليتوانيا
+                      .table-item رومانيا
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Cyprus
+                      .table-item قبرص
                         a.link(href="#modalCyprus" data-toggle="modal" data-target="#modalCyprus")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Ireland
-                      .table-item Slovakia
+                      .table-item أيرلندا
+                      .table-item سلوفاكيا
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Germany
-                      .table-item Hungary
-                      .table-item Slovenia
+                      .table-item ألمانيا
+                      .table-item هنغاريا
+                      .table-item سلوفينيا
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Liechtenstein
+                      .table-item ليختنشتاين
                         a.link(href="#modalLiechtenstein" data-toggle="modal" data-target="#modalLiechtenstein")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Latvia
+                      .table-item لاتفيا
                         a.link(href="#modalLatvia" data-toggle="modal" data-target="#modalLatvia")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Luxembourg
+                      .table-item لوكسمبورغ
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Poland
-                      .table-item USA
+                      .table-item بولندا
+                      .table-item الولايات المتحدة الأمريكية
                         a.link(href="#modalUSA" data-toggle="modal" data-target="#modalUSA")
                           img.lazy(data-src="../img/link.png")
-                      .table-item New Zealand
+                      .table-item نيوزيلاندا
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Switzerland
+                      .table-item سويسرا
                         a.link(href="#modalSwitzerland" data-toggle="modal" data-target="#modalSwitzerland")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Portugal
-                      .table-item United Kingdom
+                      .table-item البرتغال
+                      .table-item المملكة المتحدة
                         a.link(href="#modalUnitedKingdom" data-toggle="modal" data-target="#modalUnitedKingdom")
                           img.lazy(data-src="../img/link.png")
                 a.map-dot.d-flex.align-items-center.Malta(href="#modalMalta" data-toggle="modal" data-target="#modalMalta")
                   .dot
                   .name
                     span 1.
-                    span Malta
+                    span مالطا
                 a.map-dot.d-flex.align-items-center.Cyprus(href="#modalCyprus" data-toggle="modal" data-target="#modalCyprus")
                   .dot
                   .name
                     span 2.
-                    span Cyprus
+                    span قبرص
                 a.map-dot.d-flex.align-items-center.Liechtenstein(href="#modalLiechtenstein" data-toggle="modal" data-target="#modalLiechtenstein")
                   .dot
                   .name
                     span 3.
-                    span Liechtenstein
+                    span ليختنشتاين
                 a.map-dot.d-flex.align-items-center.Latvia(href="#modalLatvia" data-toggle="modal" data-target="#modalLatvia")
                   .dot
                   .name
                     span 4.
-                    span Latvia
+                    span لاتفيا
                 a.map-dot.d-flex.align-items-center.USA(href="#modalUSA" data-toggle="modal" data-target="#modalUSA")
                   .dot
                   .name
                     span 5.
-                    span USA
+                    span الولايات المتحدة الأمريكية
                 a.map-dot.d-flex.align-items-center.Switzerland(href="#modalSwitzerland" data-toggle="modal" data-target="#modalSwitzerland")
                   .name
                     span 6.
-                    span Switzerland
+                    span سويسرا
                   .dot
                 a.map-dot.d-flex.align-items-center.UnitedKingdom(href="#modalUnitedKingdom" data-toggle="modal" data-target="#modalUnitedKingdom")
                   .dot
                   .name
                     span 7.
-                    span United Kingdom
+                    span المملكة المتحدة
               div.tab-pane.fade#content3
                 .table
                   .row
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Austria
+                      .table-item النمسا
                         a.link(href="#modalAustria" data-toggle="modal" data-target="#modalAustria")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Germany
-                      .table-item Jersey
+                      .table-item ألمانيا
+                      .table-item جيرسي
                         a.link(href="#modalJersey" data-toggle="modal" data-target="#modalJersey")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Lithuania
-                      .table-item Monaco
+                      .table-item ليتوانيا
+                      .table-item موناكو
                         a.link(href="#modalMonaco" data-toggle="modal" data-target="#modalMonaco")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Russian Federation
-                      .table-item Slovenia
-                      .table-item Czech Republic
+                      .table-item الاتحاد الروسي
+                      .table-item سلوفينيا
+                      .table-item الجمهورية التشيكية
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Albania
-                      .table-item Hungary
-                      .table-item Ireland
-                      .table-item Liechtenstein
+                      .table-item ألبانيا
+                      .table-item هنغاريا
+                      .table-item أيرلندا
+                      .table-item ليختنشتاين
                         a.link(href="#modalLiechtenstein" data-toggle="modal" data-target="#modalLiechtenstein")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Netherlands
-                      .table-item Romania
-                      .table-item Spain
-                      .table-item Switzerland
+                      .table-item هولندا
+                      .table-item رومانيا
+                      .table-item إسبانيا
+                      .table-item سويسرا
                         a.link(href="#modalSwitzerland" data-toggle="modal" data-target="#modalSwitzerland")
                           img.lazy(data-src="../img/link.png")
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Andorra
+                      .table-item أندورا
                         a.link(href="#modalAndorra" data-toggle="modal" data-target="#modalAndorra")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Guernsey
+                      .table-item غيرنسي
                         a.link(href="#modalGuernsey" data-toggle="modal" data-target="#modalGuernsey")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Iceland
-                      .table-item Luxembourg
-                      .table-item Norway
-                      .table-item San Marino
-                      .table-item Ukraine
-                      .table-item Sweden
+                      .table-item أيسلندا
+                      .table-item لوكسمبورغ
+                      .table-item النرويج
+                      .table-item سان مارينو
+                      .table-item أوكرانيا
+                      .table-item السويد
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Belarus
-                      .table-item Gibraltar
+                      .table-item بيلاروسيا
+                      .table-item جبل طارق
                         a.link(href="#modalGibraltar" data-toggle="modal" data-target="#modalGibraltar")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Italy
-                      .table-item Madeira
-                      .table-item Isle Of Man
-                      .table-item Sark
-                      .table-item France
-                      .table-item Estonia
+                      .table-item إيطاليا
+                      .table-item الماديرا
+                      .table-item جزيرة آيل أوف مان
+                      .table-item سارك
+                      .table-item فرنسا
+                      .table-item إستونيا
                         a.link(href="#modalEstonia" data-toggle="modal" data-target="#modalEstonia")
                           img.lazy(data-src="../img/link.png")
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Belgium
-                      .table-item Greece
-                      .table-item Cyprus
+                      .table-item بلجيكا
+                      .table-item اليونان
+                      .table-item قبرص
                         a.link(href="#modalCyprus" data-toggle="modal" data-target="#modalCyprus")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Macedonia
-                      .table-item Poland
-                      .table-item Serbia
-                      .table-item Croatia
-                      .table-item Luxembourg
+                      .table-item مقدونيا
+                      .table-item بولندا
+                      .table-item صربيا
+                      .table-item كرواتيا
+                      .table-item لوكسمبورغ
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Bulgaria
+                      .table-item بلغاريا
                         a.link(href="#modalBulgaria" data-toggle="modal" data-target="#modalBulgaria")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Denmark
-                      .table-item Latvia
+                      .table-item الدنمارك
+                      .table-item لاتفيا
                         a.link(href="#modalLatvia" data-toggle="modal" data-target="#modalLatvia")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Malta
+                      .table-item مالطا
                         a.link(href="#modalMalta" data-toggle="modal" data-target="#modalMalta")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Portugal
-                      .table-item Slovakia
-                      .table-item Montenegro
-                      .table-item United Kingdom
+                      .table-item البرتغال
+                      .table-item سلوفاكيا
+                      .table-item الجبل الأسود
+                      .table-item المملكة المتحدة
                         a.link(href="#modalUnitedKingdom" data-toggle="modal" data-target="#modalUnitedKingdom")
                           img.lazy(data-src="../img/link.png")
                 a.map-dot.d-flex.align-items-center.Austria(href="#modalAustria" data-toggle="modal" data-target="#modalAustria")
                   .dot
                   .name
                     span 1.
-                    span Austria
+                    span النمسا
                 a.map-dot.d-flex.align-items-center.Jersey.EU(href="#modalJersey" data-toggle="modal" data-target="#modalJersey")
                   .name
                     span 2.
-                    span Jersey
+                    span جيرسي
                   .dot
                 a.map-dot.d-flex.align-items-center.Monaco(href="#modalMonaco" data-toggle="modal" data-target="#modalMonaco")
                   .dot
                   .name
                     span 3.
-                    span Monaco
+                    span موناكو
                 a.map-dot.d-flex.align-items-center.Liechtenstein(href="#modalLiechtenstein" data-toggle="modal" data-target="#modalLiechtenstein")
                   .dot
                   .name
                     span 4.
-                    span Liechtenstein
+                    span ليختنشتاين
                 a.map-dot.d-flex.align-items-center.Switzerland(href="#modalSwitzerland" data-toggle="modal" data-target="#modalSwitzerland")
                   .name
                     span 5.
-                    span Switzerland
+                    span سويسرا
                   .dot
                 a.map-dot.d-flex.align-items-center.Andorra(href="#modalAndorra" data-toggle="modal" data-target="#modalAndorra")
                   .name
                     span 6.
-                    span Andorra
+                    span أندورا
                   .dot
                 a.map-dot.Guernsey.EU(href="#modalGuernsey" data-toggle="modal" data-target="#modalGuernsey")
                   .name
                     span 7.
-                    span Guernsey
+                    span غيرنسي
                   .dot
                 a.map-dot.d-flex.align-items-center.Gibraltar(href="#modalGibraltar" data-toggle="modal" data-target="#modalGibraltar")
                   .dot
                   .name
                     span 8.
-                    span Gibraltar
+                    span جبل طارق
                 a.map-dot.d-flex.align-items-center.Estonia(href="#modalEstonia" data-toggle="modal" data-target="#modalEstonia")
                   .dot
                   .name
                     span 9.
-                    span Estonia
+                    span إستونيا
                 a.map-dot.d-flex.align-items-center.Cyprus(href="#modalCyprus" data-toggle="modal" data-target="#modalCyprus")
                   .dot
                   .name
                     span 10.
-                    span Cyprus
+                    span قبرص
                 a.map-dot.d-flex.align-items-center.Bulgaria(href="#modalBulgaria" data-toggle="modal" data-target="#modalBulgaria")
                   .dot
                   .name
                     span 11.
-                    span Bulgaria
+                    span بلغاريا
                 a.map-dot.d-flex.align-items-center.Latvia(href="#modalLatvia" data-toggle="modal" data-target="#modalLatvia")
                   .dot
                   .name
                     span 12.
-                    span Latvia
+                    span لاتفيا
                 a.map-dot.d-flex.align-items-center.Malta(href="#modalMalta" data-toggle="modal" data-target="#modalMalta")
                   .dot
                   .name
                     span 13.
-                    span Malta
+                    span مالطا
                 a.map-dot.d-flex.align-items-center.UnitedKingdom.EU(href="#modalUnitedKingdom" data-toggle="modal" data-target="#modalUnitedKingdom")
                   .dot
                   .name
                     span 14.
-                    span United Kingdom
+                    span المملكة المتحدة
               div.tab-pane.fade#content4
                 .table
                   .row
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Bangladesh
+                      .table-item بنغلاديش
                         a.link(href="#modalBangladesh" data-toggle="modal" data-target="#modalBangladesh")
                           img.lazy(data-src="../img/link.png")
-                      .table-item China
-                      .table-item Singapore
+                      .table-item الصين
+                      .table-item سنغافورة
                         a.link(href="#modalSingapore" data-toggle="modal" data-target="#modalSingapore")
                           img.lazy(data-src="../img/link.png")
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Bahrain
+                      .table-item البحرين
                         a.link(href="#modalBahrain" data-toggle="modal" data-target="#modalBahrain")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Labuan
+                      .table-item لابوان
                         a.link(href="#modalLabuan" data-toggle="modal" data-target="#modalLabuan")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Thailand
+                      .table-item تايلاند
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Brunei
+                      .table-item بروناي
                         a.link(href="#modalBrunei" data-toggle="modal" data-target="#modalBrunei")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Lebanon
-                      .table-item Turkey
+                      .table-item لبنان
+                      .table-item تركيا
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Hong Kong
+                      .table-item هونج كونج
                         a.link(href="#modalHongKong" data-toggle="modal" data-target="#modalHongKong")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Macau
-                      .table-item Japan
+                      .table-item ماكاو
+                      .table-item اليابان
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item Israel
-                      .table-item Mongolia
-                      .table-item Armenia
+                      .table-item إسرائيل
+                      .table-item منغوليا
+                      .table-item أرمينيا
                     .col-6.col-lg-2.col-xl-2.offset-0
-                      .table-item India
-                      .table-item UAE
+                      .table-item الهند
+                      .table-item الإمارات العربية المتحدة
                         a.link(href="#modalUAE" data-toggle="modal" data-target="#modalUAE")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Georgia
+                      .table-item جورجيا
                         a.link(href="#modalGeorgia" data-toggle="modal" data-target="#modalGeorgia")
                           img.lazy(data-src="../img/link.png")
                 a.map-dot.d-flex.align-items-center.Bangladesh(href="#modalBangladesh" data-toggle="modal" data-target="#modalBangladesh")
                   .dot
                   .name
                     span 1.
-                    span Bangladesh
+                    span بنغلاديش
                 a.map-dot.d-flex.align-items-center.Singapore(href="#modalSingapore" data-toggle="modal" data-target="#modalSingapore")
                   .name
                     span 2.
-                    span Singapore
+                    span سنغافورة
                   .dot
                 a.map-dot.d-flex.align-items-center.Bahrain(href="#modalBahrain" data-toggle="modal" data-target="#modalBahrain")
                   .dot
                   .name
                     span 3.
-                    span Bahrain
+                    span البحرين
                 a.map-dot.d-flex.align-items-center.Labuan(href="#modalLabuan" data-toggle="modal" data-target="#modalLabuan")
                   .dot
                   .name
                     span 4.
-                    span Labuan
+                    span لابوان
                 a.map-dot.d-flex.align-items-center.Brunei(href="#modalBrunei" data-toggle="modal" data-target="#modalBrunei")
                   .dot
                   .name
                     span 4.
-                    span Brunei
+                    span بروناي
                 a.map-dot.d-flex.align-items-center.HongKong(href="#modalHongKong" data-toggle="modal" data-target="#modalHongKong")
                   .dot
                   .name
                     span 5.
-                    span Hong Kong
+                    span هونج كونج
                 a.map-dot.d-flex.align-items-center.UAE(href="#modalUAE" data-toggle="modal" data-target="#modalUAE")
                   .dot
                   .name
                     span 6.
-                    span UAE
+                    span الإمارات العربية المتحدة
                 a.map-dot.d-flex.align-items-center.Georgia(href="#modalGeorgia" data-toggle="modal" data-target="#modalGeorgia")
                   .dot
                   .name
                     span 7.
-                    span Georgia
+                    span جورجيا
               div.tab-pane.fade#content5
                 .table
                   .row
                     .custom-grid-item
-                      .table-item Canada
+                      .table-item كندا
                         a.link(href="#modalCanada" data-toggle="modal" data-target="#modalCanada")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Barbados
+                      .table-item بربادوس
                         a.link(href="#modalBarbados" data-toggle="modal" data-target="#modalBarbados")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Costa Rica
-                      .table-item Saint Lucia
+                      .table-item كوستا ريكا
+                      .table-item سانت لوسيا
                     .custom-grid-item
-                      .table-item Bermudas
+                      .table-item برمودا
                         a.link(href="#modalBermudas" data-toggle="modal" data-target="#modalBermudas")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Belize
+                      .table-item بليز
                         a.link(href="#modalBelize" data-toggle="modal" data-target="#modalBelize")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Cuba
-                      .table-item Turks & Caicos
+                      .table-item كوبا
+                      .table-item تركس وكايكوس
                     .custom-grid-item
-                      .table-item Anguilla
+                      .table-item أنغيلا
                         a.link(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Brazil
+                      .table-item البرازيل
                         a.link(href="#modalBrazil" data-toggle="modal" data-target="#modalBrazil")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Curacao
-                      .table-item Uruguay
+                      .table-item كوراكاو
+                      .table-item أوروغواي
                     .custom-grid-item
-                      .table-item Antigua
+                      .table-item أنتيغوا
                         a.link(href="#modalAntigua" data-toggle="modal" data-target="#modalAntigua")
                           img.lazy(data-src="../img/link.png")
-                      .table-item BVI
+                      .table-item جزر بريطانيا العذراء
                         a.link(href="#modalBVI" data-toggle="modal" data-target="#modalBVI")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Peru
-                      .table-item Chile
+                      .table-item بيرو
+                      .table-item شيلي
                     .custom-grid-item
-                      .table-item Argentina
+                      .table-item الأرجنتين
                         a.link(href="#modalArgentina" data-toggle="modal" data-target="#modalArgentina")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Dominica
+                      .table-item دومينيكا
                         a.link(href="#modalDominica" data-toggle="modal" data-target="#modalDominica")
                           img.lazy(data-src="../img/link.png")
-                      .table-item St. Kitts
-                      .table-item USA
+                      .table-item سانت كيتس ونيفيس
+                      .table-item الولايات المتحدة الأمريكية
                         a.link(href="#modalUSA" data-toggle="modal" data-target="#modalUSA")
                           img.lazy(data-src="../img/link.png")
                     .custom-grid-item
-                      .table-item Aruba
+                      .table-item أروبا
                         a.link(href="#modalAruba" data-toggle="modal" data-target="#modalAruba")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Cayman islands
-                      .table-item Panama
+                      .table-item جزر كايمان
+                      .table-item بنما
                         a.link(href="#modalPanama" data-toggle="modal" data-target="#modalPanama")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Venezuela
+                      .table-item فنزويلا
                         a.link(href="#modalVenezuela" data-toggle="modal" data-target="#modalVenezuela")
                           img.lazy(data-src="../img/link.png")
                     .custom-grid-item
-                      .table-item Bahamas
+                      .table-item جزر البهاما
                         a.link(href="#modalBahamas" data-toggle="modal" data-target="#modalBahamas")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Colombia
-                      .table-item Saint Vincent 
+                      .table-item كولومبيا
+                      .table-item سانت فنسنت
                         a.link(href="#modalSaintVincent" data-toggle="modal" data-target="#modalSaintVincent")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Ecuador
+                      .table-item الإكوادور
                 a.map-dot.d-flex.align-items-center.Canada(href="#modalCanada" data-toggle="modal" data-target="#modalCanada")
                   .dot
                   .name
                     span 1.
-                    span Canada
+                    span كندا
                 a.map-dot.d-flex.align-items-center.Barbados.US(href="#modalBarbados" data-toggle="modal" data-target="#modalBarbados")
                   .dot
                   .name
                     span 2.
-                    span Barbados
+                    span بربادوس
                 a.map-dot.d-flex.align-items-center.Bermudas(href="#modalBermudas" data-toggle="modal" data-target="#modalBermudas")
                   .dot
                   .name
                     span 3.
-                    span Bermudas
+                    span برمودا
                 a.map-dot.d-flex.align-items-center.Belize(href="#modalBelize" data-toggle="modal" data-target="#modalBelize")
                   .name
                     span 4.
-                    span Belize
+                    span بليز
                   .dot
                 a.map-dot.d-flex.align-items-center.Anguilla(href="#modalAnguilla" data-toggle="modal" data-target="#modalAnguilla")
                   .dot
                   .name
                     span 5.
-                    span Anguilla
+                    span أنغيلا
                 a.map-dot.d-flex.align-items-center.Brazil(href="#modalBrazil" data-toggle="modal" data-target="#modalBrazil")
                   .dot
                   .name
                     span 6.
-                    span Brazil
+                    span البرازيل
                 a.map-dot.d-flex.align-items-center.Antigua(href="#modalAntigua" data-toggle="modal" data-target="#modalAntigua")
                   .dot
                   .name
                     span 7.
-                    span Antigua
+                    span أنتيغوا
                 a.map-dot.d-flex.align-items-center.BVI(href="#modalBVI" data-toggle="modal" data-target="#modalBVI")
                   .dot
                   .name
                     span 8.
-                    span BVI
+                    span جزر بريطانيا العذراء
                 a.map-dot.d-flex.align-items-center.Argentina(href="#modalArgentina" data-toggle="modal" data-target="#modalArgentina")
                   .dot
                   .name
                     span 9.
-                    span Argentina
+                    span الأرجنتين
                 a.map-dot.d-flex.align-items-center.Dominica(href="#modalDominica" data-toggle="modal" data-target="#modalDominica")
                   .dot
                   .name
                     span 10.
-                    span Dominica
+                    span دومينيكا
                 a.map-dot.d-flex.align-items-center.USA(href="#modalUSA" data-toggle="modal" data-target="#modalUSA")
                   .dot
                   .name
                     span 11.
-                    span USA
+                    span الولايات المتحدة الأمريكية
                 a.map-dot.d-flex.align-items-center.Aruba(href="#modalAruba" data-toggle="modal" data-target="#modalAruba")
                   .dot
                   .name
                     span 12.
-                    span Aruba
+                    span أروبا
                 a.map-dot.d-flex.align-items-center.Panama(href="#modalPanama" data-toggle="modal" data-target="#modalPanama")
                   .name
                     span 13.
-                    span Panama
+                    span بنما
                   .dot
                 a.map-dot.d-flex.align-items-center.Venezuela(href="#modalVenezuela" data-toggle="modal" data-target="#modalVenezuela")
                   .name
                     span 14.
-                    span Venezuela
+                    span فنزويلا
                   .dot
                 a.map-dot.d-flex.align-items-center.Bahamas(href="#modalBahamas" data-toggle="modal" data-target="#modalBahamas")
                   .dot
                   .name
                     span 15.
-                    span Bahamas
+                    span جزر البهاما
                 a.map-dot.d-flex.align-items-center.SaintVincent(href="#modalSaintVincent" data-toggle="modal" data-target="#modalSaintVincent")
                   .dot
                   .name
                     span 16.
-                    span Saint Vincent
+                    span سانت فنسنت
               div.tab-pane.fade#content6
                 .table
                   .row
                     .custom-grid-item-2
-                      .table-item Liberia
+                      .table-item ليبيريا
                     .custom-grid-item-2
-                      .table-item Namibia
+                      .table-item ناميبيا
                     .custom-grid-item-2
-                      .table-item Mauritius
+                      .table-item موريشيوس
                     .custom-grid-item-2
-                      .table-item Seychelles
+                      .table-item سيشيل
                         a.link(href="#modalSeychelles" data-toggle="modal" data-target="#modalSeychelles")
                           img.lazy(data-src="../img/link.png")
                     .custom-grid-item-2
-                      .table-item South Africa
+                      .table-item جنوب أفريقيا
                 a.map-dot.d-flex.align-items-center.Seychelles(href="#modalSeychelles" data-toggle="modal" data-target="#modalSeychelles")
                   .dot
                   .name
                     span 1.
-                    span Seychelles
+                    span سيشيل
               div.tab-pane.fade#content7
                 .table
                   .row
                     .col-6.col-lg-3.col-xl-3.offset-0
-                      .table-item Australia
-                      .table-item Vanuatu
+                      .table-item أستراليا
+                      .table-item فانواتو
                         a.link(href="#modalVanuatu" data-toggle="modal" data-target="#modalVanuatu")
                           img.lazy(data-src="../img/link.png")
                     .col-6.col-lg-3.col-xl-3.offset-0
-                      .table-item Marshall Islands
+                      .table-item جزر مارشال
                         a.link(href="#modalMarshall" data-toggle="modal" data-target="#modalMarshall")
                           img.lazy(data-src="../img/link.png")
-                      .table-item Nauru
+                      .table-item ناورو
                     .col-6.col-lg-3.col-xl-3.offset-0
-                      .table-item Niue
-                      .table-item New Zealand
+                      .table-item نيوي
+                      .table-item نيوزيلاندا
                     .col-6.col-lg-3.col-xl-3.offset-0
-                      .table-item Cook Islands
-                      .table-item Samoa
+                      .table-item جزر كوك
+                      .table-item ساموا
                 a.map-dot.d-flex.align-items-center.Vanuatu(href="#modalVanuatu" data-toggle="modal" data-target="#modalVanuatu")
                   .dot
                   .name
                     span 1.
-                    span Vanuatu
+                    span فانواتو
                 a.map-dot.d-flex.align-items-center.Marshall(href="#modalMarshall" data-toggle="modal" data-target="#modalMarshall")
                   .name
                     span 2.
-                    span Marshall Islands
+                    span جزر مارشال
                   .dot
 
         section.section.consulting-3
@@ -874,60 +870,44 @@ html(lang="en")
             .row
               .col-lg-7.offset-lg-5
                 h3(data-aos="fade-up").word
-                  span In case of  incorporation and purchasing an offshore ready-made company, 
-                  | you will receive the following documents (the list of documents can be differrent due to the particular jurisdiction):
+                  span في حالة إدراج وشراء شركة جاهزة خارجية، ستتلقى المستندات التالية :
+                  | (يمكن أن تكون قائمة المستندات مختلفة بسبب الاختصاص القضائي الخاص)
                 ul.consulting-3-list
-                  li(data-aos="fade-right" data-aos-delay="100") Registration Certificate;
-                  li(data-aos="fade-right" data-aos-delay="150") Certificate of Good Standing (if the company is over a year old, and it is available for the extra fee);
-                  li(data-aos="fade-right" data-aos-delay="200") The Founding Agreement and Corporate charter;
-                  li(data-aos="fade-right" data-aos-delay="250") Register of Directors;
-                  li(data-aos="fade-right" data-aos-delay="300") Register of Participants;
-                  li(data-aos="fade-right" data-aos-delay="350") Apostilled set of company certified documents (one package);
-                  li(data-aos="fade-right" data-aos-delay="400") Сorporate Seal.
+                  li(data-aos="fade-right" data-aos-delay="100") شهادة تسجيل؛
+                  li(data-aos="fade-right" data-aos-delay="150") شهادة وضع جيد (إذا كانت الشركة قد تجاوزت عامين، فهي متاحة للرسوم الإضافية)؛
+                  li(data-aos="fade-right" data-aos-delay="200")  الاتفاق التأسيسي وميثاق الشركات؛
+                  li(data-aos="fade-right" data-aos-delay="250")  سجل المديرين؛
+                  li(data-aos="fade-right" data-aos-delay="300")  سجل المشاركين؛
+                  li(data-aos="fade-right" data-aos-delay="350")  مجموعة الرسائل من المستندات المعتمدة من الشركة (حزمة واحدة)؛
+                  li(data-aos="fade-right" data-aos-delay="400") ختم الشركة.
 
         section.section.consulting-4
           div(data-src="../img/consulting_4.png").container.lazy
-            h3(data-aos="fade-up").word Purchased services for registration 
-              span (service list can differ due to the particular jurisdiction):
+            h3(data-aos="fade-up").word الخدمات المشتراة للتسجيل :
+              span (قائمة الخدمات يمكن أن تختلف بسبب الاختصاص القضائي الخاص)
             ul.consulting-4-list
-              li(data-aos="fade-right" data-aos-delay="50") Tax for state registration;
-              li(data-aos="fade-right" data-aos-delay="100") Registration agent services;
-              li(data-aos="fade-right" data-aos-delay="200") Payment for incorporation;
-              li(data-aos="fade-right" data-aos-delay="300") Annual service (if you purchase a company with the history, you pay for annual service for all the ownerless years);
-              li(data-aos="fade-right" data-aos-delay="400") Courier delivery.
+              li(data-aos="fade-right" data-aos-delay="50")  ضريبة تسجيل الدولة؛
+              li(data-aos="fade-right" data-aos-delay="100")  خدمات وكيل التسجيل؛
+              li(data-aos="fade-right" data-aos-delay="200")  دفع للتأسيس؛
+              li(data-aos="fade-right" data-aos-delay="300")  الخدمة السنوية (إذا قمت بشراء شركة مع التاريخ، فأنت تدفع ثمن الخدمة السنوية لجميع سنوات المالك)؛
+              li(data-aos="fade-right" data-aos-delay="400")  تسليم البريد السريع.
 
         section.section.consulting-5
           div(data-src="../img/consulting_5.png").container.lazy
             h3.word 
-              span Benefits of the offshore ready-made 
-              br
-              | company purchasing:
+              span فوائد شراء الشركة الجاهزة في البحر:
             .row
               .col-lg-5
                 ul.consulting-5-list.left
-                  li(data-aos="fade-right" data-aos-delay="100")
-                    span Ready-made companies are available 
-                    | immediately after the purchase, a set of documents has been already prepared for sending. However, if you need a notarized and apostilled set of documents, you have to wait 1-2 days for the apostilization. 
-                  li(data-aos="fade-right" data-aos-delay="200")
-                    span You can go in for commerce 
-                    | immediately after the purchase and account registration.
-                  li(data-aos="fade-right" data-aos-delay="300")
-                    span Offshore ready-made company price 
-                    | consists of the company registration cost plus local service cost. This is essentially the same as the regular cost of the company if you use the local service. The cost may differ if the company is several years old, as there were extra annual payments for the company.
+                  li(data-aos="fade-right" data-aos-delay="100")  الشركات الجاهزة متوفرة مباشرة بعد عملية الشراء، تم إعداد مجموعة من المستندات بالفعل للإرسال. ومع ذلك، إذا كنت بحاجة إلى مجموعة مستندات موثقة ومعتمدة للرسائل، يجب عليك الانتظار 1-2 أيام للختم.
+                  li(data-aos="fade-right" data-aos-delay="200")  يمكنك الدخول للتجارة مباشرة بعد تسجيل الحساب والتسجيل.
+                  li(data-aos="fade-right" data-aos-delay="300")  سعر الشركة الجاهزة في الخارج يتكون من تكلفة تسجيل الشركة بالإضافة إلى تكلفة الخدمة المحلية. هذا هو في الأساس نفس التكلفة العادية للشركة إذا كنت تستخدم الخدمة المحلية. قد تختلف التكلفة إذا كانت الشركة تبلغ من العمر عدة سنوات، حيث كانت هناك مدفوعات سنوية إضافية للشركة.
               .col-lg-5.offset-lg-2
                 ul.consulting-5-list.right
-                  li(data-aos="fade-right" data-aos-delay="100") Our company 
-                    span always suggests you a great quantity of offshore ready-made companies 
-                    | with various names to choose.
-                  li(data-aos="fade-right" data-aos-delay="200") You can always 
-                    span change the shareholders, authorized capital, articles of association, powers, restrict rights, etc.
-                    | according to the specific customer's needs.
-                  li(data-aos="fade-right" data-aos-delay="300")
-                    span Company service fee 
-                    | is paid upon the company purchase and valid for a year from the date of the company purchase.
-                  li(data-aos="fade-right" data-aos-delay="400") All companies 
-                    span have a good legal status, 
-                    | even though there have never been any bank accounts for them. That is why they are 100% transparent.
+                  li(data-aos="fade-right" data-aos-delay="100")  تشير شركتنا دائما إلى كمية كبيرة من الشركات الجاهزة في الخارج مع أسماء مختلفة للاختيار.
+                  li(data-aos="fade-right" data-aos-delay="200")  يمكنك دائما تغيير المساهمين، رأس المال المعتمد، مقالات الجمعيات، القوى، الحقوق المقيدة، إلخ وفقا لاحتياجات العملاء المحددة.
+                  li(data-aos="fade-right" data-aos-delay="300")  يتم دفع رسوم خدمة الشركة عند شراء الشركة وتكون صالحة لمدة عام من تاريخ شراء الشركة.
+                  li(data-aos="fade-right" data-aos-delay="400")  تتمتع جميع الشركات بوضع قانوني جيد، على الرغم من عدم وجود أي حسابات بنكية أبدا. هذا هو السبب في أنها شفافة بنسبة 100٪.
 
         section(data-src="../img/consulting_6.png").section.consulting-6.lazy
           .container
@@ -935,200 +915,197 @@ html(lang="en")
               .row
                 .col-lg-6
                   p.small
-                    span Acalista group’s specialists will provide you 
-                    | with an expert advice on the offshore company acquisition, opening a bank account in any area. 
+                    span سيوفر لك أخصائيي أكاليستا مشورة خبراء حول اكتساب الشركة في .
+                    | الخارج، وفتح حسابا مصرفيا في أي منطقة
                   p.big
-                    span We offer you offshore ready-made companies, 
-                    | and it takes 3 days to change the ownership.
+                    span نحن نقدم لك الشركات الجاهزة في الخارج، وتستغرق 3 أيام لتغيير الملكية.
                 .col-lg-6
-                  p.red Offshore 
+                  p.red الشركات الخارجية 
                     br.d-none.d-lg-block
-                    span companies
-                  a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                    span (الاوفشور)
+                  a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
 
         section.section.consulting-7#consulting-7
           div(data-src="../img/consulting_7.png").container.lazy
             .section-title
               .title-cube
                 img.lazy(data-src="img/document.png")
-                p Licenses
+                p التراخيص
               h2
-                span Licenses
+                span التراخيص
                 br
-                | How to Choose the Right Territory 
-                br
-                | for Business License
+                | كيفية اختيار الأراضي المناسبة لرخصة الأعمال
             .row
               .col-lg-8
                 p.sub-text
-                  strong Company owners and their assistants strive to develop their business and often look for an area with the less administrative costs and difficulties and as the result they can do business with benefits. Most companies choose the territories that include at least the following features:
+                  strong يسعى مالكي الشركة ومساعديهم إلى تطوير أعمالهم وغالبا ما يبحثون عن منطقة ذات تكاليف وصعوبات أقل ونتيجة لذلك يمكنهم القيام بأعمال تجارية مع فوائد. معظم الشركات تختار المناطق التي تشمل الميزات التالية على الأقل:
                 ul.check-list.left
-                  li(data-aos="fade-right" data-aos-delay="100") favorable tax sysmem
-                  li(data-aos="fade-right" data-aos-delay="150") steady political conditions and easy legislation
-                  li(data-aos="fade-right" data-aos-delay="200") simplified business licensing
-                  li(data-aos="fade-right" data-aos-delay="250") friendly business environment
-                  li(data-aos="fade-right" data-aos-delay="300") favorable terms for domicile 
+                  li(data-aos="fade-right" data-aos-delay="100") عصم الضرائب المواتية؛
+                  li(data-aos="fade-right" data-aos-delay="150") الظروف السياسية الثابت والتشريعات السهلة؛
+                  li(data-aos="fade-right" data-aos-delay="200") ترخيص الأعمال المبسطة؛
+                  li(data-aos="fade-right" data-aos-delay="250") بيئة الأعمال الودية؛ 
+                  li(data-aos="fade-right" data-aos-delay="300") شروط مواتية للإقليم
             p.sub-text.center
-              strong Caribbean and Latin America countries are often used for the following activities available for an international licensing:
+              strong غالبا ما تستخدم دول أمريكا الكاريبية وأمريكا اللاتينية للأنشطة التالية المتاحة للحصول على ترخيص دولي:
           .small-tabs
             .container
               .row
                 .col-lg-5
                   ul.nav
                     li.nav-item
-                      a(href="#smcontent1" data-toggle="tab").active  International banking license
+                      a(href="#smcontent1" data-toggle="tab").active  رخصة الخدمات المصرفية الدولية:
                         a.link(href="#modallicense" data-toggle="modal" data-target="#modallicense")
                           img.lazy(data-src="../img/link.png")
                     li.nav-item
-                      a(href="#smcontent2" data-toggle="tab") Remittance service, Payment service processing, License for remittance service
+                      a(href="#smcontent2" data-toggle="tab") خدمة التحويلات, معالجة خدمة الدفع,  ترخيص خدمة التحويلات
                     li.nav-item
-                      a(href="#smcontent3" data-toggle="tab") Forex broker license
+                      a(href="#smcontent3" data-toggle="tab") رخصة وسيط الفوركس
                         a.link(href="#modalforex" data-toggle="modal" data-target="#modalforex")
                           img.lazy(data-src="../img/link.png")
                     li.nav-item
-                      a(href="#smcontent4" data-toggle="tab") Gaming licenses
+                      a(href="#smcontent4" data-toggle="tab") تراخيص الألعاب
                     li.nav-item
-                      a(href="#smcontent5" data-toggle="tab") Cryptocurrency exchange licenses
+                      a(href="#smcontent5" data-toggle="tab") تراخيص تبادل العملات الرقمية
                 .col-lg-7
                   ul.tab-pane.fade.show.active#smcontent1
-                    li 1. Banking license in Vanuatu
+                    li 1. الرخصة المصرفية في فانواتو
                         a.link(href="#modalbankVanuatu" data-toggle="modal" data-target="#modalbankVanuatu")
                           img.lazy(data-src="../img/link.png")
-                    li 2. Banking license in Labuan
+                    li 2. الترخيص المصرفي في لابوان
                         a.link(href="#modalbankLabuan" data-toggle="modal" data-target="#modalbankLabuan")
                           img.lazy(data-src="../img/link.png")
                   ul.tab-pane.fade#smcontent2
-                    li 1. License for Electronic Money Institutions in Estonia (EMI in Estonia)
+                    li 1. ترخيص مؤسسات الأموال الإلكترونية في إستونيا (EMI في إستونيا)
                       a.link(href="#electronicMoneyEstonia" data-toggle="modal" data-target="#electronicMoneyEstonia")
                         img.lazy(data-src="../img/link.png")
-                    li 2. License for Electronic Money Institutions in UK (EMI in UK)
+                    li 2. ترخيص مؤسسات الأموال الإلكترونية في المملكة المتحدة (EMI في المملكة المتحدة)
                       a.link(href="#electronicMoneyUnitedKingdom" data-toggle="modal" data-target="#electronicMoneyUnitedKingdom")
                         img.lazy(data-src="../img/link.png")
-                    li 3. License for Electronic Money Institutions in Latvia (EMI in Latvia)
+                    li 3. ترخيص مؤسسات الأموال الإلكترونية في لاتفيا (EMI في لاتفيا)
                       a.link(href="#electronicMoneyLatvia" data-toggle="modal" data-target="#electronicMoneyLatvia")
                         img.lazy(data-src="../img/link.png")
-                    li 4. License for Electronic Money Institutions in Czech Republic (EMI in Czech Republic)
+                    li 4. رخصة مؤسسات الأموال الإلكترونية في جمهورية التشيك (EMI في جمهورية التشيك)
                       a.link(href="#electronicMoneyCzech" data-toggle="modal" data-target="#electronicMoneyCzech")
                         img.lazy(data-src="../img/link.png")
                   ul.tab-pane.fade#smcontent3
-                    li 1. Forex broker license in Bulgaria
+                    li 1. رخصة وسيط فوركس في بلغاريا
                       a.link(href="#modalforexBulgaria" data-toggle="modal" data-target="#modalforexBulgaria")
                         img.lazy(data-src="../img/link.png")
-                    li 2. Forex broker license in Hong Kong
+                    li 2. رخصة وسيط فوركس في هونغ كونغ
                       a.link(href="#modalforexHongKong" data-toggle="modal" data-target="#modalforexHongKong")
                         img.lazy(data-src="../img/link.png")
-                    li 3. Forex broker license in Estonia
+                    li 3. رخصة وسيط فوركس في إستونيا
                       a.link(href="#modalforexEstonia" data-toggle="modal" data-target="#modalforexEstonia")
                         img.lazy(data-src="../img/link.png")
-                    li 4. Forex broker license in Czech Republic
+                    li 4. رخصة وسيط فوركس في جمهورية التشيك
                       a.link(href="#modalforexCzech" data-toggle="modal" data-target="#modalforexCzech")
                         img.lazy(data-src="../img/link.png")
-                    li 5. Forex broker license in Cape Verde
+                    li 5. رخصة وسيط فوركس في كيب فيردي
                       a.link(href="#modalforexCaboVerde" data-toggle="modal" data-target="#modalforexCaboVerde")
                         img.lazy(data-src="../img/link.png")
-                    li 6. Forex broker license in Australia 
+                    li 6. رخصة وسيط فوركس في أستراليا
                       a.link(href="#modalforexAustralia" data-toggle="modal" data-target="#modalforexAustralia")
                         img.lazy(data-src="../img/link.png")
-                    li 7. Forex broker license in Vanuatu 
+                    li 7. رخصة وسيط فوركس في فانواتو
                       a.link(href="#modalforexVanuatu" data-toggle="modal" data-target="#modalforexVanuatu")
                         img.lazy(data-src="../img/link.png")
-                    li 8. Forex broker license in Singapore 
+                    li 8. رخصة وسيط فوركس في سنغافورة
                       a.link(href="#modalforexSingapore" data-toggle="modal" data-target="#modalforexSingapore")
                         img.lazy(data-src="../img/link.png")
-                    li 9. Forex broker license in Cyprus
+                    li 9. رخصة وسيط فوركس في قبرص
                       a.link(href="#modalforexCyprus" data-toggle="modal" data-target="#modalforexCyprus")
                         img.lazy(data-src="../img/link.png")
-                    li 10. Forex broker license in Labuan
+                    li 10. رخصة وسيط فوركس في لابوان
                       a.link(href="#modalbankLabuan" data-toggle="modal" data-target="#modalbankLabuan")
                         img.lazy(data-src="../img/link.png")
                   ul.tab-pane.fade#smcontent4
-                    li 1. Gaming license in Malta
+                    li 1. رخصة الألعاب في مالطا
                       a.link(href="#modalGameMalta" data-toggle="modal" data-target="#modalGameMalta")
                         img.lazy(data-src="../img/link.png")
-                    li 2. Gaming license in Cyprus
+                    li 2. رخصة الألعاب في قبرص
                       a.link(href="#modalGameCyprus" data-toggle="modal" data-target="#modalGameCyprus")
                         img.lazy(data-src="../img/link.png")
-                    li 3. Online bookmaker license in Cyprus
+                    li 3. رخصة المراهنات على الإنترنت في قبرص
                       a.link(href="#modalBookmakerCyprus" data-toggle="modal" data-target="#modalBookmakerCyprus")
                         img.lazy(data-src="../img/link.png")
-                    li 4. Gaming license in Curaçao
+                    li 4. رخصة الألعاب في كوراساو
                       a.link(href="#modalGameKurasao" data-toggle="modal" data-target="#modalGameKurasao")
                         img.lazy(data-src="../img/link.png")
-                    li 5. Gaming license on Isle of Man
+                    li 5. رخصة الألعاب على جزيرة مان
                       a.link(href="#modalGameMan" data-toggle="modal" data-target="#modalGameMan")
                         img.lazy(data-src="../img/link.png")
-                    li 6. Gaming license in UK 
+                    li 6. رخصة الألعاب في المملكة المتحدة
                       a.link(href="#modalGameUK" data-toggle="modal" data-target="#modalGameUK")
                         img.lazy(data-src="../img/link.png")
-                    li 7. Gaming license in Costa Rica
+                    li 7. رخصة الألعاب في كوستاريكا
                       a.link(href="#modalGameCostaRica" data-toggle="modal" data-target="#modalGameCostaRica")
                         img.lazy(data-src="../img/link.png")
-                    li 8. Gaming license in Austria
+                    li 8. رخصة الألعاب في النمسا
                       a.link(href="#modalGameAustria" data-toggle="modal" data-target="#modalGameAustria")
                         img.lazy(data-src="../img/link.png")
-                    li 9. Gaming license in Belgium
+                    li 9. رخصة الألعاب في بلجيكا
                       a.link(href="#modalGameBelgium" data-toggle="modal" data-target="#modalGameBelgium")
                         img.lazy(data-src="../img/link.png")
-                    li 10. Gaming license on Gibraltar
+                    li 10. رخصة الألعاب في جبل طارق
                       a.link(href="#modalGameGibraltar" data-toggle="modal" data-target="#modalGameGibraltar")
                         img.lazy(data-src="../img/link.png")
-                    li 11. Gaming license on Alderney
+                    li 11. رخصة الألعاب على ألديرني
                       a.link(href="#modalGameOlderni" data-toggle="modal" data-target="#modalGameOlderni")
                         img.lazy(data-src="../img/link.png")
-                    li 12. Gaming license in Dominican Republic 
+                    li 12. رخصة الألعاب في جمهورية الدومينيكان
                       a.link(href="#modalGameDominica" data-toggle="modal" data-target="#modalGameDominica")
                         img.lazy(data-src="../img/link.png")
-                    li 13. Gaming license in Kahnawake
+                    li 13. رخصة الألعاب في كناواكي
                       a.link(href="#modalGameKanavaka" data-toggle="modal" data-target="#modalGameKanavaka")
                         img.lazy(data-src="../img/link.png")
-                    li 14. Gaming license in Romania
+                    li 14. رخصة الألعاب في رومانيا
                       a.link(href="#modalGameRomania" data-toggle="modal" data-target="#modalGameRomania")
                         img.lazy(data-src="../img/link.png")
-                    li 15. Gaming license in El Salvador
+                    li 15. رخصة الألعاب في السلفادور
                       a.link(href="#modalGameSalvador" data-toggle="modal" data-target="#modalGameSalvador")
                         img.lazy(data-src="../img/link.png")
-                    li 16. Gaming license in Estonia
+                    li 16. رخصة الألعاب في إستونيا
                       a.link(href="#modalGameEstonia" data-toggle="modal" data-target="#modalGameEstonia")
                         img.lazy(data-src="../img/link.png")
-                    li 17. Gaming license in Italy
+                    li 17. رخصة الألعاب في إيطاليا
                       a.link(href="#modalGameItaly" data-toggle="modal" data-target="#modalGameItaly")
                         img.lazy(data-src="../img/link.png")
-                    li 18. Gaming license in Denmark 
+                    li 18. رخصة الألعاب في الدنمارك
                       a.link(href="#modalGameDenmark" data-toggle="modal" data-target="#modalGameDenmark")
                         img.lazy(data-src="../img/link.png")
                   ul.tab-pane.fade#smcontent5
-                    li 1. Cryptocurrency exchange license in Estonia 
+                    li 1. رخصة تبادل العملات الرقمية في إستونيا
                       a.link(href="#modalСryptoEstonia" data-toggle="modal" data-target="#modalСryptoEstonia")
                         img.lazy(data-src="../img/link.png")
-                    li 2. ICO license on Gibraltar 
+                    li 2. رخصة العرض المبدأي للعملات المشفرة ICO في جبل طارق
                       a.link(href="#modalСryptoGibraltar" data-toggle="modal" data-target="#modalСryptoGibraltar")
                         img.lazy(data-src="../img/link.png")
-                    li 3. Cryptocurrency  license in Singapore. 
+                    li 3. رخصة عملات رقمية في سنغافورة.
                       a.link(href="#modalСryptoSingapore" data-toggle="modal" data-target="#modalСryptoSingapore")
                         img.lazy(data-src="../img/link.png")
-                    li 4. Cryptocurrency exchanger license in Singapore 
+                    li 4. رخصة تبادل العملات الرقمية في سنغافورة
                       a.link(href="#modalСryptoSingapore2" data-toggle="modal" data-target="#modalСryptoSingapore2")
                         img.lazy(data-src="../img/link.png")
-                    li 5. Cryptocurrency exchange license in Singapore
+                    li 5. رخصة تبادل العملات الرقمية في سنغافورة
                       a.link(href="#modalСryptoSingapore3" data-toggle="modal" data-target="#modalСryptoSingapore3")
                         img.lazy(data-src="../img/link.png")
-                    li 6. Cryptocurrency exchange license in USA
+                    li 6. رخصة تبادل العملات الرقمية في الولايات المتحدة الأمريكية
                       a.link(href="#modalСryptoUSA" data-toggle="modal" data-target="#modalСryptoUSA")
                         img.lazy(data-src="../img/link.png")
-                    li 7. Cryptocurrency exchange license in Malta
+                    li 7. رخصة تبادل العملات الرقمية في مالطا
                       a.link(href="#modalСryptoMalta" data-toggle="modal" data-target="#modalСryptoMalta")
                         img.lazy(data-src="../img/link.png")
-                    li 8. Cryptocurrency exchanger license in Labuan
+                    li 8. ترخيص تبادل العملات الرقمية في لابوان
                       a.link(href="#modalСryptoLabuan" data-toggle="modal" data-target="#modalСryptoLabuan")
                         img.lazy(data-src="../img/link.png")
-                    li 9. Registration of a cryptocurrency exchanger in Czech Republic 
+                    li 9. تسجيل تبادل العملات الرقمية في جمهورية التشيك
                       a.link(href="#modalСryptoCzech" data-toggle="modal" data-target="#modalСryptoCzech")
                         img.lazy(data-src="../img/link.png")
-                    li 10. Cryptocurrency exchange license in Switzerland 
+                    li 10. رخصة تبادل العملات الرقمية في سويسرا
                       a.link(href="#modalСryptoSwitzerland" data-toggle="modal" data-target="#modalСryptoSwitzerland")
                         img.lazy(data-src="../img/link.png")
               p.sub-text.bottom
-                strong Companies providing payment systems, cryptocurrency, forex, financial and gambling services can get benefit if they obtain licenses and set up a business that qualifies for the licenses in the Caribbean or Latin America.
+                strong يمكن للشركات التي توفر أنظمة الدفع، وخدمات العملات الرقمية، وفوركس، والخدمات المالية والمقامرة من الاستفادة إذا حصلوا على تراخيص وإنشاء أعمال مؤهلة للحصول على التراخيص في أمريكا الكاريبيية أو أمريكا اللاتينية.
 
         section(data-src="../img/consulting_8.png").section.consulting-8.lazy
           .container
@@ -1139,30 +1116,27 @@ html(lang="en")
                     span
                       a.link.decor(href="#modalAllLicenses" data-toggle="modal" data-target="#modalAllLicenses")
                         img.lazy.big-link(data-src="../img/link-white.svg")
-                        | Ready-For-Sale Licenses 
-                        br
-                    | Ready-made companies with licensis are always avaible.
-                  p.small Feel free to contact us to learn more about licensing options, special offers based on your requirements and detailed calculation of a license for your current or future business. 
+                        | التراخيص الجاهزة للبيع والشركات الجاهزة مع التراخيص متاحة دائما.
+                  p.small لا تتردد في الاتصال بنا لمعرفة المزيد حول خيارات الترخيص، والعروض الخاصة بناء على متطلباتك والحساب التفصيلي لترخيص أعمالك الحالية أو المستقبلية. 
                 .col-lg-6
-                  p.red Licenses
-                  a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                  p.red التراخيص
+                  a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
 
         section.section.consulting-9
           div(data-src="../img/consulting_9.png").container.lazy
             .section-title
               .title-cube
                 img.lazy(data-src="img/bank.png")
-                p Bank Account
+                p حساب البنك
               h2
-                span Bank Account
+                span حساب البنك
                 br
-                | Opening a Bank Account
-            p.sub-text Acalista 
-              strong assists with opening bank accounts with over 120 banks around the world.
+                | فتح حساب بنكي
+            p.sub-text يساعد أكاليستا في فتح حسابات بنكية مع أكثر من 120 بنكا في جميع أنحاء العالم.
               br
-              | Opening a bank account is an easy task for us. 
-            p.sub-text As the banking systems are becoming more and more strict, Common Reporting Standards are integrated in many countries all around the world and government wants to control the residents financial flows, the requirements for companies and company documents for opening the accounts are also tending to be strict.
-            p.sub-text For a long period of cooperation, our specialists maintain contacts with employees of many banks around the world. It provides our customers with time- and terms-appropriate banking solutions for their business.
+              | فتح حساب مصرفي مهمة سهلة بالنسبة لنا.
+            p.sub-text نظرا لأن الأنظمة المصرفية أصبحت أكثر فأكثر صلابة، فإن معايير التقارير الشائعة مدمجة في العديد من البلدان في جميع أنحاء العالم وتريد الحكومة السيطرة على التدفقات المالية للمقيمين، وتميل متطلبات الشركات ووثائق الشركة لفتح الحسابات إلى أن تكون صارمة.
+            p.sub-text لفترة طويلة من التعاون، يحتفظ متخصصون لدينا باتصالات مع موظفي العديد من البنوك في جميع أنحاء العالم. يوفر ذلك لعملائنا حلول مصرفية مناسبة للوقت والشروط المناسبة لعملهم.
             .cubes
               img.lazy(data-src="../img/consulting_9-2.png")
 
@@ -1170,118 +1144,96 @@ html(lang="en")
         section.section.consulting-10#consulting-10
           .container
             h3(data-aos="fade-up").word
-              span Bank account 
-              br
-              | categories
+              span فئات الحساب المصرفي
             .row
               .col-lg-6
                 img.lazy(data-src="img/circle.png")
                 img.lazy(data-src="img/types.png")
               .col-lg-6
-                p.types Private account of a natural person
-                p.types Corporate account of a company
-                p.word 
-                  span It can be difficult 
-                  | to open a bank account with a foreign bank due to many reasons that can affect the lead time and cost of opening the account. These are reasons such as:
+                p.types حساب خاص لشخص طبيعي
+                p.types حساب الشركات للشركة
+                p.word قد يكون من الصعب فتح حساب مصرفي مع بنك أجنبي بسبب العديد من الأسباب التي يمكن أن تؤثر على المهلة وتكلفة فتح الحساب. هذه الأسباب مثل:
                 ul.consulting-10-list
-                  li(data-aos="fade-up" data-aos-delay="100") High-risk activity (payments from natural persons, financial, licensed, Forex, gambling, porn activities and so on);
-                  li(data-aos="fade-up" data-aos-delay="150") Offshore jurisdiction of the company;
-                  li(data-aos="fade-up" data-aos-delay="200") Lack of a license for licensed activity;
-                  li(data-aos="fade-up" data-aos-delay="250") Other reasons.
-                p.bottom List of banks:
+                  li(data-aos="fade-up" data-aos-delay="100") نشاط عالي المخاطر (المدفوعات من الأشخاص الطبيعيين، المالية، المرخصة، الفوركس، المقامرة، الاباحية، وهلم جرا)؛
+                  li(data-aos="fade-up" data-aos-delay="150") اختصاص بحري للشركة؛
+                  li(data-aos="fade-up" data-aos-delay="200") عدم وجود ترخيص للنشاط المرخص؛
+                  li(data-aos="fade-up" data-aos-delay="250") أسباب أخرى.
+                p.bottom قائمة البنوك:
               .col-lg-12
-                strong.text-center.d-block.mt-2.mb-2 OPENING A BANK ACCOUNT FOR EUROPEAN COMPANIES
+                strong.text-center.d-block.mt-2.mb-2 فتح حساب مصرفي للشركات الأوروبية
                 ul.check-list.left
-                  li(data-aos="fade-right" data-aos-delay="100") Switzerland – (completely remote) a deposit of 10,000 euros, only 1 thousand of which is held as a minimum balance. You would be free to use the remaining sum. 
-                  li(data-aos="fade-right" data-aos-delay="150") Cyprus – (it will be possible to certify at the bank's representative office in Kiev/Moscow/ St. Petersburg or at the embassy/consulate of Cyprus). However, according to the Cyprus legislation, a company must have a real office and the employees on islands territory.
-                  li(data-aos="fade-right" data-aos-delay="200") Portugal – (personal visit to the bank at the final stage, translation of documents into Portuguese).
-                  li(data-aos="fade-right" data-aos-delay="250") Turkey – (it is possible to open an account remotely, translate documents into Turkish, there is a requirement for a local representative office and a telephone number – we provide these services optionally).
-                  li(data-aos="fade-right" data-aos-delay="300") Hungary – (translation of documents into Hungarian, personal visit to a bank in Budapest at the final stage of an account opening).
-                  li(data-aos="fade-right" data-aos-delay="350") Serbia – (translation of documents into Serbian, personal visit to the bank).
-                  li(data-aos="fade-right" data-aos-delay="400") Singapore – (personal visit to the bank in Singapore).
-                p If you want to open the bank accounts in other jurisdictions, please contact the Acalista group manager.
-                p Besides the banks, accounts in payment systems are also quite popular. A payment system is a financial entity that operates under a bank license. Such a payment system, just like banks, has the ability to issue the unique IBAN numbers, as well as make SWIFT payments. The payment systems, the same way as the banks, provide insurance for their clients' funds. That is, the payment system can be termed as a kind of bank analogue. 
-                p Advantages: 
+                  li(data-aos="fade-right" data-aos-delay="100") سويسرا - (عن بعد تماما) إيداع بقيمة 10000 يورو، فقط 1 ألف منها محتجز كحد أدنى من التوازن. ستكون حرا في استخدام المبلغ المتبقي.
+                  li(data-aos="fade-right" data-aos-delay="150") قبرص - (سيكون من الممكن التصديق على مكتب التمثيل في البنك في كييف / موسكو / سانت بطرسبرغ أو في سفارة / قنصلية قبرص). ومع ذلك، وفقا للتشريع القبرصي، يجب أن يكون لدى الشركة مكتب حقيقي والموظفين في إقليم الجزر.
+                  li(data-aos="fade-right" data-aos-delay="200") البرتغال - (زيارة شخصية إلى البنك في المرحلة النهائية، ترجمة الوثائق إلى البرتغالية).
+                  li(data-aos="fade-right" data-aos-delay="250") تركيا - (من الممكن فتح حساب عن بعد، ترجم الوثائق إلى تركية، هناك شرط لمكتب تمثيلي محلي ورقم هاتف - نحن نقدم هذه الخدمات اختياريا).
+                  li(data-aos="fade-right" data-aos-delay="300") المجر - (ترجمة الوثائق إلى المجرية، زيارة شخصية إلى بنك في بودابست في المرحلة الأخيرة من فتح الحساب).
+                  li(data-aos="fade-right" data-aos-delay="350") صربيا - (ترجمة الوثائق إلى صربيا، زيارة شخصية إلى البنك).
+                  li(data-aos="fade-right" data-aos-delay="400") سنغافورة - (زيارة شخصية للبنك في سنغافورة). إذا كنت ترغب في فتح الحسابات المصرفية في السلطات القضائية الأخرى، فيرجى الاتصال بمدير مجموعة أكاليستا.
+                p إلى جانب البنوك، فإن الحسابات في أنظمة الدفع تحظى بشعبية كبيرة. نظام الدفع هو كيان مالي يعمل بموجب ترخيص بنكي. نظام الدفع هذا، تماما مثل البنوك، لديه القدرة على إصدار أرقام IBAN الفريدة، وكذلك إجراء مدفوعات سريعة. أنظمة الدفع، بنفس طريقة البنوك، وتوفر تأمين أموال عملائها. وهذا هو، يمكن أن يطلق عليه نظام الدفع كنوع من التناظرية المصرفية. نحن نتعاون مع أنظمة الدفع البريطانية واللتوانية والتشيك.
+                p مزايا:
                 ul.check-list.left
-                  li(data-aos="fade-right" data-aos-delay="100") short timelines of opening an account (up to 2 weeks)
-                  li(data-aos="fade-right" data-aos-delay="150") lower rates, compared to the banks.
-                p We work with more than 130 banks and 30 payment systems. If you need a unique option for your requirements, our company can customize our offer and find the best option for you.
+                  li(data-aos="fade-right" data-aos-delay="100") الجداول الزمنية القصيرة لفتح حساب (حتى أسبوعين)
+                  li(data-aos="fade-right" data-aos-delay="150") معدلات أقل، مقارنة بالبنوك
+                p نحن نعمل مع أكثر من 130 بنكا و 30 نظام دفع. إذا كنت بحاجة إلى خيار فريد لمتطلباتك، فيمكن لشركتنا تخصيص عرضنا وإيجاد أفضل خيار لك.
 
         section(data-src="../img/consulting_11.png").section.consulting-11.lazy
           .container
             .color-block
               .row
                 .col-lg-6
-                  p.big
-                    span Our company is experienced 
-                    br
-                    | in meeting all the requirements of banking institutions for opening an account.
+                  p.big تتمتع شركتنا في تلبية جميع متطلبات المؤسسات المصرفية لفتح حساب.
                 .col-lg-6
-                  p.red Bank accounts
-                  a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                  p.red حسابات بنكية
+                  a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
 
         section.section.consulting-12
           div(data-src="../img/consulting_12.png").container.lazy
             .section-title
               .title-cube
                 img.lazy(data-src="img/payment.png")
-                p Payment system
+                p نظام الدفع
               h2
-                span Payment system
+                span نظام الدفع
                 br
-                | Opening an Account in Payment Systems
-            p.sub-text Currently, banks are reluctant to cooperate with companies and non-resident citizens who permanently live abroad and do not have citizenship of the country where they applied to the bank. It is a difficult and time-consuming task to make a deal with such a bank and open an account.
-            p.sub-text That is why another service that allows you to avoid opening a bank account has appeared on the market. The payment system is a key part of the modern monetary system, that provides remittance between natural and legal persons.
-            p.sub-text Acalista cooperates with more than 30 payment systems all over the world.
+                | فتح حساب في أنظمة الدفع
+            p.sub-text حاليا، تتردد البنوك في التعاون مع الشركات والمواطنين غير المقيمين الذين يعيشون بشكل دائم في الخارج وليس لديهم جنسية في البلاد حيث تقدموا إلى البنك. إنها مهمة صعبة وتستغرق وقتا طويلا لإجراء صفقة مع هذا البنك وفتح حساب.
+            p.sub-text لهذا السبب ظهرت خدمة أخرى تتيح لك تجنب فتح حساب مصرفي في السوق. نظام الدفع هو جزء أساسي من النظام النقدي الحديث، الذي يوفر التحويلات بين الأشخاص الطبيعيين والقانونيين.
+            p.sub-text تعاون أكاليستا مع أكثر من 30 أنظمة دفع في جميع أنحاء العالم.
 
         section.section.consulting-13
           div(data-src="../img/consulting_13.png").container.lazy
             .row
               .col-lg-7.offset-lg-5
                 h3(data-aos="fade-up").word
-                  span What is 
-                  br
-                  | Payment system
-                p.sub-text.first
-                  span Payment system
-                  | is a company that provides money exchange under the economic circumstances and across national borders between participants (natural and legal persons). It is the basis of laws, regulations, instruments, systems, procedures and agreements that control payments.
-                p.sub-text Remarkably, the payment system is not a bank, but an organization that provides financial services with an appropriate license.
-                p.sub-text The payments can be classified due to large and retail cost based on the payment value and the type of the person that makes the transaction.
-                p.sub-text Large payments usually are high value payments made by financial institutions. Retail payments are made by natural persons and have relatively low value.
+                  span ما هو نظام الدفع؟
+                p.sub-text.first نظام الدفع هو شركة توفر تبادل مقابل الظروف الاقتصادية وعبر الحدود الوطنية بين المشاركين (الأشخاص الطبيعيين والقانونيين). إنه أساس القوانين واللوائح والأدوات والأنظمة والإجراءات والاتفاقيات التي تحكم في المدفوعات.
+                p.sub-text بشكل ملحوظ، نظام الدفع ليس بنكا، ولكن منظمة توفر خدمات مالية بترخيص مناسب.
+                p.sub-text يمكن تصنيف المدفوعات بسبب التكلفة الكبيرة والتجزئة بناء على قيمة الدفع ونوع الشخص الذي يجعل المعاملة.
+                p.sub-text عادة ما تكون المدفوعات الكبيرة مدفوعات عالية القيمة المقدمة من المؤسسات المالية. يتم دفع مدفوعات التجزئة للأشخاص الطبيعيين ولديهم قيمة منخفضة نسبيا.
 
         section(data-src="../img/consulting_14.png").section.consulting-14.lazy
           .container
             h3.word 
-              span Benefits 
-              br
-              | of opening an account in a payment system
+              span فوائد فتح حساب في نظام الدفع:
             .row
               .col-xl-5
                 ul.consulting-14-list.left
                   li(data-aos="fade-right" data-aos-delay="100")
-                    span  easier 
-                    | customer identification;
+                    span  أسهل في تحديد العملاء؛
                   li(data-aos="fade-right" data-aos-delay="150")
-                    span providing 
-                    | with multi-currency accounts;
-                  li(data-aos="fade-right" data-aos-delay="200") 
-                    span more favorable rates 
-                    | for maintenance and transactions;
-                  li(data-aos="fade-right" data-aos-delay="250") depending on the system,
-                    span it takes several hours or days 
-                    | to open an account;
+                    span توفير حسابات متعددة العملة؛
+                  li(data-aos="fade-right" data-aos-delay="200")
+                    span أسعار أكثر ملاءمة للصيانة والمعاملات؛
+                  li(data-aos="fade-right" data-aos-delay="250")
+                    span اعتمادا على النظام، يستغرق عدة ساعات أو أيام لفتح حساب؛
                   li(data-aos="fade-right" data-aos-delay="300")
-                    span round-the-clock 
-                    | payment acceptance;
+                    span قبول الدفع على مدار الساعة؛
                   li(data-aos="fade-right" data-aos-delay="350")
-                    span providing with 
-                    | VISA, MASTERCARD and others;
+                    span توفير فيزا، ماستركارد وغيرها؛
                   li(data-aos="fade-right" data-aos-delay="400")
-                    span providing with
-                    | universal, personal or salary cards (relevant for international companies that pay salaries for employees from different countries)
-                  li(data-aos="fade-right" data-aos-delay="450") opening 
-                    span merchant 
-                    | accounts.
+                    span توفير بطاقات عالمية أو شخصية أو رواتب (ذات صلة بالشركات الدولية التي تدفع رواتب الموظفين من مختلف البلدان)
+                  li(data-aos="fade-right" data-aos-delay="450") 
+                    span فتح حسابات التاجر.
         section.section(style="padding-bottom: 30px")
           .container
             strong.text-center.d-block.mt-2.mb-2 OPENING A BANK ACCOUNT FOR THE OFFSHORE COMPANIES/SCOTISH PARTNERSHIPS
@@ -1310,7 +1262,7 @@ html(lang="en")
                     | if you contact our employees. We will answer all your questions.
                 .col-lg-6
                   p.red Payment system
-                  a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                  a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
 
         section.section.consulting-16
           div(data-src="../img/consulting_16.png").container.lazy
@@ -1363,7 +1315,7 @@ html(lang="en")
                     | in more than 30 banking institutions, as well as in 23 non-bank financial institutions all over the world.
                 .col-lg-6
                   p.red Merchant Account
-                  a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                  a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
 
         //- Modals
         .modal.fade(id="modalAnguilla" aria-hidden="true")
@@ -1520,7 +1472,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalBVI" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -1649,7 +1601,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalDominica" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -1741,7 +1693,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalNauru" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -1861,7 +1813,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalSamoa" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -1964,7 +1916,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalAntigua" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -2054,7 +2006,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalVanuatu" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -2161,7 +2113,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalAruba" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -2252,7 +2204,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalGuernsey" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -2350,7 +2302,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalNiue" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -2477,7 +2429,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalSark" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -2555,7 +2507,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalBahamas" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -2653,7 +2605,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalGibraltar" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -2761,7 +2713,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalMalta" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -2901,7 +2853,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalBarbados" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -3009,7 +2961,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalHongKong" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -3181,7 +3133,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalLabuan" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -3282,7 +3234,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalMarshall" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -3416,7 +3368,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalSingapore" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -3533,7 +3485,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalBelize" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -3656,7 +3608,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalJersey" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -3746,7 +3698,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalMonaco" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -3861,7 +3813,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalPanama" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -4024,7 +3976,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalCyprus" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -4178,7 +4130,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalLiechtenstein" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -4332,7 +4284,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalLatvia" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -4450,7 +4402,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalUSA" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -4610,7 +4562,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalSwitzerland" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -4684,7 +4636,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalUnitedKingdom" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -4800,7 +4752,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalAustria" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -4918,7 +4870,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalAndorra" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -5082,7 +5034,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalEstonia" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -5187,7 +5139,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalBulgaria" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -5266,7 +5218,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalBangladesh" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -5391,7 +5343,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalBahrain" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -5476,7 +5428,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalBrunei" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -5566,7 +5518,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalUAE" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -5725,7 +5677,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalGeorgia" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -5816,7 +5768,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalCanada" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -5935,7 +5887,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalBermudas" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -6056,7 +6008,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalBrazil" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -6169,7 +6121,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalArgentina" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -6298,7 +6250,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalVenezuela" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -6382,7 +6334,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalSaintVincent" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -6511,7 +6463,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.fade(id="modalSeychelles" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -6613,7 +6565,7 @@ html(lang="en")
                           p.red Company
                             br.d-none.d-lg-block
                             span registration
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
 
 
 
@@ -6782,7 +6734,7 @@ html(lang="en")
                             | to know more about licensing options, receiving an individual offer based on personal requirements and a detailed calculation due to obtaining a license for your future or existing business.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.fade(id="modalforex" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -6872,7 +6824,7 @@ html(lang="en")
                             | to know more about licensing options, receiving an individual offer based on personal requirements and a detailed calculation due to obtaining a license for your future or existing business.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.all-licenses.fade(id="modalAllLicenses" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -7910,7 +7862,7 @@ html(lang="en")
                             | чтобы узнать о наличии интересующих вас лицензий на продажу. Чтобы получить оперативную консультацию, напишите нам и наш специалист ответит вам онлайн.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
 
         .modal.license.money.fade(id="electronicMoneyEstonia" aria-hidden="true")
           .modal-dialog
@@ -8015,7 +7967,7 @@ html(lang="en")
                           p.small Also, you can buy a ready-made company in Estonia with a license for electronic money. Contact us and we will help you get an EMI license in Estonia.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.money.fade(id="electronicMoneyUnitedKingdom" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -8120,7 +8072,7 @@ html(lang="en")
                           p.small Futhermore, you can buy a ready-made company in the UK with a license for electronic money. Contact us and we will help you get an EMI license in the UK.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.money.fade(id="electronicMoneyLatvia" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -8214,7 +8166,7 @@ html(lang="en")
                           br.d-none.d-lg-block
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.money.fade(id="electronicMoneyCzech" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -8320,7 +8272,7 @@ html(lang="en")
                           p.small Futhermore, you can buy a ready-made company in the the Czech Republic with a license for electronic money. Contact us and we will help you get an EMI license in the the Czech Republic.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
 
         .modal.game.fade(id="modalGameKurasao" aria-hidden="true")
           .modal-dialog
@@ -8430,7 +8382,7 @@ html(lang="en")
                             | Your business is important for us and we ensure you with a professional service.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalGameMalta" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -8526,7 +8478,7 @@ html(lang="en")
                           p.small our specialists will help you to obtain A Gaming license in Malta quickly and efficiently. Futhermore, you can buy a ready-made company in Malta with A Gaming license. Contact us and we will help you get A Gaming license in Malta.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalGameCyprus" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -8627,7 +8579,7 @@ html(lang="en")
                           p.small our specialists will help you to obtain A Gaming license in Cyprus  quickly and efficiently. Futhermore, you can buy a ready-made company in Cyprus with A Gaming license. Contact us and we will help you get A Gaming license in Cyprus.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalBookmakerCyprus" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -8695,7 +8647,7 @@ html(lang="en")
                           p.small то наши специалисты помогут вам быстро и квалифицированно получить лицензию онлайн брокера на Кипре. Также, вы можете купить компанию на Кипре с лицензией онлайн брокера. Напишите нам и мы поможем вам получить лицензию онлайн брокера на Кипре.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalGameMan" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -8824,7 +8776,7 @@ html(lang="en")
                           p.small our specialists will help you to obtain A Gaming license in the Isle of Man quickly and efficiently. Futhermore, you can buy a ready-made company in the Isle of Man with A Gaming license. Contact us and we will help you get A Gaming license in the Isle of Man.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalGameUK" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -8864,7 +8816,7 @@ html(lang="en")
                           p.small our specialists will help you to obtain A Gaming license in the UK quickly and efficiently. Futhermore, you can buy a ready-made company in the UK with A Gaming license. Contact us and we will help you get A Gaming license in the UK.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalGameCostaRica" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -8949,7 +8901,7 @@ html(lang="en")
                           p.small our specialists will help you to obtain A Gaming license in Costa Rica quickly and efficiently. Futhermore, you can buy a ready-made company in Costa Rica with A Gaming license. Contact us and we will help you get A Gaming license in Costa Rica.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalGameAustria" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -9039,7 +8991,7 @@ html(lang="en")
                           p.small our specialists will help you to obtain A Gaming license in Austria quickly and efficiently. Futhermore, you can buy a ready-made company in Austria with A Gaming license. Contact us and we will help you get A Gaming license in Austria.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalGameBelgium" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -9128,7 +9080,7 @@ html(lang="en")
                           p.small our specialists will help you to obtain A Gaming license in Belgium quickly and efficiently. Futhermore, you can buy a ready-made company in Belgium with A Gaming license. Contact us and we will help you get A Gaming license in Belgium.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalGameGibraltar" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -9211,7 +9163,7 @@ html(lang="en")
                           p.small our specialists will help you to obtain A Gaming license in Gibraltar quickly and efficiently. Futhermore, you can buy a ready-made company in Gibraltar with A Gaming license. Contact us and we will help you get A Gaming license in Gibraltar.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalGameOlderni" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -9318,7 +9270,7 @@ html(lang="en")
                           p.small our specialists will help you to obtain A Gaming license in Alderney quickly and efficiently. Futhermore, you can buy a ready-made company in Alderney with A Gaming license. Contact us and we will help you get A Gaming license in Alderney.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalGameDominica" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -9394,7 +9346,7 @@ html(lang="en")
                           p.small our specialists will help you to obtain A Gaming license in the Dominican Republic quickly and efficiently. Futhermore, you can buy a ready-made company in the Dominican Republic with A Gaming license. Contact us and we will help you get A Gaming license in the Dominican Republic.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalGameKanavaka" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -9451,7 +9403,7 @@ html(lang="en")
                           p.small our specialists will help you to obtain A Gaming license in Kahnawake quickly and efficiently. Futhermore, you can buy a ready-made company in Kahnawake with A Gaming license. Contact us and we will help you get A Gaming license in Kahnawake.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalGameRomania" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -9570,7 +9522,7 @@ html(lang="en")
                           p.small our specialists will help you to obtain A Gaming license in Romania quickly and efficiently. Futhermore, you can buy a ready-made company in Romania with A Gaming license. Contact us and we will help you get A Gaming license in Romania.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalGameSalvador" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -9710,7 +9662,7 @@ html(lang="en")
                           p.small our specialists will help you to obtain A Gaming license in El Salvador quickly and efficiently. Futhermore, you can buy a ready-made company in El Salvador with A Gaming license. Contact us and we will help you get A Gaming license in El Salvador.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalGameEstonia" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -9812,7 +9764,7 @@ html(lang="en")
                           p.small our specialists will help you to obtain A Gaming license in Estonia  quickly and efficiently. Futhermore, you can buy a ready-made company in Estonia with A Gaming license. Contact us and we will help you get A Gaming license in Estonia.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalGameItaly" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -9949,7 +9901,7 @@ html(lang="en")
                           p.small our specialists will help you to obtain A Gaming license in Italy quickly and efficiently. Futhermore, you can buy a ready-made company in Italy with A Gaming license. Contact us and we will help you get A Gaming license in Italy.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.game.fade(id="modalGameDenmark" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -10130,7 +10082,7 @@ html(lang="en")
                           p.small our specialists will help you to obtain A Gaming license in Denmark quickly and efficiently. Futhermore, you can buy a ready-made company in Denmark with A Gaming license. Contact us and we will help you get A Gaming license in Denmark.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
 
         .modal.license.fade(id="modalbankVanuatu" aria-hidden="true")
           .modal-dialog
@@ -10241,7 +10193,7 @@ html(lang="en")
                             | to know more about licensing options, receiving an individual offer based on personal requirements and a detailed calculation due to obtaining a license for your future or existing business.
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.fade(id="modalbankLabuan" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -10399,7 +10351,7 @@ html(lang="en")
                             | 2. Individual preparation of the AML procedures and company business plan
                         .col-lg-6
                           p.red Licenses 
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
 
         .modal.license.forex.country.fade(id="modalforexBulgaria" aria-hidden="true")
           .modal-dialog
@@ -10521,7 +10473,7 @@ html(lang="en")
                             | to know more about licensing options, receiving an individual offer based on personal requirements and a detailed calculation due to obtaining a license for your future or existing business.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.fade(id="modalforexHongKong" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -10623,7 +10575,7 @@ html(lang="en")
                             | to know more about licensing options, receiving an individual offer based on personal requirements and a detailed calculation due to obtaining a license for your future or existing business.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.fade(id="modalforexEstonia" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -10748,7 +10700,7 @@ html(lang="en")
                             | to know more about licensing options, receiving an individual offer based on personal requirements and a detailed calculation due to obtaining a license for your future or existing business.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.fade(id="modalforexCzech" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -10860,7 +10812,7 @@ html(lang="en")
                             | to know more about licensing options, receiving an individual offer based on personal requirements and a detailed calculation due to obtaining a license for your future or existing business.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.fade(id="modalforexCaboVerde" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -11013,7 +10965,7 @@ html(lang="en")
                             | to know more about licensing options, receiving an individual offer based on personal requirements and a detailed calculation due to obtaining a license for your future or existing business.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.fade(id="modalforexAustralia" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -11180,7 +11132,7 @@ html(lang="en")
                             | to know more about licensing options, receiving an individual offer based on personal requirements and a detailed calculation due to obtaining a license for your future or existing business.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.fade(id="modalforexVanuatu" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -11266,7 +11218,7 @@ html(lang="en")
                             | to know more about licensing options, receiving an individual offer based on personal requirements and a detailed calculation due to obtaining a license for your future or existing business.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.fade(id="modalforexSingapore" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -11311,7 +11263,7 @@ html(lang="en")
                             | to know more about licensing options, receiving an individual offer based on personal requirements and a detailed calculation due to obtaining a license for your future or existing business.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.fade(id="modalforexCyprus" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -11374,7 +11326,7 @@ html(lang="en")
                             | to know more about licensing options, receiving an individual offer based on personal requirements and a detailed calculation due to obtaining a license for your future or existing business.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
 
         .modal.license.forex.country.crypto.fade(id="modalСryptoEstonia" aria-hidden="true")
           .modal-dialog
@@ -11453,7 +11405,7 @@ html(lang="en")
                             | A license obtaining is a complex process that is betters to ensure to the professionals. The Acalista group provides all types of licensing services. We have an extensive experience of working with the foreign countries and a large number of approved deals. We will be happy to help you with this issue.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.crypto.fade(id="modalСryptoGibraltar" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -11513,7 +11465,7 @@ html(lang="en")
                             | A license obtaining is a complex process that is betters to ensure to the professionals. The Acalista group provides all types of licensing services. We have an extensive experience of working with the foreign countries and a large number of approved deals. We will be happy to help you with this issue.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.crypto.fade(id="modalСryptoSingapore" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -11585,7 +11537,7 @@ html(lang="en")
                             | A license obtaining is a complex process that is betters to ensure to the professionals. The Acalista group provides all types of licensing services. We have an extensive experience of working with the foreign countries and a large number of successful deals. We will be happy to help you with this issue.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.crypto.fade(id="modalСryptoSingapore2" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -11647,7 +11599,7 @@ html(lang="en")
                             | A license obtaining is a complex process that is betters to ensure to the professionals. The Acalista group provides all types of licensing services. We have an extensive experience of working with the foreign countries and a large number of successful deals. We will be happy to help you with this issue.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.crypto.fade(id="modalСryptoSingapore3" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -11717,7 +11669,7 @@ html(lang="en")
                             | A license obtaining is a complex process that is betters to ensure to the professionals. The Acalista group provides all types of licensing services. We have an extensive experience of working with the foreign countries and a large number of successful deals.We will be happy to help you with this issue.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.crypto.fade(id="modalСryptoUSA" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -11765,7 +11717,7 @@ html(lang="en")
                             | A license obtaining is a complex process that is betters to ensure to the professionals. The Acalista group provides all types of licensing services. We have an extensive experience of working with the foreign countries and a large number of successful deals.We will be happy to help you with this issue.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.crypto.fade(id="modalСryptoMalta" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -11902,7 +11854,7 @@ html(lang="en")
                             | A license obtaining is a complex process that is betters to ensure to the professionals. The Acalista group provides all types of licensing services. We have extensive experience of working with the foreign countries and a large number of successful deals.We will be happy to help you with this issue.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.crypto.fade(id="modalСryptoLabuan" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -11966,7 +11918,7 @@ html(lang="en")
                             | A license obtaining is a complex process that is betters to ensure to the professionals. The Acalista group provides all types of licensing services. We have an extensive experience of working with the foreign countries and a large number of successful deals.We will be happy to help you with this issue.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.crypto.fade(id="modalСryptoCzech" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -12048,7 +12000,7 @@ html(lang="en")
                             | A license obtaining is a complex process that is betters to ensure to the professionals. The Acalista group provides all types of licensing services. We have an extensive experience of working with the foreign countries and a large number of successful deals.We will be happy to help you with this issue.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.license.forex.country.crypto.fade(id="modalСryptoSwitzerland" aria-hidden="true")
           .modal-dialog
             .modal-content
@@ -12104,7 +12056,7 @@ html(lang="en")
                             | A license obtaining is a complex process that is betters to ensure to the professionals. The Acalista group provides all types of licensing services. We have an extensive experience of working with the foreign countries and a large number of successful deals.We will be happy to help you with this issue.
                         .col-lg-6
                           p.red Licenses  
-                          a.button.red(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                          a.button.red(href="#form" data-toggle="modal" data-target="#form") إبدأ اليوم
         .modal.form.consulting.fade(id="form" aria-hidden="true")
           .modal-dialog
             .modal-content
