@@ -55,6 +55,20 @@ $( document ).ready(function() {
       $(this).parent().find('.read-more').text('читать ещё');
       $(this).parent().find('.hidden-text').slideUp();
     }
+    if (elem == 'Read more') {
+      $(this).parent().find('.read-more').text('Hide');
+      $(this).parent().find('.hidden-text').slideDown();
+    } else {
+      $(this).parent().find('.read-more').text('Read more');
+      $(this).parent().find('.hidden-text').slideUp();
+    }
+    if (elem == 'اقرأ أكثر') {
+      $(this).parent().find('.read-more').text('إخفاء');
+      $(this).parent().find('.hidden-text').slideDown();
+    } else {
+      $(this).parent().find('.read-more').text('اقرأ أكثر');
+      $(this).parent().find('.hidden-text').slideUp();
+    }
   });
 
   if($('.slider').length) {
