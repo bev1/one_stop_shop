@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+html(lang="ar", dir="rtl")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no")
+        title التسويق
+        link(rel="stylesheet", href="css/bootstrap-reboot.min.css")
+        link(rel="stylesheet preload", as="style" href="css/bootstrap.min.css")
+        link(rel="stylesheet", href="css/aos.css")
+        link(rel="stylesheet preload", as="style" href="css/main.css")
+        link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")
+    body.rtl
+      header.header
+        .container
+          .header-wrap
+            .logo
+              a(href="index.html")
+                img(src="img/logo.svg", alt="logo")
+            ul.header-menu.collapse#navbar
+              li
+                a(href="index-ar.html")
+                  .text معلومات عنا
+                  .line
+                  .number 00
+              li
+                a(href="consulting-ar.html")
+                  .text الاستشارة
+                  .line
+                  .number 01
+              li
+                a.active(href="marketing-ar.html")
+                  .text التسويق
+                  .line
+                  .number 02
+              li
+                a(href="development-ar.html")
+                  .text التطوير
+                  .line
+                  .number 03
+              li
+                a(href="cryptocurrency-ar.html")
+                  .text عملة مشفرة
+                  .line
+                  .number 04
+              li
+                a(href="legal-ar.html")
+                  .text خدمات قانونية
+                  .line
+                  .number 05
+              li
+                a(href="realestate-ar.html")
+                  .text العقارات
+                  .line
+                  .number 06
+            .langs
+              .current
+                span AR
+                .arrow
+              .list
+                a(href="./marketing-en.html") EN
+                a(href="./marketing-ru.html") RU
+            button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation")
+              span(class="line line-1")
+              span(class="line line-2")
+              span(class="line line-3")
+      main
+        section.main-section.marketing
+          .container
+            .row
+              .col-lg-6                  
+                h1.title
+                  span(data-aos="fade" data-aos-delay="100") 02
+                  span.text-animate التسويق
+                    //- span M
+                    //- span a
+                    //- span r
+                    //- span k
+                    //- span e
+                    //- span t
+                    //- span i
+                    //- span n
+                    //- span g
+                .sub-title
+                  .text(data-aos="fade-left" data-aos-delay="1000") Creation and promotion of the company's image in the digital space: branding strategies and SMM. Media planning and buying: implementation of a comprehensive plan for increasing and optimization of the main traffic channels, conversion and sales.
+                a.video-link(href="index.html")
+                  .text مشاهدة المقدمة الخاصة بنا
+                  .link-img
+                    img(src="img/play_button.png", alt="play")
+              .col-lg-6
+                //- a.cube-link.market.cube-link-1(href="#marketing-1") Lead Generation
+                //- a.cube-link.market.cube-link-2(href="#marketing-2") Media 
+                //-   br.d-block.d-sm-none
+                //-   | Buying
+                //- a.cube-link.market.cube-link-3(href="#marketing-2") Content manegement
+                //- a.button.red.cube-button(href="#form" data-toggle="modal" data-target="#form") START TODAY
+                #cube.market(data-lang="en")
+        section#marketing-1.section.marketing-1.lazy(data-src="../img/marketing_1.png")
+          .container
+            .row
+              .col-lg-4
+                h2 حلول 
+                  span التسويق
+                .line
+                img.cubes.lazy(data-src="img/marketing_1_cubes.png")
+              .col-lg-4
+                ul.solutions-items
+                  li
+                    .head
+                      img.lazy(data-src="img/solution-1.png")
+                      p قيادة الجيل
+                        a.link(href="#modalLeads" data-toggle="modal" data-target="#modalLeads")
+                          img.lazy(data-src="../img/link-red.png")
+                  li
+                    .head
+                      img.lazy(data-src="img/solution-4.png")
+                      p التسويق بالتبعية
+                        a.link(href="#modalAff" data-toggle="modal" data-target="#modalAff")
+                          img.lazy(data-src="../img/link-red.png")
+                  li
+                    .head
+                      img.lazy(data-src="img/solution-3.png")
+                      p شراء وسائل الإعلام
+                        a.link(href="#modalBuy" data-toggle="modal" data-target="#modalBuy")
+                          img.lazy(data-src="../img/link-red.png")
+                  li
+                    .head
+                      img.lazy(data-src="img/solution-5.png")
+                      p إعلانات جوجل وتحسين محركات البحث
+                        a.link(href="#modalSEO" data-toggle="modal" data-target="#modalSEO")
+                          img.lazy(data-src="../img/link-red.png")
+                  li
+                    .head
+                      img.lazy(data-src="img/solution-6.png")
+                      p تسويق وسائل الاعلام الاجتماعية
+                        a.link(href="#modalSmm" data-toggle="modal" data-target="#modalSmm")
+                          img.lazy(data-src="../img/link-red.png")
+              .col-lg-4
+                ul.solutions-items.right
+                  li
+                    .head
+                      img.lazy(data-src="img/solution-2.png")
+                      p التصميم الجرافيكي والرقمي
+                        a.link(href="#modalDesign" data-toggle="modal" data-target="#modalDesign")
+                          img.lazy(data-src="../img/link-red.png")
+                  li
+                    .head
+                      img.lazy(data-src="img/solution-3.png")
+                      p استراتيجية العلامة التجارية
+                        a.link(href="#modalBrand" data-toggle="modal" data-target="#modalBrand")
+                          img.lazy(data-src="../img/link-red.png")
+                  li
+                    .head
+                      img.lazy(data-src="img/solution-1.png")
+                      p ادارة المحتوى
+                        a.link(href="#modalContent" data-toggle="modal" data-target="#modalContent")
+                          img.lazy(data-src="../img/link-red.png")
+                  li
+                    .head
+                      img.lazy(data-src="img/solution-4.png")
+                      p تسويق الفيديو
+                        a.link(href="#modalVideo" data-toggle="modal" data-target="#modalVideo")
+                          img.lazy(data-src="../img/link-red.png")
+                  li
+                    .head
+                      img.lazy(data-src="img/solution-5.png")
+                      p تحسين الحملات والاستشارات
+                        a.link(href="#modalOpti" data-toggle="modal" data-target="#modalOpti")
+                          img.lazy(data-src="../img/link-red.png")
+        section#marketing-2.section.marketing-2
+          .container
+            h2 عملائنا
+            p.subtitle التسويق هو جوهرنا
+            p.text لقد ساعدنا مجموعة متنوعة من الشركات ، الكبيرة والصغيرة على حد سواء ، على إدراك فوائد التسويق الرقمي. على مر السنين ، طورنا فهمًا عميقًا لإعلان العلامة التجارية والتصميم ومشاركة المستهلك. تصفح من خلال مجموعة مختارة من حملاتنا.
+          .slider-wrap
+            .container
+              .row
+                .col-lg-8
+                  .slider.clients
+                    .slide
+                      .top
+                        img(src="img/slide-1-1.png", alt="slide")
+                      .bottom
+                        img(src="img/slide-1-2.png", alt="slide")
+                    .slide
+                      .top
+                        img(src="img/slide-2-1.png", alt="slide")
+                      .bottom
+                        img(src="img/slide-2-2.png", alt="slide")
+                    .slide
+                      .top
+                        img(src="img/slide-3-1.png", alt="slide")
+                      .bottom
+                        img(src="img/slide-3-2.png", alt="slide")
+                    .slide
+                      .top
+                        img(src="img/slide-4-1.png", alt="slide")
+                      .bottom
+                        img(src="img/slide-4-2.png", alt="slide")
+                    .slide
+                      .top
+                        img(src="img/slide-5-1.png", alt="slide")
+                      .bottom
+                        img(src="img/slide-5-2.png", alt="slide")
+                    .slide
+                      .top
+                        img(src="img/slide-6-1.png", alt="slide")
+                      .bottom
+                        img(src="img/slide-6-2.png", alt="slide")
+                    .slide
+                      .top
+                        img(src="img/slide-7-1.png", alt="slide")
+                      .bottom
+                        img(src="img/slide-7-2.png", alt="slide")
+                    .slide
+                      .top
+                        img(src="img/slide-8-1.png", alt="slide")
+                      .bottom
+                        img(src="img/slide-8-2.png", alt="slide")
+                    .slide
+                      .top
+                        img(src="img/slide-9-1.png", alt="slide")
+                      .bottom
+                        img(src="img/slide-9-2.png", alt="slide")
+                  .slider-navigation
+                    .prev
+                      img(src="img/slide-prev.png", alt="prev")
+                    .next
+                      img(src="img/slide-next.png", alt="next")
+                .col-lg-4
+                  img(src="img/clients-faces-2.png")
+                  img(src="img/clients-faces.png")
+        .modal.form.marketing.fade(id="form" aria-hidden="true")
+          .modal-dialog
+            .modal-content
+              .modal-header
+                .container
+                  h5.modal-title C
+                    span ontact us
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-form.png" alt="close")
+              .modal-body
+                .main-info
+                  .container
+                    form
+                      .form-group
+                        input#name.form-control(type='text' required placeholder='Name person *')
+                      .form-group
+                        input#email.form-control(type='email' required placeholder='Email *')
+                      .form-group
+                        input#phone.form-control(type='tel' required placeholder='Phone *')
+                      .form-group
+                        textarea#msg.form-control(type='text' cols="30", rows="5" placeholder='Message')
+                      button(type="submit") SEND A REQUEST
+        .modal.form.marketing.info.fade(id="modalLeads" aria-hidden="true")
+          .modal-dialog
+            .modal-content
+              .modal-header
+                .container
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-form.png" alt="close")
+              .modal-body
+                .main-info
+                  .container
+                    p نحن نساعد في جذب عملاء جدد من خلال حركة مرور عالية الجودة: الإعلانات الأصلية ، وإشعارات الدفع ، ولافتات الاعلانات ، والبريد الإلكتروني ، والبحث المستهدف لتعزيز التحويلات على الصفحات المقصودة للعملاء ، ومسارات التحويل المخصصة ومواقع الويب
+        .modal.form.marketing.info.fade(id="modalDesign" aria-hidden="true")
+          .modal-dialog
+            .modal-content
+              .modal-header
+                .container
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-form.png" alt="close")
+              .modal-body
+                .main-info
+                  .container
+                    p إذا كنت تريد أن تبدو علامتك التجارية ممتازة ، فإن التصميم الاحترافي هو ما يجعلها ممكنة. ستجد بين طاقمنا: مصممو الويب والجرافيك والحركة والرقمية المتخصصون في تصميمات UX / UI والعلامات التجارية وإعادة العلامة التجارية والحملات المطبوعة والرقمية.
+        .modal.form.marketing.info.fade(id="modalBuy" aria-hidden="true")
+          .modal-dialog
+            .modal-content
+              .modal-header
+                .container
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-form.png" alt="close")
+              .modal-body
+                .main-info
+                  .container
+                    p نحن متخصصون في التخطيط الإعلامي والشراء في جميع الأسواق ، بما في ذلك حركة المرور المستهدفة وحركة المرور من كبار الناشرين والمواقع الصغيرة والمواقع والشبكات المتخصصة. الشبكة الإعلانية والجوّال حسب التكلفة لكل ألف ظهور وتكلفة النقرة
+        .modal.form.marketing.info.fade(id="modalAff" aria-hidden="true")
+          .modal-dialog
+            .modal-content
+              .modal-header
+                .container
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-form.png" alt="close")
+              .modal-body
+                .main-info
+                  .container
+                    p تتمتع مجموعة أكاليستا بخبرة واسعة في بناء برامج شريكة للعملاء في مختلف المجالات مثل الفوركس والعملات المشفرة والأدوات والنوترا والمقامرة والألعاب وغيرها. زيادة التحويلات إلى شركاء في CPL و CPA و CPI
+        .modal.form.marketing.info.fade(id="modalSEO" aria-hidden="true")
+          .modal-dialog
+            .modal-content
+              .modal-header
+                .container
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-form.png" alt="close")
+              .modal-body
+                .main-info
+                  .container
+                    p نحن نبحث عن أفضل الكلمات الرئيسية المناسبة لموقعك على الويب ، ونحسن تصنيفات محرك البحث على جوجل دون القيام بأي رسائل اقتحامية. سيقوم المحللون لدينا بإعداد الروابط الداخلية والخارجية المناسبة التي تساعد المشاهد على البقاء على اتصال مع موقع الويب الخاص بك لفترة أطول ، وتحسين مصداقيته وسيوصلك إلى القمة.
+        .modal.form.marketing.info.fade(id="modalSmm" aria-hidden="true")
+          .modal-dialog
+            .modal-content
+              .modal-header
+                .container
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-form.png" alt="close")
+              .modal-body
+                .main-info
+                  .container
+                    p SMM هو أساس التفاعل بين الأفراد والعلامات التجارية وكذلك بين الشركات. يجب أن تكون كل علامة تجارية موجودة في الشبكات الاجتماعية. تقوم مجموعة أكاليستا بإنشاء صورة رائعة لعملك على الشبكات الاجتماعية من خلال إنشاء حملات مناسبة لعلامتك التجارية وتطوير استراتيجيات تسويق قوية بأهداف تكتيكية ناجحة.
+        .modal.form.marketing.info.fade(id="modalBrand" aria-hidden="true")
+          .modal-dialog
+            .modal-content
+              .modal-header
+                .container
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-form.png" alt="close")
+              .modal-body
+                .main-info
+                  .container
+                    p يمكننا تحديد نشاطك التجاري من خلال تصميم شعار عالي الجودة ، بناءً على تفضيلات الجمهور المستهدف بالإضافة إلى توفير صور ذات علامة تجارية للشبكات الاجتماعية وأهداف أخرى لتحقيق استراتيجية تسويق العلامة التجارية للتأثير على السمع.
+        .modal.form.marketing.info.fade(id="modalContent" aria-hidden="true")
+          .modal-dialog
+            .modal-content
+              .modal-header
+                .container
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-form.png" alt="close")
+              .modal-body
+                .main-info
+                  .container
+                    p يقدم خبراؤنا جميع خدمات تسويق المحتوى بما في ذلك إنشاء استراتيجية المحتوى ، والتدوين ، وكتابة النصوص ، وخدمات الترجمة ، وإنشاء منشورات احترافية للوصول إلى انتباه الفئات المستهدفة.
+        .modal.form.marketing.info.fade(id="modalVideo" aria-hidden="true")
+          .modal-dialog
+            .modal-content
+              .modal-header
+                .container
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-form.png" alt="close")
+              .modal-body
+                .main-info
+                  .container
+                    p عند استخدام الفيديو كجزء من حملاتك الأخرى ، يكون عائد الاستثمار مبررًا. نحن نقدم فيديو تقديميًا لعلامتك التجارية: ترويج المنتج ، والإعلانات التجارية التلفزيونية ، ومحفظة الأعمال مع كتابة السيناريو وموسيقى الخلفية.
+        .modal.form.marketing.info.fade(id="modalOpti" aria-hidden="true")
+          .modal-dialog
+            .modal-content
+              .modal-header
+                .container
+                  button.close(type="button" data-dismiss="modal" aria-label="Close")
+                    span.close-icon(aria-hidden="true")
+                      img.lazy(data-src="img/close-form.png" alt="close")
+              .modal-body
+                .main-info
+                  .container
+                    p نحن نعلم كيفية تحسين نتائج مبيعاتك من خلال تحسين حملاتك الإعلانية. ستتبع بيانات وتحليلات الوقت الفعلي نهجًا يعتمد على البيانات لتحقيق أفضل عائد على الاستثمار
+
+      include layout/footer.pug
+      script(src="js/jquery.min.js")
+      script(src="js/bootstrap.min.js")
+      script(src="js/lazy-load.js")
+      script(src="js/aos.js")
+      script(src="js/three.min.js")
+      script(src="js/OrbitControls.js")
+      script(src="js/Tween.js")
+      script(src="//unpkg.com/three-spritetext")
+      script(src="js/cube5.js")
+      script(type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js")
+      script(src="js/script.js")
