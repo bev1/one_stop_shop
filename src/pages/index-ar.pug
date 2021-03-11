@@ -1,55 +1,55 @@
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ar", dir="rtl")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no")
-        title About us
+        title معلومات عنا
         link(rel="stylesheet", href="css/bootstrap-reboot.min.css")
         link(rel="stylesheet preload", as="style" href="css/bootstrap.min.css")
         link(rel="stylesheet", href="css/aos.css")
         link(rel="stylesheet preload", as="style" href="css/main.css")
         link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")
-    body
+    body.rtl
       header.header
         .container
           .header-wrap
             .logo
-              a(href="index.html")
+              a(href="index-ar.html")
                 img(src="img/logo.svg", alt="logo")
             ul.header-menu.collapse#navbar
               li
-                a.active(href="index.html")
-                  .text About us
+                a.active(href="index-ar.html")
+                  .text معلومات عنا
                   .line
                   .number 00
               li
-                a(href="consulting.html")
-                  .text Consulting
+                a(href="consulting-ar.html")
+                  .text الاستشارة
                   .line
                   .number 01
               li
-                a(href="marketing.html")
-                  .text Marketing
+                a(href="marketing-ar.html")
+                  .text التسويق
                   .line
                   .number 02
               li
-                a(href="development.html")
-                  .text Web development
+                a(href="development-ar.html")
+                  .text التطوير
                   .line
                   .number 03
               li
-                a(href="cryptocurrency.html")
-                  .text Cryptocurrency
+                a(href="cryptocurrency-ar.html")
+                  .text عملة مشفرة
                   .line
                   .number 04
               li
-                a(href="legal.html")
-                  .text Legal services
+                a(href="legal-ar.html")
+                  .text خدمات قانونية
                   .line
                   .number 05
               li
-                a(href="realestate.html")
-                  .text Real estate
+                a(href="realestate-ar.html")
+                  .text العقارات
                   .line
                   .number 06
             .langs
@@ -57,8 +57,8 @@ html(lang="en")
                 span EN
                 .arrow
               .list
+                a(href="/index-en.html") EN
                 a(href="/index-ru.html") RU
-                a(href="/index-ar.html") AR
             button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation")
               span(class="line line-1")
               span(class="line line-2")
@@ -67,46 +67,42 @@ html(lang="en")
       main
         section.section.about-1
           .container
-            .out about us
+            .out معلومات عنا
             .row
               .col-lg-6
-                h1(data-aos="fade-down" data-aos-delay="500") Who are we?
-                p.top(data-aos="fade-up" data-aos-delay="1000") We are a group of professional lawyers, economists, and developers, here to help you start your business from scratch. Our team thoroughly examines all the details of your future business and plans appropriate actions to move forward
+                h1(data-aos="fade-down" data-aos-delay="500") من نحن؟
+                p.top(data-aos="fade-up" data-aos-delay="1000") نحن مجموعة من المحامين والاقتصاديين والمطورين المحترفين ، هنا لمساعدتك في بدء عملك من الصفر. يقوم فريقنا بفحص شامل لجميع تفاصيل عملك المستقبلي ويخطط للإجراءات المناسبة للمضي قدمًا
                 p.center(data-aos="fade-up" data-aos-delay="1500")
-                  span Acalista group provides 
-                  | you with support in all areas of 
-                  strong your business from A to Z 
-                  | to make sure everything runs smoothly. 
-                p.bottom(data-aos="fade-up" data-aos-delay="2000") All you need to do is to sit back and relax while your business starts running. We’ve helped hundreds of clients to get their businesses up and running
+                  span توفر لك مجموعة أكاليستا 
+                  | الدعم في جميع مجالات عملك من الألف إلى الياء للتأكد من أن كل شيء يسير بسلاسة.
+                p.bottom(data-aos="fade-up" data-aos-delay="2000") كل ما عليك فعله هو الجلوس والاسترخاء أثناء بدء عملك. لقد ساعدنا مئات العملاء في إنشاء أعمالهم وتشغيلها
         section.section.about-2
           .container
-            .out where are we
+            .out أين نحن
             .row
               .col-6
                 img(src="../img/about-2.png")
               .col-6
-                h2(data-aos="fade-down") Locations
-                p Our headquarters are in Israel 
-                  br.d-none.d-lg-block
-                  | with branches in 
+                h2(data-aos="fade-down") المواقع
+                p مقرنا الرئيسي في إسرائيل ولنا فروع في
                 ul
-                  li(data-aos="fade-right" data-aos-delay="0") UK
-                  li(data-aos="fade-right" data-aos-delay="200") Latvia
-                  li(data-aos="fade-right" data-aos-delay="400") Estonia
-                  li(data-aos="fade-right" data-aos-delay="600") Ukraine
+                  li(data-aos="fade-right" data-aos-delay="0") المملكة المتحدة
+                  li(data-aos="fade-right" data-aos-delay="200") لاتفيا
+                  li(data-aos="fade-right" data-aos-delay="400") إستونيا
+                  li(data-aos="fade-right" data-aos-delay="600") أوكرانيا
         section.section.about-3
           .container
-            h2 Our Specialties
+            h2 تخصصاتنا
             .item.left
               .left
                 .title
                   .icon
                     img(src="../img/about-icon-1.png" data-aos="fade-right")
-                  a.link(data-aos="fade") Marketing
+                  a.link(data-aos="fade") التسويق
                   .line-wrap
                     .circle(data-aos="fade")
                     .line.marketing
-                .text We develop ads and promote your business on appropriate online and offline channels.
+                .text نقوم بتطوير الإعلانات والترويج لعملك على القنوات المناسبة عبر الإنترنت وخارج الانترنت.
               .right.marketing
                 img(src="../img/about-3-1.png" data-aos="fade-left")
             .item.right
@@ -114,11 +110,11 @@ html(lang="en")
                 .title
                   .icon
                     img(src="../img/about-icon-2.png" data-aos="fade-left")
-                  a.link(data-aos="fade") Web Development
+                  a.link(data-aos="fade") تطوير الشبكة
                   .line-wrap
                     .circle(data-aos="fade")
                     .line.web
-                .text Website development of any difficulty level.
+                .text تطوير الموقع من أي مستوى صعوبة.
               .left.web
                 img(src="../img/about-3-2.png" data-aos="fade-right")
             .item.left
@@ -126,11 +122,11 @@ html(lang="en")
                 .title
                   .icon
                     img(src="../img/about-icon-3.png" data-aos="fade-right")
-                  a.link(data-aos="fade") Branding
+                  a.link(data-aos="fade") العلامة التجارية
                   .line-wrap
                     .circle(data-aos="fade")
                     .line.branding
-                .text As an essential part of your business, we start by developing your brand. We set the tone, the voice, the style of your design, and everything else that’s related to your brand. 
+                .text كجزء أساسي من عملك ، نبدأ بتطوير علامتك التجارية. نحدد النغمة والصوت وأسلوب تصميمك وكل شيء آخر متعلق بعلامتك التجارية.
               .right.branding
                 img(src="../img/about-3-3.png" data-aos="fade-left")
             .item.right.width
@@ -138,11 +134,11 @@ html(lang="en")
                 .title
                   .icon
                     img(src="../img/about-icon-4.png" data-aos="fade-left")
-                  a.link(data-aos="fade") Administrative and Legal Services
+                  a.link(data-aos="fade") الخدمات الإدارية والقانونية
                   .line-wrap
                     .circle(data-aos="fade")
                     .line.admin
-                .text Everything – from registration of your business to bank selection and tax planning.
+                .text كل شيء - من تسجيل عملك إلى اختيار البنك والتخطيط الضريبي.
               .left.admin
                 img(src="../img/about-3-4.png" data-aos="fade-right")
             .item.left.width
@@ -150,11 +146,11 @@ html(lang="en")
                 .title
                   .icon
                     img(src="../img/about-icon-5.png" data-aos="fade-right")
-                  a.link(data-aos="fade") Cryptocurrencies
+                  a.link(data-aos="fade") العملات الرقمية
                   .line-wrap
                     .circle(data-aos="fade")
                     .line.crypto
-                .text Crypto exchange portal for businesses that want to use this tool and offer more opportunities to their customers.
+                .text بوابة تبادل العملات المشفرة للشركات التي ترغب في استخدام هذه الأداة وتوفر المزيد من الفرص لعملائها.
               .right.crypto
                 img(src="../img/about-3-5.png" data-aos="fade-left")
             .item.right.width
@@ -162,11 +158,11 @@ html(lang="en")
                 .title
                   .icon
                     img(src="../img/about-icon-6.png" data-aos="fade-left")
-                  a.link(data-aos="fade") Real Estate
+                  a.link(data-aos="fade") العقارات
                   .line-wrap
                     .circle(data-aos="fade")
                     .line.real
-                .text From renal to purchase of commercial estates to serve as offices, warehouses, and other commercial purposes. 
+                .text من الايجار إلى شراء العقارات التجارية لتكون بمثابة مكاتب ومستودعات وأغراض تجارية أخرى.
               .left.real
                 img(src="../img/about-3-6.png" data-aos="fade-right")
 
