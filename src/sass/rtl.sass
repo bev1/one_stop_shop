@@ -477,3 +477,40 @@ body.rtl
     @media (max-width: 992px)
       background-position: right
 
+  .modal
+    .modal-header
+      padding-right: 97px
+      padding-left: 16px
+      .modal-title
+        &:before
+          right: -55px
+          left: auto
+      .close
+        margin: -1rem auto -1rem -1rem
+    .modal-content
+      .modal-body
+        .table
+          text-align: right
+          .item
+            p
+              padding: 7px 40px 6px 0
+              @media (max-width: 450px)
+                padding: 5px 2px
+        .main-info
+          text-align: right
+        .modal-section
+          text-align: right
+          .nav
+            margin-right: -61px
+            @media (max-width: 1450px)
+              margin-right: 0
+            .nav-item
+              padding: 9px 31px 10px 0
+          &.text
+            background-position: 12% -68px
+            @media (max-width: 992px)
+              background-position: -200px -120px
+          &.bottom
+            @media (max-width: 992px)
+              background-position: right
+
