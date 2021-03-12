@@ -59,6 +59,24 @@ if(lang === 'ru') {
   button = new SpriteText('НАЧНИТЕ СЕЙЧАС', '0.2', '#cf093c');
 }
 
+if(lang === 'ar') {
+  myText1 = new SpriteText(
+    'حسابات →', 
+    '0.23', 
+    '#1e4ea7'); 
+  myText2 = new SpriteText(
+    'التراخيص →',
+   '0.23', '#1e4ea7');
+  myText3 = new SpriteText(
+    'خدمات تسجيل الشركة →', 
+    '0.23', 
+    '#1e4ea7');
+  button = new SpriteText(
+    'إبدأ اليوم', 
+    '0.2', 
+    '#cf093c');
+}
+
 myText1.strokeWidth = 0.15;
 myText1.strokeColor = '#1e4ea7';
 myText1.name = 'link1';
