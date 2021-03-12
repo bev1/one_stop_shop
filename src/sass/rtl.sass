@@ -482,6 +482,7 @@ body.rtl
       padding-right: 97px
       padding-left: 16px
       .modal-title
+        text-align: right
         &:before
           right: -55px
           left: auto
@@ -514,3 +515,95 @@ body.rtl
             @media (max-width: 992px)
               background-position: right
 
+    &.license 
+      .modal-body 
+        .modal-section
+          &.list            
+            background-position: left -134px
+            .marked-list
+              margin-right: 15px
+              margin-left: 0
+              @media (max-width: 576px)
+                margin-right: 0
+              li
+                &::after
+                  right: -25px
+                  left: auto
+          &.list2
+            .marked-list-2
+              margin-right: 15px
+              margin-left: 0
+              @media (max-width: 576px)
+                margin-right: 0
+              li
+                &::after
+                  right: -44px
+                  left: auto
+          &.info
+            .info-item
+              .text
+                text-align: right
+          &.info-2
+            background-position: left 85%
+            .section-title
+              img
+                margin-left: 50px
+                margin-right: 0
+                @media (max-width: 450px)
+                  margin-left: 10px
+          &.info-3
+            padding-bottom: 140px
+            @media (max-width: 1050px)
+              margin-bottom: 30px
+            .left
+              img
+                &:first-child
+                  left: 37px
+            .right
+              .section-title
+                img
+                  margin-left: 15px
+                  margin-right: 0
+            .marked-list-2
+              li:after
+                right: -44px
+                left: auto
+      &.money
+        .modal-body 
+          .modal-section
+            &.info-3
+              &.padding
+                padding-bottom: 30px
+              .right
+                .steps
+                  li
+                    .left
+                      margin-left: 25px
+                      margin-right: 0
+              .container
+                &.small
+                  p
+                    margin-top: 50px
+              .col-lg-6.left
+                transform: scale(-1, 1)
+      &.forex
+        .modal-body
+          .modal-section
+            &.list
+              background-position: -800px !important
+            &.list2
+              .col-lg-6.left
+                transform: scale(-1, 1)
+            &.description
+              .first
+                sup
+                  right: -20px
+                  left: auto
+        .consulting-4
+          p
+            text-align: right
+          .consulting-4-list
+            margin-right: 65px
+            margin-left: 0
+          .container
+            background-position: top
