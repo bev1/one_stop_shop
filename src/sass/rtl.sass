@@ -21,7 +21,38 @@ body.rtl
         .arrow
           margin-left: 0
           margin-right: 10px
+  main
+    overflow: hidden
   .section
     &.about-1
       background-image: url(../img/rtl/about-1.png)
       text-align: right
+    &.about-2
+      direction: ltr
+      text-align: right
+      h2
+        margin-right: 99px
+        margin-left: 0
+        @media (max-width: 1150px)
+          margin-right: 0
+      ul
+        margin-right: 84px
+        margin-left: 0
+        @media (max-width: 1150px)
+          margin-right: 0
+        li
+          padding-right: 30px
+          padding-left: 0
+          &:before
+            right: -10px
+            left: auto
+      p
+        margin-right: 107px
+        margin-left: 0
+        @media (max-width: 1150px)
+          margin-right: 0
+      .out
+        @media (max-width: 1620px)
+          right: -15px
+    &.about-3
+      direction: ltr
