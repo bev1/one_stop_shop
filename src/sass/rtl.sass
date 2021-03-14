@@ -481,11 +481,15 @@ body.rtl
     .modal-header
       padding-right: 97px
       padding-left: 16px
+      @media (max-width: 568px)
+        padding-right: 50px
       .modal-title
         text-align: right
         &:before
           right: -55px
           left: auto
+          @media (max-width: 568px)
+            right: -40px
       .close
         margin: -1rem auto -1rem -1rem
     .modal-content
@@ -522,7 +526,7 @@ body.rtl
             background-position: left -134px
             .marked-list
               margin-right: 15px
-              margin-left: 0
+              margin-left: 0 !important
               @media (max-width: 576px)
                 margin-right: 0
               li
@@ -599,6 +603,19 @@ body.rtl
                 sup
                   right: -20px
                   left: auto
+          .main-info
+            .marked-list
+              margin-right: 15px
+              margin-left: 0
+              @media (max-width: 576px)
+                padding-right: 10px
+                padding-left: 0
+              li
+                &::after
+                  right: -50px
+                  left: auto
+                  @media (max-width: 576px)
+                    right: -31px
         .consulting-4
           p
             text-align: right
@@ -607,3 +624,50 @@ body.rtl
             margin-left: 0
           .container
             background-position: top
+
+        &.country
+          .modal-body 
+            .modal-section
+              &.list 
+                .marked-list 
+                  @media (max-width: 576px)
+                    padding-right: 10px
+                    padding-left: 0
+                  li
+                    &:after
+                      right: -50px
+                      left: auto
+              .info-item
+                .text
+                  text-align: right
+
+    &.game
+      .modal-body
+        .marked-list
+          margin-right: 15px
+          margin-left: 0
+          @media (max-width: 576px)
+            padding-right: 10px
+            padding-left: 0
+          li
+            &::after
+              right: -50px
+              left: auto
+              @media (max-width: 576px)
+                right: -31px
+        .game1
+          background-position: 0px -100px
+          p
+            margin-right: 65px
+            margin-left: 0
+            @media (max-width: 992px)
+              margin-right: 10px
+          .section-title
+            img
+              margin-left: 15px
+              margin-right: 0
+              @media (max-width: 500px)
+                margin-left: 10px
+        .game2
+          .col-lg-6.left
+            transform: scale(-1, 1)
