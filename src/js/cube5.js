@@ -60,6 +60,24 @@ if(lang === 'ru') {
   button = new SpriteText('НАЧНИТЕ СЕЙЧАС', '0.25', '#cf093c');
 }
 
+if(lang === 'ar') {
+  myText1 = new SpriteText(
+    'قيادة الجيل →', 
+    '0.3', 
+    '#cf093c'); 
+  myText2 = new SpriteText(
+    'شراء وسائل الإعلام →',
+   '0.3', '#cf093c');
+  myText3 = new SpriteText(
+    'ادارة المحتوى →', 
+    '0.3', 
+    '#cf093c');
+  button = new SpriteText(
+    'إبدأ اليوم', 
+    '0.25', 
+    '#cf093c');
+}
+
 // const myText1 = new SpriteText('Lead Generation →', '0.3', '#cf093c');
 myText1.strokeWidth = 0.15;
 myText1.strokeColor = '#cf093c';

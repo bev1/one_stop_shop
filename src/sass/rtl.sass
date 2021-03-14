@@ -95,14 +95,21 @@ body.rtl
     &.about-3
       direction: ltr
 
-  .main-section 
+  .main-section
     .title
       &>span:first-child
         margin-left: 60px
         margin-right: 0
+        @media (max-width: 400px)
+          margin-left: 10px
       &>span:last-child
         &::first-letter
           color: #1e4ea7
+    &.marketing
+      .title
+        &>span:last-child
+          &::first-letter
+            color: #cf093c
     .sub-title
       padding-right: 50px
       padding-left: 0
@@ -671,3 +678,41 @@ body.rtl
         .game2
           .col-lg-6.left
             transform: scale(-1, 1)
+
+  .section.marketing-1
+    h2
+      margin: 80px 5px 69px 0
+    .solutions-items
+      @media (max-width: 991px)
+        padding-right: 0
+      li
+        .head
+          img
+            margin-right: -74px
+            margin-left: 0
+            @media (max-width: 991px)
+              margin-right: 0
+          p
+            margin-right: 23px
+            margin-left: 0
+            text-align: right
+            img
+              margin-right: 5px
+              margin-left: 0
+    .cubes
+      @media (max-width: 1500px)
+        margin-right: -100px
+        margin-left: 0
+
+  .section.marketing-2
+    text-align: right
+    .slider-wrap
+      .col-lg-4
+        transform: scale(-1, 1)
+    .slider-navigation
+      .prev, .next
+        img
+          transform: rotateY(180deg)
+      @media (max-width: 1500px)
+        padding-left: 30px
+        padding-right: 0
