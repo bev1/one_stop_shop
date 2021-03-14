@@ -110,6 +110,11 @@ body.rtl
         &>span:last-child
           &::first-letter
             color: #cf093c
+    &.development
+      .title
+        &>span:last-child
+          &::first-letter
+            color: #81ad00
     .sub-title
       padding-right: 50px
       padding-left: 0
@@ -716,3 +721,75 @@ body.rtl
       @media (max-width: 1500px)
         padding-left: 30px
         padding-right: 0
+
+  .section.development-1
+    .skills-items
+      @media (max-width: 767px)
+        padding-right: 0
+      &>li
+        padding: 65px 0 20px 14px
+        margin-right: 10px
+        margin-left: 0
+        ul
+          padding-right: 23px
+          padding-left: 0
+          text-align: right
+        &>.image
+          img
+            left: 0
+            right: auto
+          .hover
+            transform: translateX(-100px)
+        &:hover
+          .hover
+            transform: translateX(0)
+    .cubes
+      margin-left: 0
+      @media (max-width: 1300px)
+        margin-right: -130px
+    h2
+      margin: 80px 237px 178px 0
+      @media (max-width: 1300px)
+        margin: 80px 100px 0 0
+      @media (max-width: 1199px)
+        margin: 25px 0 10px 0
+      &.right
+        margin: 70px 220px 55px 0
+        @media (max-width: 1199px)
+          margin: 25px 0 10px 0
+    .text
+      margin-right: 220px
+      margin-left: 0
+      text-align: right
+      @media (max-width: 1199px)
+        margin-right: 0
+
+  .section.development-2
+    .slider-navigation
+      left: 77px
+      right: auto
+      .prev, .next
+        img
+          transform: rotateY(180deg)
+    .slider-wrap
+      .slick-dots
+        left: 170px
+        right: auto
+        @media (max-width: 1199px)
+          left: auto
+      .col-xl-4
+        .line
+          left: 0
+          right: auto
+          @media (max-width: 1199px)
+            right: 0
+            left: auto
+        .text
+          text-align: right
+          margin-right: 34px
+          margin-left: 0
+        h2
+          margin: 102px 31px 20px 0
+          @media (max-width: 1199px)
+            text-align: right
+            margin-top: 0
