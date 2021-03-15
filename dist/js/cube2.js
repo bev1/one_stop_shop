@@ -59,6 +59,24 @@ if(lang === 'ru') {
   button = new SpriteText('НАЧНИТЕ СЕЙЧАС', '0.2', '#cf093c');
 }
 
+if(lang === 'ar') {
+  myText1 = new SpriteText(
+    'السلطات القضائية →', 
+    '0.23', 
+    '#8660ad'); 
+  myText2 = new SpriteText(
+    'الإدارة الائتمانية →',
+   '0.23', '#8660ad');
+  myText3 = new SpriteText(
+    'الحصول على تصريح الإقامة →', 
+    '0.23', 
+    '#8660ad');
+  button = new SpriteText(
+    'إبدأ اليوم', 
+    '0.2', 
+    '#cf093c');
+}
+
 // const myText1 = new SpriteText('Jurisdictions →', '0.23', '#8660ad');
 myText1.strokeWidth = 0.15;
 myText1.strokeColor = '#8660ad';

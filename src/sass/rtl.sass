@@ -128,6 +128,11 @@ body.rtl
         &>span:last-child
           &::first-letter
             color: #8d385c
+    &.real
+      .title
+        &>span:last-child
+          &::first-letter
+            color: #8660ad
     .sub-title
       padding-right: 50px
       padding-left: 0
@@ -1125,3 +1130,166 @@ body.rtl
         @media (max-width: 991px)
           border-right: 15px solid #8d385c
           padding-right: 20px
+
+  .section.real-1
+    background-position: left
+    text-align: right
+    @media (max-width: 1500px)
+      background-position: -95% 100%
+    p
+      &:nth-of-type(2)
+        border-left: none
+        border-right: 30px solid #8660ad
+        padding-right: 25px
+        padding-left: 0
+        @media (max-width: 1200px)
+          border-right: 5px solid #8660ad
+          padding-right: 10px
+
+  .section.real-2
+    text-align: right
+    .left-img
+      margin-right: -235px
+      margin-left: 0
+      @media (max-width: 1200px)
+        margin-right: 0
+    ul
+      &.left
+        margin-right: 7px
+        margin-left: 0
+        padding-right: 0
+        li
+          padding-right: 38px
+          &::before
+            right: -10px
+            left: auto
+      &.right
+        margin-right: 120px
+        margin-left: 0
+        @media (max-width: 1200px)
+          margin-right: 0
+        @media (max-width: 768px)
+          margin-right: 15px
+        li
+          padding-right: 15px
+          padding-left: 0
+          a
+            &::before
+              right: -10px
+              left: auto
+            &.active::before, &:hover::before
+              right: 0
+            &.active, &:hover
+              margin-right: 10px
+              margin-left: 0
+    h2
+      margin-right: 137px
+      margin-left: 0
+      @media (max-width: 1200px)
+        margin-right: 0
+    p
+      &.left
+        margin-right: 137px
+        margin-left: 0
+        @media (max-width: 1200px)
+          margin-right: 0
+
+  .section.real-3
+    background-position: left
+    .nav
+      .nav-item
+        padding: 9px 66px 10px 0
+        &::before
+          right: 24px
+          left: auto
+    .tab-pane
+      margin-right: 78px
+      margin-left: 0
+      text-align: right
+      @media (max-width: 1100px)
+        margin-right: 0
+
+  .section.real-4
+    direction: ltr
+    h2
+      direction: rtl
+    .tab-content
+      .country
+        .description
+          padding: 16px 29px 20px 10px
+          direction: rtl
+          text-align: right
+    .country-wrapper
+      .title
+        padding-right: 15px
+        padding-left: 0
+        text-align: right
+        flex-direction: row-reverse
+        .dot
+          margin-left: 10px
+          margin-right: 0
+      .text
+        p
+          text-align: right
+
+  .section.real-5
+    background-position: right
+    text-align: right
+    @media (max-width: 1650px)
+      background-position: 145% 100%
+    @media (max-width: 1400px)
+      background-position: 170% 100%
+    @media (max-width: 1350px)
+      background-position: 250% 100%
+    @media (max-width: 1250px)
+      background-position: 320% 100%
+    .offset-xl-7
+      @media (min-width: 1200px)
+        margin-right: 58.333333%
+        margin-left: 0
+    h2
+      margin-right: 14px
+      margin-left: 0
+    p
+      &.sub-title
+        margin-right: 12px
+        margin-left: 0
+    ul
+      padding-right: 28px
+      padding-left: 0
+      @media (max-width: 768px)
+        padding-right: 0
+      li
+        padding-right: 38px
+        padding-left: 0
+        &::before
+          right: -2px
+          left: auto
+          @media (max-width: 768px)
+            right: 5px
+
+  .section.real-6
+    .item
+      .text
+        text-align: right
+    .bottom
+      text-align: right
+
+  .section.real-7
+    background-position: left
+    text-align: right
+    @media (max-width: 1800px)
+      background-position: -150px 0
+    ul
+      padding-right: 7px
+      padding-left: 0
+      li
+        padding-right: 50px
+        padding-left: 0
+        @media (max-width: 992px)
+          padding-right: 25px
+        &::before
+          right: -2px
+          left: auto
+          @media (max-width: 992px)
+            right: -10px
