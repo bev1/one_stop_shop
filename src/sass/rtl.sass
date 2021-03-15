@@ -97,6 +97,39 @@ body.rtl
           right: -15px
     &.about-3
       direction: ltr
+      h2
+        margin-bottom: 100px
+        @media (max-width: 576px)
+          margin-bottom: 50px
+      .item
+        .line
+          &.visible
+            &.marketing
+              @media (max-width: 1299px)
+                width: 265px
+            &.web
+              @media (max-width: 1600px)
+                width: 315px
+              @media (max-width: 991px)
+                width: 165px
+            &.admin
+              @media (max-width: 1299px)
+                width: 320px
+              @media (max-width: 1200px)
+                width: 280px
+              @media (max-width: 991px)
+                width: 135px
+            &.crypto
+              @media (max-width: 1299px)
+                width: 390px
+              @media (max-width: 991px)
+                width: 150px
+            &.real
+              @media (max-width: 1299px)
+                width: 400px
+              @media (max-width: 991px)
+                width: 115px
+
 
   .main-section
     .title
