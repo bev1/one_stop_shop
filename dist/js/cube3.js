@@ -59,6 +59,24 @@ if(lang === 'ru') {
   button = new SpriteText('НАЧНИТЕ СЕЙЧАС', '0.2', '#cf093c');
 }
 
+if(lang === 'ar') {
+  myText1 = new SpriteText(
+    'المهارات →', 
+    '0.23', 
+    '#81ad00'); 
+  myText2 = new SpriteText(
+    'تطبيق الهاتف المحمول →',
+   '0.23', '#81ad00');
+  myText3 = new SpriteText(
+    'الملف →', 
+    '0.23', 
+    '#81ad00');
+  button = new SpriteText(
+    'إبدأ اليوم', 
+    '0.2', 
+    '#cf093c');
+}
+
 // const myText1 = new SpriteText('Skills →', '0.23', '#81ad00');
 myText1.strokeWidth = 0.15;
 myText1.strokeColor = '#81ad00';
