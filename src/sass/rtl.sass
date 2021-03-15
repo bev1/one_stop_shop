@@ -105,14 +105,31 @@ body.rtl
         .line
           &.visible
             &.marketing
+              @media (max-width: 1600px)
+                width: 470px
+              @media (max-width: 1500px)
+                width: 375px
               @media (max-width: 1299px)
                 width: 265px
             &.web
               @media (max-width: 1600px)
-                width: 315px
+                width: 600px
+              @media (max-width: 1500px)
+                width: 500px
+              @media (max-width: 1299px)
+                width: 300px
               @media (max-width: 991px)
                 width: 165px
+            &.branding
+              @media (max-width: 1600px)
+                width: 500px
+              @media (max-width: 1299px)
+                width: 300px
             &.admin
+              @media (max-width: 1600px)
+                width: 575px
+              @media (max-width: 1400px)
+                width: 465px
               @media (max-width: 1299px)
                 width: 320px
               @media (max-width: 1200px)
@@ -120,11 +137,17 @@ body.rtl
               @media (max-width: 991px)
                 width: 135px
             &.crypto
+              @media (max-width: 1600px)
+                width: 600px
               @media (max-width: 1299px)
                 width: 390px
               @media (max-width: 991px)
                 width: 150px
             &.real
+              @media (max-width: 1600px)
+                width: 650px
+              @media (max-width: 1400px)
+                width: 600px
               @media (max-width: 1299px)
                 width: 400px
               @media (max-width: 991px)
@@ -363,6 +386,11 @@ body.rtl
       background-position: right
 
   section.consulting-7
+    .container
+      @media (max-width: 1600px)
+        background-position: 14px 40px
+      @media (max-width: 1500px)
+        background-position: 0 150px
     text-align: right
     .sub-text
       margin-right: 165px
@@ -561,6 +589,9 @@ body.rtl
         margin: -1rem auto -1rem -1rem
     .modal-content
       .modal-body
+        &::after
+          left: 0
+          right: auto
         .table
           text-align: right
           .item
