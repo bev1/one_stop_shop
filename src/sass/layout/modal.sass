@@ -1369,7 +1369,8 @@
 // Modal form
 
 .modal.form
-  z-index: 1051
+  &:not(.modal.form.info)    
+    z-index: 1051
   .modal-body
     &:after
       width: 100%
