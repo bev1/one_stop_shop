@@ -120,6 +120,15 @@ borderSprite.position.z = 0;
 borderSprite.scale.set(2, 0.75, 1.0)
 // scene.add( borderSprite );
 
+// const textBorderLoader = new THREE.TextureLoader().load( '../img/border-text.png' );
+// const textBorder = new THREE.SpriteMaterial({map: textBorderLoader});
+// const textBack1 = new THREE.Sprite(textBorder);
+// textBack1.name = 'textBack1';
+// textBack1.position.x = -1;
+// textBack1.position.y = 0;
+// textBack1.position.z = 0.1;
+// textBack1.scale.set(2, 0.75, 1.5)
+
 
 // fontLoader.load( '../css/fonts/ProximaNova/Rg_Regular.json', function ( font ) {}
 
@@ -151,6 +160,7 @@ loader.load('../img/cube1/money.png',
     cube12.name = 'cube12';
     scene.add(cube12);
     cube12.add(myText1);
+    // cube12.add(textBack1);
   }
 );
 // cube14
@@ -745,7 +755,7 @@ function animation12() {
 }
 
 setTimeout(() => {
-  animation1()
+  // animation1()
 }, 2000);
 
 function animateCube(cubeName) {

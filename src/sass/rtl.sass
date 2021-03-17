@@ -87,6 +87,8 @@ body.rtl
           &:before
             right: -10px
             left: auto
+            @media (max-width: 768px)
+              right: 0
       p
         margin-right: 107px
         margin-left: 0
@@ -115,7 +117,7 @@ body.rtl
               @media (max-width: 1600px)
                 width: 600px
               @media (max-width: 1500px)
-                width: 500px
+                width: 415px
               @media (max-width: 1299px)
                 width: 300px
               @media (max-width: 991px)
@@ -235,6 +237,10 @@ body.rtl
           &:before
             right: -10px
             left: auto
+        &.top
+          @media (max-width: 1200px)
+            margin-right: 10px
+            margin-left: 0          
       .cubes
         @media (max-width: 1400px)
           left: 0
@@ -259,13 +265,27 @@ body.rtl
           &>div
             border-right: 1px solid #c7c7c8
             border-left: none
+            @media (max-width: 992px)
+              border-right: none
             &:last-child
               border-left: 1px solid #c7c7c8
+              @media (max-width: 992px)
+                border-left: none
             .table-item
               text-align: right
               .link
                 margin-right: 5px
                 margin-left: 0
+            &.usa
+              @media (max-width: 1599px)
+                width: 17%
+              @media (max-width: 1200px)
+                width: 27%
+              @media (max-width: 992px)
+                width: 50%
+            &.next-usa
+              @media (max-width: 1599px)
+                border-left: 1px solid #c7c7c8
       .tab-pane
         margin-right: 5%
         margin-left: auto
@@ -414,6 +434,10 @@ body.rtl
         border-right: none
         @media (max-width: 992px)
           border-left: none
+        @media (max-width: 568px)
+          margin-right: 20px
+          margin-left: 0
+          padding-right: 0
         li
           padding-right: 18px
           padding-left: 0
@@ -512,12 +536,13 @@ body.rtl
     @media (max-width: 1200px)
       background-position: -80px -80px
     @media (max-width: 768px)
-      background-position: -200px -34px
+      background-position: -350px -34px
     h3
       text-align: right
     .consulting-14-list
       margin-right: 46px
-      margin-right: 0
+      @media (max-width: 992px)
+        margin-right: 20px
       li
         &::before
           right: -50px
@@ -671,6 +696,10 @@ body.rtl
                 &:first-child
                   left: 37px
             .right
+              @media (max-width: 1600px)
+                margin-right: auto
+              @media (max-width: 1400px)
+                margin-right: 0
               .section-title
                 img
                   margin-left: 15px

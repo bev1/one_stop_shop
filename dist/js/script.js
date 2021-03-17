@@ -51,21 +51,21 @@ $( document ).ready(function() {
     if (elem == 'читать ещё') {
       $(this).parent().find('.read-more').text('скрыть');
       $(this).parent().find('.hidden-text').slideDown();
-    } else {
+    } else if(elem == 'скрыть') {
       $(this).parent().find('.read-more').text('читать ещё');
       $(this).parent().find('.hidden-text').slideUp();
     }
     if (elem == 'Read more') {
       $(this).parent().find('.read-more').text('Hide');
       $(this).parent().find('.hidden-text').slideDown();
-    } else {
+    } else if(elem == 'Hide') {
       $(this).parent().find('.read-more').text('Read more');
       $(this).parent().find('.hidden-text').slideUp();
     }
     if (elem == 'اقرأ أكثر') {
       $(this).parent().find('.read-more').text('إخفاء');
       $(this).parent().find('.hidden-text').slideDown();
-    } else {
+    } else if(elem == 'إخفاء') {
       $(this).parent().find('.read-more').text('اقرأ أكثر');
       $(this).parent().find('.hidden-text').slideUp();
     }
@@ -76,7 +76,7 @@ $( document ).ready(function() {
       autoplay: true,
       dots: true,
       customPaging : function(slider, i) {
-      var thumb = $(slider.$slides[i]).data();
+      const thumb = $(slider.$slides[i]).data();
       return '<a class="dot">' + (i+1) + '</a>';
               },
       infinite: true,
@@ -95,7 +95,7 @@ $( document ).ready(function() {
     autoplay: true,
     dots: true,
     customPaging : function(slider, i) {
-    var thumb = $(slider.$slides[i]).data();
+    const thumb = $(slider.$slides[i]).data();
     return '<a class="dot">' + (i+1) + '</a>';
             },
     infinite: true,
@@ -116,7 +116,7 @@ $( document ).ready(function() {
     autoplay: true,
     dots: true,
     customPaging : function(slider, i) {
-    var thumb = $(slider.$slides[i]).data();
+    const thumb = $(slider.$slides[i]).data();
     return '<a class="dot">' + (i+1) + '</a>';
             },
     infinite: true,
@@ -148,7 +148,7 @@ $( document ).ready(function() {
     autoplay: true,
     dots: true,
     customPaging : function(slider, i) {
-    var thumb = $(slider.$slides[i]).data();
+    const thumb = $(slider.$slides[i]).data();
     return '<a class="dot">' + (i+1) + '</a>';
             },
     infinite: true,
@@ -179,15 +179,15 @@ $( document ).ready(function() {
   }
 
   $.fn.isInViewport = function() {
-    var elementTop = $(this).offset().top;
-    var elementBottom = elementTop + $(this).outerHeight();
-    var viewportTop = $(window).scrollTop();
-    var viewportBottom = viewportTop + $(window).height();
+    const elementTop = $(this).offset().top;
+    const elementBottom = elementTop + $(this).outerHeight();
+    const viewportTop = $(window).scrollTop();
+    const viewportBottom = viewportTop + $(window).height();
     return elementBottom > viewportTop-100 && elementTop < viewportBottom-100;
   };
   // TODO: refactor this code
   if($('.line.marketing').length) {
-    $(window).on('resize scroll', function() {
+    $(window).on('resize scroll load', function() {
       if($('.line.marketing').isInViewport()) {
         $('.line.marketing').addClass('visible');
       } else {
