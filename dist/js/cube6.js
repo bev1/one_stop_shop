@@ -46,18 +46,18 @@ const lang = $(wrapper).attr('data-lang');
 let myText1, myText2, myText3, button;
 
 if(lang === 'en') {
-  myText1 = new SpriteText('IT →', '0.23', '#8d385c');
-  myText2 = new SpriteText('Gambling →', '0.23', '#8d385c');
-  myText3 = new SpriteText('FinTech →', '0.23', '#8d385c');
-  myText4 = new SpriteText('Team of lawyers →', '0.23', '#8d385c');
+  myText1 = new SpriteText('IT →', '0.23', '#025951');
+  myText2 = new SpriteText('Gambling →', '0.23', '#025951');
+  myText3 = new SpriteText('FinTech →', '0.23', '#025951');
+  myText4 = new SpriteText('Team of lawyers →', '0.23', '#025951');
   button = new SpriteText('START TODAY', '0.2', '#cf093c');
 }
 
 if(lang === 'ru') {
-  myText1 = new SpriteText('IT →', '0.23', '#8d385c'); 
-  myText2 = new SpriteText('Азартные игры →', '0.23', '#8d385c');
-  myText3 = new SpriteText('FinTech →', '0.23', '#8d385c');
-  myText4 = new SpriteText('Команда юристов →', '0.23', '#8d385c');
+  myText1 = new SpriteText('IT →', '0.23', '#025951'); 
+  myText2 = new SpriteText('Азартные игры →', '0.23', '#025951');
+  myText3 = new SpriteText('FinTech →', '0.23', '#025951');
+  myText4 = new SpriteText('Команда юристов →', '0.23', '#025951');
   button = new SpriteText('НАЧНИТЕ СЕЙЧАС', '0.2', '#cf093c');
 }
 
@@ -65,18 +65,18 @@ if(lang === 'ar') {
   myText1 = new SpriteText(
     'تكنولوجيا المعلومات →', 
     '0.23', 
-    '#8d385c'); 
+    '#025951'); 
   myText2 = new SpriteText(
     'القمار →',
-   '0.23', '#8d385c');
+   '0.23', '#025951');
   myText3 = new SpriteText(
     'التكنولوجيا المالية →', 
     '0.23', 
-    '#8d385c');
+    '#025951');
   myText4 = new SpriteText(
     'فريق من المحامين →', 
     '0.23', 
-    '#8d385c');
+    '#025951');
   button = new SpriteText(
     'إبدأ اليوم', 
     '0.2', 
