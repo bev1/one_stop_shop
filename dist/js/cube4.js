@@ -47,15 +47,15 @@ let myText1, myText2, myText3, button;
 
 if(lang === 'en') {
   myText1 = new SpriteText('About →', '0.23', '#f1c405');
-  myText2 = new SpriteText('Currency →', '0.23', '#f1c405');
-  myText3 = new SpriteText('Trading →', '0.23', '#f1c405');
+  // myText2 = new SpriteText('Currency →', '0.23', '#f1c405');
+  // myText3 = new SpriteText('Trading →', '0.23', '#f1c405');
   button = new SpriteText('START TODAY', '0.2', '#cf093c');
 }
 
 if(lang === 'ru') {
   myText1 = new SpriteText('Инфо →', '0.23', '#f1c405'); 
-  myText2 = new SpriteText('Валюта →', '0.23', '#f1c405');
-  myText3 = new SpriteText('Коммерция →', '0.23', '#f1c405');
+  // myText2 = new SpriteText('Валюта →', '0.23', '#f1c405');
+  // myText3 = new SpriteText('Коммерция →', '0.23', '#f1c405');
   button = new SpriteText('НАЧНИТЕ СЕЙЧАС', '0.2', '#cf093c');
 }
 
@@ -64,13 +64,13 @@ if(lang === 'ar') {
     'حول →', 
     '0.23', 
     '#f1c405'); 
-  myText2 = new SpriteText(
-    'عملة →',
-   '0.23', '#f1c405');
-  myText3 = new SpriteText(
-    'التداول →', 
-    '0.23', 
-    '#f1c405');
+  // myText2 = new SpriteText(
+  //   'عملة →',
+  //  '0.23', '#f1c405');
+  // myText3 = new SpriteText(
+  //   'التداول →', 
+  //   '0.23', 
+  //   '#f1c405');
   button = new SpriteText(
     'إبدأ اليوم', 
     '0.2', 
@@ -86,20 +86,28 @@ myText1.position.y = 0;
 myText1.position.z = 1;
 
 // const myText2 = new SpriteText('Currency →', '0.23', '#f1c405');
-myText2.strokeColor = '#f1c405';
-myText2.strokeWidth = 0.15;
+const text2BorderLoader = new THREE.TextureLoader().load( '../img/text-back2.png' );
+const text2Border = new THREE.SpriteMaterial({map: text2BorderLoader});
+myText2 = new THREE.Sprite(text2Border);
+// myText2.strokeColor = '#f1c405';
+// myText2.strokeWidth = 0.15;
 myText2.name = 'link2';
 myText2.position.x = -0.3;
 myText2.position.y = -1;
 myText2.position.z = 0.5;
+myText2.scale.set(2, 0.75, 1.5)
 
 // const myText3 = new SpriteText('Trading →', '0.23', '#f1c405');
-myText3.strokeColor = '#f1c405';
-myText3.strokeWidth = 0.15;
+const text3BorderLoader = new THREE.TextureLoader().load( '../img/text-back1.png' );
+const text3Border = new THREE.SpriteMaterial({map: text3BorderLoader});
+myText3 = new THREE.Sprite(text3Border);
+// myText3.strokeColor = '#f1c405';
+// myText3.strokeWidth = 0.15;
 myText3.name = 'link3';
 myText3.position.x = 0.7;
 myText3.position.y = 1;
 myText3.position.z = 0;
+myText3.scale.set(2, 0.75, 1.5)
 
 // const button = new SpriteText('START TODAY', '0.2', '#cf093c');
 button.strokeColor = '#cf093c';
