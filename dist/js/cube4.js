@@ -46,24 +46,24 @@ const lang = $(wrapper).attr('data-lang');
 let myText1, myText2, myText3, button;
 
 if(lang === 'en') {
-  myText1 = new SpriteText('About →', '0.23', '#f1c405');
+  // myText1 = new SpriteText('About →', '0.23', '#f1c405');
   // myText2 = new SpriteText('Currency →', '0.23', '#f1c405');
   // myText3 = new SpriteText('Trading →', '0.23', '#f1c405');
   button = new SpriteText('START TODAY', '0.2', '#cf093c');
 }
 
 if(lang === 'ru') {
-  myText1 = new SpriteText('Инфо →', '0.23', '#f1c405'); 
+  // myText1 = new SpriteText('Инфо →', '0.23', '#f1c405'); 
   // myText2 = new SpriteText('Валюта →', '0.23', '#f1c405');
   // myText3 = new SpriteText('Коммерция →', '0.23', '#f1c405');
   button = new SpriteText('НАЧНИТЕ СЕЙЧАС', '0.2', '#cf093c');
 }
 
 if(lang === 'ar') {
-  myText1 = new SpriteText(
-    'حول →', 
-    '0.23', 
-    '#f1c405'); 
+  // myText1 = new SpriteText(
+  //   'حول →', 
+  //   '0.23', 
+  //   '#f1c405'); 
   // myText2 = new SpriteText(
   //   'عملة →',
   //  '0.23', '#f1c405');
@@ -78,12 +78,14 @@ if(lang === 'ar') {
 }
 
 // const myText1 = new SpriteText('About →', '0.23', '#f1c405');
-myText1.strokeWidth = 0.15;
-myText1.strokeColor = '#f1c405';
+const text1BorderLoader = new THREE.TextureLoader().load( '../img/About_link.png' );
+const text1Border = new THREE.SpriteMaterial({map: text1BorderLoader});
+myText1 = new THREE.Sprite(text1Border);
 myText1.name = 'link1';
 myText1.position.x = -0.8;
 myText1.position.y = 0;
 myText1.position.z = 1;
+myText1.scale.set(2, 0.75, 1.5)
 
 // const myText2 = new SpriteText('Currency →', '0.23', '#f1c405');
 const text2BorderLoader = new THREE.TextureLoader().load( '../img/text-back2.png' );
