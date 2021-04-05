@@ -46,60 +46,97 @@ const lang = $(wrapper).attr('data-lang');
 let myText1, myText2, myText3, button;
 
 if(lang === 'en') {
-  myText1 = new SpriteText('Jurisdictions →', '0.23', '#8660ad');
-  myText2 = new SpriteText('Fiduciary management →', '0.23', '#8660ad');
-  myText3 = new SpriteText('Obtaining a Residence Permit →', '0.23', '#8660ad');
+  const text1BorderLoader = new THREE.TextureLoader().load( '../img/cube2/eng/Jurisdictions_link.png' );
+  const text1Border = new THREE.SpriteMaterial({map: text1BorderLoader});
+  myText1 = new THREE.Sprite(text1Border);
+  // myText1 = new SpriteText('Accounts →', '0.23', '#1e4ea7');
+  const text2BorderLoader = new THREE.TextureLoader().load( '../img/cube2/eng/Fiduciary_management_link.png' );
+  const text2Border = new THREE.SpriteMaterial({map: text2BorderLoader});
+  myText2 = new THREE.Sprite(text2Border);
+  // myText2 = new SpriteText('Licenses →', '0.23', '#1e4ea7');
+  const text3BorderLoader = new THREE.TextureLoader().load( '../img/cube2/eng/Obtaining_a_Residence_Permit_link.png' );
+  const text3Border = new THREE.SpriteMaterial({map: text3BorderLoader});
+  myText3 = new THREE.Sprite(text3Border);
   button = new SpriteText('START TODAY', '0.2', '#cf093c');
 }
 
 if(lang === 'ru') {
-  myText1 = new SpriteText('Юрисдикции →', '0.23', '#8660ad'); 
-  myText2 = new SpriteText('Фидуциарное управление →', '0.23', '#8660ad');
-  myText3 = new SpriteText('Получение вида на жительство →', '0.23', '#8660ad');
+  const text1BorderLoader = new THREE.TextureLoader().load( '../img/cube2/ru/Jurisdictions_link.png' );
+  const text1Border = new THREE.SpriteMaterial({map: text1BorderLoader});
+  myText1 = new THREE.Sprite(text1Border);
+
+  const text2BorderLoader = new THREE.TextureLoader().load( '../img/cube2/ru/Fiduciary_management_link.png' );
+  const text2Border = new THREE.SpriteMaterial({map: text2BorderLoader});
+  myText2 = new THREE.Sprite(text2Border);
+
+  const text3BorderLoader = new THREE.TextureLoader().load( '../img/cube2/ru/Obtaining_a_Residence_Permit_link.png' );
+  const text3Border = new THREE.SpriteMaterial({map: text3BorderLoader});
+  myText3 = new THREE.Sprite(text3Border);
+
   button = new SpriteText('НАЧНИТЕ СЕЙЧАС', '0.2', '#cf093c');
 }
 
 if(lang === 'ar') {
-  myText1 = new SpriteText(
-    'السلطات القضائية →', 
-    '0.23', 
-    '#8660ad'); 
-  myText2 = new SpriteText(
-    'الإدارة الائتمانية →',
-   '0.23', '#8660ad');
-  myText3 = new SpriteText(
-    'الحصول على تصريح الإقامة →', 
-    '0.23', 
-    '#8660ad');
+  const text1BorderLoader = new THREE.TextureLoader().load( '../img/cube2/ar/Jurisdictions_link.png' );
+  const text1Border = new THREE.SpriteMaterial({map: text1BorderLoader});
+  myText1 = new THREE.Sprite(text1Border);
+
+  const text2BorderLoader = new THREE.TextureLoader().load( '../img/cube2/ar/Fiduciary_management_link.png' );
+  const text2Border = new THREE.SpriteMaterial({map: text2BorderLoader});
+  myText2 = new THREE.Sprite(text2Border);
+
+  const text3BorderLoader = new THREE.TextureLoader().load( '../img/cube2/ar/Obtaining_a_Residence_Permit_link.png' );
+  const text3Border = new THREE.SpriteMaterial({map: text3BorderLoader});
+  myText3 = new THREE.Sprite(text3Border);
+
   button = new SpriteText(
     'إبدأ اليوم', 
     '0.2', 
     '#cf093c');
 }
 
+if(lang === 'es') {
+  const text1BorderLoader = new THREE.TextureLoader().load( '../img/cube2/es/Jurisdictions_link.png' );
+  const text1Border = new THREE.SpriteMaterial({map: text1BorderLoader});
+  myText1 = new THREE.Sprite(text1Border);
+
+  const text2BorderLoader = new THREE.TextureLoader().load( '../img/cube2/es/Fiduciary_management_link.png' );
+  const text2Border = new THREE.SpriteMaterial({map: text2BorderLoader});
+  myText2 = new THREE.Sprite(text2Border);
+
+  const text3BorderLoader = new THREE.TextureLoader().load( '../img/cube2/es/Obtaining_a_Residence_Permit_link.png' );
+  const text3Border = new THREE.SpriteMaterial({map: text3BorderLoader});
+  myText3 = new THREE.Sprite(text3Border);
+
+  button = new SpriteText('COMIENCE HOY', '0.2', '#cf093c');
+}
+
 // const myText1 = new SpriteText('Jurisdictions →', '0.23', '#8660ad');
-myText1.strokeWidth = 0.15;
-myText1.strokeColor = '#8660ad';
+/*myText1.strokeWidth = 0.15;
+myText1.strokeColor = '#8660ad';*/
 myText1.name = 'link1';
 myText1.position.x = -1.3;
 myText1.position.y = 0;
 myText1.position.z = 1;
+// myText1.scale.set(2, 0.75, 1.5);
 
 // const myText2 = new SpriteText('Fiduciary management →', '0.23', '#8660ad');
-myText2.strokeColor = '#8660ad';
-myText2.strokeWidth = 0.15;
+/*myText2.strokeColor = '#8660ad';
+myText2.strokeWidth = 0.15;*/
 myText2.name = 'link2';
 myText2.position.x = -0.3;
 myText2.position.y = -1;
 myText2.position.z = 0.5;
+// myText2.scale.set(2.5, 0.75, 1.5);
 
 // const myText3 = new SpriteText('Obtaining a Residence Permit →', '0.23', '#8660ad');
-myText3.strokeColor = '#8660ad';
-myText3.strokeWidth = 0.15;
+/*myText3.strokeColor = '#8660ad';
+myText3.strokeWidth = 0.15;*/
 myText3.name = 'link3';
 myText3.position.x = 0.7;
 myText3.position.y = 1;
 myText3.position.z = 0;
+// myText3.scale.set(3, 0.75, 1.5);
 
 // const button = new SpriteText('START TODAY', '0.2', '#cf093c');
 button.strokeColor = '#cf093c';
@@ -108,6 +145,27 @@ button.position.x = 1.5;
 button.position.y = 0;
 button.position.z = 0;
 button.name = 'button';
+
+if(lang === 'en') {
+  myText1.scale.set(2.2, 0.75, 1.5);
+  myText2.scale.set(2.9, 0.75, 1.5);
+  myText3.scale.set(3.5, 0.75, 1.5);
+}
+if(lang === 'ru') {
+  myText1.scale.set(2.3, 0.75, 1.5);
+  myText2.scale.set(2.9, 0.75, 1.5);
+  myText3.scale.set(3.7, 0.75, 1.5);
+}
+if(lang === 'ar') {
+  myText1.scale.set(2.3, 0.75, 1.5);
+  myText2.scale.set(2.7, 0.75, 1.5);
+  myText3.scale.set(3, 0.75, 1.5);
+}
+if(lang === 'es') {
+  myText1.scale.set(2.2, 0.75, 1.5);
+  myText2.scale.set(2.9, 0.75, 1.5);
+  myText3.scale.set(3.8, 0.75, 1.5);
+}
 
 const map = new THREE.TextureLoader().load( '../img/border4.png' );
 const border = new THREE.SpriteMaterial({map: map, sizeAttenuation: true});

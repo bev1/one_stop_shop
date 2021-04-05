@@ -46,51 +46,83 @@ const lang = $(wrapper).attr('data-lang');
 let myText1, myText2, myText3, button;
 
 if(lang === 'en') {
-  myText1 = new SpriteText('Accounts →', '0.23', '#1e4ea7');
-  myText2 = new SpriteText('Licenses →', '0.23', '#1e4ea7');
-  myText3 = new SpriteText('Services →', '0.23', '#1e4ea7');
+  const text1BorderLoader = new THREE.TextureLoader().load( '../img/cube1/eng/Accounts_link.png' );
+  const text1Border = new THREE.SpriteMaterial({map: text1BorderLoader});
+  myText1 = new THREE.Sprite(text1Border);
+  // myText1 = new SpriteText('Accounts →', '0.23', '#1e4ea7');
+  const text2BorderLoader = new THREE.TextureLoader().load( '../img/cube1/eng/Licenses_link.png' );
+  const text2Border = new THREE.SpriteMaterial({map: text2BorderLoader});
+  myText2 = new THREE.Sprite(text2Border);
+  // myText2 = new SpriteText('Licenses →', '0.23', '#1e4ea7');
+  const text3BorderLoader = new THREE.TextureLoader().load( '../img/cube1/eng/Services_link.png' );
+  const text3Border = new THREE.SpriteMaterial({map: text3BorderLoader});
+  myText3 = new THREE.Sprite(text3Border);
+  // myText3 = new SpriteText('Services →', '0.23', '#1e4ea7');
   button = new SpriteText('START TODAY', '0.2', '#cf093c');
 }
 
 if(lang === 'ru') {
-  myText1 = new SpriteText('Счета →', '0.23', '#1e4ea7'); 
-  myText2 = new SpriteText('Лицензии →', '0.23', '#1e4ea7');
-  myText3 = new SpriteText('Услуги →', '0.23', '#1e4ea7');
+  const text1BorderLoader = new THREE.TextureLoader().load( '../img/cube1/ru/Accounts_link.png' );
+  const text1Border = new THREE.SpriteMaterial({map: text1BorderLoader});
+  myText1 = new THREE.Sprite(text1Border);
+
+  const text2BorderLoader = new THREE.TextureLoader().load( '../img/cube1/ru/Licenses_link.png' );
+  const text2Border = new THREE.SpriteMaterial({map: text2BorderLoader});
+  myText2 = new THREE.Sprite(text2Border);
+
+  const text3BorderLoader = new THREE.TextureLoader().load( '../img/cube1/ru/Services_link.png' );
+  const text3Border = new THREE.SpriteMaterial({map: text3BorderLoader});
+  myText3 = new THREE.Sprite(text3Border);
   button = new SpriteText('НАЧНИТЕ СЕЙЧАС', '0.2', '#cf093c');
 }
 
 if(lang === 'ar') {
-  myText1 = new SpriteText(
-    'حسابات →', 
-    '0.23', 
-    '#1e4ea7'); 
-  myText2 = new SpriteText(
-    'التراخيص →',
-   '0.23', '#1e4ea7');
-  myText3 = new SpriteText(
-    'خدمات تسجيل الشركة →', 
-    '0.23', 
-    '#1e4ea7');
+  const text1BorderLoader = new THREE.TextureLoader().load( '../img/cube1/ar/Accounts_link.png' );
+  const text1Border = new THREE.SpriteMaterial({map: text1BorderLoader});
+  myText1 = new THREE.Sprite(text1Border);
+
+  const text2BorderLoader = new THREE.TextureLoader().load( '../img/cube1/ar/Licenses_link.png' );
+  const text2Border = new THREE.SpriteMaterial({map: text2BorderLoader});
+  myText2 = new THREE.Sprite(text2Border);
+
+  const text3BorderLoader = new THREE.TextureLoader().load( '../img/cube1/ar/Services_link.png' );
+  const text3Border = new THREE.SpriteMaterial({map: text3BorderLoader});
+  myText3 = new THREE.Sprite(text3Border);
+
   button = new SpriteText(
     'إبدأ اليوم', 
     '0.2', 
     '#cf093c');
 }
+if(lang === 'es') {
+  const text1BorderLoader = new THREE.TextureLoader().load( '../img/cube1/es/Accounts_link.png' );
+  const text1Border = new THREE.SpriteMaterial({map: text1BorderLoader});
+  myText1 = new THREE.Sprite(text1Border);
 
-myText1.strokeWidth = 0.15;
-myText1.strokeColor = '#1e4ea7';
+  const text2BorderLoader = new THREE.TextureLoader().load( '../img/cube1/es/Licenses_link.png' );
+  const text2Border = new THREE.SpriteMaterial({map: text2BorderLoader});
+  myText2 = new THREE.Sprite(text2Border);
+
+  const text3BorderLoader = new THREE.TextureLoader().load( '../img/cube1/es/Services_link.png' );
+  const text3Border = new THREE.SpriteMaterial({map: text3BorderLoader});
+  myText3 = new THREE.Sprite(text3Border);
+
+  button = new SpriteText('COMIENCE HOY', '0.2', '#cf093c');
+}
+
 myText1.name = 'link1';
 myText1.position.x = -0.8;
 myText1.position.y = 0;
 myText1.position.z = 1;
+// myText1.scale.set(2, 0.75, 1.5)
 // scene.add(myText1);
 
-myText2.strokeColor = '#1e4ea7';
-myText2.strokeWidth = 0.15;
 myText2.name = 'link2';
 myText2.position.x = -0.3;
 myText2.position.y = -1;
 myText2.position.z = 0.5;
+// myText2.scale.set(2, 0.75, 1.5)
+
 // scene.add(myText2);
 
 myText3.strokeColor = '#1e4ea7';
@@ -99,6 +131,7 @@ myText3.name = 'link3';
 myText3.position.x = 0.7;
 myText3.position.y = 1;
 myText3.position.z = 0;
+// myText3.scale.set(2, 0.75, 1.5)
 // scene.add(myText3);
 
 button.strokeColor = '#cf093c';
@@ -108,6 +141,27 @@ button.position.y = 0;
 button.position.z = 0;
 button.name = 'button';
 // scene.add(button);
+
+if(lang === 'en') {
+  myText1.scale.set(2, 0.75, 1.5);
+  myText2.scale.set(2, 0.75, 1.5);
+  myText3.scale.set(2, 0.75, 1.5);
+}
+if(lang === 'ru') {
+  myText1.scale.set(2, 0.75, 1.5);
+  myText2.scale.set(2, 0.75, 1.5);
+  myText3.scale.set(2, 0.75, 1.5);
+}
+if(lang === 'ar') {
+  myText1.scale.set(2, 0.75, 1.5);
+  myText2.scale.set(2, 0.75, 1.5);
+  myText3.scale.set(2.7, 0.75, 1.5);
+}
+if(lang === 'es') {
+  myText1.scale.set(2, 0.75, 1.5);
+  myText2.scale.set(2, 0.75, 1.5);
+  myText3.scale.set(2, 0.75, 1.5);
+}
 
 const map = new THREE.TextureLoader().load( '../img/border4.png' );
 const border = new THREE.SpriteMaterial({map: map, sizeAttenuation: true});

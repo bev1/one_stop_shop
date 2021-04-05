@@ -46,61 +46,123 @@ const lang = $(wrapper).attr('data-lang');
 
 let myText1, myText2, myText3, button;
 
-if(lang === 'en') {
+if(lang === 'en') {/*
   myText1 = new SpriteText('Lead Generation →', '0.3', '#cf093c');
   myText2 = new SpriteText('Media Buying →', '0.3', '#cf093c');
-  myText3 = new SpriteText('Content manegement →', '0.3', '#cf093c');
+  myText3 = new SpriteText('Content manegement →', '0.3', '#cf093c');*/
+
+  const text1BorderLoader = new THREE.TextureLoader().load( '../img/cube5/eng/Lead_Generation_link.png' );
+  const text1Border = new THREE.SpriteMaterial({map: text1BorderLoader});
+  myText1 = new THREE.Sprite(text1Border);
+  // myText1 = new SpriteText('Accounts →', '0.23', '#1e4ea7');
+  const text2BorderLoader = new THREE.TextureLoader().load( '../img/cube5/eng/Media_Buying_link.png' );
+  const text2Border = new THREE.SpriteMaterial({map: text2BorderLoader});
+  myText2 = new THREE.Sprite(text2Border);
+  // myText2 = new SpriteText('Licenses →', '0.23', '#1e4ea7');
+  const text3BorderLoader = new THREE.TextureLoader().load( '../img/cube5/eng/Content_manegement_link.png' );
+  const text3Border = new THREE.SpriteMaterial({map: text3BorderLoader});
+  myText3 = new THREE.Sprite(text3Border);
+
   button = new SpriteText('START TODAY', '0.28', '#cf093c');
 }
 
 if(lang === 'ru') {
-  myText1 = new SpriteText('Лидогенерация →', '0.3', '#cf093c'); 
-  myText2 = new SpriteText('Покупка рекламы →', '0.3', '#cf093c');
-  myText3 = new SpriteText('Управление контентом →', '0.3', '#cf093c');
+  // myText1 = new SpriteText('Лидогенерация →', '0.3', '#cf093c'); 
+  // myText2 = new SpriteText('Покупка рекламы →', '0.3', '#cf093c');
+  // myText3 = new SpriteText('Управление контентом →', '0.3', '#cf093c');
+
+  const text1BorderLoader = new THREE.TextureLoader().load( '../img/cube5/ru/Lead_Generation_link.png' );
+  const text1Border = new THREE.SpriteMaterial({map: text1BorderLoader});
+  myText1 = new THREE.Sprite(text1Border);
+  // myText1 = new SpriteText('Accounts →', '0.23', '#1e4ea7');
+  const text2BorderLoader = new THREE.TextureLoader().load( '../img/cube5/ru/Media_Buying_link.png' );
+  const text2Border = new THREE.SpriteMaterial({map: text2BorderLoader});
+  myText2 = new THREE.Sprite(text2Border);
+  // myText2 = new SpriteText('Licenses →', '0.23', '#1e4ea7');
+  const text3BorderLoader = new THREE.TextureLoader().load( '../img/cube5/ru/Content_manegement_link.png' );
+  const text3Border = new THREE.SpriteMaterial({map: text3BorderLoader});
+  myText3 = new THREE.Sprite(text3Border);
+
   button = new SpriteText('НАЧНИТЕ СЕЙЧАС', '0.25', '#cf093c');
 }
 
 if(lang === 'ar') {
-  myText1 = new SpriteText(
-    'قيادة الجيل →', 
-    '0.3', 
-    '#cf093c'); 
-  myText2 = new SpriteText(
-    'شراء وسائل الإعلام →',
-   '0.3', '#cf093c');
-  myText3 = new SpriteText(
-    'ادارة المحتوى →', 
-    '0.3', 
-    '#cf093c');
+  // myText1 = new SpriteText(
+  //   'قيادة الجيل →', 
+  //   '0.3', 
+  //   '#cf093c'); 
+  // myText2 = new SpriteText(
+  //   'شراء وسائل الإعلام →',
+  //  '0.3', '#cf093c');
+  // myText3 = new SpriteText(
+  //   'ادارة المحتوى →', 
+  //   '0.3', 
+  //   '#cf093c');
+
+  const text1BorderLoader = new THREE.TextureLoader().load( '../img/cube5/ar/Lead_Generation_link.png' );
+  const text1Border = new THREE.SpriteMaterial({map: text1BorderLoader});
+  myText1 = new THREE.Sprite(text1Border);
+  // myText1 = new SpriteText('Accounts →', '0.23', '#1e4ea7');
+  const text2BorderLoader = new THREE.TextureLoader().load( '../img/cube5/ar/Media_Buying_link.png' );
+  const text2Border = new THREE.SpriteMaterial({map: text2BorderLoader});
+  myText2 = new THREE.Sprite(text2Border);
+  // myText2 = new SpriteText('Licenses →', '0.23', '#1e4ea7');
+  const text3BorderLoader = new THREE.TextureLoader().load( '../img/cube5/ar/Content_manegement_link.png' );
+  const text3Border = new THREE.SpriteMaterial({map: text3BorderLoader});
+  myText3 = new THREE.Sprite(text3Border);
+
   button = new SpriteText(
     'إبدأ اليوم', 
     '0.25', 
     '#cf093c');
 }
 
+if(lang === 'es') {
+  // myText1 = new SpriteText('Лидогенерация →', '0.3', '#cf093c'); 
+  // myText2 = new SpriteText('Покупка рекламы →', '0.3', '#cf093c');
+  // myText3 = new SpriteText('Управление контентом →', '0.3', '#cf093c');
+
+  const text1BorderLoader = new THREE.TextureLoader().load( '../img/cube5/es/Lead_Generation_link.png' );
+  const text1Border = new THREE.SpriteMaterial({map: text1BorderLoader});
+  myText1 = new THREE.Sprite(text1Border);
+  // myText1 = new SpriteText('Accounts →', '0.23', '#1e4ea7');
+  const text2BorderLoader = new THREE.TextureLoader().load( '../img/cube5/es/Media_Buying_link.png' );
+  const text2Border = new THREE.SpriteMaterial({map: text2BorderLoader});
+  myText2 = new THREE.Sprite(text2Border);
+  // myText2 = new SpriteText('Licenses →', '0.23', '#1e4ea7');
+  const text3BorderLoader = new THREE.TextureLoader().load( '../img/cube5/es/Content_manegement_link.png' );
+  const text3Border = new THREE.SpriteMaterial({map: text3BorderLoader});
+  myText3 = new THREE.Sprite(text3Border);
+
+  button = new SpriteText('COMIENCE HOY', '0.25', '#cf093c');
+}
+
 // const myText1 = new SpriteText('Lead Generation →', '0.3', '#cf093c');
-myText1.strokeWidth = 0.15;
-myText1.strokeColor = '#cf093c';
+// myText1.strokeWidth = 0.15;
+// myText1.strokeColor = '#cf093c';
 myText1.name = 'link1';
 myText1.position.x = 0;
 myText1.position.y = 0.7;
 myText1.position.z = 0;
+// myText1.scale.set(2, 0.75, 1.5);
 
 // const myText2 = new SpriteText('Media Buying →', '0.3', '#cf093c');
-myText2.strokeColor = '#cf093c';
-myText2.strokeWidth = 0.15;
+// myText2.strokeColor = '#cf093c';
+// myText2.strokeWidth = 0.15;
 myText2.name = 'link2';
 myText2.position.x = -0.5;
 myText2.position.y = 0.5;
 myText2.position.z = 1.5;
+// myText2.scale.set(2, 0.75, 1.5)
 
 // const myText3 = new SpriteText('Content manegement →', '0.3', '#cf093c');
-myText3.strokeColor = '#cf093c';
-myText3.strokeWidth = 0.15;
+// myText3.strokeColor = '#cf093c';
+// myText3.strokeWidth = 0.15;
 myText3.name = 'link3';
 myText3.position.x = -1;
 myText3.position.y = -1;
 myText3.position.z = 1;
+// myText3.scale.set(2, 0.75, 1.5)
 
 // const button = new SpriteText('START TODAY', '0.28', '#cf093c');
 button.strokeColor = '#cf093c';
@@ -109,6 +171,27 @@ button.position.x = 1.5;
 button.position.y = 0;
 button.position.z = 0;
 button.name = 'button';
+
+if(lang === 'en') {
+  myText1.scale.set(2.7, 0.75, 1.5);
+  myText2.scale.set(2.4, 0.75, 1.5);
+  myText3.scale.set(3, 0.75, 1.5);
+}
+if(lang === 'ru') {
+  myText1.scale.set(2.5, 0.75, 1.5);
+  myText2.scale.set(2.7, 0.75, 1.5);
+  myText3.scale.set(2.9, 0.75, 1.5);
+}
+if(lang === 'ar') {
+  myText1.scale.set(2, 0.75, 1.5);
+  myText2.scale.set(2.5, 0.75, 1.5);
+  myText3.scale.set(2.3, 0.75, 1.5);
+}
+if(lang === 'es') {
+  myText1.scale.set(3.5, 0.75, 1.5);
+  myText2.scale.set(2.5, 0.75, 1.5);
+  myText3.scale.set(3, 0.75, 1.5);
+}
 
 const map = new THREE.TextureLoader().load( '../img/border4.png' );
 const border = new THREE.SpriteMaterial({map: map, sizeAttenuation: true});
