@@ -1,4 +1,7 @@
 $( document ).ready(function() {
+  let scrollBtn = document.createElement("div")
+  scrollBtn.classList.add("scrollToTopButton")
+  document.body.appendChild(scrollBtn)
 
   setTimeout(() => {
     $("body").css("opacity", "1");    

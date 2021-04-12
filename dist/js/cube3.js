@@ -14,7 +14,7 @@ controls.enableDamping = true;
 controls.autoRotate = true;
 controls.autoRotateSpeed = 5;
 if($(window).width() > 576) {
-  camera.position.set( 5, -3, 8 );
+  camera.position.set( 5, -3, 10 );
 } else {
   camera.position.set( 5, -3, 15 );
 }
@@ -34,7 +34,7 @@ const target = new THREE.Vector3();
 scene.add(new THREE.AmbientLight(0xffffff, 0.95));
 
 
-window.addEventListener( 'resize', onWindowResize, false ); 
+window.addEventListener( 'resize', onWindowResize, false );
 function onWindowResize() {
   camera.aspect = wrapper.offsetWidth / wrapper.offsetHeight;
   camera.updateProjectionMatrix();
@@ -831,6 +831,34 @@ function onMouseClick(event) {
   }
 }
 
+window.addEventListener('mousemove', onMouseHover, false)
+
+function onMouseHover(event){
+  const objects = scene.children.filter(obj => obj.name.includes('cube') || obj.name.includes('group'));
+  // console.log("TCL: scene", link1.children[0].name)
+
+  mouse.x = ( ( event.clientX - renderer.domElement.getBoundingClientRect().left ) / renderer.domElement.clientWidth ) * 2 - 1;
+  mouse.y = - ( ( event.clientY - renderer.domElement.getBoundingClientRect().top ) / renderer.domElement.clientHeight ) * 2 + 1;
+
+  raycaster.setFromCamera(mouse, camera);
+
+  const intersects = raycaster.intersectObjects(objects, true);
+  if (intersects.length > 0) {
+    let targetLink = intersects[0].object.name;
+    let linksArr = ["link1", "link2", "link3", "link4", "link5", "button"]
+    if(linksArr.includes(targetLink)){
+      $('html,body').css('cursor', 'pointer');
+    }
+    else{
+      $('html,body').css('cursor', 'default');
+    }
+  }
+  else{
+    $('html,body').css('cursor', 'default');
+  }
+}
+
+
 function animate() {
   requestAnimationFrame( animate );
   lightHolder.quaternion.copy(camera.quaternion);
@@ -840,3 +868,4 @@ function animate() {
 }
 
 animate();
+
