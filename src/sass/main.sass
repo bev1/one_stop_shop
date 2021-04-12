@@ -22,12 +22,15 @@
   src: url('fonts/ProximaNova/ProximaNova-Semibold.woff2') format('woff2'), url('fonts/ProximaNova/ProximaNova-Semibold.woff') format('woff')
   font-weight: 600
 
+html
+  overflow-x: hidden
+
 body
   font-family: 'ProximaNova'
   background-image: url('../img/body_bg.png')
   background-size: cover
   opacity: 0
-  transition: .5s
+  transition: opacity .5s
 a
   color: inherit
   text-decoration: none
@@ -3723,6 +3726,7 @@ section
     .line
       background-color: #f1c405
       &.left
+        display: none
         height: 28px
         width: 181px
         position: absolute
@@ -3730,6 +3734,7 @@ section
         top: 466px
         @media (max-width:1599px)
           width: 130px
+          top: 466px
         @media (max-width:1480px)
           width: 181px
           top: 420px
