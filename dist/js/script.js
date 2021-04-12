@@ -1,6 +1,10 @@
 $( document ).ready(function() {
   let scrollBtn = document.createElement("div")
+  scrollBtn.style.display = 'none'
   scrollBtn.classList.add("scrollToTopButton")
+  scrollBtn.addEventListener("click", function(){
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+  })
   document.body.appendChild(scrollBtn)
 
   setTimeout(() => {
@@ -17,8 +21,10 @@ $( document ).ready(function() {
   $(window).scroll(function() {
     if($(document).scrollTop() > 0) {
       $('.footer').css('position', 'static')
+      $('.scrollToTopButton').show()
     } else {
       $('.footer').css('position', 'fixed')
+      $('.scrollToTopButton').hide()
     }
   });
   
