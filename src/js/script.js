@@ -1,4 +1,22 @@
 $( document ).ready(function() {
+  $(document).ready(function () {
+    $("form").on("submit", function(event) {
+      event.preventDefault();
+      let action = $(this).attr("action")
+      let formData = $(this).serialize()
+      $(".response-message").hide('slow')
+      $.post(action, formData, (responseContent) => {
+        $(".response-message").show('slow')
+        $(".response-message").html('Thanks for your reply');
+        $("#contactSubmit").attr('disabled', 'disabled')
+      }).fail(function (){
+        $(".response-message").show('slow')
+        $(".response-message").html('Sorry smth went wrong :( Try later !');
+      })
+    });
+  });
+
+
   let scrollBtn = document.createElement("div")
   scrollBtn.style.display = 'none'
   scrollBtn.classList.add("scrollToTopButton")

@@ -15,7 +15,7 @@ controls.autoRotate = true;
 controls.autoRotateSpeed = 5;
 // camera.position.set( 5, -3, 8 );
 if($(window).width() > 576) {
-  camera.position.set( 5, -3, 10 );
+  camera.position.set( 5, -3, 11 );
 } else {
   camera.position.set( 5, -3, 15 );
 }
