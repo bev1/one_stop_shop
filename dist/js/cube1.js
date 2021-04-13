@@ -16,7 +16,7 @@ controls.autoRotateSpeed = 5;
 if($(window).width() > 576) {
   camera.position.set( 5, -3, 11 );
 } else {
-  camera.position.set( 5, -3, 15 );
+  camera.position.set( 5, -3, 19 );
 }
 camera.lookAt(scene.position);
 controls.enableZoom = false;
