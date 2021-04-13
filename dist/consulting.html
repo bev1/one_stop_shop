@@ -11307,7 +11307,7 @@
 						<div class="modal-body">
 							<div class="main-info">
 								<div class="container">
-									<form>
+									<form action="form.php">
 										<div class="form-group">
 											<input class="form-control" id="name" type="text" required="required" placeholder="Name person *"/>
 										</div>
@@ -11320,7 +11320,8 @@
 										<div class="form-group">
 											<textarea class="form-control" id="msg" type="text" cols="30" rows="5" placeholder="Message"></textarea>
 										</div>
-										<button type="submit">SEND A REQUEST</button>
+										<div class="response-message"></div>
+										<button type="submit" id="contactSubmit">SEND A REQUEST</button>
 									</form>
 								</div>
 							</div>
