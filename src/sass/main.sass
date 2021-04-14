@@ -3497,6 +3497,7 @@ section
           img
             object-fit: cover
             min-width: 100%
+            width: 100%
         .bottom
           padding: 26px 0px 14px 32px
           border: 1px solid #e1e1e1
@@ -3535,13 +3536,15 @@ section
       .slick-dots
         list-style: none
         padding: 0
-        display: flex
         max-width: 85px
         justify-content: flex-start
         position: absolute
         width: 100%
         bottom: -97px
         right: 170px
+        display: none
+        @media (max-width:1599.1px)
+          display: flex
         @media (max-width:1199px)
           max-width: 100%
           justify-content: center
