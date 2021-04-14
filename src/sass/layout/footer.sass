@@ -4,14 +4,15 @@
     padding-right: 17px
 .footer
   background-color: #000000
-  position: fixed
-  bottom: 0
+  // position: fixed
+  // bottom: 0
   width: 100%
-  padding: 15px 0
+  padding: 25px 0 35px
   //transition: .3s
+  color: #878787
   z-index: 2
   @media (max-width: 768px)
-    padding: 5px 0
+    padding: 25px 0 15px
   .container
     @media (min-width: 1850px)
       max-width: 1830px
@@ -39,3 +40,19 @@
         @media (max-width: 768px)
           .icon
             margin: 0 10px
+    .footer-nav
+      ul
+        list-style: none
+        padding: 0
+        li
+          font-size: 16px
+          @media (max-width: 768px)
+            text-align: center
+          a
+            font-size: 16px
+            &:hover
+              text-decoration: underline
+          img
+            width: 25px
+            height: 15px
+            margin-right: 10px
