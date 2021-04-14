@@ -3729,7 +3729,6 @@ section
     .line
       background-color: #f1c405
       &.left
-        display: none
         height: 28px
         width: 181px
         position: absolute
@@ -3740,11 +3739,15 @@ section
           top: 466px
         @media (max-width:1480px)
           width: 181px
-          top: 420px
+          top: 400px
         @media (max-width:1280px)
           width: 181px
-          top: 380px
+          top: 350px
         @media (max-width:1199px)
+          // display: none
+          height: 10px
+          top: 400px
+        @media (max-width:992px)
           display: none
       &.right
         height: 28px
@@ -3782,6 +3785,17 @@ section
         @media (max-width:992px)
           font-size: 18px
           margin-left: 15px
+        @media (max-width:992px)
+          position: relative
+          &::after
+            content: ''
+            background-color: #f1c405
+            display: block
+            width: 180px
+            height: 10px
+            bottom: -20px
+            left: -50px
+            position: absolute
       &.right
         margin-left: 145px
         @media (max-width:1280px)
