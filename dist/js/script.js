@@ -44,6 +44,13 @@ $( document ).ready(function() {
       $('.footer').css('position', 'fixed')
       $('.scrollToTopButton').hide()
     }
+    var scrollHeight = $(document).height();
+    var scrollPosition = $(window).height() + $(window).scrollTop();
+    if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+      $('.scrollToTopButton').addClass('jump')
+    } else {
+      $('.scrollToTopButton').removeClass('jump')
+    }
   });
   
   $('.cube-link').on('click', function(e) {
