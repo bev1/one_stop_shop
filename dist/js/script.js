@@ -46,7 +46,7 @@ $( document ).ready(function() {
     }
     var scrollHeight = $(document).height();
     var scrollPosition = $(window).height() + $(window).scrollTop();
-    if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+    if ((scrollHeight - scrollPosition) < 5) {
       $('.scrollToTopButton').addClass('jump')
     } else {
       $('.scrollToTopButton').removeClass('jump')
