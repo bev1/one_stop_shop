@@ -16,6 +16,7 @@ $( document ).ready(function() {
     });
   });
 
+$(".footer .flexed a").click((e)=> e.preventDefault())
 
   let scrollBtn = document.createElement("div")
   scrollBtn.style.display = 'none'
