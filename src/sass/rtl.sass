@@ -98,6 +98,10 @@ body.rtl
         @media (max-width: 1620px)
           right: -15px
     &.about-3
+      .item
+        .text
+          text-align: right
+          unicode-bidi: plaintext
       direction: ltr
       h2
         margin-bottom: 100px
@@ -1440,11 +1444,16 @@ body.rtl
     right: unset
     left: 25px
   .footer
+    unicode-bidi: plaintext
     .container
       .footer-wrap
         .social
           margin-left: 110px
-    .offset-md-4
-      @media (min-width: 768px)
-        margin-left: 0
-        margin-right: 33.333333%
+          @media(max-width: 768px)
+            margin-left: 0
+      .footer-nav
+        .tel-ul
+            li
+              a
+                unicode-bidi: plaintext
+
