@@ -4197,6 +4197,12 @@ section
           line-height: 22px
 
   &.real-4
+    .grid-wrap
+      display: grid
+      grid-gap: 10px
+      grid-template-columns: repeat(auto-fill, minmax(calc(50% - 10px),1fr))
+      grid-auto-rows: 30px
+
     h2
       span
         color: #8660ad
@@ -4878,7 +4884,7 @@ section
       font-size: 24px
       font-weight: 600
       line-height: 36px
-      margin-top: -36px
+      margin-top: -10px
       margin-left: 20px
       @media (max-width: 991px)
         font-size: 18px
