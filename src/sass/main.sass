@@ -4200,8 +4200,13 @@ section
     .grid-wrap
       display: grid
       grid-gap: 10px
-      grid-template-columns: repeat(auto-fill, minmax(calc(50% - 10px),1fr))
-      grid-auto-rows: 30px
+      grid-template-columns: repeat(auto-fill, minmax(calc(100% / 3 - 10px),1fr))
+      grid-auto-rows: 20px
+      @media(max-width: 768.1px)
+        grid-template-columns: repeat(auto-fill, minmax(calc(100% / 2 - 10px),1fr))
+      @media(max-width: 576.1px)
+        display: block
+        grid-template-columns: repeat(auto-fill, minmax(calc(100% / 1 - 10px),1fr))
 
     h2
       span
