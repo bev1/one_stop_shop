@@ -276,13 +276,15 @@ $(".footer .flexed a").click((e)=> e.preventDefault())
     console.log($('.modal-backdrop').first())
   });
 
-});
 function resizeGridItem(item){
-  grid = document.getElementsByClassName("grid-wrap")[0];
-  rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-  rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-  rowSpan = Math.ceil((item.querySelector('.country-wrapper').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
-  item.style.gridRowEnd = "span "+rowSpan;
+  setTimeout(()=>{
+    grid = document.getElementsByClassName("grid-wrap")[0];
+    rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+    rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+    rowSpan = Math.ceil((item.querySelector('.country-wrapper').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
+    // console.log(item.querySelector('.country-wrapper').getBoundingClientRect().height)
+    item.style.gridRowEnd = "span "+rowSpan;
+  }, 100)
 }
 
 function resizeAllGridItems(){
@@ -301,3 +303,4 @@ window.onload = resizeAllGridItems();
 window.addEventListener("resize", resizeAllGridItems);
 
 allItems = document.getElementsByClassName("grid-item");
+});
