@@ -1,6 +1,7 @@
 $( document ).ready(function() {
   $(document).ready(function () {
     $("form").on("submit", function(event) {
+      $("#contactSubmit").attr('disabled', 'disabled')
       event.preventDefault();
       let action = $(this).attr("action")
       let formData = $(this).serialize()
@@ -8,10 +9,11 @@ $( document ).ready(function() {
       $.post(action, formData, (responseContent) => {
         $(".response-message").show('slow')
         $(".response-message").html('Thanks for your reply');
-        $("#contactSubmit").attr('disabled', 'disabled')
+
       }).fail(function (){
         $(".response-message").show('slow')
         $(".response-message").html('Sorry smth went wrong :( Try later !');
+        $("#contactSubmit").removeAttr('disabled')
       })
     });
   });

@@ -274,13 +274,13 @@ html(lang="ru")
                   .container
                     form(action="form.php")
                       .form-group
-                        input#name.form-control(type='text' required placeholder='Имя *')
+                        input#name.form-control(name='name' type='text' required placeholder='Имя *')
                       .form-group
-                        input#email.form-control(type='email' required placeholder='Электронная почта *')
+                        input#email.form-control(name='email' type='email' required placeholder='Электронная почта *')
                       .form-group
-                        input#phone.form-control(type='tel' required placeholder='Телефон *')
+                        input#phone.form-control(name="phone" type='tel' required placeholder='Телефон *')
                       .form-group
-                        textarea#msg.form-control(type='text' cols="30", rows="5" placeholder='Сообщение  ')
+                        textarea#msg.form-control(name="msg" type='text' cols="30", rows="5" placeholder='Сообщение  ')
                       button(type="submit") Отправить запрос
         .modal.form.marketing.info.fade(id="modalLeads" aria-hidden="true")
           .modal-dialog

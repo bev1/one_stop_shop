@@ -284,13 +284,13 @@ html(lang="ru")
                   .container
                     form(action="form.php")
                       .form-group
-                        input#name.form-control(type='text' required placeholder='Name person *')
+                        input#name.form-control(name='name' type='text' required placeholder='Name person *')
                       .form-group
-                        input#email.form-control(type='email' required placeholder='Email *')
+                        input#email.form-control(name='email' type='email' required placeholder='Email *')
                       .form-group
-                        input#phone.form-control(type='tel' required placeholder='Phone *')
+                        input#phone.form-control(name="phone" type='tel' required placeholder='Phone *')
                       .form-group
-                        textarea#msg.form-control(type='text' cols="30", rows="5" placeholder='Message')
+                        textarea#msg.form-control(name="msg" type='text' cols="30", rows="5" placeholder='Message')
                       .response-message
                       button(type="submit" id="contactSubmit") SEND A REQUEST
 

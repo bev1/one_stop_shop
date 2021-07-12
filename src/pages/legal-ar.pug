@@ -348,13 +348,13 @@ html(lang="ar", dir="rtl")
                   .container
                     form(action="form.php")
                       .form-group
-                        input#name.form-control(type='text' required placeholder='اسم الشخص *')
+                        input#name.form-control(name='name' type='text' required placeholder='اسم الشخص *')
                       .form-group
-                        input#email.form-control(type='email' required placeholder='البريد الالكتروني *')
+                        input#email.form-control(name='email' type='email' required placeholder='البريد الالكتروني *')
                       .form-group
-                        input#phone.form-control(type='tel' required placeholder='الهاتف *')
+                        input#phone.form-control(name="phone" type='tel' required placeholder='الهاتف *')
                       .form-group
-                        textarea#msg.form-control(type='text' cols="30", rows="5" placeholder='الرسالة')
+                        textarea#msg.form-control(name="msg" type='text' cols="30", rows="5" placeholder='الرسالة')
                       .response-message
                       button(type="submit" id="contactSubmit") ارسال الطلب
 
