@@ -1,7 +1,6 @@
 $( document ).ready(function() {
   $(document).ready(function () {
     $("form").on("submit", function(event) {
-      $("#contactSubmit").attr('disabled', 'disabled')
       event.preventDefault();
       let action = $(this).attr("action")
       let formData = $(this).serialize()
@@ -9,14 +8,28 @@ $( document ).ready(function() {
       $.post(action, formData, (responseContent) => {
         $(".response-message").show('slow')
         $(".response-message").html('Thanks for your reply');
-
+        $("#contactSubmit").attr('disabled', 'disabled')
       }).fail(function (){
         $(".response-message").show('slow')
         $(".response-message").html('Sorry smth went wrong :( Try later !');
-        $("#contactSubmit").removeAttr('disabled')
       })
     });
   });
+
+  const cookie = document.createElement('div')
+  cookie.innerHTML = '<div class="cookie">\n' +
+      '\t\t\t<div class="text-white">This website uses cookies<br>to improve your browsing experience -\n' +
+      '\t\t\t\t<u><a href="/cookies.html">Learn more</a></u>\n' +
+      '\t\t\t</div><a class="button red ml-md-5" id="acceptCookie">Got it</a>\n' +
+      '\t\t</div>'
+
+  if(!localStorage.getItem('acceptCookie')){
+    $(".footer").append(cookie)
+    $("#acceptCookie").click(function (){
+      localStorage.setItem('acceptCookie', true);
+      $(".cookie").addClass("d-none")
+    })
+  }
 
 $(".footer .flexed a").click((e)=> e.preventDefault())
 
