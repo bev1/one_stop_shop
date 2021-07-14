@@ -1,9 +1,9 @@
 <?php
-file_put_contents('test.txt', file_get_contents('php://input'));
+
 
 $to      = 'acalistainfo@gmail.com';
 $from = 'acalista.com';
-$subject = 'Acalista Form';
+$subject = 'Acalista Form '.$_POST['email'];
 $message = 'Name: '.$_POST['name'].'<br>'.'Email: '.$_POST['email'].'<br>'.'Phone: '.$_POST['phone'].'<br>'.'Message: '.$_POST['msg'];
 
 $headers  = 'MIME-Version: 1.0' . "\r\n";
